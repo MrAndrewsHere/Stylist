@@ -32,13 +32,11 @@
         Наши стилисты проходят тщательный контроль и вы можете быть уверены в успехе вашего
         нового образа.</p>
     </div>
-
   </div>
 
   <div class="start-change">
     <button class="btn btn--action">Начать преображение</button>
   </div>
-
 @endsection
 
 
