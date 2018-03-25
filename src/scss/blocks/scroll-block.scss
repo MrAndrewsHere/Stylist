@@ -1,0 +1,17 @@
+.scroll-block {
+  height: 600px;
+  overflow-y: scroll;
+  padding-right: 30px;
+
+  &--orders {
+    text-align: center;
+  }
+
+  &--slim {
+    height: 400px;
+  }
+
+  &__wrapper {
+    margin-bottom: 30px;
+  }
+}

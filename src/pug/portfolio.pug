@@ -1,0 +1,98 @@
+extends layout
+
+block title
+  title Портфолио
+
+block section
+  section.section.section--portfolio.section__home
+    h1.section__title Портфолио
+    .container
+      .portfolio.portfolio__title
+
+        form.portfolio-item.portfolio-item--editing.portfolio__margin
+          .portfolio-item__photos
+            .slide__photos
+              label.label__photo Фото до
+                input.input__photo(type="file")
+              label.label__photo Фото после
+                input.input__photo(type="file")
+          .portfolio-item__text.portfolio-item__text--add
+            label Дата
+              input.form__input(type="date" value="Евгения" required)
+            label Цель клиента
+              input.form__input(type="text" required)
+            label Заказанные услуги
+              input.form__input(type="text" required)
+            label Комментарии стилиста
+              input.form__input(type="text" required)
+            .start-change
+              input(type="submit" value="Добавить").btn.btn--action
+
+        .portfolio-item.portfolio__margin
+          .portfolio-item__photos
+            .slide__photos
+              .photo__first
+                img(src="img/clients/1before.png", alt="")
+              .photo__second
+                img(src="img/clients/1after.png", alt="")
+          .portfolio-item__text
+            .card__title-second Дата
+            .card__description__text 22 сентября 2016
+            .card__title-second Цель клиента
+            .card__description__text Сделать правильный образ на работу и перестать быть серой мышкой
+            .card__title-second Заказанные услуги
+            .card__description__text Подбор макияжа, Подбор стиля
+            .card__title-second Комментарии стилиста
+            .card__description__text Клиент был очень не уверен в себе мы помогли ему раскрепоститься и стать более красивой
+            .comment
+              .comment__user-photo
+                img(src="img/user-photo/1.png", alt="", width="79px", height="79px")
+              .comment__user-block
+                .comment__user-text-title Марина, 35 лет
+                .comment__user-text-text Мне очень понравилось работать со стилистом Евгенией, она подобрала мне новый стиль! Теперь у меня отличное портфолио из моих стилей.
+
+        .portfolio-item.portfolio__margin
+          .portfolio-item__photos
+            .slide__photos
+              .photo__first
+                img(src="img/clients/2before.png", alt="")
+              .photo__second
+                img(src="img/clients/2after.png", alt="")
+          .portfolio-item__text
+            .card__title-second Дата
+            .card__description__text 22 сентября 2016
+            .card__title-second Цель клиента
+            .card__description__text Сделать правильный образ на работу и перестать быть серой мышкой
+            .card__title-second Заказанные услуги
+            .card__description__text Подбор макияжа, Подбор стиля
+            .card__title-second Комментарии стилиста
+            .card__description__text Клиент был очень не уверен в себе мы помогли ему раскрепоститься и стать более красивой
+            .comment
+              .comment__user-photo
+                img(src="img/user-photo/1.png", alt="", width="79px", height="79px")
+              .comment__user-block
+                .comment__user-text-title Марина, 35 лет
+                .comment__user-text-text Мне очень понравилось работать со стилистом Евгенией, она подобрала мне новый стиль! Теперь у меня отличное портфолио из моих стилей.
+
+        .portfolio-item.portfolio__margin
+          .portfolio-item__photos
+            .slide__photos
+              .photo__first
+                img(src="img/clients/3before.png", alt="")
+              .photo__second
+                img(src="img/clients/3after.png", alt="")
+          .portfolio-item__text
+            .card__title-second Дата
+            .card__description__text 22 сентября 2016
+            .card__title-second Цель клиента
+            .card__description__text Сделать правильный образ на работу и перестать быть серой мышкой
+            .card__title-second Заказанные услуги
+            .card__description__text Подбор макияжа, Подбор стиля
+            .card__title-second Комментарии стилиста
+            .card__description__text Клиент был очень не уверен в себе мы помогли ему раскрепоститься и стать более красивой
+            .comment
+              .comment__user-photo
+                img(src="img/user-photo/1.png", alt="", width="79px", height="79px")
+              .comment__user-block
+                .comment__user-text-title Марина, 35 лет
+                .comment__user-text-text Мне очень понравилось работать со стилистом Евгенией, она подобрала мне новый стиль! Теперь у меня отличное портфолио из моих стилей.

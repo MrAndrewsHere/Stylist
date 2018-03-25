@@ -1,0 +1,31 @@
+.portfolio__title {
+  margin-top: 50px;
+}
+
+.portfolio__margin {
+  margin-top: 50px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.portfolio-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 35px;
+  border-bottom: 1px solid $color-input;
+
+  &--editing {
+    border: 1px dashed $color-input;
+    padding: 30px;
+  }
+}
+
+.portfolio-item__text {
+  margin-left: 35px;
+
+  &--add {
+    max-width: 47%;
+  }
+}

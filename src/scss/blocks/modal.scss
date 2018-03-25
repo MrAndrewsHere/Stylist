@@ -1,0 +1,60 @@
+.modal-auth,
+.modal-registration,
+.modal-success {
+  display: none;
+}
+
+.modal-auth-show {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.5s;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #999;
+  width: 35%;
+
+  &--registration {
+    margin: 2% auto 0 auto;
+  }
+}
+
+.modal__title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.modal__social {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.modal__text {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.modal__success {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__success-img, .modal__success-text {
+  width: 50%;
+}
+
+.modal__success-text {
+  align-self: center;
+}

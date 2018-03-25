@@ -1,0 +1,24 @@
+.modal-auth
+  .modal-content
+    button(arial-label="Закрыть окно").btn.btn--close-auth &times;
+    h3.modal__title Вход
+    p.modal__text Войти через соцсети
+
+    ul.social-icons-list.modal__social
+      li.social-icon-item
+        a(href="#").social-link
+          svg.social-icon.vk
+            use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='img/spritesvg.svg#vk')
+      li.social-icon-item
+        a(href="#").social-link
+          svg.social-icon.fb
+            use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='img/spritesvg.svg#facebook')
+    p.modal__text или
+    form.form-auth(action="{{ url('/login') }}" role="form" method='POST')
+      | {{ csrf_field() }}
+      label Электронная почта
+        input( name="email" value="{{ old('email') }}" type="email" required).form__input.input-email
+      label Пароль
+        input( name="password" type="password" required).form__input.input-password
+      .start-change
+        input(type="submit", value="Войти").btn.btn--action

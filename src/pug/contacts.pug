@@ -1,0 +1,31 @@
+extends layout
+
+block title
+  title Контакты
+
+block section
+  section.section.section--contacts.section__home
+    h1.section__title Контакты
+    .communication
+      .communication__feedback
+        .container-communication
+          form.feedback-form
+            div.communication__accent.contacts__communication__accent
+              b У вас есть вопросы или предожения?
+            label Имя
+              input(type="text" required).form__input
+            label Электронная почта
+              input(type="email" required).form__input
+            label Вопрос
+              textarea(name="", cols="30", rows="10").form__textarea
+            input(type="submit", value="Отправить").btn.btn--action.btn--action-small
+      .communication__contacts
+        .container-communication
+          div.communication__accent.contacts__communication__accent
+              b Мы на связи с вами
+          div Звоните с 10:00 до 21:00 по московскому времени
+          div.communication__contacts__phone-block
+            a(href="tel:+7(843)2922222").phone-number.communication__contacts__phone-number +7 (843) 292-22-22
+            a(href="tel:+79274330934").phone-number.communication__contacts__phone-number +7 9274 33-09-34
+          div Пишите на почту
+          a(href="mailto:info@stilisty.com").communication__contacts__email info@stilisty.com

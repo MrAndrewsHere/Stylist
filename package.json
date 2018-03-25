@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "scripts": {
+    "prod": "gulp --production",
+    "dev": "gulp watch"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-cli": "^1.4.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-newer": "^1.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "run-sequence": "^2.2.0"
+  },
+  "name": "gulp-test",
+  "description": "<p align=\"center\"><img src=\"https://laravel.com/assets/img/components/logo-laravel.svg\"></p>",
+  "version": "1.0.0",
+  "main": "gulpfule.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "gulp-blade": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrAndrewsHere/blog.git"
+  },
+  "keywords": [
+    "23210622Andru"
+  ],
+  "author": "MrAndrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrAndrewsHere/blog/issues"
+  },
+  "homepage": "https://github.com/MrAndrewsHere/blog#readme"
+}

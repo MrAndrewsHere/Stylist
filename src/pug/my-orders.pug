@@ -1,0 +1,53 @@
+extends layout
+
+block title
+  title Мои заказы
+
+block section
+  section.section.section--my-orders.section__home
+    h1.section__title Мои заказы
+    .container-home
+      .my-orders
+        .my-orders__status
+          a(href="#").link-tab.link-active Новые заказы
+          a(href="#").link-tab История заказов
+          
+        .my-orders__item.my-orders__item--active
+          .scroll-block.scroll-block--orders.scroll-block--slim.scroll-block__wrapper
+            ul.orders__title
+              li.orders__photo Фото
+              li.orders__service.orders__service--big Услуга
+              li.orders__count.orders__count--big Кол. часов
+              li.orders__price.orders__price--big Цена
+            +orders__item-new(
+              "img/services/selection-hairstyle.png","Подбор прически",
+              "Стилист первой категории", "2", "5000")
+            +orders__item-new(
+              "img/services/select-makeup.png", "Подбор макияжа",
+              "VIP стилист", "1", "3500")
+            +orders__item-new(
+              "img/services/make-over.png",
+              "Пакет или подарочный сертификат make over", "VIP стилист", "1", "2500")
+          div.my-orders__result Итого
+            b 10 000р.
+            div.my-orders__result-wrapper
+              button.btn.btn--action Оформить заказ
+
+        .my-orders__item
+          .scroll-block.scroll-block--orders.scroll-block--slim.scroll-block__wrapper
+            ul.orders__title
+              li.orders__photo Фото
+              li.orders__service.orders__service--big Услуга
+              li.orders__date-name.orders__date-name--big Дата
+              li.orders__count.orders__count--big Кол. часов
+              li.orders__price.orders__price--big Цена
+            +orders__item-client(
+              "img/services/selection-hairstyle.png", "Подбор прически",
+              "Стилист первой категории", "18.07.2016", "2", "5000")
+            +orders__item-client(
+              "img/services/select-makeup.png", "Подбор макияжа",
+              "VIP стилист", "15.06.2018", "1", "3500")
+            +orders__item-client--no-class(
+              "img/services/make-over.png",
+              "Пакет или подарочный сертификат make over", "25.02.2018", "1", "2500")
+        

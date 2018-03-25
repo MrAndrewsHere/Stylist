@@ -1,0 +1,29 @@
+.modal-registration
+  .modal-content.modal-content--registration
+    button(arial-label="Закрыть окно").btn.btn--close-registration &times;
+    h3.modal__title Регистрация
+    p.modal__text Войти через соцсети
+    ul.social-icons-list.modal__social
+      li.social-icon-item
+        a(href="#").social-link
+          svg.social-icon.vk
+            use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='img/spritesvg.svg#vk')
+      li.social-icon-item
+        a(href="#").social-link
+          svg.social-icon.fb
+            use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='img/spritesvg.svg#facebook')
+    p.modal__text или
+    form(role="form" method="POST" action="{{ url('/register') }}")
+      | {{ csrf_field() }}
+      label Имя
+        input( value="{{ old('name') }}" name="name" type="text" required).form__input.input-name
+      label Электронная почта
+        input( name="email" value="{{ old('email') }}" type="email" required).form__input
+      label Пароль
+        input( name="password" type="password" required).form__input
+      label Подтвердите пароль
+        input( name="password_confirmation" type="password" required).form__input
+      label Зарегестрировать как стилиста
+        input(type="checkbox")
+      .start-change
+        input(type="submit", value="Регистрация").btn.btn--action

@@ -1,0 +1,35 @@
+.form-orders-service {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+}
+
+.form__textarea {
+  width: 100%;
+  border: 1px solid $color-input;
+  border-radius: 5px;
+  padding: 10px 20px;
+  outline: none;
+  margin-bottom: 10px;
+  resize: none;
+
+  &:focus {
+    border-color: $color-accent-light;
+  }
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid $color-input;
+  border-radius: 5px;
+  padding: 10px 20px;
+  outline: none;
+  margin-bottom: 10px;
+
+  &:focus {
+    border-color: $color-accent-light;
+  }
+}

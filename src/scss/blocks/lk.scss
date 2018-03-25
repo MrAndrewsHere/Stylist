@@ -1,0 +1,62 @@
+/* Общие стили личного кабинета */
+
+/* Стили личного кабинета стилиста */
+
+.lk-stylist__attention {
+  border: 3px solid $color-accent;
+  padding: 20px;
+}
+
+.lk-stylist__attention-orders {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+/* Стили личного кабинета клиента */
+
+.lk-client__style {
+  display: flex;
+}
+
+.lk-client__style-photo {
+  min-width: 280px;
+  margin-right: 40px;
+  text-align: center;
+
+  &--before-after {
+    flex-shrink: 0;
+  }
+}
+
+.lk-client__style-seasons {
+  display: flex;
+  flex-direction: column;
+}
+
+.lk-client__style-seasons-list {
+  width: 215px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lk-client__style-seasons-item {
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.lk-client__style-seasons-description-text {
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+.lk-client__style-seasons-description {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}

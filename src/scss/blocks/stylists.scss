@@ -1,0 +1,30 @@
+.stylists__section {
+  margin-top: 20px;
+  font-family: "Open Sans";
+}
+
+.stylists__sort {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stylists__service {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.stylists__upload {
+  margin-top: 47px;
+  margin-bottom: 37px;
+  text-align: center;
+
+  &-text {
+    text-transform: uppercase;
+    color: $color-accent;
+    font-size: 14px;
+    font-family: "Open Sans";
+  }
+}

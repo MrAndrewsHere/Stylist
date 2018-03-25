@@ -1,0 +1,82 @@
+.btn {
+  border: none;
+  transition: $transition;
+  background: none;
+  font-size: 12px;
+  cursor: pointer;
+
+  &__card {
+    margin-top: 10px;
+  }
+}
+
+.btn--close-auth,
+.btn--close-registration {
+  width: 40px;
+  height: 40px;
+  color: #888;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border: 1px solid #999;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+}
+
+.btn--auth,
+.btn--registration,
+.btn--exit {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.btn--action {
+  min-width: 250px;
+  padding: 0 20px;
+  height: 50px;
+  border-radius: 25px;
+  color: $white;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: $color-accent;
+  box-shadow: 0px 5px 36px -6px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    background-color: $color-accent-dark;
+  }
+
+  &-small {
+    min-width: 150px;
+  }
+}
+
+.btn--upload-more-stylists {
+  width: 87px;
+  height: 87px;
+  background-image: url(../img/upload.png);
+}
+
+.btn--count {
+  width: 27px;
+  height: 27px;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.4);
+  background-color: $color-accent;
+  color: #fff;
+  border-radius: 50%;
+
+  &:active {
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+  }
+}
+
+.btn--edit {
+  display: flex;
+  justify-content: center;
+  background-color: #eee;
+  color: $color-text;
+  padding: 10px 20px;
+  border-radius: 4px;
+}

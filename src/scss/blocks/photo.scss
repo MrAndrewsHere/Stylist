@@ -1,0 +1,43 @@
+.photo {
+  @include flex-container;
+}
+
+.photo__first {
+  &:before {
+    content: "До";
+    position: absolute;
+    width: 70px;
+    bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background-color: $before-after;
+  }
+}
+
+.photo__second {
+  margin-left: 10px;
+  &:before {
+    content: "После";
+    position: absolute;
+    width: 70px;
+    bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    background-color: $before-after;
+  }
+}
+
+.photo__before {
+  height: 400px;
+}
+
+.photo__after {
+  height: 400px;
+}
+
+.photo__first,
+.photo__second {
+  position: relative;
+}

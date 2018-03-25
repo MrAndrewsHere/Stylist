@@ -1,0 +1,33 @@
+.link-change-content {
+  font-size: 16px;
+  color: $color-accent;
+  border-bottom: 1px dashed $color-accent;
+
+  &--active {
+    color: #000;
+    border-bottom: none;
+    font-weight: bold;
+  }
+}
+
+.link-common {
+  color: $color-accent;
+  font-size: 16px;
+  text-decoration: underline;
+  display: block;
+  margin-top: auto;
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.link-tab {
+  color: $color-accent;
+  border-bottom: 1px dashed $color-accent;
+}
+
+.link-active {
+  color: #000000;
+  border-bottom: none;
+}

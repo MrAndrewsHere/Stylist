@@ -1,0 +1,12 @@
+.social-icons-list {
+  width: 100%;
+  @include flex-container($spacing: space-around);
+  height: 20px;
+  margin-top: 180px;
+}
+
+.social-icon-link,
+.social-icon {
+  width: 25px;
+  height: 25px;
+}
