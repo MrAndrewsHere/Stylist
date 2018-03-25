@@ -15,7 +15,13 @@ class WelcomeControllerTo extends Controller
 
     }
 
-    public function index()
+
+  public function stylist_profile()
+  {
+    return view('stylist-card');
+  }
+
+  public function index()
     {
         return view('welcome');
     }

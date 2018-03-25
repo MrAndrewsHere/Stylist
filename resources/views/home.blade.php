@@ -1,4 +1,5 @@
 @extends('layout')
+
 @section('title','Главная')
 
 @section ('content')
@@ -12,7 +13,6 @@
       <div class="photo__second"><img src="img/client3.jpg" alt=""/></div>
     </div>
   </section>
-
   <div class="information">
     <div class="infrotamtion__what">
       <h2 class="information__title">Что это за проект?</h2>
@@ -33,7 +33,6 @@
         нового образа.</p>
     </div>
   </div>
-
   <div class="start-change">
     <button class="btn btn--action">Начать преображение</button>
   </div>

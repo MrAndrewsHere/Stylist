@@ -1,4 +1,5 @@
 @extends('layout')
+
 @section('title','Стилисты отвечают')
 
 @section ('content')
