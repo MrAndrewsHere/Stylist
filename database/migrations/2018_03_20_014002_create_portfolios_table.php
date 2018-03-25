@@ -16,7 +16,7 @@ class CreatePortfoliosTable extends Migration
         Schema::create('portfolios', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('stylist_id')->unsigned()->index();
-            $table->foreign('stylist_id')->references('stylist_id')->on('stylists')->onDelete('cascade');
+            $table->foreign('stylist_id')->references('id')->on('stylists')->onDelete('cascade');
             $table->string('client_purpose')->nullable();
             $table->string('comment')->nullable();
             $table->string('picture')->nullable();

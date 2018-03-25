@@ -15,10 +15,10 @@ class CreateServicesTable extends Migration
 	{
 		Schema::create('services', function (Blueprint $table) {
 
-			$table->increments('service_id');
+			$table->increments('id');
 			$table->integer('stylist_id')->unsigned()->index();
 			$table->integer('category_id')->unsigned()->index();
-			$table->foreign('category_id')->references('category_id')->on('servicecategory');
+			$table->foreign('category_id')->references('id')->on('servicecategories');
 			$table->string('describe')->nullable;
 			$table->float('price')->nullable;
 			$table->timestamps();

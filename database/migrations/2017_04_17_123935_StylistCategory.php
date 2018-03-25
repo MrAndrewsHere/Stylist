@@ -13,8 +13,8 @@ class StylistCategory extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('StylistCategory', function (Blueprint $table) {
-			$table->increments('category_id');
+		Schema::create('StylistCategories', function (Blueprint $table) {
+			$table->increments('id');
 			$table->string('name')->defaul('Начинающий стилист');
 			$table->string('describe')->default('Описание категории');
 
@@ -28,6 +28,6 @@ class StylistCategory extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('StylistCategory');
+		Schema::dropIfExists('StylistCategories');
 	}
 }

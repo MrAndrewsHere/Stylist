@@ -15,7 +15,7 @@ class CreateClientsTable extends Migration
 	{
 		Schema::create('clients', function (Blueprint $table) {
 
-			$table->increments('client_id');
+			$table->increments('id');
 			$table->integer('user_id')->unsigned()->index();
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

@@ -872,9 +872,13 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
-        'ServiceCategory' => __DIR__ . '/../..' . '/database/migrations/2018_03_19_190823_ServiceCategory.php',
-        'StylistCategory' => __DIR__ . '/../..' . '/database/migrations/2018_03_17_123935_StylistCategory.php',
+        'ServiceCategory' => __DIR__ . '/../..' . '/database/migrations/2017_03_19_190823_ServiceCategory.php',
+        'StCategoryDBseeder' => __DIR__ . '/../..' . '/database/seeds/StCategoryDBseeder.php',
+        'StCategorySeeder' => __DIR__ . '/../..' . '/database/seeds/StCategorySeeder.php',
+        'StylistCategory' => __DIR__ . '/../..' . '/database/migrations/2017_04_17_123935_StylistCategory.php',
+        'StylistDaatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/StylistDaatabaseSeeder.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'TestMigration' => __DIR__ . '/../..' . '/database/migrations/2018_03_21_134132_TestMigration.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
     );
 
