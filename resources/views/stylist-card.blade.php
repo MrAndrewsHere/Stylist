@@ -1,9 +1,4 @@
-
-<!-- stylists-->
-<!-- services-->
-<!-- lk-stylist-->
-<!-- lk-stylist-->
-<!--lk-client--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru"></html>
 <head>
   <meta charset="UTF-8"/>
