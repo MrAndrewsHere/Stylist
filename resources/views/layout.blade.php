@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-
 <head>
-
-	<meta charset="UTF-8"/>
-	<title> @yield ('title')</title>
-	<link rel="stylesheet" href="css/style.css"/>
-
+  <meta charset="UTF-8"/>
+  <title> @yield ('title')</title>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
 <div class="main">
-	@include('blocks.sidebar')
-
-
-		<div class="home">
-			@include('blocks.header')
-			@yield('content')
-		</div>
-
+  @include('blocks.sidebar')
+    <div class="home">
+      @include('blocks.header')
+      @yield('content')
+    </div>
 </div>
-
 
 @include('blocks.modal-auth')
 @include('blocks.modal-registration')

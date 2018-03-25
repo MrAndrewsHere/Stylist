@@ -1,15 +1,13 @@
 
-<!-- stylists-->
-<!-- services-->
-<!-- lk-stylist-->
-<!-- lk-stylist-->
-<!--lk-client--><!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="ru"></html>
 <head>
   <meta charset="UTF-8"/>
   <link rel="stylesheet" href="css/style.css"/>
   <title>Страница не найдена</title>
 </head>
+
 <body>
   <div class="main">
     <aside class="sidebar">
