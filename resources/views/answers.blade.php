@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','Стилисты отвечают нам')
+@section('title','Стилисты отвечают')
 
 @section ('content')
   <section class="section section__home">
