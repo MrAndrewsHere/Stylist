@@ -13,7 +13,7 @@ class ServiceCategory extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('ServiceCategories', function (Blueprint $table) {
+		Schema::create('servicecategories', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('describe');
@@ -28,6 +28,6 @@ class ServiceCategory extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('ServiceCategories');
+		Schema::dropIfExists('servicecategories');
 	}
 }

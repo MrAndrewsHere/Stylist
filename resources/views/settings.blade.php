@@ -7,7 +7,7 @@
     <div class="container-lk">
       <h1 class="section__title">Настройки</h1>
       <h3>@if(Session::has('success')) {{Session::get('success')}} @endif </h3>
-      <form class="form-settings" action="{{url('/save_info')}}" method="post">
+      <form class="form-settings" action="{{url('/save_info')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <label>Имя
           <input class="form__input" name="name" type="text" value="{{$currentUser->name}}" required="required"/>
@@ -42,7 +42,7 @@
                     rows="10">{{$currentSt->education}}</textarea>
         </label>
         <label>Аватар
-          <input type="file"/>
+          <input type="file" id="avatar" name="avatar" class="form__input"  />
         </label>
         <div class="start-change">
           <input class="btn btn--action" type="submit" value="Сохранить"/>

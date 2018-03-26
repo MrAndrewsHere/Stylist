@@ -10,8 +10,9 @@
         <ul class="stylists__sort">
           <li class="stylists__sort-category">Категория:
             <select class="select" name="">vip
-              <option value="vip">vip</option>
-              <option value="common">common</option>
+              @foreach(\App\stylistcategory::all() as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+              @endforeach
             </select>
           </li>
           <li class="stylists__sort-category">Вид услуг: <a class="link-tab stylists__service" href="#">прическа</a><a
