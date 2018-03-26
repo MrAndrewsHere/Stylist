@@ -17,4 +17,8 @@ class Stylist extends Model
   {
     return $this->belongsTo('App\User', 'id');
   }
+  public function orders()
+  {
+    return$this->hasMany('App\order');
+  }
 }
