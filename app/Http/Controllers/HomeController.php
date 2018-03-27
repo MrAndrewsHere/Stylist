@@ -68,10 +68,10 @@ class HomeController extends Controller
     public function my_orders()
     {
 
-        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
-        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
+//        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
+//        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
 
-       return view('my-orders',compact('Neworders'),compact('Savedorders'));
+       return view('my-orders');
     }
     public function social()
     {

@@ -14,9 +14,6 @@
           {{csrf_field()}}
           <div class="portfolio-item__photos">
             <div class="slide__photos">
-              <label>Аватар
-                <input type="file" name="image" id="image"/>
-              </label>
               <label class="label__photo">Фото до
                 <input class="input__photo" id="before" name="before" multiple name="file[]" type="file"/>
               </label>
