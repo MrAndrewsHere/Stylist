@@ -8,13 +8,11 @@
 </head>
 
 <body>
-  <main class="main">
-    @include('blocks.sidebar')
-    <div class="home">
-      @include('blocks.header')
-      @yield('content')
-    </div>
-  </main>
+  @include('blocks.sidebar')
+  <div class="home">
+    @include('blocks.header')
+    @yield('content')
+  </div>
 
   @include('blocks.modal-auth')
   @include('blocks.modal-registration')
