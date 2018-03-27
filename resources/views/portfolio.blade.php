@@ -43,7 +43,7 @@
         <div class="portfolio-item portfolio__margin">
           <div class="portfolio-item__photos">
             <div class="slide__photos">
-              <div class="photo__first"><img src="{{Auth::user()->picture}}" alt=""/></div>
+              <div class="photo__first"><img src="img/clients/1before.png" alt=""/></div>
               <div class="photo__second"><img src="img/clients/1after.png" alt=""/></div>
             </div>
           </div>
