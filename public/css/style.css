@@ -650,9 +650,10 @@ textarea {
   margin-left: 18%; }
 
 .slider {
-  height: 300px;
   margin-top: 30px;
-  padding: 0 130px; }
+  padding: 0 130px;
+  overflow: hidden;
+  height: 320px; }
 
 .slider--portfolio {
   width: 100%;

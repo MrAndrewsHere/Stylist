@@ -1,7 +1,8 @@
 .slider {
-  height: 300px;
   margin-top: 30px;
   padding: 0 130px;
+  overflow: hidden;
+  height: 320px;
 
   &--portfolio {
     width: 100%;

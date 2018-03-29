@@ -3,16 +3,17 @@
 @section('title','Главная')
 
 @section ('content')
-  <section class="slider section__home">
+  <div class="slider section__home">
     <div class="slide">
       <div class="photo__first"><img src="img/home_client_before.jpg" width="320px" alt=""/></div>
       <div class="photo__second"><img src="img/home_client_after.jpg" width="320px" alt=""/></div>
     </div>
     <div class="slide">
-      <div class="photo__first"><img src="img/client2.jpg" alt=""/></div>
-      <div class="photo__second"><img src="img/client3.jpg" alt=""/></div>
+      <div class="photo__first"><img src="img/client2.jpg" width="320px" alt=""/></div>
+      <div class="photo__second"><img src="img/client3.jpg" width="320px" alt=""/></div>
     </div>
-  </section>
+  </div>
+  
   <div class="container-home">
     <div class="information">
       <div class="infrotamtion__what">
