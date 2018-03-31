@@ -17,9 +17,10 @@ class WelcomeControllerTo extends Controller
   }
 
 
-  public function stylist_profile()
+  public function stylist_profile($id)
   {
-    return view('stylist-card');
+    $stylist = Stylist::findorfail($id);
+    return view('stylist-card', compact('stylist'));
   }
 
   public function index()

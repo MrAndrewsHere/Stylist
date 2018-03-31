@@ -23,4 +23,8 @@ class Stylist extends Model
   {
     return $this->hasMany('App\order');
   }
+  public function services()
+  {
+    return $this->belongsToMany('App\Service');
+  }
 }

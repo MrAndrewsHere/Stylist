@@ -90,6 +90,7 @@ class DatabaseSeeder extends Seeder
 
     $this->call(StCategorySeeder::class);
     $this->call(StylistDaatabaseSeeder::class);
+    $this->call(ServiceSeeder::class);
 
 
   }

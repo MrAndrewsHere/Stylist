@@ -30,7 +30,7 @@
             <div class="card__photo-block"><img class="card__photo card__photo--stylist" src="img/stylist1.png"
                                                 alt="стилист"/></div>
             <div class="card__description"><a class="card__description__title"
-                                              href="stylist-card.html">{{$stylist->name}}</a>
+                                              href="{{url('/stylist_profile',['id'=>$stylist->id])}}">{{$stylist->name}}</a>
               <div class="card__review-stars">
                 <label title="ужасно">
                   <input type="radio" id="star-4"/>

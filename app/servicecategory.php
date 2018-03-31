@@ -4,14 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class stylistcategory extends Model
+class servicecategory extends Model
 {
-  protected $fillable = ['name'];
+  protected $fillable = ['name','describe'];
 
-    public function stylist()
-		{
+ public function service()
+ {
+   return $this->belongsToMany('App\Service');
+ }
 
-		}
   public function setUpdatedAt($value)
   {
     //Do-nothing
@@ -33,3 +34,4 @@ class stylistcategory extends Model
   }
 
 }
+

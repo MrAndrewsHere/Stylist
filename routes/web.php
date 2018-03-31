@@ -34,7 +34,7 @@ Route::get('/answers', 'WelcomeControllerTo@answers');
 Route::get('/stylists', 'WelcomeControllerTo@stylists');
 Route::get('/services', 'WelcomeControllerTo@services');
 Route::post('/save_portfolio', 'HomeController@save_portfolio');
-Route::get('stylist_profile', 'WelcomeControllerTo@stylist_profile');
+Route::get('/stylist_profile/{id}', 'WelcomeControllerTo@stylist_profile');
 Route::get('/Reg', 'HomeController@reg');
 Route::post('/posttest', 'WelcomeControllerTo@posttest');
 
