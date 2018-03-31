@@ -42,7 +42,7 @@
                     rows="10">{{$currentSt->education}}</textarea>
         </label>
         <label>Аватар
-          <input type="file" id="avatar" name="avatar" class="form__input"  />
+          <input type="file" id="avatar" name="avatar" class="form__input"/>
         </label>
         <div class="start-change">
           <input class="btn btn--action" type="submit" value="Сохранить"/>

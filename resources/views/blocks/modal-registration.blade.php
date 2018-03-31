@@ -28,9 +28,11 @@
       <label>Подтвердите пароль
         <input class="form__input" name="password_confirmation" type="password" required="required"/>
       </label>
-      <label>Зарегестрировать как стилиста
-        <input type="checkbox"/>
-      </label>
+      <select class="select" name="IsStylist">Клиент
+        <option value="client">Клиент</option>
+        <option value="stylist">Стилист</option>
+
+      </select>
       <div class="start-change">
         <input class="btn btn--action" type="submit" value="Регистрация"/>
       </div>

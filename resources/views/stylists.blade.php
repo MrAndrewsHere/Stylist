@@ -9,7 +9,7 @@
       <div class="stylists stylists__section">
         <ul class="stylists__sort">
           <li class="stylists__sort-category">Категория:
-            <select class="select" name="">vip
+            <select class="select" name="category">vip
               @foreach(\App\stylistcategory::all() as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
               @endforeach

@@ -49,6 +49,7 @@ return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePortfoliosTable' => $baseDir . '/database/migrations/2018_03_20_014002_create_portfolios_table.php',
     'CreateServicesTable' => $baseDir . '/database/migrations/2018_03_17_123143_create_services_table.php',
+    'CreateTableRoles' => $baseDir . '/database/migrations/2014_09_27_193213_create_table_roles.php',
     'CreateTableStylists' => $baseDir . '/database/migrations/2018_03_17_121229_create_table_stylists.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

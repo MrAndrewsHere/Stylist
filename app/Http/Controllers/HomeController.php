@@ -11,94 +11,100 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('home');
-    }
-    public function test()
-    {
-        return view('test1');
-    }
-    public function contacts()
-    {
-        return view('contacts');
-    }
+  /**
+   * Show the application dashboard.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function index()
+  {
+    return view('home');
+  }
 
-    public function answers()
-    {
-        return view('answers');
-    }
+  public function redindex()
+  {
+    return redirect('/');
+  }
 
-    public function services()
-    {
-        return view('services');
-    }
-    public function lk_stylist()
-    {
-        return view('lk-stylist');
-    }
-    public function lk_client()
-    {
-        return view('lk-client');
-    }
-    public function portfolio()
-    {
-        return view('portfolio');
-    }
+  public function reg(Request $request)
+  {
 
-    public function my_style()
-    {
-        return view('my-style');
-    }
-    public function my_orders()
-    {
+//      Auth::user()->update(['role_id' => Role::where('name', '=',$request->input('IsStylist'))]);
+
+    return redirect('/');
+  }
+
+  public function test()
+  {
+    return view('test1');
+  }
+
+  public function contacts()
+  {
+    return view('contacts');
+  }
+
+  public function answers()
+  {
+    return view('answers');
+  }
+
+  public function services()
+  {
+    return view('services');
+  }
+
+
+  public function portfolio()
+  {
+    return view('portfolio');
+  }
+
+
+  public function my_orders()
+  {
 
 //        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
 //        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
 
-       return view('my-orders');
-    }
-    public function social()
-    {
-        return view('auth.social');
-    }
+    return view('my-orders');
+  }
 
-    public function settings()
-    {
+  public function social()
+  {
+    return view('auth.social');
+  }
 
-			$currentSt = Auth::user()->stylist;
-			$currentUser = Auth::user();
+  public function settings()
+  {
+
+    $currentSt = Auth::user()->stylist;
+    $currentUser = Auth::user();
 //
 
-				return view('settings', compact('currentSt'),compact('currentUser'));
+    return view('settings', compact('currentSt'), compact('currentUser'));
 
 
+  }
 
-    }
+  protected function store(Request $request)
+  {
+    $data = $request;
 
-    protected function store(Request $request)
-    {
-        $data = $request;
+    Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
+    Auth::user()->stylist->update(['about' => $data->about, 'education' => $data->education]);
+    $request->session()->flash('success', 'Данные успешно сохранены');
+    return redirect('/settings');
 
-       Auth::user()->update(['name' => $data->name,'second_name'=>$data->second_name,]);
-       Auth::user()->stylist->update(['about'=>$data->about,'education'=>$data->education]);
-  $request->session()->flash('success','Данные успешно сохранены');
-        return redirect('/settings');
-
-    }
+  }
 }

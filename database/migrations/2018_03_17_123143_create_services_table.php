@@ -19,8 +19,8 @@ class CreateServicesTable extends Migration
 			$table->integer('stylist_id')->unsigned()->index();
 			$table->integer('category_id')->unsigned()->index();
 			$table->foreign('category_id')->references('id')->on('servicecategories');
-			$table->string('describe')->nullable;
-			$table->float('price')->nullable;
+			$table->string('describe')->nullable();
+			$table->float('price')->nullable();
 			$table->timestamps();
 		});
 	}

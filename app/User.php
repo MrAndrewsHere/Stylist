@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','second_name','city','phone_number','picture','role '
+        'name', 'email', 'password','role_id'
     ];
 
     /**
@@ -34,5 +35,9 @@ class User extends Authenticatable
 		{
 			return $this->hasOne('App\Stylist','user_id');
 		}
+		public function role()
+    {
+      return $this->belongsTo('App\role');
+    }
 
 }
