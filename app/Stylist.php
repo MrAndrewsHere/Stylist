@@ -11,7 +11,7 @@ class Stylist extends Model
 
   public function category()
   {
-    $this->belongsTo('App\stylistcategory');
+   return $this->belongsTo('App\stylistcategory','id');
   }
 
   public function user()

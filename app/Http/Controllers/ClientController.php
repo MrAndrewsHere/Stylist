@@ -15,11 +15,11 @@ class ClientController extends Controller
 
   public function lk_client()
   {
-    return view('lk-client');
+    return view('Client.lk-client');
   }
 
   public function my_style()
   {
-    return view('my-style');
+    return view('Client.my-style');
   }
 }

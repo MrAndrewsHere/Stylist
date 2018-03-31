@@ -31,19 +31,6 @@ class HomeController extends Controller
     return view('home');
   }
 
-  public function redindex()
-  {
-    return redirect('/');
-  }
-
-  public function reg(Request $request)
-  {
-
-//      Auth::user()->update(['role_id' => Role::where('name', '=',$request->input('IsStylist'))]);
-
-    return redirect('/');
-  }
-
   public function test()
   {
     return view('test1');
@@ -88,11 +75,9 @@ class HomeController extends Controller
   public function settings()
   {
 
-    $currentSt = Auth::user()->stylist;
     $currentUser = Auth::user();
-//
 
-    return view('settings', compact('currentSt'), compact('currentUser'));
+    return view('settings', compact('currentUser'));
 
 
   }

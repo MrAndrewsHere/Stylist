@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('title','Настройки')
 
@@ -13,33 +13,23 @@
           <input class="form__input" name="name" type="text" value="{{$currentUser->name}}" required="required"/>
         </label>
         <label>Фамилия
-          <input class="form__input" name="second_name" type="text" value="{{$currentUser->second_name}}"
-                 required="required"/>
+          <input class="form__input" name="second_name" type="text" value="{{$currentUser->second_name}}" required="required"/>
         </label>
         <label>Электронная почта
           <input class="form__input" type="email" value="{{$currentUser->email}}" required="required"/>
         </label>
         <label>Обо мне
-          <textarea name="about" class="form__input" cols="30"
-                    rows="10"> {{$currentSt->about}}</textarea>
+          <textarea name="about" class="form__input" cols="30" rows="10"> {{$currentUser->stylist->about}}</textarea>
         </label>
-        <label>Класс
-          {{--<select class="form__input">--}}
-          {{--<option>VIP</option>--}}
-          {{--<option>Стилист первой категории</option>--}}
-          {{--<option>Начинающий стилист</option>--}}
-          {{--</select>--}}
-
-          <input class="form__input" name="category" type="text" value="{{$currentSt->category_id}}"
+        <label>Категория
+          <input class="form__input" name="category" type="text" value="{{$currentUser->stylist->category->name}}"
                  required="required"/>
-
         </label>
         <label>Опыт работы
-          <textarea class="form__input" cols="30" rows="10">{{$currentSt->experience}}</textarea>
+          <textarea class="form__input" cols="30" rows="10">{{$currentUser->stylist->experience}}</textarea>
         </label>
         <label>Образование
-          <textarea name="education" class="form__input" cols="30"
-                    rows="10">{{$currentSt->education}}</textarea>
+          <textarea name="education" class="form__input" cols="30" rows="10">{{$currentUser->stylist->education}}</textarea>
         </label>
         <label>Аватар
           <input type="file" id="avatar" name="avatar" class="form__input"/>

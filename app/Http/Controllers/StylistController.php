@@ -19,6 +19,6 @@ class StylistController extends Controller
 
   public function lk_stylist()
   {
-    return view('lk-stylist');
+    return view('Stylist.lk-stylist');
   }
 }

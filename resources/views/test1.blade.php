@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
   <form class="" action="{{url('/posttest')}}" method="post" enctype="multipart/form-data">
     {{csrf_field()}}
