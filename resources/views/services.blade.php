@@ -5,14 +5,14 @@
 @section('content')
   <section class="section section--services section__home">
     <h1 class="section__title">Наши услуги</h1>
-    <h3>@if(Session::has('success')) {{Session::get('success')}} @endif </h3>
     <div class="container">
+      <h3>@if(Session::has('success')) {{Session::get('success')}} @endif </h3>
       {{--@if(isset($services))--}}
         @foreach(\App\Service::all() as $service)
           <div class="card card__margin">
-            <div class="card__photo-block card__photo-block--service"><img class="card__photo card__photo--service"
-                                                                           src="img/services/image-consultation.png"
-                                                                           alt="стилист"/></div>
+            <div class="card__photo-block card__photo-block--service">
+              <img class="card__photo card__photo--service" src="img/services/image-consultation.png" alt="стилист"/>
+            </div>
             <div class="card__description card__description--services">
               <div class="card__description__title">{{$service->name}}</div>
               <div class="card__description__text">{{$service->description}}</div>
