@@ -70,19 +70,19 @@
     }
   });
 
-  var formSettings = document.querySelector(".form-settings");
+  // var formSettings = document.querySelector(".form-settings");
 
-  formSettings.addEventListener("submit", function () {
-    event.preventDefault();
-    var node = document.createElement("div");
-    node.classList.add("success");
+  // formSettings.addEventListener("submit", function () {
+  //   event.preventDefault();
+  //   var node = document.createElement("div");
+  //   node.classList.add("success");
 
-    node.textContent = "Изменения успешно сохранены";
-    formSettings.appendChild(node);
+  //   node.textContent = "Изменения успешно сохранены";
+  //   formSettings.appendChild(node);
 
-    setTimeout(function () {
-      $(node).fadeOut("fast");
-    }, 2000);
-  });
+  //   setTimeout(function () {
+  //     $(node).fadeOut("fast");
+  //   }, 2000);
+  // });
 
 })();
