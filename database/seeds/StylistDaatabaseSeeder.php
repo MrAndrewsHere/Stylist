@@ -18,7 +18,7 @@ class StylistDaatabaseSeeder extends Seeder
 					'experience' => 'Опыт',
 					'education' => 'Образование',
 					'about' => 'Обо мне',
-					'rating'=>'Рейтинг'
+					'rating'=>'2.0'
 				]);
 			DB::table('stylists')->insert(
 				[
@@ -27,7 +27,7 @@ class StylistDaatabaseSeeder extends Seeder
 					'experience' => 'Опыт',
 					'education' => 'Образование',
 					'about' => 'Обо мне',
-					'rating'=>'Рейтинг'
+					'rating'=>'1.0'
 				]);
 			DB::table('stylists')->insert(
 				[
@@ -37,7 +37,7 @@ class StylistDaatabaseSeeder extends Seeder
 					'experience' => 'Опыт',
 					'education' => 'Образование',
 					'about' => 'Обо мне',
-					'rating'=>'Рейтинг'
+					'rating'=>'3.0'
 				]);
 			DB::table('stylists')->insert(
 				[
@@ -47,7 +47,7 @@ class StylistDaatabaseSeeder extends Seeder
 					'experience' => 'Опыт',
 					'education' => 'Образование',
 					'about' => 'Обо мне',
-					'rating'=>'Рейтинг'
+					'rating'=>'1.0'
 				]
 			   );
     }

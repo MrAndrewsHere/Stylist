@@ -35,6 +35,10 @@ class User extends Authenticatable
 		{
 			return $this->hasOne('App\Stylist','user_id');
 		}
+		protected function client()
+    {
+      return $this->hasOne('App\Client','user_id');
+    }
 		public function role()
     {
       return $this->belongsTo('App\role');

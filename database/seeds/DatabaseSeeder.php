@@ -14,6 +14,16 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
+
+//    DB::table('service_servicecategory')->truncate();
+//    DB::table('service_stylist')->truncate();
+//    DB::table('client_service')->truncate();
+//    DB::table('services')->truncate();
+//    DB::table('portfolios')->truncate();
+//    DB::table('stylists')->truncate();
+//    DB::table('clients')->truncate();
+//    DB::table('users')->truncate();
+//    DB::table('roles')->truncate();
     DB::table('roles')->insert(
       [
         'id' => '1',

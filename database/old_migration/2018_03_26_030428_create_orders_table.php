@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
           $table->foreign('stylist_id')->references('id')->on('stylists')->onUpdate('cascade');
             $table->integer('service_id')->unsigned();
           $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade');
-          $table->boolean('confirmed_by_stylist')->default('0');
+//          $table->boolean('confirmed_by_stylist')->default('0');
             $table->decimal('Total_price')->nullable();
             $table->timestamps();
         });

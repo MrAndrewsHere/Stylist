@@ -19,8 +19,8 @@ class CreateServicesTable extends Migration
 			$table->string('name')->nullable();
 //			$table->integer('stylist_id')->unsigned()->index();
 //			$table->foreign('stylist_id')->references('id')->on('stylists')->onUpdate('cascade')->onDelete('cascade');
-			$table->integer('category_id')->unsigned()->index();
-			$table->foreign('category_id')->references('id')->on('servicecategories');
+//			$table->integer('category_id')->unsigned()->index();
+//			$table->foreign('category_id')->references('id')->on('servicecategories');
 			$table->longText('description')->nullable();
 			$table->longText('result')->nullable;
 			$table->float('price')->nullable();

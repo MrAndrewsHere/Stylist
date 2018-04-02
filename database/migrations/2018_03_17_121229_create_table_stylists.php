@@ -22,7 +22,8 @@ class CreateTableStylists extends Migration
       $table->string('experience')->nullable();
       $table->string('education')->nullable();
       $table->string('about')->nullable();
-      $table->string('rating')->nullable();
+      $table->float('rating')->nullable();
+      $table->boolean('Confirmed')->default(0);
       $table->timestamps();
 
 

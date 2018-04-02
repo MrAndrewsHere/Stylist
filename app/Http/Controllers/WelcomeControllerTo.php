@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Service;
 use App\Stylist;
 use App\User;
 use Illuminate\Http\Request;
@@ -31,8 +32,8 @@ class WelcomeControllerTo extends Controller
   public function test(Request $request)
   {
 
-
-    return view('test1');
+    $services = Service::all();
+    return dd($services);
 
   }
 

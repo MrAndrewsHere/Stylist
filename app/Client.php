@@ -10,7 +10,7 @@ class Client extends Model
 
   public function orders()
   {
-    return $this->hasMany('App\order');
+    return $this->HasMany('App\Order');
   }
 
 }

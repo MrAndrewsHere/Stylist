@@ -96,7 +96,6 @@
               <li class="orders__date-name orders__date-name--big">Дата</li>
               <li class="orders__count orders__count--big">Количество</li>
               <li class="orders__price orders__price--big">Цена</li>
-              @
             </ul>
             <ul class="orders__item">
               <li class="orders__photo"><img src="img/services/selection-hairstyle.png" alt="" width="70%"/></li>

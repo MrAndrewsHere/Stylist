@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Service;
 use App\Stylist;
+use App\stylistcategory;
 use App\User;
 use App\Order;
 use Illuminate\Http\Request;
@@ -46,9 +48,18 @@ class HomeController extends Controller
     return view('answers');
   }
 
+  public function add_service_to_client(Request $request)
+  {
+    Order::create(['client_id'=>Auth::user()->client->id,'service_id'=>$request->input('s'),'stylist_id'=>Stylist::all()->random()->id]);
+    $request->session()->flash('success', 'Услуга добавлена');
+   return back()->with('success','Услуга добавлена');
+  }
+
   public function services()
   {
+//    $services = User::all();
     return view('services');
+
   }
 
 
@@ -63,8 +74,8 @@ class HomeController extends Controller
 
 //        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
 //        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
-
-    return view('my-orders');
+    $orders = Auth::user()->client->orders;
+    return view('my-orders',compact('orders'));
   }
 
   public function social()
