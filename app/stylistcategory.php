@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class stylistcategory extends Model
 {
-  protected $fillable = ['name'];
+  protected $fillable = ['name','describe'];
 
     public function stylist()
 		{

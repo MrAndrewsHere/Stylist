@@ -11,12 +11,12 @@ class Stylist extends Model
 
   public function category()
   {
-   return $this->belongsTo('App\stylistcategory','id');
+   return $this->belongsTo('App\stylistcategory');
   }
 
   public function user()
   {
-    return $this->belongsTo('App\User', 'id');
+    return $this->belongsTo('App\User');
   }
 
   public function orders()
