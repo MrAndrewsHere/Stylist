@@ -13,7 +13,8 @@
           <input class="form__input" name="name" type="text" value="{{$currentUser->name}}" required="required"/>
         </label>
         <label>Фамилия
-          <input class="form__input" name="second_name" type="text" value="{{$currentUser->second_name}}" required="required"/>
+          <input class="form__input" name="second_name" type="text" value="{{$currentUser->second_name}}"
+                 required="required"/>
         </label>
         <label>Электронная почта
           <input class="form__input" type="email" value="{{$currentUser->email}}" required="required"/>
@@ -21,15 +22,23 @@
         <label>Обо мне
           <textarea name="about" class="form__input" cols="30" rows="10"> {{$currentUser->stylist->about}}</textarea>
         </label>
-        <label>Категория
-          <input class="form__input" name="category" type="text" value="{{$currentUser->stylist->category->name}}"
-                 required="required"/>
-        </label>
+        @if (isset($currentUser->stylist->category->name))
+          <label>Категория
+            <input class="form__input" name="category" type="text" value="{{$currentUser->stylist->category->name}}"
+                   required="required"/>
+          </label>
+        @else
+          <label>Категория
+            <input class="form__input" name="category" type="text" value=""
+                   required="required"/>
+          </label>
+        @endif
         <label>Опыт работы
           <textarea class="form__input" cols="30" rows="10">{{$currentUser->stylist->experience}}</textarea>
         </label>
         <label>Образование
-          <textarea name="education" class="form__input" cols="30" rows="10">{{$currentUser->stylist->education}}</textarea>
+          <textarea name="education" class="form__input" cols="30"
+                    rows="10">{{$currentUser->stylist->education}}</textarea>
         </label>
         <label>Аватар
           <input type="file" id="avatar" name="avatar" class="form__input"/>

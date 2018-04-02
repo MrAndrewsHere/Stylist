@@ -27,8 +27,8 @@
       </label>
       <label>Подтвердите пароль
         <input class="form__input" name="password_confirmation" type="password" required="required"/>
-      </label>
-      <select class="select" name="IsStylist">Клиент
+      </label>Категория
+      <select class="form__input" name="IsStylist">Клиент
         <option value="client">Клиент</option>
         <option value="stylist">Стилист</option>
 

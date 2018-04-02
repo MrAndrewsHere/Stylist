@@ -50,9 +50,12 @@ class HomeController extends Controller
 
   public function add_service_to_client(Request $request)
   {
-    Order::create(['client_id'=>Auth::user()->client->id,'service_id'=>$request->input('s'),'stylist_id'=>Stylist::all()->random()->id]);
-    $request->session()->flash('success', 'Услуга добавлена');
-   return back()->with('success','Услуга добавлена');
+    if (Auth::user()->role_id == '1') {
+      Order::create(['client_id' => Auth::user()->client->id, 'service_id' => $request->input('s'), 'stylist_id' => Stylist::all()->random()->id]);
+      $request->session()->flash('success', 'Услуга добавлена');
+      return back()->with('success', 'Услуга добавлена');
+    }
+    return back();
   }
 
   public function services()
@@ -74,8 +77,11 @@ class HomeController extends Controller
 
 //        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
 //        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
-    $orders = Auth::user()->client->orders;
-    return view('my-orders',compact('orders'));
+    if (Auth::user()->role_id == '1') {
+      $orders = Auth::user()->client->orders;
+      return view('my-orders', compact('orders'));
+    } else
+      return view('my-orders');
   }
 
   public function social()

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Client;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,6 +19,7 @@ class ClientController extends Controller
   {
     return view('Client.lk-client');
   }
+
 
   public function my_style()
   {
