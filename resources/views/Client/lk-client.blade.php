@@ -7,83 +7,22 @@
     <h1 class="section__title">Личный кабинет</h1>
     <div class="lk-client">
       <div class="container-home">
-        <div class="info-block info-block__wrapper">
-          <h2 class="secondary-title">Мой стиль</h2>
-          <div class="lk-client__style">
-            <div class="lk-client__style-photo"><img src="img/winter.png" alt=""/></div>
-            <div class="lk-client__style-seasons">
-              <ul class="lk-client__style-seasons-list"><a class="link-change-content link-change-content--active"
-                                                           href="#">Зима</a><a class="link-change-content" href="#">Весна</a><a
-                  class="link-change-content" href="#">Лето</a><a class="link-change-content" href="#">Осень</a>
-              </ul>
-              <div class="lk-client__style-seasons-description lk-client__style-seasons-description--active">
-                <p class="lk-client__style-seasons-description-text">
-                  Мода постоянно диктует нам свои требования и для
-                  современной девушки, желающей идти в ногу со временем,
-                  важно иметь возможность постоянно пополнять свой гардероб
-                  стильной одеждой. Коллекционная часть ассортимент обновляется
-                  в магазинах каждые две недели и отражает все модные тренды.
-                </p>
-                <p class="lk-client__style-seasons-description-text">
-                  Продолжением цветовых и трендовых решений коллекционной
-                  части являются базовые модели, которые представлены во всех
-                  отделах женской одежды внутри магазинов, а так же бестселлеры
-                  прошлых сезонов, характеризующиеся умеренным дизайном и
-                  невысокими ценами.
-                </p>
-                <p class="lk-client__style-seasons-description-text">
-                  Мы сами контролируем весь процесс производства,
-                  начиная от разработки одежды и заканчивая розничной
-                  продажей моделей в собственных магазинах сети и Онлайн,
-                  что позволяет нам продавать хорошую качественную одежду
-                  по минимальным ценам.
-                </p>
+        <div class="lk-stylist__general">
+          <div class="card card__margin">
+            <div class="card__photo-block">
+              <a href="settings.html"><img src="img/stylist1.png" alt="стилист"/></a>
+              <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
+            </div>
+            <div class="card__description">
+              <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
+              <div class="card__description__text"> {{Auth::user()->stylist->about}}</div>
+              <div class="card__title-second">Класс</div>
+              <div class="card__description__text">{{Auth::user()->stylist->category_id}}</div>
+              <div class="card__title-second">Опыт работы</div>
+              <div class="card__description__text">{{Auth::user()->stylist->experience}}
               </div>
-              <div class="lk-client__style-seasons-description">
-                <p class="lk-client__style-seasons-description-text">
-                  Мода постоянно диктует нам свои требования и для
-                  современной девушки, желающей идти в ногу со временем,
-                  важно иметь возможность постоянно пополнять свой гардероб
-                  стильной одеждой. Коллекционная часть ассортимент обновляется
-                  в магазинах каждые две недели и отражает все модные тренды.
-                </p>
-                <p class="lk-client__style-seasons-description-text">
-                  Продолжением цветовых и трендовых решений коллекционной
-                  части являются базовые модели, которые представлены во всех
-                  отделах женской одежды
-                </p>
-              </div>
-              <div class="lk-client__style-seasons-description">
-                <p class="lk-client__style-seasons-description-text">
-                  Мода постоянно диктует нам свои требования и для
-                  современной девушки, желающей и
-                </p>
-                <p class="lk-client__style-seasons-description-text">
-                  Мы сами контролируем весь процесс производства,
-                  начиная от разработки одежды и заканчивая розничной
-                  продажей моделей в собственных магазинах сети и Онлайн,
-                  что позволяет нам продавать хорошую качественную одежду
-                  по минимальным ценам.
-                </p>
-              </div>
-              <div class="lk-client__style-seasons-description">
-                <p class="lk-client__style-seasons-description-text">
-                  Мода постоянно диктует нам свои требования и для
-                  современной девушки, желающей идти в ногу со временем,
-                  важно иметь возможность постоянно пополнять свой гардероб
-                  стильной одеждой. Коллекционная часть ассортимент обновляется
-                  в магазинах каждые две недели и отражает все модные тренды.
-                </p>
-                <p class="lk-client__style-seasons-description-text">
-                  Продолжением цветовых и трендовых решений коллекционной
-                  части являются базовые модели, которые представлены во всех
-                  отделах женской одежды внутри магазинов, а так же бестселлеры
-                  прошлых сезонов, характеризующиеся умеренным дизайном и
-                  невысокими ценами.
-                </p>
-                <p class="lk-client__style-seasons-description-text">Мы сами контролируем весь про</p>
-              </div>
-              <a class="link-common link-common--right" href="#">Посмотреть все рекомендации</a>
+              <div class="card__title-second">Образование</div>
+              <div class="card__description__text">{{Auth::user()->stylist->education}} </div>
             </div>
           </div>
         </div>

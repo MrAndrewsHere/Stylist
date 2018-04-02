@@ -9,9 +9,10 @@
       <div class="container">
         <div class="lk-stylist__general">
           <div class="card card__margin">
-            <div class="card__photo-block"><a href="settings.html"><img src="img/stylist1.png" alt="стилист"/></a><a
-                class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a></div>
-
+            <div class="card__photo-block">
+              <a href="settings.html"><img src="img/stylist1.png" alt="стилист"/></a>
+              <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
+            </div>
             <div class="card__description">
               <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
               <div class="card__description__text"> {{Auth::user()->stylist->about}}</div>
