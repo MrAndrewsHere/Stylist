@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Неверный логин/пароль.',
+    'failed' => 'Неверный логин/пароль',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

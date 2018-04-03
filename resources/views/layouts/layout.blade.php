@@ -6,7 +6,6 @@
   <title> @yield ('title')</title>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
-
 <body>
 @include('blocks.sidebar')
 <div class="home">
@@ -22,5 +21,6 @@
 <script src="js/main.js"></script>
 <script src="js/dialog.js"></script>
 <script src="js/orders.js"></script>
+<script src="//ulogin.ru/js/ulogin.js"></script>
 </body>
 </html>

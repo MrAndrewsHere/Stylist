@@ -9,20 +9,20 @@
         <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/contacts">Контакты</a></li>
       </ul>
     </nav>@if (Auth::guest())
-    <ul class="social-icons-list">
-      <li class="social-icon-item"><a class="social-link" href="#" arial-label="Ссылка на вконтакте">
+    <div class="social-icons-list"  id="uLogin" data-ulogin="display=buttons;callback=myfunc">
+      <li class="social-icon-item"><a class="social-link" data-uloginbutton="vkontakte" arial-label="Ссылка на вконтате">
           <svg class="social-icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#vk"></use>
           </svg></a></li>
-      <li class="social-icon-item"><a class="social-link" href="#" arial-label="Ссылка на фейсбук">
+      <li class="social-icon-item"><a class="social-link" data-uloginbutton="facebook" arial-label="Ссылка на фейсбук">
           <svg class="social-icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#facebook"></use>
           </svg></a></li>
-      <li class="social-icon-item"><a class="social-link" href="#" arial-label="Ссылка на инстаграм">
+      <li class="social-icon-item"><a class="social-link" data-uloginbutton="instagram" arial-label="Ссылка на инстаграм">
           <svg class="social-icon">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#instagram"></use>
           </svg></a></li>
-    </ul>
+    </div>
     <div class="enter-panel">
       <button class="btn btn--auth enter-panel__btn">Вход</button>
       <button class="btn btn--registration enter-panel__btn">Регистрация</button>
