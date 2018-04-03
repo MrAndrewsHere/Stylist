@@ -50,7 +50,8 @@ class DatabaseSeeder extends Seeder
       'second_name' => 'Долженко',
       'city' => 'Дубна',
       'phone_number' => '89259042411',
-      'role_id' => '3'
+      'role_id' => '3',
+      'avatar' => 'img/no_avatar.jpg',
 
 
     ]);
@@ -62,8 +63,10 @@ class DatabaseSeeder extends Seeder
         'second_name' => 'Рябушкин',
         'city' => 'Дубна',
         'phone_number' => '89264587655',
-        'role_id' => '1'
+        'role_id' => '1',
+        'avatar' => 'img/no_avatar.jpg',
       ]);
+    App\Client::create(['id'=>'1','user_id'=>'2']);
     DB::table('users')->insert(
       ['id' => '3',
         'name' => 'Виктория',
@@ -72,7 +75,8 @@ class DatabaseSeeder extends Seeder
         'second_name' => 'Рябушкина',
         'city' => 'Дубна',
         'phone_number' => '89996633221',
-        'role_id' => '2'
+        'role_id' => '2',
+        'avatar' => 'img/stylist1.png',
 
       ]);
     DB::table('users')->insert(
@@ -83,17 +87,19 @@ class DatabaseSeeder extends Seeder
         'second_name' => 'Владимировна',
         'city' => 'Дубна',
         'phone_number' => '87776565851',
-        'role_id' => '2'
+        'role_id' => '2',
+        'avatar' => 'img/stylist3.jpg',
       ]);
     DB::table('users')->insert(
       ['id' => '5',
         'name' => 'Алиса',
         'email' => 'Alice@yandex.ru',
         'password' => bcrypt('123456789'),
-        'second_name' => 'Ульянова',
+        'second_name' => 'Селезнёва',
         'city' => 'Дубна',
         'phone_number' => '89996644221',
-        'role_id' => '1'
+        'role_id' => '2',
+        'avatar' => 'img/stylist2.png',
       ]
     );
 
@@ -101,6 +107,7 @@ class DatabaseSeeder extends Seeder
     $this->call(StCategorySeeder::class);
     $this->call(StylistDaatabaseSeeder::class);
     $this->call(ServiceSeeder::class);
+    $this->call(stylist_service::class);
 
 
   }

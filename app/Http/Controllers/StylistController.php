@@ -21,4 +21,15 @@ class StylistController extends Controller
   {
     return view('Stylist.lk-stylist');
   }
+
+  protected function store(Request $request)
+  {
+    $data = $request;
+
+    Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
+    Auth::user()->stylist->update(['education'=>$data->education,'about' => $data->about, 'education' => $data->education]);
+    $request->session()->flash('success', 'Данные успешно сохранены');
+    return redirect('/settings');
+
+  }
 }

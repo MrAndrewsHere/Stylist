@@ -25,4 +25,13 @@ class ClientController extends Controller
   {
     return view('Client.my-style');
   }
+  protected function store(Request $request)
+  {
+    $data = $request;
+
+    Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
+    $request->session()->flash('success', 'Данные успешно сохранены');
+    return redirect('/settings');
+
+  }
 }

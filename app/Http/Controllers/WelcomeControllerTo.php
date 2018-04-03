@@ -18,10 +18,10 @@ class WelcomeControllerTo extends Controller
   }
 
 
-  public function stylist_profile($id)
+  public function stylist_profile(Request $request)
   {
-    $stylist = Stylist::findorfail($id);
-    return view('stylist-card', compact('stylist'));
+    $stylist = Stylist::findorfail($request->input('id'));
+    return view('stylist-card',compact('stylist'));
   }
 
   public function index()
@@ -32,8 +32,8 @@ class WelcomeControllerTo extends Controller
   public function test(Request $request)
   {
 
-    $services = Service::all();
-    return dd($services);
+
+    return view('stylist-card');
 
   }
 
@@ -63,7 +63,8 @@ class WelcomeControllerTo extends Controller
   public function stylists()
   {
 
-    $stylists = Stylist::join('users', 'users.id', '=', 'stylists.user_id')->get();
+//    $stylists = Stylist::join('users', 'users.id', '=', 'stylists.user_id')->get();
+    $stylists = Stylist::all();
     return view('stylists', compact('stylists'));
   }
 }

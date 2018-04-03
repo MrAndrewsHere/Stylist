@@ -26,7 +26,7 @@ Route::get('/lk_client', 'ClientController@lk_client');
 Route::get('/my_style', 'ClientController@my_style');
 Route::get('/my_orders', 'HomeController@my_orders');
 Route::get('/portfolio', 'HomeController@portfolio');
-Route::get('/test', 'WelcomeControllerTo@test');
+Route::get('/test/', 'WelcomeControllerTo@test');
 Route::get('/settings', 'HomeController@settings');
 Route::get('/social', 'HomeController@social');
 Route::get('/contacts', 'WelcomeControllerTo@contacts');
@@ -34,12 +34,13 @@ Route::get('/answers', 'WelcomeControllerTo@answers');
 Route::get('/stylists', 'WelcomeControllerTo@stylists');
 Route::get('/services', 'WelcomeControllerTo@services');
 Route::post('/save_portfolio', 'HomeController@save_portfolio');
-Route::get('/stylist_profile/{id}', 'WelcomeControllerTo@stylist_profile');
+Route::get('/stylist_profile', 'WelcomeControllerTo@stylist_profile');
 Route::get('/Reg', 'HomeController@reg');
 Route::post('/posttest', 'WelcomeControllerTo@posttest');
 Route::post('/add_service_to_client','HomeController@add_service_to_client');
 
 Route::resource('portfolio', 'PortfolioController');
 
-Route::post('save_info', 'HomeController@store');
+Route::post('save_info', 'StylistController@store');
+Route::post('saveinfo', 'ClientController@store');
 

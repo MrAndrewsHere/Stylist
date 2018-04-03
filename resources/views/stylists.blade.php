@@ -11,7 +11,7 @@
           <li class="stylists__sort-category">Категория:
             <select class="select" name="category">vip
               @foreach(\App\stylistcategory::all() as $category)
-                <option value="{{$category->id}}">{{$category->name}}</option>
+                <option value="{{$category->id}}">{{$category->describe}}</option>
               @endforeach
             </select>
           </li>
@@ -28,10 +28,10 @@
         @foreach($stylists as $stylist)
           <div class="card card__margin">
             <div class="card__photo-block">
-              <img class="card__photo card__photo--stylist" src="img/stylist1.png" alt="стилист"/>
+              <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
             </div>
             <div class="card__description">
-              <a class="card__description__title" href="{{url('/stylist_profile',['id'=>$stylist->id])}}">{{$stylist->name}}</a>
+              <div class="card__description__title">{{$stylist->user->name}}</div>
               <div class="card__review-stars">
                 <label title="ужасно">
                   <input type="radio" id="star-4"/>
@@ -68,7 +68,12 @@
                 <li class="card__photo-list__block"><img class="card__photo-list__photo" src="img/client2.jpg" alt=""/>
                 </li>
               </ul>
-              <button class="btn btn--action">Выбрать стилиста</button>
+              <form method="get" action="{{url('/stylist_profile')}}">
+                {{csrf_field()}}
+                <button type="submit" name="id" value="{{$stylist->id}}" class="btn btn--action">
+                  Выбрать стилиста
+                </button>
+              </form>
             </div>
           </div>
         @endforeach

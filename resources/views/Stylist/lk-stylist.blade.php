@@ -10,20 +10,35 @@
         <div class="lk-stylist__general">
           <div class="card card__margin">
             <div class="card__photo-block">
-              <a href="settings.html"><img src="img/stylist1.png" alt="стилист"/></a>
+              <a href="settings.html"><img src={{Auth::user()->avatar}} alt="стилист"/></a>
               <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
             </div>
-            <div class="card__description">
-              <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
-              <div class="card__description__text"> {{Auth::user()->stylist->about}}</div>
-              <div class="card__title-second">Класс</div>
-              <div class="card__description__text">{{Auth::user()->stylist->category_id}}</div>
-              <div class="card__title-second">Опыт работы</div>
-              <div class="card__description__text">{{Auth::user()->stylist->experience}}
+            @if (Auth::user()->role->name == 'stylist')
+              <div class="card__description">
+                <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
+                <div class="card__description__text"> {{Auth::user()->stylist->about}}</div>
+                <div class="card__title-second">Класс</div>
+                <div class="card__description__text">{{Auth::user()->stylist->category->name}}</div>
+                <div class="card__title-second">Опыт работы</div>
+                <div class="card__description__text">{{Auth::user()->stylist->experience}}
+                </div>
+                <div class="card__title-second">Образование</div>
+                <div class="card__description__text">{{Auth::user()->stylist->education}} </div>
               </div>
-              <div class="card__title-second">Образование</div>
-              <div class="card__description__text">{{Auth::user()->stylist->education}} </div>
-            </div>
+            @else
+              <div class="card__description">
+                <div class="card__description">
+                  <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
+                  <div class="card__description__text"> </div>
+                  <div class="card__title-second">Класс</div>
+                  <div class="card__description__text"></div>
+                  <div class="card__title-second">Опыт работы</div>
+                  <div class="card__description__text"></div>
+                  <div class="card__title-second">Образование</div>
+                  <div class="card__description__text"></div>
+                </div>
+              </div>
+            @endif
           </div>
         </div>
         <div class="lk-stylist__attention info-block__wrapper">

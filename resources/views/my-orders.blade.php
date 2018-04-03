@@ -21,7 +21,7 @@
             @if(isset($orders))
               @foreach($orders as $order)
               <ul class="orders__item">
-                <li class="orders__photo"><img src="img/services/selection-hairstyle.png" alt="" width="70%"/></li>
+                <li class="orders__photo"><img src="{{$order->service->picture}}" alt="" width="70%"/></li>
                 <li class="orders__service orders__service--big"><span>{{$order->service->name}}</span><br/><span>{{$order->stylist->category->describe}}</span>
                 </li>
                 <li class="orders__count orders__count--big">

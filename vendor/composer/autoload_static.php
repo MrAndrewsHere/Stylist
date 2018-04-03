@@ -408,7 +408,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'App\\Http\\Middleware\\Stylist' => __DIR__ . '/../..' . '/app/Http/Middleware/Stylist.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Mail\\OrderShipped' => __DIR__ . '/../..' . '/app/Mail/OrderShipped.php',
-        'App\\Order' => __DIR__ . '/../..' . '/app/Order.php',
+        'App\\Order' => __DIR__ . '/../..' . '/app/order.php',
         'App\\Portfolio' => __DIR__ . '/../..' . '/app/Portfolio.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -427,7 +427,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
-        'ClientService' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_232802_client_service.php',
+        'ClientService' => __DIR__ . '/../..' . '/database/old_migration/2018_04_01_232802_client_service.php',
         'CreateClientsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_17_123120_create_clients_table.php',
         'CreateMediaTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_26_012922_create_media_table.php',
         'CreateOrdersTable' => __DIR__ . '/../..' . '/database/old_migration/2018_03_26_030428_create_orders_table.php',
@@ -2783,7 +2783,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
         'PHPUnit\\Util\\TextTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
-        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
+        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XML.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
         'PHPUnit_Framework_MockObject_MockObject' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/MockObject.php',
         'PHP_Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
@@ -4394,6 +4394,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'stylist_service' => __DIR__ . '/../..' . '/database/seeds/stylist_service.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

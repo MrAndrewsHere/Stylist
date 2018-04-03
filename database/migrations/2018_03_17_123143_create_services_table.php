@@ -24,6 +24,7 @@ class CreateServicesTable extends Migration
 			$table->longText('description')->nullable();
 			$table->longText('result')->nullable;
 			$table->float('price')->nullable();
+			$table->string('picture')->nullable();
 			$table->timestamps();
 		});
 	}

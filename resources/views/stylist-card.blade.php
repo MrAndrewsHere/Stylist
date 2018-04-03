@@ -4,14 +4,14 @@
 
 @section('content')
   <section class="section section--stylists section__home">
-    <h1 class="section__title">Наши стилисты</h1>
+    <h1 class="section__title">Профиль стилиста</h1>
     <div class="container">
       <div class="card card__margin">
-        <div class="card__photo-block"><img src="img/stylist1.png" alt="стилист"/>
-          <button class="btn btn--action btn__card">Выбрать стилиста</button>
+        <div class="card__photo-block"><img src="{{$stylist->user->avatar}}" alt="стилист"/>
+          <button  class="btn btn--action btn__card">Выбрать стилиста</button>
         </div>
         <div class="card__description">
-          <div class="card__description__title">Евгения Удальцова</div>
+          <div class="card__description__title">{{$stylist->user->name}}</div>
           <div class="card__review-stars">
             <label title="ужасно">
               <input type="radio" id="star-4"/>
@@ -35,8 +35,8 @@
             стремится стать более успешным и желает выглядеть стильно и уверенно. К вашим услугам разные варианты
             шоппинга, разбор гардероба, консультации по имиджу.
           </div>
-          <div class="card__title-second">Класс</div>
-          <div class="card__description__text">VIP</div>
+          <div class="card__title-second">Категория</div>
+          <div class="card__description__text">{{$stylist->category->describe}}</div>
           <div class="card__title-second">Опыт работы</div>
           <div class="card__description__text">Работала 3 года в компании "Пентхаус", занималась: Окрашиванием волос,
             укладкой, завивкой волос, женскими и мужскими стрижками, консультированием клиентов

@@ -8,42 +8,44 @@
     <div class="container">
       <h3>@if(Session::has('success')) {{Session::get('success')}} @endif </h3>
       {{--@if(isset($services))--}}
-        @foreach(\App\Service::all() as $service)
-          <div class="card card__margin">
-            <div class="card__photo-block card__photo-block--service">
-              <img class="card__photo card__photo--service" src="img/services/image-consultation.png" alt="стилист"/>
-            </div>
-            <div class="card__description card__description--services">
-              <div class="card__description__title">{{$service->name}}</div>
-              <div class="card__description__text">{{$service->description}}</div>
-              <div class="card__description__text"><b>Результат </b><span
-                  class="card__description__result">{{$service->result}}</span></div>
-              <div class="card__choose-price">
-                <div class="card__choose-price-block">
-                  <div class="card__choose-price__category"><b>Vip стилист</b></div>
-                  <div class="card__choose-price__cost">
-                    <form method="post" action="{{url('/add_service_to_client')}}">
+      @foreach(\App\Service::all() as $service)
+        <div class="card card__margin">
+          <div class="card__photo-block card__photo-block--service">
+            <img class="card__photo card__photo--service" src="{{$service->picture}}" alt="стилист"/>
+          </div>
+          <div class="card__description card__description--services">
+            <div class="card__description__title">{{$service->name}}</div>
+            <div class="card__description__text">{{$service->description}}</div>
+            <div class="card__description__text"><b>Результат </b><span
+                class="card__description__result">{{$service->result}}</span></div>
+            <div class="card__choose-price">
+              <div class="card__choose-price-block">
+                <div class="card__choose-price__category"><b>Vip стилист</b></div>
+                <div class="card__choose-price__cost">
+                  <form method="post" action="{{url('/add_service_to_client')}}">
                     {{csrf_field()}}
-                      <button type="submit" name="s" value="{{$service->id}}"  class="btn btn--action btn--action-small">3500 р/час</button>
-                    </form>
-                  </div>
+                    <button type="submit" name="s" value="{{$service->id}}" class="btn btn--action btn--action-small">
+                      3500 р/час
+                    </button>
+                  </form>
                 </div>
-                <div class="card__choose-price-block">
-                  <div class="card__choose-price__category"><b>Стилист первой категории</b></div>
-                  <div class="card__choose-price__cost">
-                    <button class="btn btn--action btn--action-small">2500 р/час</button>
-                  </div>
+              </div>
+              <div class="card__choose-price-block">
+                <div class="card__choose-price__category"><b>Стилист первой категории</b></div>
+                <div class="card__choose-price__cost">
+                  <button class="btn btn--action btn--action-small">2500 р/час</button>
                 </div>
-                <div class="card__choose-price-block">
-                  <div class="card__choose-price__category"><b>Начинающий стилист</b></div>
-                  <div class="card__choose-price__cost">
-                    <button class="btn btn--action btn--action-small">1500 р/час</button>
-                  </div>
+              </div>
+              <div class="card__choose-price-block">
+                <div class="card__choose-price__category"><b>Начинающий стилист</b></div>
+                <div class="card__choose-price__cost">
+                  <button class="btn btn--action btn--action-small">1500 р/час</button>
                 </div>
               </div>
             </div>
           </div>
-        @endforeach
+        </div>
+      @endforeach
       {{--@endif--}}
       {{--<div class="card card__margin">--}}
       {{--<div class="card__photo-block card__photo-block--service"><img class="card__photo card__photo--service"--}}
