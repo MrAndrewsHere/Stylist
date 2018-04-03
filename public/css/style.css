@@ -569,8 +569,7 @@ textarea {
 .sidebar__menu {
   margin-top: 50px;
   background-color: #fdf0da;
-  padding: 20px 0px;
- }
+  padding: 20px 0px; }
 
 .sidebar__menu-item {
   margin: 20px 0; }
@@ -965,6 +964,9 @@ textarea {
 
 .card__photo-block--service {
   min-width: 240px; }
+
+.card__photo--stylist {
+  width: 100%; }
 
 .card__title-second {
   color: #000000;
