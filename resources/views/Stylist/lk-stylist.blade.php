@@ -10,7 +10,9 @@
         <div class="lk-stylist__general">
           <div class="card card__margin">
             <div class="card__photo-block">
-              <a href="settings.html"><img src={{Auth::user()->avatar}} alt="стилист"/></a>
+              <a href="settings.html">
+                <img class="lk__photo" src={{Auth::user()->avatar}} alt="стилист"/>
+              </a>
               <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
             </div>
             @if (Auth::user()->role->name == 'stylist')

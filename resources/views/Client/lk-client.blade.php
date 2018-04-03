@@ -10,18 +10,13 @@
         <div class="lk-stylist__general">
           <div class="card card__margin">
             <div class="card__photo-block">
-              <a href="{{url('/settings')}}"><img src="{{Auth::user()->avatar}}" alt="стилист"/></a>
+              <a href="{{url('/settings')}}">
+                <img class="lk__photo" src="{{Auth::user()->avatar}}" alt="клиент"/>
+              </a>
               <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
             </div>
             <div class="card__description">
-              <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
-              <div class="card__description__text"> </div>
-              <div class="card__title-second">Класс</div>
-              <div class="card__description__text"></div>
-              <div class="card__title-second">Опыт работы</div>
-              <div class="card__description__text"></div>
-              <div class="card__title-second">Образование</div>
-              <div class="card__description__text"></div>
+              <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}}</div>
             </div>
           </div>
         </div>

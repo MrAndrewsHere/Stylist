@@ -1121,6 +1121,9 @@ textarea {
 .lk-client__style-seasons-description--active {
   display: block; }
 
+.lk__photo {
+  width: 300px; }
+
 .order {
   display: -webkit-box;
   display: -ms-flexbox;
