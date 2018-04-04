@@ -106,7 +106,7 @@
   }
 
   &__price {
-    width: 10%;
+    width: 15%;
   }
 
   &__count {
@@ -118,8 +118,12 @@
     justify-content: flex-end;
   }
 
-  &__buy {
+  &__status {
     width: 20%;
+  }
+
+  &__buy {
+    width: 15%;
     display: flex;
     justify-content: flex-end;
   }
@@ -128,6 +132,7 @@
     width: 5%;
     display: flex;
     align-items: center;
+    padding: 0 10px;
   }
 
   &__delete__pic {
@@ -150,7 +155,7 @@
   }
 
   &__price--big {
-    width: 16%;
+    width: 10%;
   }
 
   &__count-change {

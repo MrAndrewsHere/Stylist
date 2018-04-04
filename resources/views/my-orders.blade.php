@@ -17,19 +17,26 @@
               <li class="orders__photo">Фото</li>
               <li class="orders__service orders__service--big">Услуга</li>
               <li class="orders__price orders__price--big">Цена</li>
+              <li class="orders__status">Статус</li>
               <li class="orders__buy"></li>
               <li class="orders__delete"></li>
             </ul>
             @if(isset($orders))
               @foreach($orders as $order)
               <ul class="orders__item">
-                <li class="orders__photo"><img src="{{$order->service->picture}}" alt="" width="70%"/></li>
-                <li class="orders__service orders__service--big"><span>{{$order->service->name}}</span><br/><span>{{$order->stylist->category->describe}}</span>
+                <li class="orders__photo">
+                  <img src="{{$order->service->picture}}" alt="" width="70%"/>
+                </li>
+                <li class="orders__service orders__service--big">
+                  <span>{{$order->service->name}}</span><br/>
+                  <span>{{$order->stylist->category->describe}}</span>
                 </li>
                 <li class="orders__price orders__price--big">
-                  <input class="input--number input-price" type="number" disabled="disabled"
-                    value="{{$order->service->price}}" data-sum="{{$order->service->price}}"/>
+                  <span>{{$order->service->price}}</span>
                   <span>₽</span>
+                </li>
+                <li class="orders__status">
+                  <span>Не подтвержден</span>
                 </li>
                 <li class="orders__buy">
                   <button class="btn btn--action btn--action-buy">Заказать</button>
