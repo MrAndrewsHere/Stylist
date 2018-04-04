@@ -32,6 +32,11 @@ textarea {
   resize: none;
 }
 
+.wrapper {
+  width: 82%;
+  margin-left: 18%;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -42,14 +47,6 @@ textarea {
 .container-lk {
   width: 40%;
   margin: 0 auto;
-}
-
-.container-sidebar {
-  max-width: 86%;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .container-communication {

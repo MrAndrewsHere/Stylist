@@ -9,10 +9,23 @@
   position: fixed;
 }
 
+.container-sidebar {
+  max-width: 86%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.sidebar__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .sidebar__menu {
-  margin-top: 50px;
+  margin-top: 30%;
   background-color: $cream;
   padding: 20px 0px;
+  text-align: center;
 }
 
 .sidebar__menu-item {
@@ -20,7 +33,8 @@
 }
 
 .sidebar__menu-link {
-  @include flex-container($spacing: center);
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
