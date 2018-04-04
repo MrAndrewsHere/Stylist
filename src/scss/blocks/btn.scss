@@ -51,6 +51,13 @@
   &-small {
     min-width: 150px;
   }
+
+  &-buy {
+    min-width: 120px;
+    max-width: 150px;
+    height: 40px;
+    box-shadow: none;
+  }
 }
 
 .btn--upload-more-stylists {
@@ -62,13 +69,13 @@
 .btn--count {
   width: 27px;
   height: 27px;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
   background-color: $color-accent;
   color: #fff;
   border-radius: 50%;
 
   &:active {
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4);
   }
 }
 

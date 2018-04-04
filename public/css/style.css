@@ -386,6 +386,13 @@ textarea {
 .btn--action-small {
   min-width: 150px; }
 
+.btn--action-buy {
+  min-width: 120px;
+  max-width: 150px;
+  height: 40px;
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
 .btn--upload-more-stylists {
   width: 87px;
   height: 87px;
@@ -1204,10 +1211,22 @@ textarea {
 .orders__photo {
   width: 12%; }
 
-.orders__date-name, .orders__service, .orders__format {
+.orders__date-name {
   width: 18%; }
 
-.orders__id, .orders__class, .orders__price {
+.orders__service {
+  width: 18%; }
+
+.orders__format {
+  width: 18%; }
+
+.orders__id {
+  width: 10%; }
+
+.orders__class {
+  width: 10%; }
+
+.orders__price {
   width: 10%; }
 
 .orders__count {
@@ -1221,12 +1240,40 @@ textarea {
       -ms-flex-pack: end;
           justify-content: flex-end; }
 
+.orders__buy {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.orders__delete {
+  width: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.orders__delete__pic {
+  width: 100%;
+  height: 26px; }
+
 .orders__service--big {
   width: 40%;
   text-align: left;
   padding: 0 50px 0 30px; }
 
-.orders__date-name--big, .orders__count--big, .orders__price--big {
+.orders__date-name--big {
+  width: 16%; }
+
+.orders__count--big {
+  width: 16%; }
+
+.orders__price--big {
   width: 16%; }
 
 .orders__count-change {

@@ -6,7 +6,7 @@
   <section class="section section--services section__home">
     <h1 class="section__title">Наши услуги</h1>
     <div class="container">
-      <span class="success">@if(Session::has('success')) {{Session::get('success')}} @endif</span>
+      <span>@if(Session::has('success')) {{Session::get('success')}} @endif</span>
 
       {{--@if(isset($services))--}}
       @foreach(\App\Service::all() as $service)
