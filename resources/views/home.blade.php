@@ -35,9 +35,10 @@
           нового образа.</p>
       </div>
     </div>
-  </div>
-  <div class="start-change">
-    <button class="btn btn--action">Начать преображение</button>
+
+    <div class="start-change">
+      <button class="btn btn--action">Начать преображение</button>
+    </div>
   </div>
 @endsection
 

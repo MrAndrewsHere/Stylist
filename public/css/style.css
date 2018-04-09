@@ -415,6 +415,20 @@ textarea {
   padding: 10px 20px;
   border-radius: 4px; }
 
+.btn--filter {
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  background-color: #0e7e77; }
+
+.btn--filter:hover {
+  background-color: #084c47; }
+
+.btn--filter-non-active {
+  background-color: #ddd; }
+
 .nav-link {
   text-transform: uppercase;
   margin: 0 15px;
@@ -824,6 +838,9 @@ textarea {
 .section--stylists {
   margin-bottom: 50px; }
 
+.section--home {
+  margin-top: 100px; }
+
 .error-img {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -962,6 +979,9 @@ textarea {
 
 .card__margin {
   margin-top: 60px; }
+
+.card__margin:first-child {
+  margin-top: 30px; }
 
 .card__margin:last-child {
   margin-bottom: 60px; }

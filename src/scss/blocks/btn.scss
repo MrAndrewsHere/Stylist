@@ -87,3 +87,20 @@
   padding: 10px 20px;
   border-radius: 4px;
 }
+
+.btn--filter {
+  padding: 10px 15px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  background-color: $color-accent;
+
+  &:hover {
+    background-color: $color-accent-dark;
+  }
+
+  &-non-active {
+    background-color: #ddd;
+  }
+}

@@ -6,8 +6,13 @@
   <section class="section section--services section__home">
     <h1 class="section__title">Наши услуги</h1>
     <div class="container">
+      <div class="services__filters">
+        <button class="btn btn--filter">Шоппинг</button>
+        <button class="btn btn--filter btn--filter-non-active">Стилевое решение</button>
+        <button class="btn btn--filter btn--filter-non-active">Особый случай</button>
+        <button class="btn btn--filter btn--filter-non-active">Онлайн услуги</button>
+      </div>
       <span>@if(Session::has('success')) {{Session::get('success')}} @endif</span>
-
       {{--@if(isset($services))--}}
       @foreach(\App\Service::all() as $service)
         <div class="card card__margin">
