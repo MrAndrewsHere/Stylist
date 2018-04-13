@@ -31,10 +31,12 @@ class WelcomeControllerTo extends Controller
 
   public function test(Request $request)
   {
-
-
     return view('stylist-card');
+  }
 
+  public function service_page(Request $request)
+  {
+    return view('service-page');
   }
 
   public function posttest(Request $request)

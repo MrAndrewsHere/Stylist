@@ -7,7 +7,8 @@
     <h1 class="section__title">Наши услуги</h1>
     <div class="container">
       <div class="services__filters">
-        <button class="btn btn--filter">Шоппинг</button>
+        <button class="btn btn--filter">Все</button>
+        <button class="btn btn--filter btn--filter-non-active">Шоппинг</button>
         <button class="btn btn--filter btn--filter-non-active">Стилевое решение</button>
         <button class="btn btn--filter btn--filter-non-active">Особый случай</button>
         <button class="btn btn--filter btn--filter-non-active">Онлайн услуги</button>
@@ -20,7 +21,7 @@
             <img class="card__photo card__photo--service" src="{{$service->picture}}" alt="стилист"/>
           </div>
           <div class="card__description card__description--services">
-            <div class="card__description__title">{{$service->name}}</div>
+            <a class="card__description__title" href="{{url('/service-page')}}">{{$service->name}}</a>
             <div class="card__description__text">{{$service->description}}</div>
             <div class="card__description__text"><b>Результат </b><span
                 class="card__description__result">{{$service->result}}</span></div>
