@@ -34,17 +34,17 @@
         <li class="service-page__list-item-price">
           <span class="service-page__stars">★★★</span>
           <span class="service-page__status">VIP-стилист</span>
-          <span class="service-page__price">От 2000 р / час</span>
+          <span class="service-page__price">2000 р / час</span>
         </li>
         <li class="service-page__list-item-price">
           <span class="service-page__stars">★★</span>
           <span class="service-page__status">Стилист 1 категории</span>
-          <span class="service-page__price">От 1500 р / час</span>
+          <span class="service-page__price">1500 р / час</span>
         </li>
         <li class="service-page__list-item-price">
           <span class="service-page__stars">★</span>
           <span class="service-page__status">Начинающий стилист</span>
-          <span class="service-page__price">От 1000 р / час</span>
+          <span class="service-page__price">1000 р / час</span>
         </li>
       </ul>
       <h2 class="service-page__title">Выберите своего стилиста</h2>
