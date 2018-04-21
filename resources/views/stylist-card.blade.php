@@ -7,12 +7,13 @@
     <h1 class="section__title">Профиль стилиста</h1>
     <div class="container">
       <div class="card card__margin">
-        <div class="card__photo-block"><img src="/{{$stylist->user->avatar}}" alt="стилист"/>
+        <div class="card__photo-block">
+          <img class="card__photo--stylist" src="/{{$stylist->user->avatar}}" alt="стилист"/>
           <button  class="btn btn--action btn__card">Выбрать стилиста</button>
         </div>
         <div class="card__description">
           <div class="card__description__title">{{$stylist->user->name}}</div>
-          <div class="card__review-stars">
+          <!-- <div class="card__review-stars">
             <label title="ужасно">
               <input type="radio" id="star-4"/>
             </label>
@@ -28,7 +29,7 @@
             <label title="отлично">
               <input type="radio" id="star-0"/>
             </label>
-          </div>
+          </div> -->
           <div class="card__description__text">Каждая женщина, как цветок — неповторима. В каждой заложена уникальная
             природная красота. И я с удовольствием помогу вам ее раскрыть и усилить. Я открою вам коды доступа к вашей
             внешности. Предлагаю индивидуальный подход именно к вашей внешности и к вашим задачам. Каждый мужчина

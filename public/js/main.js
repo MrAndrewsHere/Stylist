@@ -25,38 +25,20 @@ $(document).ready(function () {
     $(this).toggleClass("btn--filter-non-active");
   });
 
-  // $("#contactform").on("submit", function (e) {
-  //   e.preventDefault();
-  //   $(".link-tab").click(function () {
-  //       $(".link-tab").removeClass("link-active").eq($(this).index()).addClass("link-active");
-  //       $(".my-orders__item").hide().eq($(this).index()).show();
-  //   }).eq(0).addClass(".my-orders__item--active");
 
-  //   $(".link-change-content").click(function () {
-  //       $(".link-change-content").removeClass("link-change-content--active").eq($(this).index()).addClass("link-change-content--active");
-  //       $(".lk-client__style-seasons-description").hide().eq($(this).index()).show();
-  //   }).eq(0).addClass(".lk-client__style-seasons-description--active");
 
-  //   $(".btn--filter").click(function (e) {
+  $("#contactform").on("submit", function (e) {
+    e.preventDefault();
 
-  //       e.preventDefault();
-  //       $(this).toggleClass("btn--filter-non-active");
-  //       alert('hello');
-  //       // var category = $(this).className;
-  //       // category = encodeURIComponent(category);
-  //       // var xhr = new XMLHttpRequest();
-  //       // xhr.open('GET','/take'+'category='+category,true);
-  //       // // xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-  //       // xhr.send();
-
-  $.ajax({
-    type: "POST",
-    url: "/sendmail",
-    data: $("#contactform").serialize(),
-    success: function () {
-      $(".sendmessage").css("display", "block");
-      $(".sendmessage").text("Cообщение успешно отправлено");
-    }
+    $.ajax({
+      type: "POST",
+      url: "/sendmail",
+      data: $("#contactform").serialize(),
+      success: function () {
+        $(".sendmessage").css("display", "block");
+        $(".sendmessage").text("Cообщение успешно отправлено");
+      }
+    });
   });
 
 });

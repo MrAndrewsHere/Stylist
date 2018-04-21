@@ -24,8 +24,10 @@
 }
 
 .card__photo--stylist {
-  width: 100%;
+  max-width: 300px;
 }
+
+.card__photo
 
 .card__title-second {
   color: $color-text;
