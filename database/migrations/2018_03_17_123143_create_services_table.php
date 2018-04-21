@@ -17,14 +17,12 @@ class CreateServicesTable extends Migration
 
 			$table->increments('id');
 			$table->string('name')->nullable();
-//			$table->integer('stylist_id')->unsigned()->index();
-//			$table->foreign('stylist_id')->references('id')->on('stylists')->onUpdate('cascade')->onDelete('cascade');
-//			$table->integer('category_id')->unsigned()->index();
-//			$table->foreign('category_id')->references('id')->on('servicecategories');
 			$table->longText('description')->nullable();
+			$table->string('HowTo')->nullable();
 			$table->longText('result')->nullable;
 			$table->float('price')->nullable();
 			$table->string('picture')->nullable();
+			$table->string('banner')->nullable();
 			$table->timestamps();
 		});
 	}

@@ -21,7 +21,7 @@ class StylistController extends Controller
   { $orders = null;
     try
     {
-      $orders = Auth::user()->stylist->orders;
+      $orders = Auth::user()->stylist->orders->where('Ordered','1');
     }
     catch (\ErrorException $error)
     {
@@ -41,6 +41,7 @@ class StylistController extends Controller
     return redirect('/settings');
 
   }
+
 
 
 }

@@ -41,7 +41,9 @@ Route::post('/posttest', 'WelcomeControllerTo@posttest');
 Route::post('/add_service_to_client','HomeController@add_service_to_client');
 Route::post('/sendmail', 'WelcomeControllerTo@sendmail'); // роут для отправки формы обратной связи
 
+Route::post('/take','WelcomeControllerTo@take');
 Route::resource('portfolio', 'PortfolioController');
+Route::post('/ordered','ClientController@ordered');
 
 Route::post('save_info', 'StylistController@store');
 Route::post('saveinfo', 'ClientController@store');
