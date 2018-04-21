@@ -3258,6 +3258,8 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'ServiceCategory' => $baseDir . '/database/migrations/2017_03_19_190823_ServiceCategory.php',
     'ServiceSeeder' => $baseDir . '/database/seeds/ServiceSeeder.php',
+    'ServiceStylistCategory' => $baseDir . '/database/migrations/2018_04_21_015327_service__stylist_category.php',
+    'Service_Price' => $baseDir . '/database/seeds/Service_Price.php',
     'ServicecategoryService' => $baseDir . '/database/migrations/2018_04_01_230710_servicecategory_service.php',
     'SessionUpdateTimestampHandlerInterface' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
     'Spatie\\ImageOptimizer\\DummyLogger' => $vendorDir . '/spatie/image-optimizer/src/DummyLogger.php',

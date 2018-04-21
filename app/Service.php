@@ -23,4 +23,26 @@ class Service extends Model
     return $this->HasMany('App\Order');
   }
 
+  public function stylistcategory()
+  {
+    return $this->belongsToMany('App\stylistcategory')->withPivot('price');
+  }
+
+  public function PriceForVip()
+  {
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('name','VIP')->first()->id)->withPivot('price');
+    return $call->first()->pivot->price;
+  }
+
+  public function PriceForVip2()
+  {
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('name','VIP/2')->first()->id)->withPivot('price');
+    return $call->first()->pivot->price;
+  }
+  public function PriceForVip4()
+  {
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('name','VIP/4')->first()->id)->withPivot('price');
+    return $call->first()->pivot->price;
+  }
+
 }

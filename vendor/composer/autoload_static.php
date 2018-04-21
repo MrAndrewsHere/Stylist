@@ -3638,6 +3638,8 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'ServiceCategory' => __DIR__ . '/../..' . '/database/migrations/2017_03_19_190823_ServiceCategory.php',
         'ServiceSeeder' => __DIR__ . '/../..' . '/database/seeds/ServiceSeeder.php',
+        'ServiceStylistCategory' => __DIR__ . '/../..' . '/database/migrations/2018_04_21_015327_service__stylist_category.php',
+        'Service_Price' => __DIR__ . '/../..' . '/database/seeds/Service_Price.php',
         'ServicecategoryService' => __DIR__ . '/../..' . '/database/migrations/2018_04_01_230710_servicecategory_service.php',
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'Spatie\\ImageOptimizer\\DummyLogger' => __DIR__ . '/..' . '/spatie/image-optimizer/src/DummyLogger.php',

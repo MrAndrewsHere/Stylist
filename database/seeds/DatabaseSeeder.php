@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         'city' => 'Дубна',
         'phone_number' => '87776565851',
         'role_id' => '2',
-        'avatar' => 'img/stylist3.jpg',
+        'avatar' => 'img/stylist3.png',
       ]);
     DB::table('users')->insert(
       ['id' => '5',
@@ -108,6 +108,7 @@ class DatabaseSeeder extends Seeder
     $this->call(StylistDaatabaseSeeder::class);
     $this->call(ServiceSeeder::class);
     $this->call(stylist_service::class);
+    $this->call(Service_Price::class);
 
 
   }

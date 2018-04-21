@@ -42,10 +42,11 @@ class WelcomeControllerTo extends Controller
     $service = null;
     try {
       $service = Service::find($id);
+      $stylists = $service->stylists;
     } catch (\ErrorException $exception) {
 
     }
-    return view('service-page', compact('service'));
+    return view('service-page', compact('service'),compact('stylists'));
   }
 
   public function posttest(Request $request)

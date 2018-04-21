@@ -21,8 +21,16 @@ $(document).ready(function () {
     }).eq(0).addClass(".lk-client__style-seasons-description--active");
 
     $(".btn--filter").click(function (e) {
-        e.preventDefault();
-        $(this).toggleClass("btn--filter-non-active");
+        alert('Hi');
+        // e.preventDefault();
+        // $(this).toggleClass("btn--filter-non-active");
+        //
+        // var category = $(this).className;
+        // category = encodeURIComponent(category);
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('GET','/take'+'category='+category,true);
+        // // xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        // xhr.send();
 
     });
 
