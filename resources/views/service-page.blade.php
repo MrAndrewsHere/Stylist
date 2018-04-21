@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title','Наши стилисты')
+@section('title','Шоппинг сопровождение с профессиональным шоппером')
 
 @section('content')
   <section class="section section__home">
