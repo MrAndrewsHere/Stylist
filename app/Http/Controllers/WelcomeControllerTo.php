@@ -18,10 +18,13 @@ class WelcomeControllerTo extends Controller
   }
 
 
-  public function stylist_profile(Request $request)
+  public function stylist_profile($id)
   {
-    $stylist = Stylist::findorfail($request->input('id'));
-    return view('stylist-card',compact('stylist'));
+    $stylist = null;
+    if (isset($id)) {
+      $stylist = Stylist::findorfail($id);
+    }
+    return view('stylist-card', compact('stylist'));
   }
 
   public function index()
@@ -34,9 +37,15 @@ class WelcomeControllerTo extends Controller
     return view('stylist-card');
   }
 
-  public function service_page(Request $request)
+  public function service_page($id)
   {
-    return view('service-page');
+    $service = null;
+    try {
+      $service = Service::find($id);
+    } catch (\ErrorException $exception) {
+
+    }
+    return view('service-page', compact('service'));
   }
 
   public function posttest(Request $request)

@@ -5,18 +5,14 @@
 @section('content')
   <section class="section section__home">
     <div class="container-service-page">
-      <h1 class="section__title">Шоппинг сопровождение<br>с профессиональным шоппером</h1>
-      <img class="service-page__photo" src="img/services/shopping_banner.jpg" alt="шоппинг">
+      <h1 class="section__title">{{$service->name}}</h1>
+      <img class="service-page__photo" src="{{$service->picture}}" alt="шоппинг">
       <div class="service-page__description">
-        <p>Часто у людей нет времени, чтобы следить за модой и тратить время на шоппинг. Им сложно ориентироваться в многообразии выбора, они устали ошибаться и впустую расходовать деньги, а магазины их сильно утомяют. Поэтому, шоппинг сопровождение и услуги шоппера особенно востребована.</p><br>
-        <p>Шоппинг со стилистом или шоппером — не роскошь, а способ решения разнообразных жизненных задач,
-        возможность экономии денег и времени.</p><br>
-        <p>Задачи могут быть самыми разнообразными. Может быть ваш стиль уже давно сложился, но вы хотите расширить горизонты, получить
-        объективный взгляд со стороны или узнать что-то новое о себе.</p>
+        <p>{{$service->description}}</p>
       </div>
       <h2 class="service-page__title">Как все будет</h2>
       <ul>
-        <li class="service-page__list-item-how">Мы встречаемся с вами лично в удобной для вас форме</li>
+        <li class="service-page__list-item-how">{{$service->result}}</li>
         <li class="service-page__list-item-how">Определяем задачу, которую должны выполнить в процессе шоппинга</li>
         <li class="service-page__list-item-how">Определяем бюджет и маршрут шоппинга</li>
         <li class="service-page__list-item-how">Совершаем покупки вместе. Вы можете купить только те вещи, которые вам понравятся</li>

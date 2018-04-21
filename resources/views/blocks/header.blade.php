@@ -11,7 +11,7 @@
           <a class="nav-link" href="/my_orders">Мои заказы</a>
           <a class="nav-link" href="#">Мои ответы</a>
           <a class="nav-link nav-profile" href="#">
-            <div class="nav-profile__img"><img class="nav-profile__img" src="img/user-pic.png" alt="клиентка"/></div>
+            <div class="nav-profile__img"><img class="nav-profile__img" src="/img/user-pic.png"/></div>
             <div class="nav-profile__arrow"></div>
           </a>
           <div class="nav-profile__menu"><a class="nav-profile__menu-link nav-link">{{Auth::user()->name}}</a>

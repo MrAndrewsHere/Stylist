@@ -51,7 +51,7 @@ class HomeController extends Controller
   public function add_service_to_client(Request $request)
   {
     if (Auth::user()->role_id == '1') {
-      $stylist = Stylist::all()->random();
+      $stylist = Stylist::find(1);
       $service = Service::find($request->input('s'));
       $stylist->services()->attach($service);
       Order::create(['client_id' => Auth::user()->client->id, 'service_id' => $service->id, 'stylist_id' => $stylist->id]);
