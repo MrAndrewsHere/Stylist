@@ -120,128 +120,50 @@
             <input class="btn btn--action" type="submit" value="Найти"/>
           </form>
         </div>
-        <div class="orders-block orders-block__inner"><a class="link-common" href="#">Как получить заказ</a>
-          <div class="orders__tip-description">
-            Отправка заявки предполагает, что администратор может назначить
-            вас на этот заказ, не переспрашивая. Если вы не уверены на 100%,
-            обязательно напишите об этом в комментариях к заявке.
-          </div>
           <div class="orders orders__wrapper">
             <ul class="orders__title">
               <li class="orders__checkbox"></li>
               <li class="orders__id">Номер</li>
               <li class="orders__date-name">Дата/Имя</li>
               <li class="orders__service">Услуга</li>
+              <li class="orders__status">Статус</li>
               <li class="orders__format">Формат</li>
-              <li class="orders__count">Количество</li>
-              <li class="orders__class">Класс</li>
               <li class="orders__price">Цена</li>
             </ul>
+            @if (isset($orders))
+              @foreach($orders as $order)
             <ul class="orders__item">
               <li class="orders__checkbox">
                 <input class="input-checkbox" type="checkbox"/>
               </li>
-              <li class="orders__id"><span>000001</span></li>
+              <li class="orders__id"><span>{{$order->id}}</span></li>
               <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
+                <div>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->service->updated_at)->toDateString()}}</div>
+                <div>{{$order->client->user->name}}</div>
               </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
+              <li class="orders__service"><span>{{$order->service->name}}</span></li>
+              <li class="orders__status"><span>{{$order->confirmed_by_stylist}}</span></li>
               <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
+              <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
             </ul>
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>000002</span></li>
-              <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
-              </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
-            </ul>
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>000003</span></li>
-              <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
-              </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
-            </ul>
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>000004</span></li>
-              <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
-              </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
-            </ul>
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>000005</span></li>
-              <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
-              </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
-            </ul>
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>000006</span></li>
-              <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
-              </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
-            </ul>
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>000007</span></li>
-              <li class="orders__date-name">
-                <div>21.02.2018</div>
-                <div>Светлана</div>
-              </li>
-              <li class="orders__service"><span>Подбор макияжа</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__count"><span>2</span></li>
-              <li class="orders__class"><span>VIP</span></li>
-              <li class="orders__price"><span>7000</span><span>р</span></li>
-            </ul>
+              @endforeach
+            @endif
+            {{--<ul class="orders__item">--}}
+              {{--<li class="orders__checkbox">--}}
+                {{--<input class="input-checkbox" type="checkbox"/>--}}
+              {{--</li>--}}
+              {{--<li class="orders__id"><span>000002</span></li>--}}
+              {{--<li class="orders__date-name">--}}
+                {{--<div>21.02.2018</div>--}}
+                {{--<div>Светлана</div>--}}
+              {{--</li>--}}
+              {{--<li class="orders__service"><span>Подбор макияжа</span></li>--}}
+              {{--<li class="orders__format"><span>online</span></li>--}}
+              {{--<li class="orders__count"><span>2</span></li>--}}
+              {{--<li class="orders__class"><span>VIP</span></li>--}}
+              {{--<li class="orders__price"><span>7000</span><span>р</span></li>--}}
+            {{--</ul>--}}
+
           </div>
           <div class="orders__take">
             <input class="btn btn--action" type="submit" value="Взять заказ"/>

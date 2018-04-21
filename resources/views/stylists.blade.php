@@ -32,28 +32,27 @@
             </div>
             <div class="card__description">
               <div class="card__description__title">{{$stylist->user->name}}</div>
-              <div class="card__review-stars">
-                <label title="ужасно">
-                  <input type="radio" id="star-4"/>
-                </label>
-                <label title="плохо">
-                  <input type="radio" id="star-3"/>
-                </label>
-                <label title="средне">
-                  <input type="radio" id="star-2"/>
-                </label>
-                <label title="хорошо">
-                  <input type="radio" id="star-1"/>
-                </label>
-                <label title="отлично">
-                  <input type="radio" id="star-0"/>
-                </label>
-              </div>
+              {{--<div class="card__review-stars">--}}
+                {{--<label title="ужасно">--}}
+                  {{--<input type="radio" id="star-4"/>--}}
+                {{--</label>--}}
+                {{--<label title="плохо">--}}
+                  {{--<input type="radio" id="star-3"/>--}}
+                {{--</label>--}}
+                {{--<label title="средне">--}}
+                  {{--<input type="radio" id="star-2"/>--}}
+                {{--</label>--}}
+                {{--<label title="хорошо">--}}
+                  {{--<input type="radio" id="star-1"/>--}}
+                {{--</label>--}}
+                {{--<label title="отлично">--}}
+                  {{--<input type="radio" id="star-0"/>--}}
+                {{--</label>--}}
+              {{--</div>--}}
               <div class="card__description__text">
                 Каждая женщина, как цветок — неповторима. В каждой заложена уникальная природная красота. И я с
                 удовольствием помогу вам ее раскрыть и усилить. Я открою вам коды доступа к вашей внешности.
                 Предлагаю индивидуальный подход именно к вашей внешности и к вашим задачам. Каждый мужчина стремится
-                стать более успешным и желает выглядеть стильно и уверенно.
                 К вашим услугам разные варианты шоппинга, разбор гардероба, консультации по имиджу.
               </div>
               <ul class="card__photo-list">
@@ -64,13 +63,11 @@
                 <li class="card__photo-list__block"><img class="card__photo-list__photo" src="img/client3.jpg" alt=""/>
                 </li>
                 <li class="card__photo-list__block"><img class="card__photo-list__photo" src="img/client1.jpg" alt=""/>
-                </li>
                 <li class="card__photo-list__block"><img class="card__photo-list__photo" src="img/client2.jpg" alt=""/>
                 </li>
               </ul>
-              <form method="get" action="{{url('/stylist_profile')}}">
-                {{csrf_field()}}
-                <button type="submit" name="id" value="{{$stylist->id}}" class="btn btn--action">
+              <form action="{{url('/stylist_profile',$stylist->id)}}">
+                <button type="submit" class="btn btn--action">
                   Выбрать стилиста
                 </button>
               </form>

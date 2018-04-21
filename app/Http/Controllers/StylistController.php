@@ -18,8 +18,17 @@ class StylistController extends Controller
   }
 
   public function lk_stylist()
-  {
-    return view('Stylist.lk-stylist');
+  { $orders = null;
+    try
+    {
+      $orders = Auth::user()->stylist->orders;
+    }
+    catch (\ErrorException $error)
+    {
+
+    }
+
+    return view('Stylist.lk-stylist', compact('orders'));
   }
 
   protected function store(Request $request)
@@ -32,4 +41,6 @@ class StylistController extends Controller
     return redirect('/settings');
 
   }
+
+
 }

@@ -7,15 +7,15 @@
     <div class="social-icons-list modal__social" id="uLogin" data-ulogin="display=buttons;callback=myfunc">
       <li class="social-icon-item"><a class="social-link" data-uloginbutton="vkontakte">
           <svg class="social-icon vk">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#vk"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#vk"></use>
           </svg></a></li>
       <li class="social-icon-item"><a class="social-link" data-uloginbutton="facebook">
           <svg class="social-icon fb">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#facebook"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#facebook"></use>
           </svg></a></li>
       <li class="social-icon-item"><a class="social-link" data-uloginbutton="instagram" arial-label="Ссылка на инстаграм">
           <svg class="social-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#instagram"></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#instagram"></use>
           </svg></a></li>
     </div>
     <p class="modal__text">или</p>

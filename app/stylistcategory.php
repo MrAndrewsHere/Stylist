@@ -12,6 +12,11 @@ class stylistcategory extends Model
 		{
 
 		}
+
+  public function service()
+  {
+    return $this->belongsToMany('App\Service')->withPivot('price');
+  }
   public function setUpdatedAt($value)
   {
     //Do-nothing
