@@ -21,10 +21,10 @@ $(document).ready(function () {
     }).eq(0).addClass(".lk-client__style-seasons-description--active");
 
     $(".btn--filter").click(function (e) {
-        alert('Hi');
-        // e.preventDefault();
-        // $(this).toggleClass("btn--filter-non-active");
-        //
+
+        e.preventDefault();
+        $(this).toggleClass("btn--filter-non-active");
+        alert('hello');
         // var category = $(this).className;
         // category = encodeURIComponent(category);
         // var xhr = new XMLHttpRequest();

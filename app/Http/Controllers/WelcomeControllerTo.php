@@ -49,6 +49,10 @@ class WelcomeControllerTo extends Controller
     return view('service-page', compact('service'),compact('stylists'));
   }
 
+  public function take(Request $request)
+  {
+    return Service::where('category_id',$request->input('id'));
+  }
   public function posttest(Request $request)
   {
     $result = $request->input('IsStylist');

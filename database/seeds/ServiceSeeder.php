@@ -35,6 +35,7 @@ class ServiceSeeder extends Seeder
       'result' => 'у клиента в кабинете появляется информация от стилиста',
       'price' => '1000',
       'picture' => 'img/services/image-consultation.png',
+      'banner' => 'img/services/шоппинг.png',
     ]);
     $imidzh->service()->create([
       'name'=>'Разбор гардероба',
@@ -42,6 +43,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
       'picture' => 'img/services/analysis-wardrobe.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $imidzh->service()->create([
@@ -50,6 +52,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
       'picture' => 'img/services/create-style.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $imidzh->service()->create([
@@ -58,6 +61,7 @@ class ServiceSeeder extends Seeder
       'result'=>'за 3-4 часa шопинг-сопровождения обычно можно создать несколькополных комплектов одежды с обувью и аксессуарами.',
       'price'=>'2000',
       'picture' => 'img/services/shopping-support.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $prich->service()->create([
@@ -66,6 +70,7 @@ class ServiceSeeder extends Seeder
       'result'=>'новая стрижка и/или цвет волос, и стилист покажет 3 вида прически которые большевсего вам подходят: повседневный, вечерный или клубный, и на свидание илина прогулку.',
       'price'=>'2000',
       'picture' => 'img/services/selection-hairstyle.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $makiyazh->service()->create([
@@ -74,6 +79,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
       'picture' => 'img/services/select-makeup.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $imidzh->service()->create([
@@ -82,6 +88,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
       'picture' => 'img/services/photo-session.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $sertif->service()->create([
@@ -90,6 +97,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
       'picture' => 'img/services/new-look.png',
+      'banner' => 'img/services/шоппинг.png',
 
     ]);
     $sertif->service()->create([
@@ -98,6 +106,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста.',
       'price'=>'2000',
       'picture' => 'img/services/make-over.png',
+      'banner' => 'img/services/шоппинг.png',
 
 
     ]);

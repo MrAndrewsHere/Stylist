@@ -5,6 +5,7 @@
 @section('content')
   <section class="section section--my-orders section__home">
     <h1 class="section__title">Мои заказы</h1>
+    <h3>@if(Session::has('success')) {{Session::get('success')}} @endif </h3>
     <div class="container-home">
       <div class="my-orders">
         <div class="my-orders__status">
@@ -39,7 +40,12 @@
                   <span>Не подтвержден</span>
                 </li>
                 <li class="orders__buy">
-                  <button class="btn btn--action btn--action-buy">Заказать</button>
+                  <form method="post" action="{{url('/ordered')}}">
+                    {{csrf_field()}}
+                    <button type="submit" name="s" value="{{$order->service_id}}" class="btn btn--action btn--action-buy">
+                      Заказать
+                    </button>
+                  </form>
                 </li>
                 <li class="orders__delete">
                   <button class="btn">

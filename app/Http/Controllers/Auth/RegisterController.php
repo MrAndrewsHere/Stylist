@@ -77,6 +77,7 @@ class RegisterController extends Controller
       'name' => $data['name'],
       'email' => $data['email'],
       'password' => bcrypt($data['password']),
+      'avatar'=> '/img/user-pic.png',
       'role_id' => Role::where('name', '=', $data['IsStylist'])->first()->id,
     ]);
     if ($data['IsStylist'] == 'stylist') {
