@@ -24,4 +24,21 @@ $(document).ready(function () {
     e.preventDefault();
     $(this).toggleClass("btn--filter-non-active");
   });
+
+
+
+  $("#contactform").on("submit", function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: "POST",
+      url: "/sendmail",
+      data: $("#contactform").serialize(),
+      success: function () {
+        $(".sendmessage").css("display", "block");
+        $(".sendmessage").text("Cообщение успешно отправлено");
+      }
+    });
+  });
+
 });

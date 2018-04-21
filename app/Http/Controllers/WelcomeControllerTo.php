@@ -72,6 +72,10 @@ class WelcomeControllerTo extends Controller
     return view('services');
   }
 
+  public function sendmail(Request $request) {
+    return $answer = 'Ваше сообщение отправлено';
+  }
+
   public function stylists()
   {
 

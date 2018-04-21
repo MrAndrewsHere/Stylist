@@ -39,6 +39,7 @@ Route::get('/stylist_profile/{id}', 'WelcomeControllerTo@stylist_profile');
 Route::get('/Reg', 'HomeController@reg');
 Route::post('/posttest', 'WelcomeControllerTo@posttest');
 Route::post('/add_service_to_client','HomeController@add_service_to_client');
+Route::post('/sendmail', 'WelcomeControllerTo@sendmail'); // роут для отправки формы обратной связи
 
 Route::resource('portfolio', 'PortfolioController');
 

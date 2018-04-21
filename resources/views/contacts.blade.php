@@ -9,20 +9,31 @@
     <div class="communication">
       <div class="communication__feedback">
         <div class="container-communication">
-          <form class="feedback-form">
+
+          <form class="feedback-form" id="contactform" action="/sendmail" method="post" name="send-contact">
+            {{ csrf_field() }}
+
+            <div class="sendmessage">
+              <!-- @if(Session::has('success')) {{Session::get('success')}} @endif -->
+            </div>
+            <div class="senderror">
+              <span>{{ env('MAIL_ADMIN_EMAIL') }}</span>
+            </div>
+
             <div class="communication__accent contacts__communication__accent"><b>У вас есть вопросы или предожения?</b>
             </div>
             <label>Имя
-              <input class="form__input" type="text" name="name" required="required"/>
+              <input class="form__input" type="text" name="name" required="required" value="Светлана"/>
             </label>
             <label>Электронная почта
-              <input class="form__input" type="email" name="email" required="required"/>
+              <input class="form__input" type="email" name="email" required="required" value="sveta@mail.ru"/>
             </label>
             <label>Вопрос
-              <textarea class="form__textarea" name="ques" cols="30" rows="10"></textarea>
+              <textarea class="form__textarea" name="ques" cols="30" rows="10">хочу на ноготочки</textarea>
             </label>
             <input class="btn btn--action btn--action-small" type="submit" value="Отправить"/>
           </form>
+
         </div>
       </div>
       <div class="communication__contacts">
