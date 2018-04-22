@@ -35,8 +35,11 @@ $(document).ready(function () {
       url: "/sendmail",
       data: $("#contactform").serialize(),
       success: function () {
-        $(".sendmessage").css("display", "block");
-        $(".sendmessage").text("Cообщение успешно отправлено");
+        $(".message-success").css("display", "block");
+        $("#contactform").trigger("reset");
+      },
+      error: function () {
+        $(".message-error").css("display", "block");
       }
     });
   });

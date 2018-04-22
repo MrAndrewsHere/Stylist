@@ -1602,8 +1602,8 @@ textarea {
   font-weight: bold;
   margin: 10px 0; }
 
-.sendmessage,
-.senderror {
+.message-success,
+.message-error {
   border: 1px solid #e6e6e6;
   background: #f6f6f6;
   display: none;
@@ -1613,10 +1613,10 @@ textarea {
   font-weight: 600;
   font-size: 14px; }
 
-.sendmessage {
+.message-success {
   border: 1px solid #afd4a9;
   background-color: #effaed; }
 
-.senderror {
+.message-error {
   border: 1px solid #af1616;
-  background-color: #ffc1c1; }
+  background-color: #fdecec; }

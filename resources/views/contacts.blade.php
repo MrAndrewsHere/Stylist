@@ -13,23 +13,22 @@
           <form class="feedback-form" id="contactform" action="/sendmail" method="post" name="send-contact">
             {{ csrf_field() }}
 
-            <div class="sendmessage">
-              <!-- @if(Session::has('success')) {{Session::get('success')}} @endif -->
-            </div>
-            <div class="senderror">
-              <span>{{ env('MAIL_ADMIN_EMAIL') }}</span>
+            <div class="message-success">Cообщение успешно отправлено</div>
+            <div class="message-error">
+              При отправке сообщения произошла ошибка. Продублируйте его, пожалуйста,
+              на почту администратора <span>{{ env('MAIL_ADMIN_EMAIL') }}</span>
             </div>
 
             <div class="communication__accent contacts__communication__accent"><b>У вас есть вопросы или предожения?</b>
             </div>
             <label>Имя
-              <input class="form__input" type="text" name="name" required="required" value="Светлана"/>
+              <input class="form__input" type="text" name="name" required="required"/>
             </label>
             <label>Электронная почта
-              <input class="form__input" type="email" name="email" required="required" value="sveta@mail.ru"/>
+              <input class="form__input" type="email" name="email" required="required"/>
             </label>
             <label>Вопрос
-              <textarea class="form__textarea" name="ques" cols="30" rows="10">хочу на ноготочки</textarea>
+              <textarea class="form__textarea" name="ques" cols="30" rows="10"></textarea>
             </label>
             <input class="btn btn--action btn--action-small" type="submit" value="Отправить"/>
           </form>
