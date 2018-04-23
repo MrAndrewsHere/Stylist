@@ -37,13 +37,12 @@
             шоппинга, разбор гардероба, консультации по имиджу.
           </div>
           <div class="card__title-second">Категория</div>
-          <div class="card__description__text">Категория</div>
+          <div class="card__description__text">{{$stylist->category->name}}</div>
           <div class="card__title-second">Опыт работы</div>
-          <div class="card__description__text">Работала 3 года в компании "Пентхаус", занималась: Окрашиванием волос,
-            укладкой, завивкой волос, женскими и мужскими стрижками, консультированием клиентов
+          <div class="card__description__text">{{$stylist->experience}}
           </div>
           <div class="card__title-second">Образование</div>
-          <div class="card__description__text">Казанский Федеральный университет, факультет РГФ</div>
+          <div class="card__description__text">{{$stylist->education}}</div>
         </div>
       </div>
       <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио <span
