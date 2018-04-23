@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ClientController extends Controller
 {
@@ -25,11 +27,27 @@ class ClientController extends Controller
   {
     return view('Client.my-style');
   }
+  protected function delete_order(Request $request)
+  {
+    try
+    {
+      $order = Order::find($request->input('id'));
+      $order->delete();
+      return 'OK';
+    }
+    catch (\Exception $exception)
+    { }
+
+  }
   protected function store(Request $request)
   {
     $data = $request;
-
     Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
+    if ($request->hasFile('avatar')) {
+      $picture = $request->file('avatar');
+      if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))]) !== 0)
+        $request->session()->flash('Error', 'Ошибка');
+    }
     $request->session()->flash('success', 'Данные успешно сохранены');
     return redirect('/settings');
 

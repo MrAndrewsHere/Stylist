@@ -18,9 +18,9 @@
 ;(function(factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
+        define(['jquery-2.0.3.min'], factory);
     } else if (typeof exports !== 'undefined') {
-        module.exports = factory(require('jquery'));
+        module.exports = factory(require('jquery-2.0.3.min'));
     } else {
         factory(jQuery);
     }

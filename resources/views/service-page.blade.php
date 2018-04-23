@@ -6,7 +6,7 @@
   <section class="section section__home">
     <div class="container-service-page">
       <h1 class="section__title">{{$service->name}}</h1>
-      <img class="service-page__photo" src="/{{$service->picture}}" alt="шоппинг">
+      <img class="service-page__photo" src="/{{$service->banner}}" alt="шоппинг">
       <div class="service-page__description">
         <p>{{$service->description}}</p>
       </div>

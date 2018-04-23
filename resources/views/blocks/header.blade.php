@@ -7,27 +7,29 @@
           <span> |</span>
           <button class="btn btn--registration">Регистрация</button>
         </div>@else
-        <div class="enter-panel-stylist"><a class="nav-link" href="/portfolio">Мое портфолио</a>
+        <div class="enter-panel-stylist">
+          @if (Auth::user()->role->name !== 'client' )
+          <a class="nav-link" href="/portfolio">Мое портфолио</a>
+          @endif
           <a class="nav-link" href="/my_orders">Мои заказы</a>
-          <a class="nav-link" href="#">Мои ответы</a>
           <a class="nav-link nav-profile" href="#">
-            <div class="nav-profile__img"><img class="nav-profile__img" src="/img/user-pic.png"/></div>
+            <div class="nav-profile__img"><img class="nav-profile__img" src="{{Auth::user()->avatar}}"/></div>
             <div class="nav-profile__arrow"></div>
           </a>
           <div class="nav-profile__menu"><a class="nav-profile__menu-link nav-link">{{Auth::user()->name}}</a>
             @if(Auth::user()->role->name == 'stylist')
-              <a class="nav-profile__menu-link nav-link" href="/lk_stylist">Личный кабинет (с)</a>
+              <a class="nav-profile__menu-link nav-link" href="/lk_stylist">Личный кабинет</a>
             @endif
 
             @if(Auth::user()->role->name == 'client')
-              <a class="nav-profile__menu-link nav-link" href="/lk_client">Личный кабинет (к)</a>
-              <a class="nav-profile__menu-link nav-link" href="/my_style">Мой стиль (к)</a>
+              <a class="nav-profile__menu-link nav-link" href="/lk_client">Личный кабинет</a>
+              <a class="nav-profile__menu-link nav-link" href="/my_style">Мой стиль</a>
             @endif
 
             @if(Auth::user()->role->name == 'admin')
-              <a class="nav-profile__menu-link nav-link" href="/lk_stylist">Личный кабинет (с)</a>
-              <a class="nav-profile__menu-link nav-link" href="/lk_client">Личный кабинет (к)</a>
-              <a class="nav-profile__menu-link nav-link" href="/my_style">Мой стиль (к)</a>
+              <a class="nav-profile__menu-link nav-link" href="/lk_stylist">Личный кабинет</a>
+              <a class="nav-profile__menu-link nav-link" href="/lk_client">Личный кабинет</a>
+              <a class="nav-profile__menu-link nav-link" href="/my_style">Мой стиль</a>
             @endif
 
 
@@ -42,3 +44,5 @@
     </div>
   </div>
 </header>
+
+

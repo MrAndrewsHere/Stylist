@@ -12,6 +12,8 @@
           <a class="link-tab link-active" href="#">Новые заказы</a>
           <a class="link-tab" href="#">История заказов</a>
         </div>
+        <div class="message-success">Услуга успешно удалена</div>
+        <div class="message-error">Ошибка</div>
         <div class="my-orders__item my-orders__item--active">
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
@@ -47,12 +49,16 @@
                     </button>
                   </form>
                 </li>
-                <li class="orders__delete">
-                  <button class="btn">
+                <li class="orders__delete" >
+                  <form class="delete_order">
+                    {{csrf_field()}}
+                    <input name="id" value="{{$order->id}}" hidden>
+                  <button class="btn" type="submit"   >
                     <svg class="orders__delete__pic">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
                     </svg>
                   </button>
+                  </form>
                 </li>
               </ul>
               @endforeach
