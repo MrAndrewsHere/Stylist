@@ -51,8 +51,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/1after.png" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/1before.png" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/1before.png" alt=""/></div>
+              <div class="photo__second"><img src="/img/clients/1after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
               <div class="comment__user-photo"><img src="/img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
@@ -68,8 +68,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/2after.png" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/2before.png" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/2before.png" alt=""/></div>
+              <div class="photo__second"><img src="/img/clients/2after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
               <div class="comment__user-photo"><img src="/img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
@@ -85,8 +85,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/3after.png" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/3before.png" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/3before.png" alt=""/></div>
+              <div class="photo__second"><img src="/img/clients/3after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
               <div class="comment__user-photo"><img src="/img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
