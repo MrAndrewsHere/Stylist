@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Order;
+use App\Service;
+use App\Stylist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,6 +40,19 @@ class ClientController extends Controller
     catch (\Exception $exception)
     { }
 
+  }
+
+  public function add_service_to_client(Request $request)
+  {
+
+      $service = Service::find($request->input('service_id'));
+    $stylist = $service->stylists->find($request->input('stylist_id'));
+      if($stylist !== null && $service !== null) {
+        Order::create(['client_id' => Auth::user()->client->id, 'service_id' => $service->id, 'stylist_id' => $stylist->id, 'price' => $service->priceForStylist($stylist)]);
+        return $success = 'Услуга добавлена';
+      }
+
+    return $error = 'Извините, что-то пошло не так';
   }
   protected function store(Request $request)
   {

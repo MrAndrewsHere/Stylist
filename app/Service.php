@@ -30,18 +30,23 @@ class Service extends Model
 
   public function PriceForVip()
   {
-    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('name','VIP')->first()->id)->withPivot('price');
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('describe','VIP')->first()->id)->withPivot('price');
     return $call->first()->pivot->price;
   }
 
   public function PriceForVip2()
   {
-    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('name','VIP/2')->first()->id)->withPivot('price');
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('describe','VIP/2')->first()->id)->withPivot('price');
     return $call->first()->pivot->price;
   }
   public function PriceForVip4()
   {
-    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('name','VIP/4')->first()->id)->withPivot('price');
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('describe','VIP/4')->first()->id)->withPivot('price');
+    return $call->first()->pivot->price;
+  }
+  public  function priceForStylist(Stylist $stylist)
+  {
+    $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', $stylist->category->id)->withPivot('price');
     return $call->first()->pivot->price;
   }
 

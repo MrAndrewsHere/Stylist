@@ -11,11 +11,13 @@ class stylist_service extends Seeder
      */
     public function run()
     {
-        $stylists = App\Stylist::all();
-        foreach ($stylists as $stylist)
+        $services = App\Service::all();
+
+        foreach ($services as $service)
         {
-          $stylist->services()->save(\App\Service::all()->random());
-          $stylist->services()->save(\App\Service::all()->random());
+          $service->stylists()->save(\App\Service::find(1));
+          $service->stylists()->save(\App\Service::find(2));
+          $service->stylists()->save(\App\Service::find(3));
         }
 
     }

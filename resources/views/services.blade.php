@@ -29,12 +29,9 @@
               <div class="card__choose-price-block">
                 <div class="card__choose-price__category"><b>Vip стилист</b></div>
                 <div class="card__choose-price__cost">
-                  <form method="post" action="{{url('/add_service_to_client')}}">
-                    {{csrf_field()}}
-                    <button type="submit" name="s" value="{{$service->id}}" class="btn btn--action btn--action-small">
+                    <button type="submit"  class="btn btn--action btn--action-small">
                       3500 р/час
                     </button>
-                  </form>
                 </div>
               </div>
               <div class="card__choose-price-block">

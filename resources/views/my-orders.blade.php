@@ -32,10 +32,10 @@
                 </li>
                 <li class="orders__service orders__service--big">
                   <span>{{$order->service->name}}</span><br/>
-                  <span>{{$order->stylist->category->describe}}</span>
+                  <span>{{$order->stylist->category->name}}</span>
                 </li>
                 <li class="orders__price orders__price--big">
-                  <span>{{$order->service->price}}</span>
+                  <span>{{$order->price}}</span>
                   <span>₽</span>
                 </li>
                 <li class="orders__status">

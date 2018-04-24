@@ -6,7 +6,7 @@
   <section class="section section__home">
     <div class="container-service-page">
       <h1 class="section__title">{{$service->name}}</h1>
-      <img class="service-page__photo" src="/{{$service->banner}}" alt="шоппинг">
+      <img class="service-page__photo" src="{{$service->category->first()->banner}}" alt="шоппинг">
       <div class="service-page__description">
         <p>{{$service->description}}</p>
       </div>
@@ -55,11 +55,16 @@
         @if(isset($stylists))
           @foreach($stylists as $stylist)
             <div class="service-page__stylist">
-              <img class="service-page__stylist-photo" src="/{{$stylist->user->avatar}}  " alt="">
+              <img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}  " alt="">
               <span class="service-page__stylist-stars">★★★</span>
               <span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>
               <span class="service-page__stylist-status">{{$stylist->category->name}}</span>
+              <form class="add_service_to_client">
+                {{csrf_field()}}
+                <input hidden name="stylist_id" value="{{$stylist->id}}">
+                <input hidden name="service_id" value="{{$service->id}}">
               <button class="btn btn--action btn--action-super-small">Выбрать</button>
+              </form>
             </div>
           @endforeach
         @else

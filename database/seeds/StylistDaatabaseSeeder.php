@@ -23,7 +23,7 @@ class StylistDaatabaseSeeder extends Seeder
       DB::table('stylists')->insert(
         [ 'id'=>'2',
           'user_id' => '4',
-          'category_id' => '1',
+          'category_id' => '2',
           'experience' => 'Опыт',
           'education' => 'Образование',
           'about' => 'Обо мне',
@@ -32,7 +32,7 @@ class StylistDaatabaseSeeder extends Seeder
       DB::table('stylists')->insert(
         ['id'=>'3',
           'user_id' => '5',
-          'category_id' => '1',
+          'category_id' => '3',
           'experience' => 'Опыт',
           'education' => 'Образование',
           'about' => 'Обо мне',

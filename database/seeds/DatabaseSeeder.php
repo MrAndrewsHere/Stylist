@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
       'city' => 'Дубна',
       'phone_number' => '89259042411',
       'role_id' => '3',
-      'avatar' => 'img/no_avatar.jpg',
+      'avatar' => '/img/no_avatar.jpg',
 
 
     ]);
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
         'city' => 'Дубна',
         'phone_number' => '89264587655',
         'role_id' => '1',
-        'avatar' => 'img/no_avatar.jpg',
+        'avatar' => '/img/no_avatar.jpg',
       ]);
     App\Client::create(['id'=>'1','user_id'=>'2']);
     DB::table('users')->insert(
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
         'city' => 'Дубна',
         'phone_number' => '89996633221',
         'role_id' => '2',
-        'avatar' => 'img/stylist1.png',
+        'avatar' => '/img/stylist1.png',
 
       ]);
     DB::table('users')->insert(
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         'city' => 'Дубна',
         'phone_number' => '87776565851',
         'role_id' => '2',
-        'avatar' => 'img/stylist3.png',
+        'avatar' => '/img/stylist3.jpg',
       ]);
     DB::table('users')->insert(
       ['id' => '5',
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
         'city' => 'Дубна',
         'phone_number' => '89996644221',
         'role_id' => '2',
-        'avatar' => 'img/stylist2.png',
+        'avatar' => '/img/stylist2.png',
       ]
     );
 

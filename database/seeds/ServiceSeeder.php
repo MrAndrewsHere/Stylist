@@ -14,36 +14,43 @@ class ServiceSeeder extends Seeder
   public function run()
   {
     $makiyazh = servicecategory::create([
-      'name' => 'Макияж',
-      'describe' => 'Описание',
+      'name' => 'Онлайн услуги',
+      'describe' => 'Узнайте все о «своём» гардеробе, типе внешности, цветах, фасонах, получите оптимальные рекомендации онлайн в любом удобном для вас месте. 
+            ',
+      'banner' => '/img/category/online-services.jpg'
     ]);
     $imidzh = servicecategory::create([
-      'name' => 'Имидж',
-      'describe' => 'Описание',
-    ]);
+      'name' => 'Особый случай',
+      'describe' => 'Хотите получить новый стильный образ и сэкономить время на поиске идеальных вещей? Образ для вашего особого случая доверьте стилисту!',
+     'banner' => '/img/category/wedding.jpeg',
+      ]);
     $sertif = servicecategory::create([
-      'name' => 'Подарочный сертификат',
-      'describe' => 'Описание',
+      'name' => 'Шоппинг-сопровождение',
+      'describe' => 'Творческая помощь в выборе одежды — это огромная экономия личных средств. Эффективный шоппинг-маршрут индивидуально для вас, согласно вашему бюджету, запросу, целям, пожеланиям.
+          ',
+      'banner' => '/img/category/shopping.jpg'
     ]);
     $prich = servicecategory::create([
-      'name' => 'Причёска',
-      'describe' => 'Описание',
+      'name' => 'Разбор стилевого решения',
+      'describe' => 'Каждый человек уникален, и не существует на свете другого человека, в точности похожего на Вас. Получите свою личную концепцию стиля с учетом всех характеристик.
+          ',
+      'banner' => '/img/category/style-solution.jpg'
     ]);
     $makiyazh->service()->create([
       'name' => 'Имидж-консультация',
       'description' => 'Встреча с личным стилистом, в процессе которой стилист определит ваш цветотиптип фигуры, вы получите рекомендации по подбору одежды и советы по стилю.Имидж-консультация может быть проведена в скайпе.',
       'result' => 'у клиента в кабинете появляется информация от стилиста',
       'price' => '1000',
-      'picture' => 'img/services/image-consultation.png',
-      'banner' => 'img/services/шоппинг.png',
+      'picture' => '/img/services/image-consultation.png',
+      'banner' => '/img/services/шоппинг.png',
     ]);
     $imidzh->service()->create([
       'name'=>'Разбор гардероба',
       'description'=>'Выявление скрытых возможностей вашего гардероба, создание комплектов с уже имеющимися вещами. Рекомендации по недостающим предметам одежды.для дополнения гардероба.',
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
-      'picture' => 'img/services/analysis-wardrobe.png',
-      'banner' => 'img/services/шоппинг.png',
+      'picture' => '/img/services/analysis-wardrobe.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $imidzh->service()->create([
@@ -52,7 +59,7 @@ class ServiceSeeder extends Seeder
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
       'picture' => 'img/services/create-style.png',
-      'banner' => 'img/services/шоппинг.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $imidzh->service()->create([
@@ -61,7 +68,7 @@ class ServiceSeeder extends Seeder
       'result'=>'за 3-4 часa шопинг-сопровождения обычно можно создать несколькополных комплектов одежды с обувью и аксессуарами.',
       'price'=>'2000',
       'picture' => 'img/services/shopping-support.png',
-      'banner' => 'img/services/шоппинг.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $prich->service()->create([
@@ -70,7 +77,7 @@ class ServiceSeeder extends Seeder
       'result'=>'новая стрижка и/или цвет волос, и стилист покажет 3 вида прически которые большевсего вам подходят: повседневный, вечерный или клубный, и на свидание илина прогулку.',
       'price'=>'2000',
       'picture' => 'img/services/selection-hairstyle.png',
-      'banner' => 'img/services/шоппинг.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $makiyazh->service()->create([
@@ -78,8 +85,8 @@ class ServiceSeeder extends Seeder
       'description'=>'Встреча с личным стилистом, в процессе которой стилист определитваш цветотип, тип фигуры, вы получите рекомендации по подбору одежды исоветы по стилю. Имидж-консультация может быть проведена в скайпе.',
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
-      'picture' => 'img/services/select-makeup.png',
-      'banner' => 'img/services/шоппинг.png',
+      'picture' => '/img/services/select-makeup.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $imidzh->service()->create([
@@ -87,8 +94,8 @@ class ServiceSeeder extends Seeder
       'description'=>'Встреча с личным стилистом, в процессе которой стилист определитваш цветотип, тип фигуры, вы получите рекомендации по подбору одежды исоветы по стилю. Имидж-консультация может быть проведена в скайпе.',
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
-      'picture' => 'img/services/photo-session.png',
-      'banner' => 'img/services/шоппинг.png',
+      'picture' => '/img/services/photo-session.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $sertif->service()->create([
@@ -96,8 +103,8 @@ class ServiceSeeder extends Seeder
       'description'=>'Встреча с личным стилистом, в процессе которой стилист определитваш цветотип, тип фигуры, вы получите рекомендации по подбору одежды исоветы по стилю. Имидж-консультация может быть проведена в скайпе.',
       'result'=>'у клиента в кабинете появляется информация от стилиста',
       'price'=>'2000',
-      'picture' => 'img/services/new-look.png',
-      'banner' => 'img/services/шоппинг.png',
+      'picture' => '/img/services/new-look.png',
+      'banner' => '/img/services/шоппинг.png',
 
     ]);
     $sertif->service()->create([
@@ -105,8 +112,8 @@ class ServiceSeeder extends Seeder
       'description'=>'Встреча с личным стилистом, в процессе которой стилист определитваш цветотип, тип фигуры, вы получите рекомендации по подбору одежды исоветы по стилю. Имидж-консультация может быть проведена в скайпе.',
       'result'=>'у клиента в кабинете появляется информация от стилиста.',
       'price'=>'2000',
-      'picture' => 'img/services/make-over.png',
-      'banner' => 'img/services/шоппинг.png',
+      'picture' => '/img/services/make-over.png',
+      'banner' => '/img/services/шоппинг.png',
 
 
     ]);

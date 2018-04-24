@@ -8,7 +8,7 @@
     <div class="container">
       <div class="card card__margin">
         <div class="card__photo-block">
-          <img class="card__photo--stylist" src="/{{$stylist->user->avatar}}" alt="стилист"/>
+          <img class="card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
           <button  class="btn btn--action btn__card">Выбрать стилиста</button>
         </div>
         <div class="card__description">

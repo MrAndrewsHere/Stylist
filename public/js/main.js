@@ -65,5 +65,20 @@ $(document).ready(function () {
       }
     });
   });
+    $(".add_service_to_client").on("submit", function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: "POST",
+            url: "/add_service_to_client",
+            data: $(this).serialize(),
+            success: function () {
+                $(".message-success").css("display", "block");
+            },
+            error: function () {
+                $(".message-error").css("display", "block");
+            }
+        });
+    });
 
 });
