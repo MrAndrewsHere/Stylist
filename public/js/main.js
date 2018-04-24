@@ -43,9 +43,6 @@ $(document).ready(function () {
     });
   });
 
-  // Array.from(document.querySelectorAll(".delete_order")).forEach(function (e) {
-
-  // });
 
   $(".delete_order").on("submit", function (e) {
     e.preventDefault();

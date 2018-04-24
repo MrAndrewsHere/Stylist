@@ -1557,7 +1557,7 @@ textarea {
   font-size: 16px; }
 
 .container-service-page {
-  width: 800px;
+  width: 80%;
   margin: 0 auto; }
 
 .service-page__title {
@@ -1594,7 +1594,9 @@ textarea {
 .service-page__stylists {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .service-page__stylist {
   display: -webkit-box;
@@ -1606,7 +1608,8 @@ textarea {
           flex-direction: column;
   width: 120px;
   text-align: center;
-  margin-right: 50px; }
+  margin-right: 50px;
+  margin-bottom: 40px; }
 
 .service-page__stylist-photo {
   width: 100%;
