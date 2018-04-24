@@ -42,7 +42,7 @@
   font-weight: 700;
   text-transform: uppercase;
   background-color: $color-accent;
-  box-shadow: 0px 5px 36px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 18px -6px rgba(0, 0, 0, 0.75);
 
   &:hover {
     background-color: $color-accent-dark;
@@ -108,5 +108,21 @@
 
   &-non-active {
     background-color: #ddd;
+  }
+}
+
+.btn--banner {
+  min-width: 250px;
+  padding: 0 20px;
+  height: 50px;
+  border-radius: 25px;
+  color: #000;
+  text-transform: uppercase;
+  background-color: $cream;
+  box-shadow: 0px 5px 12px -6px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    background-color: #5a2627;
+    color: $cream;
   }
 }
