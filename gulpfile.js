@@ -36,7 +36,7 @@ const gulp = require("gulp"),
   rename = require("gulp-rename"), // переименовывает файлы
   svgstore = require("gulp-svgstore"), // создает svg спрайт
   svgmin = require("gulp-svgmin"), // минифицирует svg
-  del = require("del"), // удаляет файлы и папки
+  // del = require("del"), // удаляет файлы и папки
   run = require("run-sequence"), // для последовательного запуска задач
   autoprefixer = require("gulp-autoprefixer"); // добавляет автопрефиксеры
 
