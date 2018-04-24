@@ -53,11 +53,11 @@
                   <form class="delete_order">
                     {{csrf_field()}}
                     <input name="id" value="{{$order->id}}" hidden>
-                  <button class="btn" type="submit"   >
-                    <svg class="orders__delete__pic">
-                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
-                    </svg>
-                  </button>
+                    <button class="btn" type="submit" id="btn__delete-order">
+                      <svg class="orders__delete__pic">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
+                      </svg>
+                    </button>
                   </form>
                 </li>
               </ul>
@@ -65,6 +65,7 @@
             @endif
           </div>
         </div>
+
         <div class="my-orders__item">
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
