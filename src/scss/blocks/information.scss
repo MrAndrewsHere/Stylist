@@ -1,20 +1,22 @@
 .information {
-  display: flex;
-  justify-content: space-between;
   margin-top: 50px;
-
-  &__text {
-    font-size: 15px;
-  }
 }
 
 .information__title {
-  font-size: 18px;
+  &-first {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &-second {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 }
 
-.infrotamtion__what,
-.infrotamtion__help,
-.infrotamtion__guarantee {
-  width: 33.33%;
-  padding: 0 20px;
+.infotmation__categories {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
