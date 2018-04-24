@@ -3,7 +3,18 @@
 @section('title','Главная')
 
 @section ('content')
-  <div class="slider section__home">
+  <div class="banner">
+    <div class="banner__slogan">
+      <p class="banner__slogan-text">
+        Покупайте, что вам нравится<br>
+        Мы позаботимся о том, чтобы вы это носили
+      </p>
+      <button class="btn btn--banner btn--registration">Начать преображение</button>
+    </div>
+    
+  </div>
+
+  <!-- <div class="slider section__home">
     <div class="slide">
       <div class="photo__first"><img src="img/home_client_before.jpg" width="320px" alt=""/></div>
       <div class="photo__second"><img src="img/home_client_after.jpg" width="320px" alt=""/></div>
@@ -12,7 +23,7 @@
       <div class="photo__first"><img src="img/client2.jpg" width="320px" alt=""/></div>
       <div class="photo__second"><img src="img/client3.jpg" width="320px" alt=""/></div>
     </div>
-  </div>
+  </div> -->
   
   <div class="container-home">
     <div class="information">
@@ -34,10 +45,6 @@
           Наши стилисты проходят тщательный контроль и вы можете быть уверены в успехе вашего
           нового образа.</p>
       </div>
-    </div>
-
-    <div class="start-change">
-      <button class="btn btn--action">Начать преображение</button>
     </div>
   </div>
 @endsection
