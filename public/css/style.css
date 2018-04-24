@@ -1566,6 +1566,7 @@ textarea {
   font-size: 20px; }
 
 .service-page__photo {
+  max-width: 100%;
   display: block;
   margin: 0 auto 20px; }
 
@@ -1596,7 +1597,10 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .service-page__stylist {
   display: -webkit-box;
