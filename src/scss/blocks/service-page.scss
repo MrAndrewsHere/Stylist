@@ -1,5 +1,5 @@
 .container-service-page {
-  width: 800px;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -42,6 +42,7 @@
 
 .service-page__stylists {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .service-page__stylist {
@@ -50,6 +51,7 @@
   width: 120px;
   text-align: center;
   margin-right: 50px;
+  margin-bottom: 40px;
 }
 
 .service-page__stylist-photo {
