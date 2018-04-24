@@ -66,13 +66,13 @@ const path = {
     spritesvg: "src/img/icons/*.svg",
     fonts: "src/fonts/*.{woff,woff2}"
   },
-  clean: {
-    blocks: "public/blocks/*.*",
-    css: "public/css/*.*",
-    fonts: "public/fonts/*.*",
-    img: "public/img/*.*",
-    js: "public/js/*.*"
-  }
+  // clean: {
+  //   blocks: "public/blocks/*.*",
+  //   css: "public/css/*.*",
+  //   fonts: "public/fonts/*.*",
+  //   img: "public/img/*.*",
+  //   js: "public/js/*.*"
+  // }
 };
 
 // html
@@ -156,17 +156,17 @@ gulp.task("fonts", function () {
 });
 
 // clean
-gulp.task("clean", function () {
-  return del(path.clean.blocks, { read: false }),
-  del(path.clean.css, { read: false }),
-  del(path.clean.fonts, { read: false }),
-  del(path.clean.img, { read: false }),
-  del(path.clean.js, { read: false });
-});
+// gulp.task("clean", function () {
+//   return del(path.clean.blocks, { read: false }),
+//   del(path.clean.css, { read: false }),
+//   del(path.clean.fonts, { read: false }),
+//   del(path.clean.img, { read: false }),
+//   del(path.clean.js, { read: false });
+// });
 
 // public
 gulp.task("public", function (fn) {
-  run("clean", "css", "js", "imgmin", "spritesvg", "fonts", fn);
+  run( "css", "js", "imgmin", "spritesvg", "fonts", fn);
 });
 
 // server
