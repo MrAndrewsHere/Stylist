@@ -47,7 +47,6 @@ Route::post('delete_order','ClientController@delete_order');
 Route::post('/save_info', 'StylistController@store');
 Route::post('/saveinfo', 'ClientController@store');
 
-Route::get('/', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 
