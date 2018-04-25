@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Message;
 use App\Events\MessageSent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -20,7 +22,7 @@ class ChatsController extends Controller
    */
   public function index()
   {
-//    return view('chat');
+    return view('chat');
   }
 
   /**
