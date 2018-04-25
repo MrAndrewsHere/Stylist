@@ -32,7 +32,7 @@ Route::get('/social', 'HomeController@social');
 Route::get('/contacts', 'WelcomeControllerTo@contacts');
 Route::get('/answers', 'WelcomeControllerTo@answers');
 Route::get('/stylists', 'WelcomeControllerTo@stylists');
-Route::get('/services', 'WelcomeControllerTo@services');
+Route::get('/services/{category}', 'WelcomeControllerTo@services');
 Route::get('/service-page/{id}', 'WelcomeControllerTo@service_page');
 Route::post('/save_portfolio', 'HomeController@save_portfolio');
 Route::get('/stylist_profile/{id}', 'WelcomeControllerTo@stylist_profile');

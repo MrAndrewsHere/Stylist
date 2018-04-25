@@ -23,29 +23,29 @@
       </p>
       <div class="infotmation__categories">
         <div class="category">
-          <img src="img/category/online-services.jpg" alt="онлайн-услуги" class="category__image">
-          <a class="category__link" href="">Онлайн услуги</a>
-          <p class="category__description">
+          <a href="/services/Онлайн услуги"><img src="img/category/online-services.jpg" alt="онлайн-услуги" class="category__image"></a>
+          <a href="/services/Онлайн услуги" class="category__link" href="">Онлайн услуги</a>
+          <p  class="category__description">
             Узнайте все о «своём» гардеробе, типе внешности, цветах, фасонах, получите оптимальные рекомендации онлайн в любом удобном для вас месте. 
           </p>
         </div>
         <div class="category">
-          <img src="img/category/wedding.jpeg" alt="онлайн-услуги" class="category__image">
-          <a class="category__link" href="">Особый случай</a>
+          <a href="/services/Особый случай"><img src="img/category/wedding.jpeg" alt="онлайн-услуги" class="category__image"></a>
+          <a href="/services/Особый случай" class="category__link" href="">Особый случай</a>
           <p class="category__description">
             Хотите получить новый стильный образ и сэкономить время на поиске идеальных вещей? Образ для вашего особого случая доверьте стилисту! Блистайте, наслаждайтесь событием или отпуском!
           </p>
         </div>
         <div class="category">
-          <img src="img/category/shopping.jpg" alt="онлайн-услуги" class="category__image">
-          <a class="category__link" href="">Шоппинг-сопровождение</a>
+          <a href="/services/Шоппинг-сопровождение"><img src="img/category/shopping.jpg" alt="онлайн-услуги" class="category__image"></a>
+          <a href="/services/Шоппинг-сопровождение" class="category__link" href="">Шоппинг-сопровождение</a>
           <p class="category__description">
             Творческая помощь в выборе одежды — это огромная экономия личных средств. Эффективный шоппинг-маршрут индивидуально для вас, согласно вашему бюджету, запросу, целям, пожеланиям.
           </p>
         </div>
         <div class="category">
-          <img src="img/category/style-solution.jpg" alt="онлайн-услуги" class="category__image">
-          <a class="category__link" href="">Разбор стилевого решения</a>
+          <a href="/services/Разбор стилевого решения"><img src="img/category/style-solution.jpg" alt="онлайн-услуги" class="category__image"></a>
+          <a href="/services/Разбор стилевого решения" class="category__link" href="">Разбор стилевого решения</a>
           <p class="category__description">
             Каждый человек уникален, и не существует на свете другого человека, в точности похожего на Вас. Получите свою личную концепцию стиля с учетом всех характеристик.
           </p>

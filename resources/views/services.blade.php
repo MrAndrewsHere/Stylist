@@ -7,15 +7,15 @@
     <h1 class="section__title">Наши услуги</h1>
     <div class="container">
       <div class="services__filters" id="sort">
-        <a class="btn btn--filter" type="button" onclick="OnLoad(this)" value="0">Все</a>
-        <button type="button" onclick="OnLoad(this)" id="shopping" value="1" class="btn btn--filter btn--filter-non-active">Шоппинг</button>
-        <button type="button" onclick="OnLoad(this)"  value="2" class="btn btn--filter btn--filter-non-active">Стилевое решение</button>
-        <button  type="button" onclick="OnLoad(this)"  value="3" class="btn btn--filter btn--filter-non-active">Особый случай</button>
-        <button type="button" onclick="OnLoad(this)"   value="4" class="btn btn--filter btn--filter-non-active">Онлайн услуги</button>
+        <a href="/services/all" class="btn btn--filter">Все</a>
+        <a href="/services/Шоппинг-сопровождение" class="btn btn--filter">Шоппинг</a>
+        <a href="/services/Разбор стилевого решения" class="btn btn--filter">Стилевое решение</a>
+        <a href="/services/Особый случай" class="btn btn--filter">Особый случай</a>
+        <a href="/services/Онлайн услуги" class="btn btn--filter">Онлайн услуги</a>
       </div>
       <span>@if(Session::has('success')) {{Session::get('success')}} @endif</span>
-      {{--@if(isset($services))--}}
-      @foreach(\App\Service::all() as $service)
+      @if(isset($Categoryservices))
+      @foreach($Categoryservices as $service)
         <div class="card card__margin">
           <div class="card__photo-block card__photo-block--service">
             <img class="card__photo card__photo--service" src="{{$service->picture}}" alt="стилист"/>
@@ -50,9 +50,11 @@
           </div>
         </div>
       @endforeach
+        @endif
     </div>
   </section>
 @endsection
+
 {{--<script>--}}
     {{--function OnLoad(e) {--}}
         {{--var xhr = new XMLHttpRequest(); //Создаём новый объект XMLHttpRequest--}}

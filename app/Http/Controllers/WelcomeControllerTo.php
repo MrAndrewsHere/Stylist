@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Service;
+use App\servicecategory;
 use App\Stylist;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use function Symfony\Component\VarDumper\Dumper\esc;
 
 class WelcomeControllerTo extends Controller
 
@@ -71,9 +73,24 @@ class WelcomeControllerTo extends Controller
     return view('answers');
   }
 
-  public function services()
+  public function services($categoryName)
   {
-    return view('services');
+    if (isset($categoryName))
+    {
+      if($categoryName == 'all')
+      { $Categoryservices = Service::all();
+        return view('services',compact('Categoryservices'));
+      }
+      $services = null;
+      $category = servicecategory::wherename($categoryName);
+      if ( isset($category->first()->id))
+//        $services = Service::where('category_id',$categoryID->first()->id)->get();
+        $Categoryservices =  $category->first()->service;
+      return view('services',compact('Categoryservices'));
+    }
+
+    $Categoryservices = Service::all();
+    return view('services',compact('Categoryservices'));
   }
 
   public function sendmail(Request $request) {
