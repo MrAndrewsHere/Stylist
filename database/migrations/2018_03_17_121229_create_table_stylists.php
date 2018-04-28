@@ -21,7 +21,7 @@ class CreateTableStylists extends Migration
       $table->foreign('category_id')->references('id')->on('stylistcategories');
       $table->string('experience')->nullable();
       $table->string('education')->nullable();
-      $table->string('about')->nullable();
+      $table->text('about')->nullable();
       $table->float('rating')->nullable();
       $table->boolean('Confirmed')->default(0);
       $table->timestamps();

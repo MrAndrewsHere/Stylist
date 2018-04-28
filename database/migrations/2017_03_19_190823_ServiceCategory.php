@@ -16,7 +16,7 @@ class ServiceCategory extends Migration
 		Schema::create('servicecategories', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
-			$table->string('describe');
+			$table->text('describe');
 			$table->string('banner')->nullable;
 			$table->timestamps();
 		});

@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
 			$table->increments('id');
 			$table->string('name')->nullable();
 			$table->longText('description')->nullable();
-			$table->string('HowTo')->nullable();
+			$table->longText('HowTo')->nullable();
 			$table->longText('result')->nullable;
 			$table->float('price')->nullable();
 			$table->string('picture')->nullable();

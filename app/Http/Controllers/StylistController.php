@@ -37,7 +37,7 @@ class StylistController extends Controller
     $data = $request;
     Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
     Auth::user()->stylist->update(['education'=>$data->education,'about' => $data->about, 'education' => $data->education]);
-    if ($request->has('avatar'))
+    if ($request->hasFile('avatar'))
       $picture = $request->file('avatar');
       if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars',$picture))]) !== 0)
         $request->session()->flash('Error', 'Ошибка');
