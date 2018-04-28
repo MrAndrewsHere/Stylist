@@ -49,6 +49,8 @@
           <span class="service-page__price">{{$service->PriceForVip4()}} р / час</span>
         </li>
       </ul>
+      <div class="message-success">Услуга успешно удалена в Мои заказы</div>
+      <div class="message-error">Извините, что-то пошло не так</div>
       <h2 class="service-page__title">Выберите своего стилиста</h2>
 
       <div class="service-page__stylists">

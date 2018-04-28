@@ -72,8 +72,7 @@ class ClientController extends Controller
     $service = Auth::user()->client->orders->where('service_id',$request->input('s'))->first();
     $service->ordered = 1;
     $service->save();
-    $request->session()->flash('success', 'Данные успешно сохранены');
-    return redirect('/my_orders');
+    return "Услуга заказана";
 
   }
 }

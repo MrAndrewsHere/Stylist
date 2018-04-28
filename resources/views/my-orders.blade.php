@@ -14,6 +14,8 @@
         </div>
         <div class="message-success">Услуга успешно удалена</div>
         <div class="message-error">Ошибка</div>
+        <div id = "ordered" class="message-success">Услуга заказана</div>
+        <div id = 'ordered'class="message-error">Ошибка</div>
         <div class="my-orders__item my-orders__item--active">
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
@@ -42,9 +44,10 @@
                   <span>Не подтвержден</span>
                 </li>
                 <li class="orders__buy">
-                  <form method="post" action="{{url('/ordered')}}">
+                  <form class="ordered">
                     {{csrf_field()}}
-                    <button type="submit" name="s" value="{{$order->service_id}}" class="btn btn--action btn--action-buy">
+                    <input hidden name="s" value="{{$order->service_id}}">
+                    <button type="submit" class="btn btn--action btn--action-buy">
                       Заказать
                     </button>
                   </form>
