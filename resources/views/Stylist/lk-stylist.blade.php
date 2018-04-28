@@ -10,39 +10,54 @@
         <div class="lk-stylist__general">
           <div class="card card__margin">
             <div class="card__photo-block">
-              <a href="settings.html">
+              <a href="{{url('/settings')}}">
                 <img class="lk__photo" src={{Auth::user()->avatar}} alt="стилист"/>
               </a>
               <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
             </div>
+
             @if (Auth::user()->role->name == 'stylist')
               <div class="card__description">
-                <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
-                <div class="card__description__text"> {{Auth::user()->stylist->about}}</div>
-                <div class="card__title-second">Класс</div>
-                <div class="card__description__text">{{Auth::user()->stylist->category->name}}</div>
-                <div class="card__title-second">Опыт работы</div>
-                <div class="card__description__text">{{Auth::user()->stylist->experience}}
+                <div class="card__description__title">
+                  {{Auth::user()->name}} {{Auth::user()->second_name}}
                 </div>
-                <div class="card__title-second">Образование</div>
-                <div class="card__description__text">{{Auth::user()->stylist->education}} </div>
+                <div class="card__description__text">
+                  {{Auth::user()->stylist->about}}
+                </div>
+                <div class="card__description__title">Класс:
+                  <span class="card__description__text">
+                    {{Auth::user()->stylist->category->name}}
+                  </span>
+                </div>
+                <div class="card__description__title">Опыт работы:
+                  <span class="card__description__text">
+                    {{Auth::user()->stylist->experience}}
+                    </span>
+                </div>
+                <div class="card__description__title">Образование:
+                  <span class="card__description__text">
+                    {{Auth::user()->stylist->education}}
+                  </span>
+                </div>
               </div>
+
             @else
               <div class="card__description">
                 <div class="card__description">
                   <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
                   <div class="card__description__text"> </div>
-                  <div class="card__title-second">Класс</div>
+                  <div class="card__description__title">Класс</div>
                   <div class="card__description__text"></div>
-                  <div class="card__title-second">Опыт работы</div>
+                  <div class="card__description__title">Опыт работы</div>
                   <div class="card__description__text"></div>
-                  <div class="card__title-second">Образование</div>
+                  <div class="card__description__title">Образование</div>
                   <div class="card__description__text"></div>
                 </div>
               </div>
             @endif
           </div>
         </div>
+
         <div class="lk-stylist__attention info-block__wrapper">
           <h2 class="secondary-title secondary-title--slim">Обратите внимание:</h2>
           <div class="lk-stylist__attention-orders">
@@ -90,6 +105,7 @@
             </div>
           </div>
         </div>
+
         <div class="orders-list">
           <h3 class="secondary-title">Список заказов:</h3>
           <ul class="orders-list__names-list">
@@ -132,39 +148,24 @@
             </ul>
             @if (isset($orders))
               @foreach($orders as $order)
-            <ul class="orders__item">
-              <li class="orders__checkbox">
-                <input class="input-checkbox" type="checkbox"/>
-              </li>
-              <li class="orders__id"><span>{{$order->id}}</span></li>
-              <li class="orders__date-name">
-                <div>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->service->updated_at)->toDateString()}}</div>
-                <div>{{$order->client->user->name}}</div>
-              </li>
-              <li class="orders__service"><span>{{$order->service->name}}</span></li>
-              <li class="orders__status"><span>{{$order->confirmed_by_stylist}}</span></li>
-              <li class="orders__format"><span>online</span></li>
-              <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
-            </ul>
+                <ul class="orders__item">
+                  <li class="orders__checkbox">
+                    <input class="input-checkbox" type="checkbox"/>
+                  </li>
+                  <li class="orders__id"><span>{{$order->id}}</span></li>
+                  <li class="orders__date-name">
+                    <div>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->service->updated_at)->toDateString()}}</div>
+                    <div>{{$order->client->user->name}}</div>
+                  </li>
+                  <li class="orders__service"><span>{{$order->service->name}}</span></li>
+                  <li class="orders__status"><span>{{$order->confirmed_by_stylist}}</span></li>
+                  <li class="orders__format"><span>online</span></li>
+                  <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
+                </ul>
               @endforeach
             @endif
-            {{--<ul class="orders__item">--}}
-              {{--<li class="orders__checkbox">--}}
-                {{--<input class="input-checkbox" type="checkbox"/>--}}
-              {{--</li>--}}
-              {{--<li class="orders__id"><span>000002</span></li>--}}
-              {{--<li class="orders__date-name">--}}
-                {{--<div>21.02.2018</div>--}}
-                {{--<div>Светлана</div>--}}
-              {{--</li>--}}
-              {{--<li class="orders__service"><span>Подбор макияжа</span></li>--}}
-              {{--<li class="orders__format"><span>online</span></li>--}}
-              {{--<li class="orders__count"><span>2</span></li>--}}
-              {{--<li class="orders__class"><span>VIP</span></li>--}}
-              {{--<li class="orders__price"><span>7000</span><span>р</span></li>--}}
-            {{--</ul>--}}
-
           </div>
+
           <div class="orders__take">
             <input class="btn btn--action" type="submit" value="Взять заказ"/>
           </div>

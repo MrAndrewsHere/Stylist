@@ -1036,9 +1036,9 @@ textarea {
 
 .card__description__title {
   color: #000000;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 16px;
   margin-bottom: 10px; }
 
 .card__description__title--center {
@@ -1542,20 +1542,6 @@ textarea {
   background-size: 50%;
   background-repeat: no-repeat; }
 
-.success {
-  margin-top: 20px;
-  width: 100%;
-  color: #000000;
-  border: 1px solid #0e7e77;
-  background-color: #7cbeac;
-  border-radius: 5px;
-  padding: 10px 20px;
-  outline: none;
-  margin-bottom: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px; }
-
 .container-service-page {
   width: 80%;
   margin: 0 auto; }
@@ -1759,42 +1745,3 @@ textarea {
 
 .chat__submit {
   width: 30%; }
-
-
- .chat {
-   list-style: none;
-   margin: 0;
-   padding: 0;
- }
-
-.chat li {
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px dotted #B3A9A9;
-}
-
-.chat li .chat-body p {
-  margin: 0;
-  color: #777777;
-}
-
-.panel-body {
-  overflow-y: scroll;
-  height: 350px;
-}
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-  background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-  background-color: #555;
-}
-

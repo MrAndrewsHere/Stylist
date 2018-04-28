@@ -12,37 +12,25 @@
           <button  class="btn btn--action btn__card">Выбрать стилиста</button>
         </div>
         <div class="card__description">
-          <div class="card__description__title">{{$stylist->user->name}}</div>
-          <!-- <div class="card__review-stars">
-            <label title="ужасно">
-              <input type="radio" id="star-4"/>
-            </label>
-            <label title="плохо">
-              <input type="radio" id="star-3"/>
-            </label>
-            <label title="средне">
-              <input type="radio" id="star-2"/>
-            </label>
-            <label title="хорошо">
-              <input type="radio" id="star-1"/>
-            </label>
-            <label title="отлично">
-              <input type="radio" id="star-0"/>
-            </label>
-          </div> -->
-          <div class="card__description__text">Каждая женщина, как цветок — неповторима. В каждой заложена уникальная
-            природная красота. И я с удовольствием помогу вам ее раскрыть и усилить. Я открою вам коды доступа к вашей
-            внешности. Предлагаю индивидуальный подход именно к вашей внешности и к вашим задачам. Каждый мужчина
-            стремится стать более успешным и желает выглядеть стильно и уверенно. К вашим услугам разные варианты
-            шоппинга, разбор гардероба, консультации по имиджу.
+          <div class="card__description__title">
+          {{Auth::user()->name}} {{Auth::user()->second_name}}
           </div>
-          <div class="card__title-second">Категория</div>
-          <div class="card__description__text">{{$stylist->category->name}}</div>
-          <div class="card__title-second">Опыт работы</div>
-          <div class="card__description__text">{{$stylist->experience}}
+          <div class="card__description__text">
+            {{Auth::user()->stylist->about}}
           </div>
-          <div class="card__title-second">Образование</div>
-          <div class="card__description__text">{{$stylist->education}}</div>
+          <div class="card__description__title">Класс:
+            <span class="card__description__text">
+              {{Auth::user()->stylist->category->name}}
+            </span>
+          </div>
+          <div class="card__description__title">Опыт работы:
+            <span class="card__description__text">
+              {{Auth::user()->stylist->experience}}
+              </span>
+          </div>
+          <div class="card__description__title">Образование:
+            <span class="card__description__text">{{Auth::user()->stylist->education}}</span>
+          </div>
         </div>
       </div>
       <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио <span
