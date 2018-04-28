@@ -64,3 +64,18 @@
 .lk__photo {
   width: 300px;
 }
+
+.lk-stylist__education {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  &-document {
+    margin-right: 40px;
+  }
+}
+
+.lk-stylist__diplom {
+  width: 100px;
+}

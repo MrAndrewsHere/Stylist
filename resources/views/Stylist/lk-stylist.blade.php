@@ -58,6 +58,27 @@
           </div>
         </div>
 
+        <div class="lk-stylist__general">
+          <h2 class="secondary-title">Дипломы и сертификаты</h2>
+          <div class="lk-stylist__education">
+            <div class="lk-stylist__education-document">
+              <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+            </div>
+            <div class="lk-stylist__education-document">
+              <img src="img/diplom2.jpg" alt="диплом" class="lk-stylist__diplom">
+            </div>
+            <div class="lk-stylist__education-document">
+              <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+            </div>
+            <div class="lk-stylist__education-document">
+              <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+            </div>
+            <div class="lk-stylist__education-document">
+              <img src="img/diplom2.jpg" alt="диплом" class="lk-stylist__diplom">
+            </div>
+          </div>
+        </div>
+
         <div class="lk-stylist__attention info-block__wrapper">
           <h2 class="secondary-title secondary-title--slim">Обратите внимание:</h2>
           <div class="lk-stylist__attention-orders">
