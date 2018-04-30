@@ -20,6 +20,11 @@ $(document).ready(function () {
     $('.lk-client__style-seasons-description').hide().eq($(this).index()).show();
   }).eq(0).addClass('.lk-client__style-seasons-description--active');
 
+  $('.btn--filter').click(function (e) {
+    e.preventDefault();
+    $(this).toggleClass('btn--filter-non-active');
+  });
+
 
   $('#contactform').on('submit', function (e) {
     e.preventDefault();
@@ -57,5 +62,19 @@ $(document).ready(function () {
       }
     });
   });
+
+  var filter_select_el = document.getElementById('filterServices');
+  var items_el = document.getElementById('services');
+
+  filter_select_el.onchange = function () {
+    var items = items_el.getElementsByClassName('card');
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].classList.contains(this.value) || items[i].classList.contains('all')) {
+        items[i].style.display = 'flex';
+      } else {
+        items[i].style.display = 'none';
+      }
+    }
+  };
 
 });
