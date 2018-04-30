@@ -6,7 +6,7 @@
   <section class="section section__home">
     <div class="container-service-page">
       <h1 class="section__title">{{$service->name}}</h1>
-      <img class="service-page__photo" src="{{$service->category->first()->banner}}" alt="шоппинг">
+      <img class="service-page__photo" src="{{$service->picture}}" alt="шоппинг">
       <div class="service-page__description">
         <p>{{$service->description}}</p>
       </div>
@@ -49,7 +49,7 @@
           <span class="service-page__price">{{$service->PriceForVip4()}} р / час</span>
         </li>
       </ul>
-      <div class="message-success">Услуга успешно удалена в Мои заказы</div>
+      <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif </div>
       <div class="message-error">Извините, что-то пошло не так</div>
       <h2 class="service-page__title">Выберите своего стилиста</h2>
 

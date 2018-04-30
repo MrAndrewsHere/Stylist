@@ -8,7 +8,7 @@
       <h1 class="section__title">Настройки</h1>
       @if(Session::has('success'))
       <div class="success">
-        Настройки успешно сохранены 
+       {{Session::get('success')}}
       </div>
       @endif
 

@@ -12,10 +12,8 @@
           <a class="link-tab link-active" href="#">Новые заказы</a>
           <a class="link-tab" href="#">История заказов</a>
         </div>
-        <div class="message-success">Услуга успешно удалена</div>
+        <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif </div>
         <div class="message-error">Ошибка</div>
-        <div id = "ordered" class="message-success">Услуга заказана</div>
-        <div id = 'ordered'class="message-error">Ошибка</div>
         <div class="my-orders__item my-orders__item--active">
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
