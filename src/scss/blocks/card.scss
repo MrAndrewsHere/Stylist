@@ -88,6 +88,8 @@
 .card__choose-price {
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
 
   &-block {
     width: 150px;

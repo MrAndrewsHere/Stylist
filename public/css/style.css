@@ -423,8 +423,10 @@ textarea {
   border-radius: 4px; }
 
 .btn--filter {
+  min-width: 142px;
   padding: 10px 15px;
   border-radius: 25px;
+  text-align: center;
   color: #fff;
   font-weight: 700;
   font-size: 12px;
@@ -1078,7 +1080,9 @@ textarea {
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto; }
 
 .card__choose-price-block {
   width: 150px;
@@ -1630,6 +1634,16 @@ textarea {
 .service-page__stylist-status {
   font-weight: bold;
   margin: 10px 0; }
+
+.services__filters {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
 
 .message-success,
 .message-error {
