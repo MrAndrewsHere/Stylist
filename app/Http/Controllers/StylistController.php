@@ -35,17 +35,26 @@ class StylistController extends Controller
   protected function store(Request $request)
   {
     $data = $request;
-    Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
-    Auth::user()->stylist->update(['education'=>$data->education,'about' => $data->about, 'education' => $data->education]);
-    if ($request->hasFile('avatar'))
-      $picture = $request->file('avatar');
+
+    Auth::user() -> update ([
+      'name' => $data -> name,
+      'second_name' => $data -> second_name,
+      'city' => $data -> city,
+    ]);
+
+    Auth::user() -> stylist -> update([
+      'education' => $data -> education,
+      'about' => $data -> about
+    ]);
+
+    if ($request->hasFile('avatar')) {
+      $picture = $request -> file('avatar');
+
       if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars',$picture))]) !== 0)
         $request->session()->flash('Error', 'Ошибка');
+    }
+
     $request->session()->flash('success', 'Данные успешно сохранены');
     return redirect('/settings');
-
   }
-
-
-
 }

@@ -88,10 +88,14 @@
 .btn--edit {
   display: flex;
   justify-content: center;
-  background-color: #eee;
+  background-color: #ddd;
   color: $color-text;
   padding: 10px 20px;
   border-radius: 4px;
+
+  &:hover {
+    background-color: #ccc;
+  }
 }
 
 .btn--filter {
@@ -99,13 +103,14 @@
   padding: 10px 15px;
   border-radius: 25px;
   text-align: center;
-  color: #fff;
+  color: $color-accent;
   font-weight: 700;
   font-size: 12px;
-  background-color: $color-accent;
+  border: 2px solid $color-accent;
 
   &:hover {
     background-color: $color-accent-dark;
+    color: white;
   }
 
   &-non-active {

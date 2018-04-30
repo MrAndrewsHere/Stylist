@@ -59,7 +59,12 @@ class ClientController extends Controller
   protected function store(Request $request)
   {
     $data = $request;
-    Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
+
+    Auth::user()->update([
+      'name' => $data->name,
+      'second_name' => $data->second_name,
+      'city' => $data -> city
+    ]);
     if ($request->hasFile('avatar')) {
       $picture = $request->file('avatar');
       try

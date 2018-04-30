@@ -27,6 +27,9 @@
           <label>Электронная почта
             <input class="form__input" type="email" value="{{$currentUser->email}}" disabled="true"/>
           </label>
+          <label>Город
+            <input class="form__input" type="text" name="city" value="{{$currentUser->city}}"/>
+          </label>
           <label>Обо мне
             <textarea name="about" class="form__input" cols="30" rows="10">{{$currentUser->stylist->about}}</textarea>
           </label>

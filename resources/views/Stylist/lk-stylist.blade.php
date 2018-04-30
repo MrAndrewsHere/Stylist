@@ -29,14 +29,14 @@
                     {{Auth::user()->stylist->category->name}}
                   </span>
                 </div>
-                <div class="card__description__title">Опыт работы:
-                  <span class="card__description__text">
-                    {{Auth::user()->stylist->experience}}
-                    </span>
-                </div>
                 <div class="card__description__title">Образование:
                   <span class="card__description__text">
                     {{Auth::user()->stylist->education}}
+                  </span>
+                </div>
+                <div class="card__description__title">Город:
+                  <span class="card__description__text">
+                    {{Auth::user()->city}}
                   </span>
                 </div>
               </div>
