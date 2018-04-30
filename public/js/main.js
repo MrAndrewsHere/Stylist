@@ -20,10 +20,7 @@ $(document).ready(function () {
     $(".lk-client__style-seasons-description").hide().eq($(this).index()).show();
   }).eq(0).addClass(".lk-client__style-seasons-description--active");
 
-  $(".btn--filter").click(function (e) {
-    e.preventDefault();
-    $(this).toggleClass("btn--filter-non-active");
-  });
+
 
 
   $("#contactform").on("submit", function (e) {

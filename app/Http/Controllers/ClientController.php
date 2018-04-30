@@ -35,7 +35,8 @@ class ClientController extends Controller
     {
       $order = Order::find($request->input('id'));
       $order->delete();
-      return 'OK';
+      $request->session()->flash('success', 'Услуга удалена');
+      return ;
     }
     catch (\Exception $exception)
     { }
@@ -49,7 +50,8 @@ class ClientController extends Controller
     $stylist = $service->stylists->find($request->input('stylist_id'));
       if($stylist !== null && $service !== null) {
         Order::create(['client_id' => Auth::user()->client->id, 'service_id' => $service->id, 'stylist_id' => $stylist->id, 'price' => $service->priceForStylist($stylist)]);
-        return $success = 'Услуга добавлена';
+        $request->session()->flash('success', 'Услуга добавлена');
+        return ;
       }
 
     return $error = 'Извините, что-то пошло не так';
@@ -60,8 +62,18 @@ class ClientController extends Controller
     Auth::user()->update(['name' => $data->name, 'second_name' => $data->second_name,]);
     if ($request->hasFile('avatar')) {
       $picture = $request->file('avatar');
-      if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))]) !== 0)
-        $request->session()->flash('Error', 'Ошибка');
+      try
+      {
+        if(Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))])==0)
+        {$request->session()->flash('Error', 'Ошибка');
+        return redirect('/settings');
+        }
+      }
+      catch (Exeption $exception)
+      {$request->session()->flash('Error', 'Ошибка');
+        return redirect('/settings');
+        }
+
     }
     $request->session()->flash('success', 'Данные успешно сохранены');
     return redirect('/settings');
@@ -72,7 +84,8 @@ class ClientController extends Controller
     $service = Auth::user()->client->orders->where('service_id',$request->input('s'))->first();
     $service->ordered = 1;
     $service->save();
-    return "Услуга заказана";
+    $request->session()->flash('success', 'Услуга заказана');
+    return ;
 
   }
 }
