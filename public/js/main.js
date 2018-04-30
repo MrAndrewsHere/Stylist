@@ -21,8 +21,8 @@ $(document).ready(function () {
   }).eq(0).addClass(".lk-client__style-seasons-description--active");
 
   $(".btn--filter").click(function (e) {
-    //e.preventDefault();
-    //$(this).toggleClass("btn--filter-non-active");
+    e.preventDefault();
+    $(this).toggleClass("btn--filter-non-active");
   });
 
 
@@ -62,37 +62,5 @@ $(document).ready(function () {
       }
     });
   });
-    $(".add_service_to_client").on("submit", function (e) {
-        e.preventDefault();
-
-        $.ajax({
-            type: "POST",
-            url: "/add_service_to_client",
-            data: $(this).serialize(),
-            success: function () {
-                $(".message-success").css("display", "block");
-                $(".message-success").value(result);
-            },
-            error: function () {
-                $(".message-error").css("display", "block");
-            }
-        });
-    });
-    $(".ordered").on("submit", function (e) {
-        e.preventDefault();
-
-
-        $.ajax({
-            type: "POST",
-            url: "/ordered",
-            data: $(this).serialize(),
-            success: function (result) {
-                $("#ordered").css("display", "block");
-            },
-            error: function () {
-                $(".message-error").css("display", "block");
-            }
-        });
-    });
 
 });

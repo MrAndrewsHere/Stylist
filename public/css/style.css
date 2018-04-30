@@ -1650,6 +1650,17 @@ textarea {
   border: 1px solid #af1616;
   background-color: #fdecec; }
 
+.success {
+  border: 1px solid #e6e6e6;
+  background: #f6f6f6;
+  text-align: center;
+  padding: 15px;
+  margin: 10px 0;
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid #afd4a9;
+  background-color: #effaed; }
+
 .banner {
   background-image: url(../img/banners/banner4.jpg);
   background-size: cover;
