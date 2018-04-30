@@ -63,7 +63,7 @@ $(document).ready(function () {
     });
   });
 
-  var filter_select_el = document.getElementById('filterServices');
+  var filter_select_el = document.getElementById('filter-services');
   var items_el = document.getElementById('services');
 
   filter_select_el.onchange = function () {

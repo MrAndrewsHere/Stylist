@@ -6,7 +6,7 @@
   <section class="section section--services section__home">
     <h1 class="section__title">Наши услуги</h1>
     <div class="container">
-      <select id="filterServices">Выберите категорию
+      <select id="filter-services">Выберите категорию
         <option value="card">Все категории</option>
         <option value="shopping">Шоппинг</option>
         <option value="styleSolution">Стилевое решение</option>
