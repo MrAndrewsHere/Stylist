@@ -10,17 +10,24 @@
         <ul class="stylists__sort">
           <li class="stylists__sort-category">
             <select class="select" name="category">
-              <option value="vip">Vip</option>
-              <option value="first-category">Первой категории</option>
-              <option value="beginner">Начинающий</option>
+              @if (isset($stylistcategories))
+                @foreach($stylistcategories as $category)
+                  <option value={{$category->describe}}>{{$category->name}}</option>
+                  @endforeach
+              @endif
+              {{--<option value="vip">Vip</option>--}}
+              {{--<option value="first-category">Первой категории</option>--}}
+              {{--<option value="beginner">Начинающий</option>--}}
             </select>
           </li>
 
           <li class="stylists__sort-category">
             <select class="select">
-              <option value="five-star">5 звезд</option>
-              <option value="four-star">4 звезды</option>
-              <option value="three-star">3 звезды</option>
+              @if (isset($stylists))
+                @foreach($stylists as $stylist)
+                  <option value="five-star">{{$stylist->user->city}}</option>
+                @endforeach
+              @endif
             </select>
           </li>
         </ul>

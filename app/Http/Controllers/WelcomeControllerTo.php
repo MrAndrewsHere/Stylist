@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Service;
 use App\servicecategory;
 use App\Stylist;
+use App\stylistcategory;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -101,7 +102,9 @@ class WelcomeControllerTo extends Controller
   {
 
 //    $stylists = Stylist::join('users', 'users.id', '=', 'stylists.user_id')->get();
-    $stylists = Stylist::all();
-    return view('stylists', compact('stylists'));
+    $stylists = Stylist::whereConfirmed(1)->get();
+    $stylistcategories = stylistcategory::all();
+  $cities = User::select('city')->distinct()->get();
+    return view('stylists', compact('stylists'),compact('stylistcategories'));
   }
 }

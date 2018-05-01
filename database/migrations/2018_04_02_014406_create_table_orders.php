@@ -21,7 +21,6 @@ class CreateTableOrders extends Migration
         $table->foreign('client_id')->references('id')->on('clients')->onUpdate('cascade')->onDelete('cascade');
         $table->foreign('service_id')->references('id')->on('services')->onUpdate('cascade')->onDelete('cascade');
         $table->foreign('stylist_id')->references('id')->on('stylists')->onUpdate('cascade')->onDelete('cascade');
-        $table->string('format')->default('Оффлайн');
         $table->float('price');
         $table->boolean('confirmed_by_stylist')->default(0);
         $table->date('Confirme_Date')->nullable();

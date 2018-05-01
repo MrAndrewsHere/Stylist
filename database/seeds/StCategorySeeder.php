@@ -15,17 +15,17 @@ class StCategorySeeder extends Seeder
       DB::table('stylistcategories')->insert(
         [ 'id' =>'1',
           'name' => 'VIP стилист',
-          'describe' => 'VIP'
+          'describe' => 'vip'
         ]);
       DB::table('stylistcategories')->insert(
         ['id' =>'3',
           'name' => 'Начинающий стилист',
-          'describe' => 'VIP/4'
+          'describe' => 'beginner'
         ]);
       DB::table('stylistcategories')->insert(
         [ 'id' =>'2',
           'name' => 'Стилист первой категории',
-          'describe' => 'VIP/2'
+          'describe' => 'firstcat'
         ]
       );
     }
