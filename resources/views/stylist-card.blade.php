@@ -13,23 +13,25 @@
         </div>
         <div class="card__description">
           <div class="card__description__title">
-          {{Auth::user()->name}} {{Auth::user()->second_name}}
+          {{$stylist->user->name}} {{$stylist->user->second_name}}
           </div>
           <div class="card__description__text">
-            {{Auth::user()->stylist->about}}
+            {{$stylist->about}}
           </div>
+          @if(isset($stylist->category->name))
           <div class="card__description__title">Класс:
             <span class="card__description__text">
-              {{Auth::user()->stylist->category->name}}
+              {{$stylist->category->name}}
             </span>
           </div>
+          @endif
           <div class="card__description__title">Опыт работы:
             <span class="card__description__text">
-              {{Auth::user()->stylist->experience}}
+              {{$stylist->experience}}
               </span>
           </div>
           <div class="card__description__title">Образование:
-            <span class="card__description__text">{{Auth::user()->stylist->education}}</span>
+            <span class="card__description__text">{{$stylist->education}}</span>
           </div>
         </div>
       </div>

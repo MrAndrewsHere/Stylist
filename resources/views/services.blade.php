@@ -17,7 +17,7 @@
       <div id="services">
       @if(isset($Categoryservices))
         @foreach($Categoryservices as $service)
-          <div class="card card__margin {{ $service -> category }}">
+          <div class="card card__margin {{ $service ->category->first()->name }}">
             <div class="card__photo-block card__photo-block--service">
               <img class="card__photo card__photo--service" src="{{ $service->picture }}" alt="стилист"/>
             </div>
