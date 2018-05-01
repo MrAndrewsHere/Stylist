@@ -553,6 +553,15 @@ textarea {
 .form__input:focus {
   border-color: #7cbeac; }
 
+.select {
+  border: 1px solid #90a4ae;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 10px; }
+
+.select:focus {
+  border-color: #7cbeac; }
+
 .photo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -980,26 +989,18 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+.stylists__sort-category {
+  margin-right: 10px; }
 
 .stylists__service {
   margin-right: 10px; }
 
 .stylists__service:last-child {
   margin-right: 0; }
-
-.stylists__upload {
-  margin-top: 47px;
-  margin-bottom: 37px;
-  text-align: center; }
-
-.stylists__upload-text {
-  text-transform: uppercase;
-  color: #0e7e77;
-  font-size: 14px;
-  font-family: "Open Sans"; }
 
 .card {
   display: -webkit-box;
@@ -1645,16 +1646,6 @@ textarea {
 .service-page__stylist-status {
   font-weight: bold;
   margin: 10px 0; }
-
-.services__filters {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
 
 .message-success,
 .message-error {

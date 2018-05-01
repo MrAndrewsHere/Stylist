@@ -5,7 +5,11 @@
 
 .stylists__sort {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  &-category {
+    margin-right: 10px;
+  }
 }
 
 .stylists__service {
@@ -13,18 +17,5 @@
 
   &:last-child {
     margin-right: 0;
-  }
-}
-
-.stylists__upload {
-  margin-top: 47px;
-  margin-bottom: 37px;
-  text-align: center;
-
-  &-text {
-    text-transform: uppercase;
-    color: $color-accent;
-    font-size: 14px;
-    font-family: "Open Sans";
   }
 }
