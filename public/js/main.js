@@ -47,7 +47,7 @@ $(document).ready(function () {
   $('.delete_order').on('submit', function (e) {
     e.preventDefault();
 
-    var a = this.closest('ul');
+    const a = this.closest('ul');
     a.parentElement.removeChild(a);
 
     $.ajax({
@@ -63,12 +63,12 @@ $(document).ready(function () {
     });
   });
 
-  var filter_select_el = document.getElementById('filter-services');
-  var items_el = document.getElementById('services');
+  const filter_select_el = document.getElementById('filter-services');
+  const items_el = document.getElementById('services');
 
   filter_select_el.onchange = function () {
-    var items = items_el.getElementsByClassName('card');
-    for (var i = 0; i < items.length; i++) {
+    const items = items_el.getElementsByClassName('card');
+    for (let i = 0; i < items.length; i++) {
       if (items[i].classList.contains(this.value) || items[i].classList.contains('all')) {
         items[i].style.display = 'flex';
       } else {
@@ -77,4 +77,4 @@ $(document).ready(function () {
     }
   };
 
-});
+})();

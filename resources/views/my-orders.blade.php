@@ -5,8 +5,8 @@
 @section('content')
   <section class="section section--my-orders section__home">
     <h1 class="section__title">Мои заказы</h1>
-    <h3>@if(Session::has('success')) {{Session::get('success')}} @endif </h3>
     <div class="container-home">
+      <span>@if(Session::has('success')) {{Session::get('success')}} @endif </span>
       <div class="my-orders">
         <div class="my-orders__status">
           <a class="link-tab link-active" href="#">Новые заказы</a>

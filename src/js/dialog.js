@@ -1,24 +1,25 @@
 (function () {
-  var modalAuth = document.querySelector('.modal-auth');
-  var modalRegistration = document.querySelector('.modal-registration');
-  var btnAuth = document.querySelectorAll('.btn--auth');
-  var btnRegistration = document.querySelectorAll('.btn--registration');
-  var closeAuth = document.querySelector('.btn--close-auth');
-  var closeRegistration = document.querySelector('.btn--close-registration');
-  var email = document.querySelector('.input-email');
-  var login = document.querySelector('.input-login');
-  var ESC_CODE = 27;
 
-  var profileMenu = document.querySelector('.nav-profile');
-  var profileMenuBlock = document.querySelector('.nav-profile__menu');
+  const modalAuth = document.querySelector('.modal-auth');
+  const modalRegistration = document.querySelector('.modal-registration');
+  const btnAuth = document.querySelectorAll('.btn--auth');
+  const btnRegistration = document.querySelectorAll('.btn--registration');
+  const closeAuth = document.querySelector('.btn--close-auth');
+  const closeRegistration = document.querySelector('.btn--close-registration');
+  const email = document.querySelector('.input-email');
+  const login = document.querySelector('.input-login');
+  const ESC_CODE = 27;
 
-  var formAuth = document.querySelector('.form-auth');
-  var password = document.querySelector('.input-password');
-  var storage = localStorage.getItem('email');
+  const profileMenu = document.querySelector('.nav-profile');
+  const profileMenuBlock = document.querySelector('.nav-profile__menu');
+
+  const formAuth = document.querySelector('.form-auth');
+  const password = document.querySelector('.input-password');
+  const storage = localStorage.getItem('email');
 
   // открытие модального окна
-  var openDialog = function (btn, modalWindow, inputFocus, inputFocusTwo) {
-    for (var i = 0; i < btn.length; i++) {
+  const openDialog = function (btn, modalWindow, inputFocus, inputFocusTwo) {
+    for (let i = 0; i < btn.length; i++) {
       btn[i].addEventListener('click', function (event) {
         event.preventDefault();
         modalWindow.classList.add('modal-auth-show');
@@ -36,7 +37,7 @@
   openDialog(btnRegistration, modalRegistration, login);
 
   // закрытие модального окна
-  var closeDialog = function (closeModal, modalWindow) {
+  const closeDialog = function (closeModal, modalWindow) {
     closeModal.addEventListener('click', function (event) {
       event.preventDefault();
       modalWindow.classList.remove('modal-auth-show');
@@ -69,20 +70,5 @@
       localStorage.setItem('email', email.value);
     }
   });
-
-  // var formSettings = document.querySelector(".form-settings");
-
-  // formSettings.addEventListener("submit", function () {
-  //   event.preventDefault();
-  //   var node = document.createElement("div");
-  //   node.classList.add("success");
-
-  //   node.textContent = "Изменения успешно сохранены";
-  //   formSettings.appendChild(node);
-
-  //   setTimeout(function () {
-  //     $(node).fadeOut("fast");
-  //   }, 2000);
-  // });
 
 })();

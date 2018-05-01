@@ -1,11 +1,11 @@
 $(document).ready(function () {
   $('.orders__item').on('click', function (evt) {
-    var elem = evt.target;
-    var container = evt.currentTarget;
-    var input = container.querySelector('.input-count');
-    var sum = container.querySelector('.input-price');
-    var count = parseInt(input.getAttribute('data-count'), 10);
-    var price = parseInt(input.getAttribute('data-price'), 10);
+    const elem = evt.target;
+    const container = evt.currentTarget;
+    const input = container.querySelector('.input-count');
+    const sum = container.querySelector('.input-price');
+    let count = parseInt(input.getAttribute('data-count'), 10);
+    const price = parseInt(input.getAttribute('data-price'), 10);
 
     if (elem.classList.contains('minus')) {
       count = count === 1 ? count : (count - 1);
@@ -20,5 +20,6 @@ $(document).ready(function () {
     sum.setAttribute('data-sum', sum.value);
     input.setAttribute('data-count', count);
   });
-});
+
+})();
 
