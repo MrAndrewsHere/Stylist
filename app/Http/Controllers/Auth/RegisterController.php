@@ -81,11 +81,11 @@ class RegisterController extends Controller
       'role_id' => role::where('name', '=', $data['IsStylist'])->first()->id,
     ]);
     if ($data['IsStylist'] == 'stylist') {
-      \App\Stylist::create([
+      \App\stylist::create([
         'user_id' => $user->id,
       ]);
     } else {
-      \App\Client::create([
+      \App\client::create([
         'user_id' => $user->id,
       ]);
     }

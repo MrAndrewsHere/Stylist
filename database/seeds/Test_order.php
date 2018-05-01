@@ -11,6 +11,6 @@ class Test_order extends Seeder
      */
     public function run()
     {
-      factory(App\Client::class,3)->create();
+      factory(App\client::class,3)->create();
     }
 }

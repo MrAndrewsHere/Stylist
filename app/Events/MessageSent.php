@@ -3,7 +3,7 @@
 namespace App\Events;
 
 use App\User;
-use App\Message;
+use App\message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -24,9 +24,9 @@ class MessageSent
   public $user;
 
   /**
-   * Message details
+   * message details
    *
-   * @var Message
+   * @var message
    */
   public $message;
 
@@ -35,7 +35,7 @@ class MessageSent
    *
    * @return void
    */
-    public function __construct(User $user, Message $message)
+    public function __construct(User $user, message $message)
     {
       $this->user = $user;
       $this->message = $message;

@@ -38,15 +38,7 @@ class PortfolioController extends Controller
 	 */
 	public function store(Request $request)
 	{
-//		Auth::user()->update(['picture'=> Storage::putFile($request->file('image'), new File('public/avatars'))]);
-//		return view('lk-stylist');
-
-
-//    	$file = $request->hasFile('before');
-//			$path = $request->file('before')->store('image');
-//			$request->session()->flash('success','Данные успешно сохранены');
-//			return redirect(dump($path));
-
+	  //
 	}
 
 	/**

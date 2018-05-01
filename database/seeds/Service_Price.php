@@ -11,7 +11,7 @@ class Service_Price extends Seeder
    */
   public function run()
   {
-    $services = App\Service::all();
+    $services = App\service::all();
     $categories = App\stylistcategory::all();
     foreach ($services as $service) {
 

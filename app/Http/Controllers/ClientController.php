@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Client;
+use App\client;
 use App\Order;
-use App\Service;
-use App\Stylist;
+use App\service;
+use App\stylist;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,76 +21,81 @@ class ClientController extends Controller
 
   public function lk_client()
   {
-    return view('Client.lk-client');
+    return view('client.lk-client');
   }
 
 
   public function my_style()
   {
-    return view('Client.my-style');
+    return view('client.my-style');
   }
-  protected function delete_order(Request $request)
+
+  protected function delete_order(Request $request) // Удаление заказа из моих заказов
   {
-    try
-    {
+    try {
       $order = Order::find($request->input('id'));
       $order->delete();
       $request->session()->flash('success', 'Услуга удалена');
-      return ;
+      return;
+    } catch (\Exception $exception) {
     }
-    catch (\Exception $exception)
-    { }
 
   }
 
   public function add_service_to_client(Request $request)
   {
 
-      $service = Service::find($request->input('service_id'));
-    $stylist = $service->stylists->find($request->input('stylist_id'));
-      if($stylist !== null && $service !== null) {
-        Order::create(['client_id' => Auth::user()->client->id, 'service_id' => $service->id, 'stylist_id' => $stylist->id, 'price' => $service->priceForStylist($stylist)]);
-        $request->session()->flash('success', 'Услуга добавлена');
-        return ;
-      }
+    $service = service::findorfail($request->input('service_id'));
+    $stylist = $service->stylists->findorfail($request->input('stylist_id'));
 
-    return $error = 'Извините, что-то пошло не так';
+    if ($stylist !== null && $service !== null) {
+      Order::create([
+        'client_id' => Auth::user()->client->id,
+        'service_id' => $service->id,
+        'stylist_id' => $stylist->id,
+        'price' => $service->priceForStylist($stylist)
+      ]);
+      $request->session()->flash('success', 'Услуга добавлена');
+      return;
+    }
+
+    return $request->session()->flash('error', 'Что-то пошло не так');;
   }
-  protected function store(Request $request)
+
+  protected function store(Request $request) // Сохранение настроек клиента
   {
     $data = $request;
 
     Auth::user()->update([
       'name' => $data->name,
       'second_name' => $data->second_name,
-      'city' => $data -> city
+      'city' => $data->city
     ]);
     if ($request->hasFile('avatar')) {
       $picture = $request->file('avatar');
-      try
-      {
-        if(Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))])==0)
-        {$request->session()->flash('Error', 'Ошибка');
-        return redirect('/settings');
+      try {
+        if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))]) == 0) {
+          $request->session()->flash('Error', 'Ошибка');
+          return redirect('/settings');
         }
+      } catch (Exeption $exception) {
+        $request->session()->flash('Error', 'Ошибка');
+        return redirect('/settings');
       }
-      catch (Exeption $exception)
-      {$request->session()->flash('Error', 'Ошибка');
-        return redirect('/settings');
-        }
 
     }
     $request->session()->flash('success', 'Данные успешно сохранены');
     return redirect('/settings');
 
   }
-  protected function ordered(Request $request)
+
+  protected function ordered(Request $request) //Заказ услгуи у стилиста
   {
-    $service = Auth::user()->client->orders->where('service_id',$request->input('s'))->first();
+    $service = Auth::user()->client->orders->where('service_id', $request->input('s'))->first();
     $service->ordered = 1;
     $service->save();
     $request->session()->flash('success', 'Услуга заказана');
-    return ;
+    return;
 
   }
 }

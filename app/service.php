@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class service extends Model
 {
   protected $fillable = ['name', 'category_id', 'description', 'result', 'price'];
 
   public function Stylists()
   {
-    return $this->belongsToMany('App\Stylist');
+    return $this->belongsToMany('App\stylist');
   }
 
   public function category()
@@ -44,7 +44,7 @@ class Service extends Model
     $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', stylistcategory::all()->where('describe','beginner')->first()->id)->withPivot('price');
     return $call->first()->pivot->price;
   }
-  public  function priceForStylist(Stylist $stylist)
+  public  function priceForStylist(stylist $stylist)
   {
     $call = $this->belongsToMany('App\stylistcategory')->wherePivot('stylistcategory_id', $stylist->category->id)->withPivot('price');
     return $call->first()->pivot->price;

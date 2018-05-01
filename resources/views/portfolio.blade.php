@@ -59,7 +59,7 @@
               стать более красивой
             </div>
             <div class="comment">
-              <div class="comment__user-photo"><img src="img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
@@ -88,7 +88,7 @@
               стать более красивой
             </div>
             <div class="comment">
-              <div class="comment__user-photo"><img src="img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="img/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
@@ -117,7 +117,7 @@
               стать более красивой
             </div>
             <div class="comment">
-              <div class="comment__user-photo"><img src="img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала

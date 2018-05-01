@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Stylist;
+use App\stylist;
 use App\User;
 use App\Order;
 use Illuminate\Http\Request;
@@ -29,7 +29,7 @@ class StylistController extends Controller
 
     }
 
-    return view('Stylist.lk-stylist', compact('orders'));
+    return view('stylist.lk-stylist', compact('orders'));
   }
 
   protected function store(Request $request)

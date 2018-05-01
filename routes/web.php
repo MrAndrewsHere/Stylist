@@ -28,7 +28,6 @@ Route::get('/my_orders', 'HomeController@my_orders');
 Route::get('/portfolio', 'HomeController@portfolio');
 Route::get('/test/', 'WelcomeControllerTo@test');
 Route::get('/settings', 'HomeController@settings');
-Route::get('/social', 'HomeController@social');
 Route::get('/contacts', 'WelcomeControllerTo@contacts');
 Route::get('/answers', 'WelcomeControllerTo@answers');
 Route::get('/stylists', 'WelcomeControllerTo@stylists');

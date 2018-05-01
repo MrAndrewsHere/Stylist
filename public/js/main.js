@@ -5,7 +5,7 @@ $(document).ready(function () {
     arrows: true
   });
 
-  $('.slider-tips').slick({
+  $('.slider-my-style').slick({
     dots: false,
     arrows: true
   });
