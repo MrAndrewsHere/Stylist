@@ -103,6 +103,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         ),
         'E' => 
         array (
+            'ElForastero\\Transliterate\\' => 26,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
@@ -297,6 +298,10 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'ElForastero\\Transliterate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/elforastero/transliterate/src',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
@@ -391,7 +396,6 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
     );
 
     public static $classMap = array (
-        'App\\Client' => __DIR__ . '/../..' . '/app/Client.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\MessageSent' => __DIR__ . '/../..' . '/app/Events/MessageSent.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -407,7 +411,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'App\\Http\\Controllers\\PortfolioController' => __DIR__ . '/../..' . '/app/Http/Controllers/PortfolioController.php',
         'App\\Http\\Controllers\\StylistController' => __DIR__ . '/../..' . '/app/Http/Controllers/StylistController.php',
         'App\\Http\\Controllers\\UploadController' => __DIR__ . '/../..' . '/app/Http/Controllers/UploadController.php',
-        'App\\Http\\Controllers\\WelcomeControllerTo' => __DIR__ . '/../..' . '/app/Http/Controllers/WelcomeControllerTo.php',
+        'App\\Http\\Controllers\\WelcomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/WelcomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
         'App\\Http\\Middleware\\Client' => __DIR__ . '/../..' . '/app/Http/Middleware/Client.php',
@@ -416,19 +420,20 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'App\\Http\\Middleware\\Stylist' => __DIR__ . '/../..' . '/app/Http/Middleware/Stylist.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Mail\\OrderShipped' => __DIR__ . '/../..' . '/app/Mail/OrderShipped.php',
-        'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
         'App\\Order' => __DIR__ . '/../..' . '/app/order.php',
-        'App\\Portfolio' => __DIR__ . '/../..' . '/app/Portfolio.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
-        'App\\Service' => __DIR__ . '/../..' . '/app/Service.php',
-        'App\\Stylist' => __DIR__ . '/../..' . '/app/Stylist.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\client' => __DIR__ . '/../..' . '/app/client.php',
+        'App\\message' => __DIR__ . '/../..' . '/app/message.php',
+        'App\\portfolio' => __DIR__ . '/../..' . '/app/portfolio.php',
         'App\\role' => __DIR__ . '/../..' . '/app/role.php',
+        'App\\service' => __DIR__ . '/../..' . '/app/service.php',
         'App\\servicecategory' => __DIR__ . '/../..' . '/app/servicecategory.php',
+        'App\\stylist' => __DIR__ . '/../..' . '/app/stylist.php',
         'App\\stylistcategory' => __DIR__ . '/../..' . '/app/stylistcategory.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
@@ -915,6 +920,9 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'Egulias\\EmailValidator\\Warning\\QuotedString' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/QuotedString.php',
         'Egulias\\EmailValidator\\Warning\\TLD' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/TLD.php',
         'Egulias\\EmailValidator\\Warning\\Warning' => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator/Warning/Warning.php',
+        'ElForastero\\Transliterate\\Transliteration' => __DIR__ . '/..' . '/elforastero/transliterate/src/Transliteration.php',
+        'ElForastero\\Transliterate\\TransliterationFacade' => __DIR__ . '/..' . '/elforastero/transliterate/src/TransliterationFacade.php',
+        'ElForastero\\Transliterate\\TransliterationServiceProvider' => __DIR__ . '/..' . '/elforastero/transliterate/src/TransliterationServiceProvider.php',
         'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Inn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Inn.php',

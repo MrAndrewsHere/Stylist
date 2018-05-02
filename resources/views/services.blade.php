@@ -27,9 +27,9 @@
               <div class="card__description__text"><b>Результат </b><span
                   class="card__description__result">{{$service->result}}</span></div>
               <div class="card__choose-price">
-                <button type="submit" class="btn btn--action btn--action-small">
+                <a href="{{url('/service-page',$service->id)}}" class="btn btn--action btn--action-small">
                   Подробнее
-                </button>
+                </a>
               </div>
             </div>
           </div>

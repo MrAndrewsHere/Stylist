@@ -16,7 +16,8 @@
           {{$stylist->user->name}} {{$stylist->user->second_name}}
           </div>
           <div class="card__description__text">
-            {{$stylist->about}}
+            {!! nl2br(e($stylist->about))!!}
+
           </div>
           @if(isset($stylist->category->name))
           <div class="card__description__title">Класс:

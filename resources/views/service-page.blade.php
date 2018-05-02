@@ -63,16 +63,12 @@
               <span class="service-page__stylist-status">{{$stylist->category->name}}</span>
               <form class="add_service_to_client">
                 {{csrf_field()}}
-                <input hidden name="stylist_id" value="{{$stylist->id}}">
-                <input hidden name="service_id" value="{{$service->id}}">
-              <button class="btn btn--action btn--action-super-small">Выбрать</button>
+                <input type="hidden" name="stylist_id" value="{{$stylist->id}}">
+                <input type="hidden" name="service_id" value="{{$service->id}}">
+                <button class="btn btn--action btn--action-super-small">Выбрать</button>
               </form>
             </div>
           @endforeach
-        @else
-          <div class="service-page__stylist">
-            <span class="service-page__stylist-name">Услуга не предоставляется</span>
-          </div>
         @endif
       </div>
 

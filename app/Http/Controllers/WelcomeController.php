@@ -9,10 +9,12 @@ use App\stylistcategory;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Input;
 use function Symfony\Component\VarDumper\Dumper\esc;
+use ElForastero\Transliterate;
 
-class WelcomeControllerTo extends Controller
+class WelcomeController extends Controller
 
 {
   public function __construct()
@@ -42,14 +44,10 @@ class WelcomeControllerTo extends Controller
 
   public function service_page($id)
   {
-    $service = null;
-    try {
-      $service = service::find($id);
-      $stylists = $service->stylists;
-    } catch (\ErrorException $exception) {
-
-    }
+    $service = service::findorfail($id);
+    $stylists = $service->stylists;
     return view('service-page', compact('service'), compact('stylists'));
+
   }
 
   public function take(Request $request)
@@ -102,7 +100,16 @@ class WelcomeControllerTo extends Controller
   {
     $stylists = stylist::whereConfirmed(1)->get();
     $stylistcategories = stylistcategory::all();
-    $cities = User::select('city')->distinct()->get();
-    return view('stylists', compact('stylists'), compact('stylistcategories'));
+    $cities = collect([]);
+    foreach ($stylists as $stylist) {
+      $city = $stylist->user->city;
+
+      $cities->push(
+        ['RU' => $city, 'Translit' => Transliterate\Transliteration::make($city)]
+      );
+    }
+    $cities = $cities->unique();
+    $cities->values()->all();
+    return view('stylists', compact('stylists'), compact('stylistcategories'))->with('cities', $cities);
   }
 }
