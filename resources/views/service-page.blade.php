@@ -49,28 +49,31 @@
           <span class="service-page__price">{{$service->PriceForVip4()}} р / час</span>
         </li>
       </ul>
+
+      @if(Auth::check())
       <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif </div>
       <div class="message-error">Извините, что-то пошло не так</div>
       <h2 class="service-page__title">Выберите своего стилиста</h2>
 
-      <div class="service-page__stylists">
-        @if(isset($stylists))
-          @foreach($stylists as $stylist)
-            <div class="service-page__stylist">
-              <img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}  " alt="">
-              <span class="service-page__stylist-stars">★★★</span>
-              <span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>
-              <span class="service-page__stylist-status">{{$stylist->category->name}}</span>
-              <form class="add_service_to_client">
-                {{csrf_field()}}
-                <input type="hidden" name="stylist_id" value="{{$stylist->id}}">
-                <input type="hidden" name="service_id" value="{{$service->id}}">
-                <button class="btn btn--action btn--action-super-small">Выбрать</button>
-              </form>
-            </div>
-          @endforeach
-        @endif
-      </div>
+        <div class="service-page__stylists">
+          @if(isset($stylists))
+            @foreach($stylists as $stylist)
+              <div class="service-page__stylist">
+                <img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}  " alt="">
+                <span class="service-page__stylist-stars">★★★</span>
+                <span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>
+                <span class="service-page__stylist-status">{{$stylist->category->name}}</span>
+                <form class="add_service_to_client">
+                  {{csrf_field()}}
+                  <input type="hidden" name="stylist_id" value="{{$stylist->id}}">
+                  <input type="hidden" name="service_id" value="{{$service->id}}">
+                  <button class="btn btn--action btn--action-super-small">Выбрать</button>
+                </form>
+              </div>
+            @endforeach
+          @endif
+        </div>
+      @endif
 
     </div>
   </section>

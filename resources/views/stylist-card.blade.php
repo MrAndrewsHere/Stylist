@@ -26,14 +26,6 @@
             </span>
           </div>
           @endif
-          <div class="card__description__title">Опыт работы:
-            <span class="card__description__text">
-              {{$stylist->experience}}
-              </span>
-          </div>
-          <div class="card__description__title">Образование:
-            <span class="card__description__text">{{$stylist->education}}</span>
-          </div>
         </div>
       </div>
       <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио <span
