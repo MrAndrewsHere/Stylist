@@ -13,23 +13,25 @@
         </div>
         <div class="card__description">
           <div class="card__description__title">
-          {{$stylist->user->name}} {{$stylist->user->second_name}}
+            {{$stylist->user->name}}
+            {{$stylist->user->second_name}}
           </div>
           <div class="card__description__text">
             {!! nl2br(e($stylist->about))!!}
+          </div>
 
-          </div>
           @if(isset($stylist->category->name))
-          <div class="card__description__title">Класс:
-            <span class="card__description__text">
-              {{$stylist->category->name}}
-            </span>
-          </div>
+            <div class="card__description__title">
+              Класс:
+              <span class="card__description__text">
+                {{$stylist->category->name}}
+              </span>
+            </div>
           @endif
+          
         </div>
       </div>
-      <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио <span
-          class="card__count">(10)</span></a>
+      <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио</a>
       <div class="slider slider--portfolio">
         <div class="slide">
           <div class="slide__wrapper">
