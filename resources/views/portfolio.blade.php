@@ -48,25 +48,25 @@
             </div>
           </div>
           <div class="portfolio-item__text">
-            <div class="card__title-second">Дата</div>
+            <div class="comment__user-text-title">Дата</div>
             <div class="card__description__text">22 сентября 2016</div>
-            <div class="card__title-second">Цель клиента</div>
+            <div class="comment__user-text-title">Цель клиента</div>
             <div class="card__description__text">Сделать правильный образ на работу и перестать быть серой мышкой</div>
-            <div class="card__title-second">Заказанные услуги</div>
+            <div class="comment__user-text-title">Заказанные услуги</div>
             <div class="card__description__text">Подбор макияжа, Подбор стиля</div>
-            <div class="card__title-second">Комментарии стилиста</div>
+            <div class="comment__user-text-title">Комментарии стилиста</div>
             <div class="card__description__text">Клиент был очень не уверен в себе мы помогли ему раскрепоститься и
               стать более красивой
             </div>
-            <div class="comment">
+            <!-- <div class="comment">
               <div class="comment__user-photo"><img src="img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
-                <div class="comment__user-text-title">Марина, 35 лет</div>
+                <div class="comment__user-text-title">Марина</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
                   мне новый стиль! Теперь у меня отличное портфолио из моих стилей.
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="portfolio-item portfolio__margin">
@@ -77,25 +77,25 @@
             </div>
           </div>
           <div class="portfolio-item__text">
-            <div class="card__title-second">Дата</div>
+            <div class="comment__user-text-title">Дата</div>
             <div class="card__description__text">22 сентября 2016</div>
-            <div class="card__title-second">Цель клиента</div>
+            <div class="comment__user-text-title">Цель клиента</div>
             <div class="card__description__text">Сделать правильный образ на работу и перестать быть серой мышкой</div>
-            <div class="card__title-second">Заказанные услуги</div>
+            <div class="comment__user-text-title">Заказанные услуги</div>
             <div class="card__description__text">Подбор макияжа, Подбор стиля</div>
-            <div class="card__title-second">Комментарии стилиста</div>
+            <div class="comment__user-text-title">Комментарии стилиста</div>
             <div class="card__description__text">Клиент был очень не уверен в себе мы помогли ему раскрепоститься и
               стать более красивой
             </div>
-            <div class="comment">
+            <!-- <div class="comment">
               <div class="comment__user-photo"><img src="img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
-                <div class="comment__user-text-title">Марина, 35 лет</div>
+                <div class="comment__user-text-title">Марина</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
                   мне новый стиль! Теперь у меня отличное портфолио из моих стилей.
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="portfolio-item portfolio__margin">
@@ -106,25 +106,25 @@
             </div>
           </div>
           <div class="portfolio-item__text">
-            <div class="card__title-second">Дата</div>
+            <div class="comment__user-text-title">Дата</div>
             <div class="card__description__text">22 сентября 2016</div>
-            <div class="card__title-second">Цель клиента</div>
+            <div class="comment__user-text-title">Цель клиента</div>
             <div class="card__description__text">Сделать правильный образ на работу и перестать быть серой мышкой</div>
-            <div class="card__title-second">Заказанные услуги</div>
+            <div class="comment__user-text-title">Заказанные услуги</div>
             <div class="card__description__text">Подбор макияжа, Подбор стиля</div>
-            <div class="card__title-second">Комментарии стилиста</div>
+            <div class="comment__user-text-title">Комментарии стилиста</div>
             <div class="card__description__text">Клиент был очень не уверен в себе мы помогли ему раскрепоститься и
               стать более красивой
             </div>
-            <div class="comment">
+            <!-- <div class="comment">
               <div class="comment__user-photo"><img src="img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
-                <div class="comment__user-text-title">Марина, 35 лет</div>
+                <div class="comment__user-text-title">Марина</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
                   мне новый стиль! Теперь у меня отличное портфолио из моих стилей.
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
