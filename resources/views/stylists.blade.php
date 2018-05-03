@@ -54,7 +54,7 @@
                 <li class="card__photo-list__block"><img class="card__photo-list__photo" src="img/client3.jpg" alt=""/>
                 </li>
               </ul>
-                <a  href="{{ url('/stylist_profile', $stylist->id) }}"class="btn btn--action btn--action-small">
+                <a href="{{ url('/stylist_profile', $stylist->id) }}"class="btn btn--action btn--action-small">
                   Посмотреть профиль
                 </a>
             </div>
