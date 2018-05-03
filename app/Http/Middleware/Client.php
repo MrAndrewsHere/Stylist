@@ -19,6 +19,6 @@ class Client
     if (Auth::user()->role->name == 'client' || Auth::user()->role->name == 'admin')
       return $next($request);
     else
-      return redirect($request->getBaseUrl());
+      return back();
   }
 }

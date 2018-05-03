@@ -19,6 +19,8 @@ class CreatePortfoliosTable extends Migration
             $table->foreign('stylist_id')->references('id')->on('stylists')->onDelete('cascade');
             $table->text('client_purpose')->nullable();
             $table->string('comment')->nullable();
+            $table->string('picture_before')->nullable();
+            $table->string('picture_after')->nullable();
             $table->timestamps();
         });
     }

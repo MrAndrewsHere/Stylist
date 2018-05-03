@@ -1,6 +1,16 @@
 <header class="header-home__margin">
   <div class="container-home">
     <div class="header-home"><a class="phone-number header__link" href="tel:+7(843)2922222">+7 (843) 292-22-22</a>
+      @if ($errors->has('password'))
+        <span class="help-block">
+          <strong>{{ $errors->first('password') }}</strong>
+        </span>
+      @endif
+      @if ($errors->has('email'))
+        <span class="help-block">
+          <strong>{{ $errors->first('email') }}</strong>
+        </span>
+      @endif
       @if (Auth::guest())
         <div class="enter-panel-guest">
           <button class="btn btn--auth">Вход</button>
@@ -9,7 +19,7 @@
         </div>@else
         <div class="enter-panel-stylist">
           @if (Auth::user()->role->name !== 'client' )
-          <a class="nav-link" href="/portfolio">Мое портфолио</a>
+            <a class="nav-link" href="/portfolio">Мое портфолио</a>
           @endif
           <a class="nav-link" href="/my_orders">Мои заказы</a>
           <a class="nav-link nav-profile" href="#">

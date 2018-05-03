@@ -42,11 +42,11 @@ class ClientController extends Controller
 
   }
 
-  public function add_service_to_client(Request $request)
+  protected function add_service_to_client(Request $request)
   {
 
-    $service = service::findorfail($request->input('service_id'));
-    $stylist = $service->stylists->findorfail($request->input('stylist_id'));
+    $service = service::find($request->input('service_id'));
+    $stylist = $service->stylists->find($request->input('stylist_id'));
 
     if ($stylist !== null && $service !== null) {
       Order::create([
@@ -55,11 +55,10 @@ class ClientController extends Controller
         'stylist_id' => $stylist->id,
         'price' => $service->priceForStylist($stylist)
       ]);
-      $request->session()->flash('success', 'Услуга добавлена');
-      return;
+      return $request->session()->flash('success', 'Услуга добавлена');;
     }
 
-    return $request->session()->flash('error', 'Что-то пошло не так');;
+    return $request->session()->flash('error', 'Ошибка');;
   }
 
   protected function store(Request $request) // Сохранение настроек клиента
@@ -91,11 +90,10 @@ class ClientController extends Controller
 
   protected function ordered(Request $request) //Заказ услгуи у стилиста
   {
-    $service = Auth::user()->client->orders->where('service_id', $request->input('s'))->first();
-    $service->ordered = 1;
-    $service->save();
-    $request->session()->flash('success', 'Услуга заказана');
-    return;
+    $order = Auth::user()->client->orders->find($request->input('order_id'))->first();
+    $order->ordered = 1;
+    $order->save();
+    return $request->session()->flash('success', 'Услуга заказана');
 
   }
 }

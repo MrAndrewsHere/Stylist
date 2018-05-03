@@ -6,14 +6,13 @@
   <section class="section section--my-orders section__home">
     <h1 class="section__title">Мои заказы</h1>
     <div class="container-home">
-      <span>@if(Session::has('success')) {{Session::get('success')}} @endif </span>
       <div class="my-orders">
         <div class="my-orders__status">
           <a class="link-tab link-active" href="#">Новые заказы</a>
           <a class="link-tab" href="#">История заказов</a>
         </div>
         <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif </div>
-        <div class="message-error">Ошибка</div>
+        <div class="message-error">@if(Session::has('error')) {{Session::get('error')}} @endif </div>
         <div class="my-orders__item my-orders__item--active">
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
@@ -44,7 +43,7 @@
                 <li class="orders__buy">
                   <form class="ordered">
                     {{csrf_field()}}
-                    <input hidden name="s" value="{{$order->service_id}}">
+                    <input type="hidden" name="order_id" value="{{$order->id}}">
                     <button type="submit" class="btn btn--action btn--action-buy">
                       Заказать
                     </button>

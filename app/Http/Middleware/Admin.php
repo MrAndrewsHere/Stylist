@@ -17,7 +17,7 @@ class Admin
   public function handle($request, Closure $next, $role)
   {
     if (Auth::user()->role->name == 'admin') {
-      return redirect($request->getBaseUrl());
+      return back();
     } else
       return $next($request);
 

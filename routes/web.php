@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('posts', 'PostController');
 Route::get('/home', 'HomeController@index');
 Route::get('/lk_stylist', 'StylistController@lk_stylist');
 Route::get('/lk_client', 'ClientController@lk_client');

@@ -27,4 +27,8 @@ class stylist extends Model
   {
     return $this->belongsToMany('App\service');
   }
+  public function portfolios()
+  {
+    return $this->hasMany('App\portfolio');
+  }
 }

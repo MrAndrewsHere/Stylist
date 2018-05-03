@@ -19,6 +19,6 @@ class Stylist
     if (Auth::user()->role->name == 'stylist' || Auth::user()->role->name == 'admin')
       return $next($request);
     else
-      return redirect($request->getBaseUrl());
+      return back();
   }
 }
