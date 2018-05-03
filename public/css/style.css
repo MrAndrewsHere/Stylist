@@ -1657,7 +1657,19 @@ textarea {
   margin: 10px 0;
   font-weight: 600;
   font-size: 14px; }
-
+.help-block {
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 12px;
+  border-radius: 25px;
+  background-color: #fb8181;
+  padding-top: 6px;
+  min-width: 300px;
+  text-align: center;
+  min-height: 30px;
+}
 .message-success {
   border: 1px solid #afd4a9;
   background-color: #effaed; }

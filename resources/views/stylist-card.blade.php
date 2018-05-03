@@ -16,7 +16,8 @@
           {{$stylist->user->name}} {{$stylist->user->second_name}}
           </div>
           <div class="card__description__text">
-            {{$stylist->about}}
+            {!! nl2br(e($stylist->about))!!}
+
           </div>
           @if(isset($stylist->category->name))
           <div class="card__description__title">Класс:
@@ -25,14 +26,6 @@
             </span>
           </div>
           @endif
-          <div class="card__description__title">Опыт работы:
-            <span class="card__description__text">
-              {{$stylist->experience}}
-              </span>
-          </div>
-          <div class="card__description__title">Образование:
-            <span class="card__description__text">{{$stylist->education}}</span>
-          </div>
         </div>
       </div>
       <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио <span
@@ -45,7 +38,7 @@
               <div class="photo__second"><img src="/img/clients/1after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
-              <div class="comment__user-photo"><img src="/img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
@@ -62,7 +55,7 @@
               <div class="photo__second"><img src="/img/clients/2after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
-              <div class="comment__user-photo"><img src="/img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Service;
-use App\Stylist;
+use App\service;
+use App\stylist;
 use App\stylistcategory;
 use App\User;
 use App\Order;
@@ -48,25 +48,13 @@ class HomeController extends Controller
     return view('answers');
   }
 
-
-
-  public function services()
-  {
-//    $services = User::all();
-    return view('services');
-
-  }
-
-
   public function portfolio()
   {
     return view('portfolio');
   }
 
-
   public function my_orders()
   {
-
 //        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
 //        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
     if (Auth::user()->role_id == '1') {
@@ -76,16 +64,9 @@ class HomeController extends Controller
       return view('my-orders');
   }
 
-  public function social()
-  {
-    return view('auth.social');
-  }
-
   public function settings()
   {
-
     $currentUser = Auth::user();
-
     return view('settings', compact('currentUser'));
 
 

@@ -10,7 +10,7 @@ class servicecategory extends Model
 
  public function service()
  {
-   return $this->belongsToMany('App\Service');
+   return $this->belongsToMany('App\service');
  }
 
   public function setUpdatedAt($value)

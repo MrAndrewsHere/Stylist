@@ -10,7 +10,7 @@
         <div class="info-block info-block__wrapper">
           <h2 class="secondary-title">Мой стиль</h2>
           <div class="lk-client__style">
-            <div class="lk-client__style-photo"><img src="img/winter.png" alt=""/></div>
+            <div class="lk-client__style-photo"><img src="/img/my-style/winter.png" alt=""/></div>
             <div class="lk-client__style-seasons">
               <ul class="lk-client__style-seasons-list"><a class="link-change-content link-change-content--active"
                                                            href="#">Зима</a><a class="link-change-content" href="#">Весна</a><a
@@ -101,7 +101,7 @@
           <h2 class="secondary-title">Вид внешности и психотип</h2>
           <div class="slider-tips">
             <div class="lk-client__style">
-              <div class="lk-client__style-photo"><img src="img/tips/tip1.png" alt=""/></div>
+              <div class="lk-client__style-photo"><img src="img/my-style/tip1.png" alt=""/></div>
               <div class="lk-client__style-seasons">
                 <div class="lk-client__style-tips">
                   <h3>Советы:</h3>
@@ -121,7 +121,7 @@
               </div>
             </div>
             <div class="lk-client__style">
-              <div class="lk-client__style-photo"><img src="img/tips/tip1.png" alt=""/></div>
+              <div class="lk-client__style-photo"><img src="img/my-style/tip1.png" alt=""/></div>
               <div class="lk-client__style-seasons">
                 <div class="lk-client__style-tips">
                   <h3>Советы:</h3>

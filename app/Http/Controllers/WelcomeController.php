@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Service;
+use App\service;
 use App\servicecategory;
-use App\Stylist;
+use App\stylist;
 use App\stylistcategory;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Input;
 use function Symfony\Component\VarDumper\Dumper\esc;
+use ElForastero\Transliterate;
 
-class WelcomeControllerTo extends Controller
+class WelcomeController extends Controller
 
 {
   public function __construct()
@@ -25,7 +27,7 @@ class WelcomeControllerTo extends Controller
   {
     $stylist = null;
     if (isset($id)) {
-      $stylist = Stylist::findorfail($id);
+      $stylist = stylist::findorfail($id);
     }
     return view('stylist-card', compact('stylist'));
   }
@@ -42,20 +44,17 @@ class WelcomeControllerTo extends Controller
 
   public function service_page($id)
   {
-    $service = null;
-    try {
-      $service = Service::find($id);
-      $stylists = $service->stylists;
-    } catch (\ErrorException $exception) {
+    $service = service::findorfail($id);
+    $stylists = $service->stylists;
+    return view('service-page', compact('service'), compact('stylists'));
 
-    }
-    return view('service-page', compact('service'),compact('stylists'));
   }
 
   public function take(Request $request)
   {
-    return Service::where('category_id',$request->input('id'));
+    return service::where('category_id', $request->input('id'));
   }
+
   public function posttest(Request $request)
   {
     $result = $request->input('IsStylist');
@@ -76,35 +75,41 @@ class WelcomeControllerTo extends Controller
 
   public function services($categoryName)
   {
-    if (isset($categoryName))
-    {
-      if($categoryName == 'all')
-      { $Categoryservices = Service::all();
-        return view('services',compact('Categoryservices'));
+    if (isset($categoryName)) {
+      if ($categoryName == 'all') {
+        $Categoryservices = service::all();
+        return view('services', compact('Categoryservices'));
       }
       $services = null;
       $category = servicecategory::wherename($categoryName);
-      if ( isset($category->first()->id))
-//        $services = Service::where('category_id',$categoryID->first()->id)->get();
-        $Categoryservices =  $category->first()->service;
-      return view('services',compact('Categoryservices'));
+      if (isset($category->first()->id))
+        $Categoryservices = $category->first()->service;
+      return view('services', compact('Categoryservices'));
     }
 
-    $Categoryservices = Service::all();
-    return view('services',compact('Categoryservices'));
+    $Categoryservices = service::all();
+    return view('services', compact('Categoryservices'));
   }
 
-  public function sendmail(Request $request) {
+  public function sendmail(Request $request)
+  {
     return $answer = 'Ваше сообщение отправлено';
   }
 
   public function stylists()
   {
-
-//    $stylists = Stylist::join('users', 'users.id', '=', 'stylists.user_id')->get();
-    $stylists = Stylist::whereConfirmed(1)->get();
+    $stylists = stylist::whereConfirmed(1)->get();
     $stylistcategories = stylistcategory::all();
-  $cities = User::select('city')->distinct()->get();
-    return view('stylists', compact('stylists'),compact('stylistcategories'));
+    $cities = collect([]);
+    foreach ($stylists as $stylist) {
+      $city = $stylist->user->city;
+
+      $cities->push(
+        ['RU' => $city, 'Translit' => Transliterate\Transliteration::make($city)]
+      );
+    }
+    $cities = $cities->unique();
+    $cities->values()->all();
+    return view('stylists', compact('stylists'), compact('stylistcategories'))->with('cities', $cities);
   }
 }

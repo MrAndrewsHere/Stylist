@@ -10,22 +10,21 @@
         <ul class="stylists__sort">
           <li class="stylists__sort-category">
             <select class="select" name="category">
+              <option value="all">Все категории</option>
               @if (isset($stylistcategories))
                 @foreach($stylistcategories as $category)
-                  <option value={{$category->describe}}>{{$category->name}}</option>
+                  <option value="{{$category->describe}}">{{$category->name}}</option>
                   @endforeach
               @endif
-              {{--<option value="vip">Vip</option>--}}
-              {{--<option value="first-category">Первой категории</option>--}}
-              {{--<option value="beginner">Начинающий</option>--}}
             </select>
           </li>
 
           <li class="stylists__sort-category">
             <select class="select">
-              @if (isset($stylists))
-                @foreach($stylists as $stylist)
-                  <option value="five-star">{{$stylist->user->city}}</option>
+              <option value="all">Все города</option>
+              @if (isset($cities))
+                @foreach($cities as $city)
+                  <option value="{{$city['Translit']}}">{{$city['RU']}}</option>
                 @endforeach
               @endif
             </select>
@@ -55,11 +54,9 @@
                 <li class="card__photo-list__block"><img class="card__photo-list__photo" src="img/client3.jpg" alt=""/>
                 </li>
               </ul>
-              <form action="{{ url('/stylist_profile', $stylist->id) }}">
-                <button type="submit" class="btn btn--action">
+                <a  href="{{ url('/stylist_profile', $stylist->id) }}"class="btn btn--action btn--action-small">
                   Посмотреть профиль
-                </button>
-              </form>
+                </a>
             </div>
           </div>
         @endforeach

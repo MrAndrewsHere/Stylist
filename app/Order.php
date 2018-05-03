@@ -9,17 +9,17 @@ class Order extends Model
   protected $fillable = ['client_id','service_id','stylist_id','price'];
   public function client()
   {
-    return $this->belongsTo('App\Client');
+    return $this->belongsTo('App\client');
   }
 
   public function stylist()
   {
-    return $this->belongsTo('App\Stylist');
+    return $this->belongsTo('App\stylist');
   }
 
   public function service()
   {
-    return $this->belongsTo('App\Service');
+    return $this->belongsTo('App\service');
   }
 
   public function setUpdatedAt($value)

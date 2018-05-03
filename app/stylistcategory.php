@@ -15,7 +15,7 @@ class stylistcategory extends Model
 
   public function service()
   {
-    return $this->belongsToMany('App\Service')->withPivot('price');
+    return $this->belongsToMany('App\service')->withPivot('price');
   }
   public function setUpdatedAt($value)
   {

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Message;
+use App\message;
 use App\Events\MessageSent;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,11 +28,11 @@ class ChatsController extends Controller
   /**
    * Fetch all messages
    *
-   * @return Message
+   * @return message
    */
   public function fetchMessages()
   {
-    return Message::with('user')->get();
+    return message::with('user')->get();
   }
 
   /**
@@ -51,6 +51,6 @@ class ChatsController extends Controller
 
     broadcast(new MessageSent($user, $message))->toOthers();
 
-    return ['status' => 'Message Sent!'];
+    return ['status' => 'message Sent!'];
   }
 }

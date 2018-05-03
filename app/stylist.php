@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stylist extends Model
+class stylist extends Model
 {
   protected $fillable = ['user_id', 'category_id', 'about', 'education'];
   protected $hidden = ['user_id'];
@@ -25,6 +25,10 @@ class Stylist extends Model
   }
   public function services()
   {
-    return $this->belongsToMany('App\Service');
+    return $this->belongsToMany('App\service');
+  }
+  public function portfolios()
+  {
+    return $this->hasMany('App\portfolio');
   }
 }

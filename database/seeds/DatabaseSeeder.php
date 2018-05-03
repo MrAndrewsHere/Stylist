@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
       'city' => 'Дубна',
       'phone_number' => '89259042411',
       'role_id' => '3',
-      'avatar' => '/img/no_avatar.jpg',
+      'avatar' => '/img/user-pic.png',
 
 
     ]);
@@ -64,9 +64,9 @@ class DatabaseSeeder extends Seeder
         'city' => 'Дубна',
         'phone_number' => '89264587655',
         'role_id' => '1',
-        'avatar' => '/img/no_avatar.jpg',
+        'avatar' => '/img/user-pic.png',
       ]);
-    App\Client::create(['id'=>'1','user_id'=>'2']);
+    App\client::create(['id'=>'1','user_id'=>'2']);
     DB::table('users')->insert(
       ['id' => '3',
         'name' => 'Виктория',

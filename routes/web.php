@@ -19,28 +19,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('posts', 'PostController');
 Route::get('/home', 'HomeController@index');
 Route::get('/lk_stylist', 'StylistController@lk_stylist');
 Route::get('/lk_client', 'ClientController@lk_client');
 Route::get('/my_style', 'ClientController@my_style');
 Route::get('/my_orders', 'HomeController@my_orders');
 Route::get('/portfolio', 'HomeController@portfolio');
-Route::get('/test/', 'WelcomeControllerTo@test');
+Route::get('/test/', 'WelcomeController@test');
 Route::get('/settings', 'HomeController@settings');
-Route::get('/social', 'HomeController@social');
-Route::get('/contacts', 'WelcomeControllerTo@contacts');
-Route::get('/answers', 'WelcomeControllerTo@answers');
-Route::get('/stylists', 'WelcomeControllerTo@stylists');
-Route::get('/services/{category}', 'WelcomeControllerTo@services');
-Route::get('/service-page/{id}', 'WelcomeControllerTo@service_page');
+Route::get('/contacts', 'WelcomeController@contacts');
+Route::get('/answers', 'WelcomeController@answers');
+Route::get('/stylists', 'WelcomeController@stylists');
+Route::get('/services/{category}', 'WelcomeController@services');
+Route::get('/service-page/{id}', 'WelcomeController@service_page');
 Route::post('/save_portfolio', 'HomeController@save_portfolio');
-Route::get('/stylist_profile/{id}', 'WelcomeControllerTo@stylist_profile');
+Route::get('/stylist_profile/{id}', 'WelcomeController@stylist_profile');
 Route::get('/Reg', 'HomeController@reg');
-Route::post('/posttest', 'WelcomeControllerTo@posttest');
+Route::post('/posttest', 'WelcomeController@posttest');
 Route::post('/add_service_to_client','ClientController@add_service_to_client');
-Route::post('/sendmail', 'WelcomeControllerTo@sendmail'); // роут для отправки формы обратной связи
-Route::post('/take','WelcomeControllerTo@take');
+Route::post('/sendmail', 'WelcomeController@sendmail'); // роут для отправки формы обратной связи
+Route::post('/take','WelcomeController@take');
 Route::resource('portfolio', 'PortfolioController');
 Route::post('/ordered','ClientController@ordered');
 Route::post('delete_order','ClientController@delete_order');

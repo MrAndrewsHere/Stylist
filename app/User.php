@@ -33,12 +33,12 @@ class User extends Authenticatable
 
   public function stylist()
   {
-    return $this->hasOne('App\Stylist', 'user_id');
+    return $this->hasOne('App\stylist', 'user_id');
   }
 
   protected function client()
   {
-    return $this->hasOne('App\Client', 'user_id');
+    return $this->hasOne('App\client', 'user_id');
   }
 
   public function role()
@@ -48,7 +48,7 @@ class User extends Authenticatable
 
   public function messages()
   {
-    return $this->hasMany(Message::class);
+    return $this->hasMany(message::class);
   }
 
 }
