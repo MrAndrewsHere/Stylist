@@ -2,6 +2,10 @@
   const filterServices = document.getElementById('filter-services');
   const itemsServices = document.getElementById('services');
 
+  const filterServicesCategory = document.getElementById('filter-stylists-category');
+  const filterServicesCities = document.getElementById('filter-stylists-cities');
+  const stylistsBlock = document.getElementById('stylists');
+
   const servicesFilter = function () {
     const items = itemsServices.getElementsByClassName('card');
 
@@ -14,26 +18,22 @@
     }
   };
 
-  filterServices.addEventListener('change', servicesFilter);
+  const filter = function () {
+    const itemsStylists = stylistsBlock.getElementsByClassName('card');
 
-
-  const filterStylistsCategory = document.getElementById('filter-stylists-category');
-  const filterStylistsCities = document.getElementById('filter-stylists-cities');
-  const itemsStylists = document.getElementById('stylists');
-
-  const stylistsFilter = function () {
-    const items = itemsStylists.getElementsByClassName('card');
-
-    for (let i = 0; i < items.length; i += 1) {
-      if (((filterStylistsCategory.value === 'all') || (filterStylistsCategory.value === items[i].dataset.category)) &&
-        ((filterStylistsCities.value === 'all') || (filterStylistsCities.value === items[i].dataset.cities))) {
-        items[i].style.display = 'flex';
+    for (let i = 0; i < itemsStylists.length; i += 1) {
+      if ((filterServicesCategory.value === 'all' || filterServicesCategory.value === itemsStylists[i].dataset.category) &&
+        (filterServicesCities.value === 'all' || filterServicesCities.value === itemsStylists[i].dataset.cities)) {
+        itemsStylists[i].style.display = 'flex';
       } else {
-        items[i].style.display = 'none';
+        itemsStylists[i].style.display = 'none';
       }
     }
   };
 
-  filterStylistsCategory.addEventListener('change', stylistsFilter);
-  filterStylistsCities.addEventListener('change', stylistsFilter);
+  if (filterServices) {
+    filterServices.addEventListener('change', servicesFilter);
+  }
+  filterServicesCategory.addEventListener('change', filter);
+  filterServicesCities.addEventListener('change', filter);
 }());

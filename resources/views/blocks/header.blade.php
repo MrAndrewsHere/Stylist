@@ -1,15 +1,17 @@
 <header class="header-home__margin">
   <div class="container-home">
     <div class="header-home"><a class="phone-number header__link" href="tel:+7(843)2922222">+7 (843) 292-22-22</a>
-      @if ($errors->has('password'))
-        <span class="help-block">
-          <strong>{{ $errors->first('password') }}</strong>
-        </span>
-      @endif
-      @if ($errors->has('email'))
-        <span class="help-block">
-          <strong>{{ $errors->first('email') }}</strong>
-        </span>
+      @if (isset($error))
+        @if ($errors->has('password'))
+          <span class="help-block">
+            <strong>{{ $errors->first('password') }}</strong>
+          </span>
+        @endif
+        @if ($errors->has('email'))
+          <span class="help-block">
+            <strong>{{ $errors->first('email') }}</strong>
+          </span>
+        @endif
       @endif
       @if (Auth::guest())
         <div class="enter-panel-guest">

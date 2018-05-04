@@ -31,7 +31,8 @@
           
         </div>
       </div>
-      <a class="card__description__title card__description__title--center" href="portfolio.html">Портфолио</a>
+      <a class="card__description__title card__description__title--center">Портфолио</a>
+
       <div class="slider slider--portfolio">
         <div class="slide">
           <div class="slide__wrapper">
@@ -40,7 +41,7 @@
               <div class="photo__second"><img src="/img/clients/1after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
-              <div class="comment__user-photo"><img src="/img/user-pic.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-photo/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
@@ -57,7 +58,7 @@
               <div class="photo__second"><img src="/img/clients/2after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
-              <div class="comment__user-photo"><img src="/img/user-pic.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-photo/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
@@ -74,7 +75,7 @@
               <div class="photo__second"><img src="/img/clients/3after.png" alt=""/></div>
             </div>
             <div class="comment comment__slider">
-              <div class="comment__user-photo"><img src="/img/user-photo/1.png" alt="" width="79px" height="79px"/></div>
+              <div class="comment__user-photo"><img src="/img/user-photo/user-pic.png" alt="" width="79px" height="79px"/></div>
               <div class="comment__user-block">
                 <div class="comment__user-text-title">Марина, 35 лет</div>
                 <div class="comment__user-text-text">Мне очень понравилось работать со стилистом Евгенией, она подобрала
