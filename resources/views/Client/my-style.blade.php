@@ -10,11 +10,16 @@
         <div class="info-block info-block__wrapper">
           <h2 class="secondary-title">Мой стиль</h2>
           <div class="lk-client__style">
-            <div class="lk-client__style-photo"><img src="/img/my-style/winter.png" alt=""/></div>
+            <div class="lk-client__style-photo">
+              <img src="/img/my-style/winter.png" alt="" />
+            </div>
             <div class="lk-client__style-seasons">
-              <ul class="lk-client__style-seasons-list"><a class="link-change-content link-change-content--active"
-                                                           href="#">Зима</a><a class="link-change-content" href="#">Весна</a><a
-                  class="link-change-content" href="#">Лето</a><a class="link-change-content" href="#">Осень</a></ul>
+              <ul class="lk-client__style-seasons-list">
+                <a class="link-change-content link-change-content--active" href="#">Зима</a>
+                <a class="link-change-content" href="#">Весна</a>
+                <a class="link-change-content" href="#">Лето</a>
+                <a class="link-change-content" href="#">Осень</a>
+              </ul>
               <div class="lk-client__style-seasons-description lk-client__style-seasons-description--active">
                 <p class="lk-client__style-seasons-description-text">
                   Мода постоянно диктует нам свои требования и для
@@ -83,7 +88,9 @@
         <div class="info-block info-block__wrapper">
           <h2 class="secondary-title">Тип фигуры</h2>
           <div class="lk-client__style">
-            <div class="lk-client__style-photo"><img src="img/type-body-pear.png" alt=""/></div>
+            <div class="lk-client__style-photo">
+              <img src="img/type-body-pear.png" alt=""/>
+            </div>
             <div class="lk-client__style-seasons">
               <div class="lk-client__style-body-type">
                 <h3>Груша</h3>
@@ -101,7 +108,9 @@
           <h2 class="secondary-title">Вид внешности и психотип</h2>
           <div class="slider-tips">
             <div class="lk-client__style">
-              <div class="lk-client__style-photo"><img src="img/my-style/tip1.png" alt=""/></div>
+              <div class="lk-client__style-photo">
+                <img src="img/my-style/tip1.png" alt=""/>
+              </div>
               <div class="lk-client__style-seasons">
                 <div class="lk-client__style-tips">
                   <h3>Советы:</h3>
@@ -121,7 +130,9 @@
               </div>
             </div>
             <div class="lk-client__style">
-              <div class="lk-client__style-photo"><img src="img/my-style/tip1.png" alt=""/></div>
+              <div class="lk-client__style-photo">
+                <img src="img/my-style/tip1.png" alt=""/>
+              </div>
               <div class="lk-client__style-seasons">
                 <div class="lk-client__style-tips">
                   <h3>Советы:</h3>
@@ -146,9 +157,11 @@
         <div class="info-block info-block__wrapper">
           <h2 class="secondary-title">Фото до и после</h2>
           <div class="lk-client__style">
-            <div class="lk-client__style-photo lk-client__style-photo--before-after"><img src="img/clients/4before.png"
-                                                                                          alt=""/><img
-                src="img/clients/4-1after.png" alt=""/><img src="img/clients/4-2after.png" alt=""/></div>
+            <div class="lk-client__style-photo lk-client__style-photo--before-after">
+              <img src="img/clients/4before.png" alt=""/>
+              <img src="img/clients/4-1after.png" alt=""/>
+              <img src="img/clients/4-2after.png" alt=""/>
+            </div>
             <div class="lk-client__style-seasons">
               <div class="lk-client__style-d">
                 <h3>Фото до и после от 20 сентября 2016</h3>

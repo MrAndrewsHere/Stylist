@@ -24,7 +24,7 @@
 
           <div class="portfolio-item__text portfolio-item__text--add">
             <label>Дата
-              <input class="form__input" type="date" name="date" value="Евгения" required/>
+              <input class="form__input" type="date" name="date" required/>
             </label>
             <label>Цель клиента
               <input class="form__input" name="purpose" type="text" required/>
