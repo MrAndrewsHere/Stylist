@@ -18,11 +18,20 @@
 
             @if (Auth::user()->role->name == 'stylist')
               <div class="card__description">
-                <div class="card__description__title">
-                  {{Auth::user()->name}} {{Auth::user()->second_name}}
+                <div class="card__description__title">Имя:
+                  <span class="card__description__text">
+                    {{Auth::user()->name}} 
+                  </span>
                 </div>
-                <div class="card__description__text">
-                  {{Auth::user()->stylist->about}}
+                <div class="card__description__title">Фамилия:
+                  <span class="card__description__text">
+                  {{Auth::user()->second_name}}
+                  </span>
+                </div>
+                <div class="card__description__title">Обо мне:
+                  <span class="card__description__text">
+                    {{Auth::user()->stylist->about}}
+                  </span>
                 </div>
                 <div class="card__description__title">Класс:
                   <span class="card__description__text">
@@ -40,11 +49,10 @@
                   </span>
                 </div>
               </div>
-
             @else
               <div class="card__description">
                 <div class="card__description">
-                  <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}} </div>
+                  <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}}</div>
                   <div class="card__description__text"> </div>
                   <div class="card__description__title">Класс</div>
                   <div class="card__description__text"></div>

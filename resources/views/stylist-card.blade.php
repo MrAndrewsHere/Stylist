@@ -12,12 +12,20 @@
           <button  class="btn btn--action btn__card">Выбрать стилиста</button>
         </div>
         <div class="card__description">
-          <div class="card__description__title">
-            {{$stylist->user->name}}
-            {{$stylist->user->second_name}}
+          <div class="card__description__title">Имя:
+            <span class="card__description__text">
+              {{$stylist->user->name}}
+            </span>
           </div>
-          <div class="card__description__text">
-            {!! nl2br(e($stylist->about))!!}
+          <div class="card__description__title">Фамилия:
+            <span class="card__description__text">
+              {{$stylist->user->second_name}}
+            </span>
+          </div>
+          <div class="card__description__title">Обо мне:
+            <span class="card__description__text">
+              {!! nl2br(e($stylist->about))!!}
+            </span>
           </div>
 
           @if(isset($stylist->category->name))
@@ -28,6 +36,18 @@
               </span>
             </div>
           @endif
+
+          <div class="card__description__title">Образование:
+            <span class="card__description__text">
+              {!! nl2br(e($stylist->education))!!}
+            </span>
+          </div>
+          
+          <div class="card__description__title">Город:
+            <span class="card__description__text">
+              {{$stylist->user->city}}
+            </span>
+          </div>
           
         </div>
       </div>

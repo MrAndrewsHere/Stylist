@@ -421,6 +421,7 @@ textarea {
           box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.4); }
 
 .btn--edit {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1028,7 +1029,17 @@ textarea {
 
 .card__photo-block {
   min-width: 300px;
-  text-align: center; }
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .card__photo-block--service {
   min-width: 240px; }
@@ -1052,7 +1063,7 @@ textarea {
 
 .card__description__title {
   color: #000000;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 16px;
   margin-bottom: 10px; }
@@ -1257,6 +1268,9 @@ textarea {
   font-size: 14px;
   line-height: 18px;
   margin-bottom: 20px; }
+
+.orders {
+  margin: 40px 0; }
 
 .orders__title {
   display: -webkit-box;

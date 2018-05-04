@@ -16,7 +16,16 @@
               <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
             </div>
             <div class="card__description">
-              <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}}</div>
+              <div class="card__description__title">Имя:
+                <span class="card__description__text">
+                  {{Auth::user()->name}} 
+                </span>
+              </div>
+              <div class="card__description__title">Фамилия:
+                <span class="card__description__text">
+                  {{Auth::user()->second_name}}
+                </span>
+              </div>
             </div>
           </div>
         </div>
