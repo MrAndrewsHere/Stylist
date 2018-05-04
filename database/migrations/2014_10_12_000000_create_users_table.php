@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
       $table->string('password');
       $table->string('second_name')->nullable();
       $table->string('city')->nullable();
+      $table->string('cityTranslit')->nullable();
       $table->string('phone_number')->nullable();
       $table->string('avatar')->nullable();
       $table->integer('role_id')->unsigned()->nullable();

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use ElForastero\Transliterate;
 
 
 class DatabaseSeeder extends Seeder
@@ -49,6 +50,7 @@ class DatabaseSeeder extends Seeder
       'password' => bcrypt('123456789'),
       'second_name' => 'Долженко',
       'city' => 'Дубна',
+      'cityTranslit' => Transliterate\Transliteration::make('Дубна'),
       'phone_number' => '89259042411',
       'role_id' => '3',
       'avatar' => '/img/user-pic.png',
@@ -61,7 +63,8 @@ class DatabaseSeeder extends Seeder
         'email' => 'Misha@yandex.ru',
         'password' => bcrypt('123456789'),
         'second_name' => 'Рябушкин',
-        'city' => 'Дубна',
+        'city' => 'СПБ',
+        'cityTranslit' => Transliterate\Transliteration::make('СПБ'),
         'phone_number' => '89264587655',
         'role_id' => '1',
         'avatar' => '/img/user-pic.png',
@@ -74,6 +77,7 @@ class DatabaseSeeder extends Seeder
         'password' => bcrypt('123456789'),
         'second_name' => 'Рябушкина',
         'city' => 'Дубна',
+        'cityTranslit' => Transliterate\Transliteration::make('Дубна'),
         'phone_number' => '89996633221',
         'role_id' => '2',
         'avatar' => '/img/stylist1.png',
@@ -85,7 +89,8 @@ class DatabaseSeeder extends Seeder
         'email' => 'Kate@yandex.ru',
         'password' => bcrypt('123456789'),
         'second_name' => 'Владимировна',
-        'city' => 'Дубна',
+        'city' => 'Москва',
+        'cityTranslit' => Transliterate\Transliteration::make('Москва'),
         'phone_number' => '87776565851',
         'role_id' => '2',
         'avatar' => '/img/stylist3.jpg',
@@ -96,7 +101,8 @@ class DatabaseSeeder extends Seeder
         'email' => 'Alice@yandex.ru',
         'password' => bcrypt('123456789'),
         'second_name' => 'Селезнёва',
-        'city' => 'Дубна',
+        'city' => 'Дмитров',
+        'cityTranslit' => Transliterate\Transliteration::make('Дмитров'),
         'phone_number' => '89996644221',
         'role_id' => '2',
         'avatar' => '/img/stylist2.png',
