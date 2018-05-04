@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('title','Наши стилисты')
+
 @section('content')
 
   <section class="section section--stylists section__home">
@@ -14,7 +15,7 @@
               @if (isset($stylistcategories))
                 @foreach($stylistcategories as $category)
                   <option value="{{$category->describe}}">{{$category->name}}</option>
-                  @endforeach
+                @endforeach
               @endif
             </select>
           </li>
@@ -33,7 +34,7 @@
 
         <div id="stylists">
           @foreach($stylists as $stylist)
-            <div class="card card__margin" data-category="{{ $stylist->user->name }}" data-cities="{{ $stylist->user->city }}">
+            <div class="card card__margin" data-category="{{$stylist -> category -> describe}}" data-cities="Dubna">
               <div class="card__photo-block">
                 <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
               </div>

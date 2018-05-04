@@ -14,7 +14,7 @@
     }
   };
 
-  filterServices.onchange = servicesFilter;
+  filterServices.addEventListener('change', servicesFilter);
 
 
   const filterStylistsCategory = document.getElementById('filter-stylists-category');
@@ -26,7 +26,7 @@
 
     for (let i = 0; i < items.length; i += 1) {
       if (((filterStylistsCategory.value === 'all') || (filterStylistsCategory.value === items[i].dataset.category)) &&
-        ((filterStylistsCategory.value === 'all') || (filterStylistsCategory.value === items[i].dataset.cities))) {
+        ((filterStylistsCities.value === 'all') || (filterStylistsCities.value === items[i].dataset.cities))) {
         items[i].style.display = 'flex';
       } else {
         items[i].style.display = 'none';
@@ -34,6 +34,6 @@
     }
   };
 
-  filterStylistsCategory.onchange = stylistsFilter;
-  filterStylistsCities.onchange = stylistsFilter;
+  filterStylistsCategory.addEventListener('change', stylistsFilter);
+  filterStylistsCities.addEventListener('change', stylistsFilter);
 }());
