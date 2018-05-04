@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use ElForastero\Transliterate;
 
 class StylistController extends Controller
 {
@@ -40,6 +41,7 @@ class StylistController extends Controller
       'name' => $data -> name,
       'second_name' => $data -> second_name,
       'city' => $data -> city,
+      'cityTranslit' => Transliterate\Transliteration::make($data -> city),
     ]);
 
     Auth::user() -> stylist -> update([

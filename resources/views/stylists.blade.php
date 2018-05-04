@@ -34,7 +34,7 @@
 
         <div id="stylists">
           @foreach($stylists as $stylist)
-            <div class="card card__margin" data-category="{{$stylist -> category -> describe}}" data-cities="Dubna">
+            <div class="card card__margin" data-category="{{ $stylist->category->describe }}" data-cities="{{ $stylist->user->cityTranslit }}">
               <div class="card__photo-block">
                 <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
               </div>

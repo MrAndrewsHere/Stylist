@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use ElForastero\Transliterate;
 
 class ClientController extends Controller
 {
@@ -68,7 +69,8 @@ class ClientController extends Controller
     Auth::user()->update([
       'name' => $data->name,
       'second_name' => $data->second_name,
-      'city' => $data->city
+      'city' => $data->city,
+      'cityTranslit' => Transliterate\Transliteration::make($data -> city),
     ]);
     if ($request->hasFile('avatar')) {
       $picture = $request->file('avatar');
