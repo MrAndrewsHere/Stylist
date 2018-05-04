@@ -1,13 +1,12 @@
-$(document).ready(function () {
-
+$(document).ready(() => {
   $('.slider').slick({
     dots: false,
-    arrows: true
+    arrows: true,
   });
 
   $('.slider-my-style').slick({
     dots: false,
-    arrows: true
+    arrows: true,
   });
 
   $('.link-tab').click(function () {
@@ -26,20 +25,20 @@ $(document).ready(function () {
   });
 
 
-  $('#contactform').on('submit', function (e) {
+  $('#contactform').on('submit', (e) => {
     e.preventDefault();
 
     $.ajax({
       type: 'POST',
       url: '/sendmail',
       data: $('#contactform').serialize(),
-      success: function () {
+      success() {
         $('.message-success').css('display', 'block');
         $('#contactform').trigger('reset');
       },
-      error: function () {
+      error() {
         $('.message-error').css('display', 'block');
-      }
+      },
     });
   });
 
@@ -54,27 +53,12 @@ $(document).ready(function () {
       type: 'POST',
       url: '/delete_order',
       data: $(this).serialize(),
-      success: function () {
+      success() {
         $('.message-success').css('display', 'block');
       },
-      error: function () {
+      error() {
         $('.message-error').css('display', 'block');
-      }
+      },
     });
   });
-
-  const filter_select_el = document.getElementById('filter-services');
-  const items_el = document.getElementById('services');
-
-  filter_select_el.onchange = function () {
-    const items = items_el.getElementsByClassName('card');
-    for (let i = 0; i < items.length; i++) {
-      if (items[i].classList.contains(this.value) || items[i].classList.contains('all')) {
-        items[i].style.display = 'flex';
-      } else {
-        items[i].style.display = 'none';
-      }
-    }
-  };
-
 })();

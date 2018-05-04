@@ -1,5 +1,4 @@
 (function () {
-
   const modalAuth = document.querySelector('.modal-auth');
   const modalRegistration = document.querySelector('.modal-registration');
   const btnAuth = document.querySelectorAll('.btn--auth');
@@ -19,13 +18,14 @@
 
   // открытие модального окна
   const openDialog = function (btn, modalWindow, inputFocus, inputFocusTwo) {
-    for (let i = 0; i < btn.length; i++) {
-      btn[i].addEventListener('click', function (event) {
+    for (let i = 0; i < btn.length; i += 1) {
+      btn[i].addEventListener('click', (event) => {
         event.preventDefault();
         modalWindow.classList.add('modal-auth-show');
 
         if (storage && modalAuth.classList.contains('modal-auth-show')) {
-          inputFocus.value = storage;
+          const inputFocusValue = inputFocus;
+          inputFocusValue.value = storage;
           inputFocusTwo.focus();
         } else {
           inputFocus.focus();
@@ -38,7 +38,7 @@
 
   // закрытие модального окна
   const closeDialog = function (closeModal, modalWindow) {
-    closeModal.addEventListener('click', function (event) {
+    closeModal.addEventListener('click', (event) => {
       event.preventDefault();
       modalWindow.classList.remove('modal-auth-show');
     });
@@ -47,7 +47,7 @@
   closeDialog(closeRegistration, modalRegistration);
 
   // закрытие модальных окон на ESC
-  window.addEventListener('keydown', function (event) {
+  window.addEventListener('keydown', (event) => {
     if (event.keyCode === ESC_CODE) {
       if (modalAuth.classList.contains('modal-auth-show')) {
         modalAuth.classList.remove('modal-auth-show');
@@ -58,17 +58,16 @@
   });
 
   // меню пользователя при клике на аватарке
-  profileMenu.addEventListener('click', function () {
+  profileMenu.addEventListener('click', () => {
     profileMenuBlock.classList.toggle('nav-profile__visible');
   });
 
   // добавление данных в localStorage
-  formAuth.addEventListener('submit', function (event) {
+  formAuth.addEventListener('submit', (event) => {
     if (!email.value || !password.value) {
       event.preventDefault();
     } else {
       localStorage.setItem('email', email.value);
     }
   });
-
-})();
+}());
