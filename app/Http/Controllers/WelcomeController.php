@@ -102,10 +102,9 @@ class WelcomeController extends Controller
     $stylistcategories = stylistcategory::all();
     $cities = collect([]);
     foreach ($stylists as $stylist) {
-      $city = $stylist->user->city;
-
+      
       $cities->push(
-        ['RU' => $city, 'Translit' => Transliterate\Transliteration::make($city)]
+        ['RU' =>  $city = $stylist->user->city, 'Translit' => $stylist->user->cityTranslit]
       );
     }
     $cities = $cities->unique();
