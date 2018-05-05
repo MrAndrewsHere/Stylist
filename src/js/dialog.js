@@ -58,9 +58,11 @@
   });
 
   // меню пользователя при клике на аватарке
-  profileMenu.addEventListener('click', () => {
-    profileMenuBlock.classList.toggle('nav-profile__visible');
-  });
+  if (profileMenu) {
+    profileMenu.addEventListener('click', () => {
+      profileMenuBlock.classList.toggle('nav-profile__visible');
+    });
+  }
 
   // добавление данных в localStorage
   formAuth.addEventListener('submit', (event) => {

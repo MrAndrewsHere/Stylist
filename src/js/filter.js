@@ -34,6 +34,9 @@
   if (filterServices) {
     filterServices.addEventListener('change', servicesFilter);
   }
-  filterServicesCategory.addEventListener('change', filter);
-  filterServicesCities.addEventListener('change', filter);
+
+  if (filterServicesCategory && filterServicesCities) {
+    filterServicesCategory.addEventListener('change', filter);
+    filterServicesCities.addEventListener('change', filter);
+  }
 }());

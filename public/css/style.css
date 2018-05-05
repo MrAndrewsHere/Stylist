@@ -345,7 +345,7 @@ textarea {
 .btn--exit {
   background-color: transparent;
   text-transform: uppercase;
-  font-family: "Montserrat";
+  font-family: "Montserrat", Arial;
   font-weight: 600; }
 
 .btn--action {
