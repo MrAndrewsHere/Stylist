@@ -44,9 +44,9 @@
             </label>
           @endif
 
-          <label>Опыт работы
+          <!-- <label>Опыт работы
             <textarea class="form__input" cols="30" rows="10">{{$currentUser->stylist->experience}}</textarea>
-          </label>
+          </label> -->
           <label>Образование
             <textarea name="education" class="form__input" cols="30" rows="10">{{$currentUser->stylist->education}}</textarea>
           </label>
