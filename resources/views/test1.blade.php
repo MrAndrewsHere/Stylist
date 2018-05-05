@@ -12,7 +12,7 @@
     <div class="chat__messages">
       <div class="chat__message chat__message-my">
         <div class="nav-profile__img chat__profile__img">
-          <img class="nav-profile__img" src="/img/no_avatar.jpg">
+          <img class="nav-profile__img" src="/img/user-pic.png">
         </div>
         <div class="chat__message-text-all">
           <p class="chat__message-text-one">Привет</p>
@@ -23,7 +23,7 @@
 
       <div class="chat__message chat__message-notmy">
         <div class="nav-profile__img chat__profile__img">
-          <img class="nav-profile__img" src="/img/no_avatar.jpg">
+          <img class="nav-profile__img" src="/img/user-pic.png">
         </div>
         <div class="chat__message-text-all">
           <p class="chat__message-text-one">Привет</p>
@@ -34,7 +34,7 @@
 
       <div class="chat__message chat__message-my">
         <div class="nav-profile__img chat__profile__img">
-          <img class="nav-profile__img" src="/img/no_avatar.jpg">
+          <img class="nav-profile__img" src="/img/user-pic.png">
         </div>
         <div class="chat__message-text-all">
           <p class="chat__message-text-one">Отлично</p>
