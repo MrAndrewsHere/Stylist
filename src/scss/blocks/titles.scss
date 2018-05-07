@@ -1,9 +1,13 @@
-.secondary-title {
+.title-second {
   font-size: 18px;
   font-family: "Montserrat";
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
 
-  &--slim {
-    margin-bottom: 0;
-  }
+.title-block {
+  font-size: 18px;
+  font-family: "Montserrat";
+  margin-bottom: 10px;
 }

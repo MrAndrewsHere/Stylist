@@ -38,6 +38,12 @@
 }
 
 .slider-tips {
+  user-select: text;
+
+  .lk-client__style {
+    outline: none;
+  }
+
   .slick-next {
     top: 424px;
     left: 254px;

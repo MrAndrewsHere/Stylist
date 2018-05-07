@@ -374,7 +374,7 @@ textarea {
 
 .btn--action-small {
   min-width: 150px;
-  max-width: 200px; }
+  max-width: 220px; }
 
 .btn--action-super-small {
   min-width: 100px;
@@ -754,6 +754,15 @@ textarea {
   width: 300px;
   text-align: center; }
 
+.slider-tips {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text; }
+
+.slider-tips .lk-client__style {
+  outline: none; }
+
 .slider-tips .slick-next {
   top: 424px;
   left: 254px; }
@@ -1064,7 +1073,7 @@ textarea {
   margin-top: 30px; }
 
 .card__description__text {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 18px;
   margin-bottom: 15px; }
@@ -1129,67 +1138,16 @@ textarea {
   font-weight: normal; }
 
 /* Общие стили личного кабинета */
+.lk__photo {
+  width: 300px; }
+
 /* Стили личного кабинета стилиста */
-.lk-stylist__attention {
-  border: 3px solid #0e7e77;
-  padding: 20px; }
+.lk-stylist__block {
+  margin-bottom: 50px; }
 
 .lk-stylist__attention-orders {
   height: 250px;
   overflow-y: scroll; }
-
-/* Стили личного кабинета клиента */
-.lk-client__style {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.lk-client__style-photo {
-  min-width: 280px;
-  margin-right: 40px;
-  text-align: center; }
-
-.lk-client__style-photo--before-after {
-  -ms-flex-negative: 0;
-      flex-shrink: 0; }
-
-.lk-client__style-seasons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.lk-client__style-seasons-list {
-  width: 215px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-
-.lk-client__style-seasons-item {
-  margin-right: 30px; }
-
-.lk-client__style-seasons-item:last-child {
-  margin-right: 0; }
-
-.lk-client__style-seasons-description-text {
-  margin-top: 20px;
-  font-size: 16px;
-  line-height: 1.4em; }
-
-.lk-client__style-seasons-description {
-  display: none; }
-
-.lk-client__style-seasons-description--active {
-  display: block; }
-
-.lk__photo {
-  width: 300px; }
 
 .lk-stylist__education {
   display: -webkit-box;
@@ -1209,13 +1167,73 @@ textarea {
 .lk-stylist__diplom {
   width: 100px; }
 
+/* Стили личного кабинета клиента */
+.lk-client__style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.lk-client__style-photo {
+  max-width: 280px;
+  margin-right: 40px;
+  text-align: center; }
+
+.lk-client__style-photo-before-after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-width: 50%; }
+
+.lk-client__style-seasons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.lk-client__style-seasons-photo {
+  min-width: 280px;
+  max-width: 281px; }
+
+.lk-client__style-seasons-list {
+  width: 215px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 20px;
+  font-family: "Montserrat"; }
+
+.lk-client__paragraph {
+  margin-bottom: 20px; }
+
+.lk-client__style-seasons-item {
+  margin-right: 30px; }
+
+.lk-client__style-seasons-item:last-child {
+  margin-right: 0; }
+
+.lk-client__style-seasons-description {
+  display: none; }
+
+.lk-client__style-seasons-description--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .order {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
 
 .order__inner {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px; }
 
 .order__number {
@@ -1372,16 +1390,20 @@ textarea {
       -ms-flex-align: center;
           align-items: center; }
 
-.secondary-title {
+.title-second {
   font-size: 18px;
   font-family: "Montserrat";
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee; }
 
-.secondary-title--slim {
-  margin-bottom: 0; }
+.title-block {
+  font-size: 18px;
+  font-family: "Montserrat";
+  margin-bottom: 10px; }
 
 .link-change-content {
-  font-size: 16px;
+  font-size: 15px;
   color: #0e7e77;
   border-bottom: 1px dashed #0e7e77; }
 
@@ -1407,14 +1429,6 @@ textarea {
 .link-active {
   color: #000000;
   border-bottom: none; }
-
-.info-block {
-  border: 1px solid #eee;
-  padding: 20px 30px; }
-
-.info-block__wrapper {
-  margin-top: 30px;
-  margin-bottom: 50px; }
 
 .scroll-block {
   height: 600px;

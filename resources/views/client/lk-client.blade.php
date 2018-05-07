@@ -6,8 +6,8 @@
   <section class="section section--lk-client section__home">
     <h1 class="section__title">Личный кабинет</h1>
     <div class="lk-client">
-      <div class="container-home">
-        <div class="lk-stylist__general">
+      <div class="container">
+        <div class="lk-stylist__block">
           <div class="card card__margin">
             <div class="card__photo-block">
               <a href="{{url('/settings')}}">
@@ -29,8 +29,9 @@
             </div>
           </div>
         </div>
-        <div class="info-block info-block__wrapper">
-          <h2 class="secondary-title">Моя история заказов</h2>
+
+        <div class="lk-stylist__block">
+          <h2 class="title-second">Моя история заказов</h2>
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
               <li class="orders__photo">Фото</li>
