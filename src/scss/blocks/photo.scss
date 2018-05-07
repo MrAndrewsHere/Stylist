@@ -1,7 +1,3 @@
-.photo {
-  @include flex-container;
-}
-
 .photo__first {
   &:before {
     content: "До";

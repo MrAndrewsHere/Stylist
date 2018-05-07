@@ -14,12 +14,6 @@
         </ul>
       </nav>
 
-      {{--@if (Auth::guest())--}}
-        {{--<div class="enter-panel">--}}
-          {{--<button class="btn btn--auth enter-panel__btn">Вход</button>--}}
-          {{--<button class="btn btn--registration enter-panel__btn">Регистрация</button>--}}
-        {{--</div>--}}
-      {{--@endif--}}
       <ul class="social-icons-list" id="uLogin" data-ulogin="display=buttons;callback=myfunc">
         <li class="social-icon-item">
           <a class="social-link" data-uloginbutton="vkontakte" arial-label="Ссылка на вконтате">
