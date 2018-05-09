@@ -20,13 +20,11 @@ class StylistController extends Controller
   }
 
   public function lk_stylist()
-  { $orders = null;
-    try
-    {
-      $orders = Auth::user()->stylist->orders->where('Ordered','1');
-    }
-    catch (\ErrorException $error)
-    {
+  {
+    $orders = null;
+    try {
+      $orders = Auth::user()->stylist->orders->where('Ordered', '1');
+    } catch (\ErrorException $error) {
 
     }
 
@@ -36,27 +34,35 @@ class StylistController extends Controller
   protected function store(Request $request)
   {
     $data = $request;
+    $user = Auth::user();
 
-    Auth::user() -> update ([
-      'name' => $data -> name,
-      'second_name' => $data -> second_name,
-      'city' => $data -> city,
-      'cityTranslit' => Transliterate\Transliteration::make($data -> city),
+    $user->update([
+      'name' => $data->name,
+      'second_name' => $data->second_name,
+      'city' => $data->city,
+      'cityTranslit' => Transliterate\Transliteration::make($data->city),
     ]);
 
-    Auth::user() -> stylist -> update([
-      'education' => $data -> education,
-      'about' => $data -> about
+    $user->stylist->update([
+      'education' => $data->education,
+      'about' => $data->about
     ]);
 
     if ($request->hasFile('avatar')) {
-      $picture = $request -> file('avatar');
+      $picture = $request->file('avatar');
 
-      if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars',$picture))]) !== 0)
+      $oldPath = $user->avatar;
+
+      if ($user->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))]) !== 0) {
+         Storage::delete('public/avatars/'.substr($oldPath,17));
+        $request->session()->flash('success', 'Данные успешно сохранены');
+        return redirect('/settings');
+      } else
         $request->session()->flash('Error', 'Ошибка');
+
     }
 
-    $request->session()->flash('success', 'Данные успешно сохранены');
+    $request->session()->flash('error', 'Упс, ошибка!');
     return redirect('/settings');
   }
 }

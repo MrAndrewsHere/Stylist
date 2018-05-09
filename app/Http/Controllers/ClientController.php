@@ -65,21 +65,23 @@ class ClientController extends Controller
   protected function store(Request $request) // Сохранение настроек клиента
   {
     $data = $request;
+    $user = Auth::user();
 
-    Auth::user()->update([
+    $user->update([
       'name' => $data->name,
       'second_name' => $data->second_name,
       'city' => $data->city,
-      'cityTranslit' => Transliterate\Transliteration::make($data -> city),
+      'cityTranslit' => Transliterate\Transliteration::make($data->city),
     ]);
     if ($request->hasFile('avatar')) {
       $picture = $request->file('avatar');
-      try {
-        if (Auth::user()->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))]) == 0) {
-          $request->session()->flash('Error', 'Ошибка');
-          return redirect('/settings');
-        }
-      } catch (Exeption $exception) {
+      $oldPath = $user->avatar;
+
+      if ($user->update(['avatar' => Storage::url(Storage::putFile('public/avatars', $picture))]) !== 0) {
+        Storage::delete('public/avatars/' . substr($oldPath, 17));
+        $request->session()->flash('success', 'Данные успешно сохранены');
+        return redirect('/settings');
+      } else {
         $request->session()->flash('Error', 'Ошибка');
         return redirect('/settings');
       }
