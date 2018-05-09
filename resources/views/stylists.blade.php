@@ -7,7 +7,7 @@
   <section class="section section--stylists section__home">
     <h1 class="section__title">Наши стилисты</h1>
     <div class="container">
-      <div class="stylists stylists__section">
+      <div class="stylists">
         <ul class="stylists__sort">
           <li class="stylists__sort-category">
             <select id="filter-stylists-category" class="select" name="category">
@@ -33,36 +33,36 @@
         </ul>
 
         <div id="stylists">
-        @foreach($stylists as $stylist)
-          <div class="card card__margin" data-category="{{ $stylist->category->describe }}" data-cities="{{ $stylist->user->cityTranslit }}">
-            <div class="card__photo-block">
-              <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
-            </div>
+          @foreach($stylists as $stylist)
+            <div class="card card__margin" data-category="{{ $stylist->category->describe }}" data-cities="{{ $stylist->user->cityTranslit }}">
+              <div class="card__photo-block">
+                <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
+              </div>
 
-            <div class="card__description">
-              <div class="card__description__title">
-                {{ $stylist->user->name }}
+              <div class="card__description">
+                <div class="card__description__title">
+                  {{ $stylist->user->name }}
+                </div>
+                <div class="card__description__text">
+                  {!! nl2br(e($stylist->about))!!}
+                </div>
+                <ul class="card__photo-list">
+                  <li class="card__photo-list__block">
+                    <img class="card__photo-list__photo" src="img/client1.jpg" alt=""/>
+                  </li>
+                  <li class="card__photo-list__block">
+                    <img class="card__photo-list__photo" src="img/client2.jpg" alt=""/>
+                  </li>
+                  <li class="card__photo-list__block">
+                    <img class="card__photo-list__photo" src="img/client3.jpg" alt=""/>
+                  </li>
+                </ul>
+                <a href="{{ url('/stylist_profile', $stylist->id) }}" class="btn btn--action btn--action-small">
+                  Посмотреть профиль
+                </a>
               </div>
-              <div class="card__description__text">
-                Каждая женщина, как цветок — неповторима. В каждой заложена уникальная природная красота. И я с удовольствием помогу вам ее раскрыть и усилить. Я открою вам коды доступа к вашей внешности. Предлагаю индивидуальный подход именно к вашей внешности и к вашим задачам. К вашим услугам разные варианты шоппинга, разбор гардероба, консультации по имиджу.
-              </div>
-              <ul class="card__photo-list">
-                <li class="card__photo-list__block">
-                  <img class="card__photo-list__photo" src="img/client1.jpg" alt=""/>
-                </li>
-                <li class="card__photo-list__block">
-                  <img class="card__photo-list__photo" src="img/client2.jpg" alt=""/>
-                </li>
-                <li class="card__photo-list__block">
-                  <img class="card__photo-list__photo" src="img/client3.jpg" alt=""/>
-                </li>
-              </ul>
-              <a href="{{ url('/stylist_profile', $stylist->id) }}" class="btn btn--action btn--action-small">
-                Посмотреть профиль
-              </a>
             </div>
-          </div>
-        @endforeach
+          @endforeach
         </div>
       </div>
     </div>
