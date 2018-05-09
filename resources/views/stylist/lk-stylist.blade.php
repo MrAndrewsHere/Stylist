@@ -79,33 +79,43 @@
 
         <div class="lk-stylist__block">
           <h2 class="title-second">Дипломы и сертификаты</h2>
-          <div class="lk-stylist__education">
+          <div class="lk-stylist__education lk-stylist__education--filled">
             <div class="lk-stylist__education-document">
               <a href="img/diplom1.jpg">
                 <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
               </a>
+              <button class="btn--diplom-delete">x</button>
             </div>
+
             <div class="lk-stylist__education-document">
               <a href="img/diplom2.jpg">
                 <img src="img/diplom2.jpg" alt="диплом" class="lk-stylist__diplom">
-              </a>  
+              </a>
+              <button class="btn--diplom-delete">x</button>
             </div>
+
             <div class="lk-stylist__education-document">
               <a href="img/diplom1.jpg">
                 <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
               </a>
+              <button class="btn--diplom-delete">x</button>
             </div>
+
             <div class="lk-stylist__education-document">
               <a href="img/diplom1.jpg">
                 <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
               </a>
+              <button class="btn--diplom-delete">x</button>
             </div>
+
             <div class="lk-stylist__education-document">
               <a href="img/diplom3.jpg">
                 <img src="img/diplom3.jpg" alt="диплом" class="lk-stylist__diplom">
               </a>
+              <button class="btn--diplom-delete">x</button>
             </div>
           </div>
+          <button class="btn btn__card btn--edit btn--edit-diploms">Редактировать</button>
         </div>
 
         <div class="lk-stylist__block">

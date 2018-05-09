@@ -419,8 +419,29 @@ textarea {
   padding: 10px 20px;
   border-radius: 4px; }
 
+.btn--edit-diploms {
+  min-width: 130px;
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
 .btn--edit:hover {
   background-color: #ccc; }
+
+.btn--diplom-delete {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  top: -10px;
+  right: -10px;
+  background-color: #333;
+  border: none;
+  color: #eee;
+  padding: 5px;
+  border-radius: 25px; }
 
 .btn--filter {
   min-width: 142px;
@@ -667,7 +688,8 @@ textarea {
   position: relative;
   color: #000;
   font-weight: 600;
-  font-size: 12px; }
+  font-size: 12px;
+  font-family: "Montserrat", Arial; }
 
 .slider {
   margin-top: 30px;
@@ -1131,6 +1153,7 @@ textarea {
   border: 2px dashed #ddd; }
 
 .lk-stylist__education-document {
+  position: relative;
   margin-right: 20px;
   margin-left: 20px;
   margin-bottom: 10px;
