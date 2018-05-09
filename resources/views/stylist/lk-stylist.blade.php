@@ -69,21 +69,41 @@
 
         <div class="lk-stylist__block">
           <h2 class="title-second">Дипломы и сертификаты</h2>
+          <div class="lk-stylist__education lk-stylist__education--empty">
+            <div>
+              <span>Вы еще не добавили сертификаты</span>
+              <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Добавить</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lk-stylist__block">
+          <h2 class="title-second">Дипломы и сертификаты</h2>
           <div class="lk-stylist__education">
             <div class="lk-stylist__education-document">
-              <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+              <a href="img/diplom1.jpg">
+                <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+              </a>
             </div>
             <div class="lk-stylist__education-document">
-              <img src="img/diplom2.jpg" alt="диплом" class="lk-stylist__diplom">
+              <a href="img/diplom2.jpg">
+                <img src="img/diplom2.jpg" alt="диплом" class="lk-stylist__diplom">
+              </a>  
             </div>
             <div class="lk-stylist__education-document">
-              <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+              <a href="img/diplom1.jpg">
+                <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+              </a>
             </div>
             <div class="lk-stylist__education-document">
-              <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+              <a href="img/diplom1.jpg">
+                <img src="img/diplom1.jpg" alt="диплом" class="lk-stylist__diplom">
+              </a>
             </div>
             <div class="lk-stylist__education-document">
-              <img src="img/diplom2.jpg" alt="диплом" class="lk-stylist__diplom">
+              <a href="img/diplom3.jpg">
+                <img src="img/diplom3.jpg" alt="диплом" class="lk-stylist__diplom">
+              </a>
             </div>
           </div>
         </div>

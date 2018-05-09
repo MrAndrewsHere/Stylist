@@ -21,13 +21,22 @@
   justify-content: space-around;
   align-items: center;
 
+  &--empty {
+    padding: 40px 0;
+    text-align: center;
+    border: 2px dashed #ddd;
+  }
+
   &-document {
-    margin-right: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 }
 
 .lk-stylist__diplom {
-  width: 100px;
+  width: 130px;
 }
 
 /* Стили личного кабинета клиента */

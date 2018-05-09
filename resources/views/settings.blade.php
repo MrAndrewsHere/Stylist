@@ -14,22 +14,29 @@
 
       @if (Auth::user()->role->name == 'stylist')
         <form class="form-settings" action="{{url('/save_info')}}" method="post" enctype="multipart/form-data">
+
           {{csrf_field()}}
+
           <label>Аватар
             <input type="file" id="avatar" name="avatar" class="form__input"/>
           </label>
+
           <label>Имя
             <input class="form__input" name="name" type="text" value="{{$currentUser->name}}"/>
           </label>
+
           <label>Фамилия
             <input class="form__input" name="second_name" type="text" value="{{$currentUser->second_name}}"/>
           </label>
+
           <label>Электронная почта
             <input class="form__input" type="email" value="{{$currentUser->email}}" disabled="true"/>
           </label>
+
           <label>Город
             <input class="form__input" type="text" name="city" value="{{$currentUser->city}}"/>
           </label>
+
           <label>Обо мне
             <textarea name="about" class="form__input" cols="30" rows="10">{{$currentUser->stylist->about}}</textarea>
           </label>
@@ -44,12 +51,14 @@
             </label>
           @endif
 
-          <!-- <label>Опыт работы
-            <textarea class="form__input" cols="30" rows="10">{{$currentUser->stylist->experience}}</textarea>
-          </label> -->
           <label>Образование
             <textarea name="education" class="form__input" cols="30" rows="10">{{$currentUser->stylist->education}}</textarea>
           </label>
+
+          <label>Дипломы и сертификаты
+            <input type="file" id="diploms" name="diploms" class="form__input" multiple/>
+          </label>
+
           <div class="start-change">
             <input class="btn btn--action" type="submit" value="Сохранить"/>
           </div>
