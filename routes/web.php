@@ -29,6 +29,7 @@ Route::get('/test/', 'WelcomeController@test');
 Route::get('/settings', 'HomeController@settings');
 Route::get('/contacts', 'WelcomeController@contacts');
 Route::get('/answers', 'WelcomeController@answers');
+Route::get('/admin', 'HomeController@admin');
 Route::get('/stylists', 'WelcomeController@stylists');
 Route::get('/services/{category}', 'WelcomeController@services');
 Route::get('/service-page/{id}', 'WelcomeController@service_page');

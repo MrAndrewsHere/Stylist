@@ -3,7 +3,7 @@
 @section('title','Наши стилисты')
 
 @section('content')
-  <section class="section section--stylists section__home">
+  <section class="section section--stylists">
     <h1 class="section__title">Профиль стилиста</h1>
     <div class="container">
       <div class="card card__margin">

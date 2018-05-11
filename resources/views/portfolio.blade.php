@@ -3,7 +3,7 @@
 @section('title','Портфолио')
 
 @section('content')
-  <section class="section section--portfolio section__home">
+  <section class="section section--portfolio">
     <h1 class="section__title">Портфолио</h1>
     <div class="container">
       <span>@if(Session::has('success')) {{Session::get('success')}} @endif</span>

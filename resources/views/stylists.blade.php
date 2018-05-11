@@ -4,7 +4,7 @@
 
 @section('content')
 
-  <section class="section section--stylists section__home">
+  <section class="section section--stylists">
     <h1 class="section__title">Наши стилисты</h1>
     <div class="container">
       <div class="stylists">

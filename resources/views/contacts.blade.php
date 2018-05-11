@@ -3,7 +3,7 @@
 @section('title','Контакты')
 
 @section ('content')
-  <section class="section section--contacts section__home">
+  <section class="section section--contacts">
     <h1 class="section__title">Контакты</h1>
     {{--<a href="{{url('/test')}}">UJ</a>--}}
     <div class="communication">

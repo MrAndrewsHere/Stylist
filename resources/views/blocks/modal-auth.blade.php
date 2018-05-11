@@ -15,7 +15,10 @@
           </svg></a></li>
     </ul>
     <p class="modal__text">или</p>
-    <form class="form-auth" action="{{ url('/login') }}" role="form" method="POST">{{ csrf_field() }}
+    <form class="form-auth" action="{{ url('/login') }}" role="form" method="POST">
+    
+      {{ csrf_field() }}
+
       <label>Электронная почта
         <input class="form__input input-email" name="email" value="{{ old('email') }}" type="email" required="required"/>
       </label>

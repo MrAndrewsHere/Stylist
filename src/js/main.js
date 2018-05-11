@@ -32,26 +32,30 @@ $(document).ready(() => {
   const btn = document.querySelectorAll('.btn--diplom-delete');
   let state = false;
 
-  educationBlock.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('btn--diplom-delete')) return;
-    e.target.parentNode.style.display = 'none';
-  });
+  if (educationBlock) {
+    educationBlock.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('btn--diplom-delete')) return;
+      e.target.parentNode.style.display = 'none';
+    });
+  }
 
-  editDiploms.addEventListener('click', () => {
-    if (state === false) {
-      editDiploms.textContent = 'готово';
-      for (let i = 0; i < btn.length; i += 1) {
-        btn[i].style.display = 'block';
+  if (editDiploms) {
+    editDiploms.addEventListener('click', () => {
+      if (state === false) {
+        editDiploms.textContent = 'готово';
+        for (let i = 0; i < btn.length; i += 1) {
+          btn[i].style.display = 'block';
+        }
+        state = true;
+      } else {
+        editDiploms.textContent = 'редактировать';
+        for (let i = 0; i < btn.length; i += 1) {
+          btn[i].style.display = 'none';
+        }
+        state = false;
       }
-      state = true;
-    } else {
-      editDiploms.textContent = 'редактировать';
-      for (let i = 0; i < btn.length; i += 1) {
-        btn[i].style.display = 'none';
-      }
-      state = false;
-    }
-  });
+    });
+  }
 
 
   $('#contactform').on('submit', (e) => {

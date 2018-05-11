@@ -53,6 +53,11 @@ class HomeController extends Controller
     return view('portfolio');
   }
 
+  public function admin()
+  {
+    return view('admin');
+  }
+
   public function my_orders()
   {
 //        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
@@ -68,8 +73,6 @@ class HomeController extends Controller
   {
     $currentUser = Auth::user();
     return view('settings', compact('currentUser'));
-
-
   }
 
 

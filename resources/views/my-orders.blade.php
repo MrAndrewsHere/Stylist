@@ -3,7 +3,7 @@
 @section('title','Мои заказы')
 
 @section('content')
-  <section class="section section--my-orders section__home">
+  <section class="section section--my-orders">
     <h1 class="section__title">Мои заказы</h1>
     <div class="container-home">
       <div class="my-orders">

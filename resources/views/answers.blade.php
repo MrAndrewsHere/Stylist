@@ -3,7 +3,7 @@
 @section('title','Стилисты отвечают')
 
 @section ('content')
-  <section class="section section__home">
+  <section class="section">
     <h1 class="section__title">Стилисты отвечают</h1>
     <div class="ask-question">
       <div class="container">

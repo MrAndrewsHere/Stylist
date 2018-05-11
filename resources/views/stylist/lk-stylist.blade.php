@@ -3,7 +3,7 @@
 @section('title','Личный кабинет')
 
 @section('content')
-  <section class="section section--lk-stylist section__home">
+  <section class="section section--lk-stylist">
     <h1 class="section__title">Личный кабинет</h1>
     <div class="lk-stylist">
       <div class="container">

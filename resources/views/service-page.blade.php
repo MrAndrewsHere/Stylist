@@ -3,7 +3,7 @@
 @section('title','Шоппинг сопровождение с профессиональным шоппером')
 
 @section('content')
-  <section class="section section__home">
+  <section class="section">
     <div class="container-service-page">
       <h1 class="section__title">{{$service->name}}</h1>
       <img class="service-page__photo" src="{{$service->picture}}" alt="шоппинг">

@@ -288,6 +288,9 @@ textarea {
   max-width: 94%;
   margin: 0 auto; }
 
+.alert {
+  color: #f76270; }
+
 .header-home {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,6 +380,7 @@ textarea {
   max-width: 220px; }
 
 .btn--action-super-small {
+  width: 100%;
   min-width: 100px;
   padding: 0 5px;
   font-size: 12px; }
@@ -574,8 +578,7 @@ textarea {
 .select {
   border: 1px solid #90a4ae;
   border-radius: 5px;
-  padding: 10px 20px;
-  margin-bottom: 10px; }
+  padding: 10px 20px; }
 
 .select:focus {
   border-color: #7cbeac; }
@@ -845,37 +848,17 @@ textarea {
   -ms-flex-item-align: center;
       align-self: center; }
 
-.section__home {
-  margin-top: 30px;
-  margin-bottom: 30px; }
-
-.section__title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-family: "Montserrat"; }
-
-.section__title:after {
-  display: block;
-  content: "";
-  height: 2px;
-  width: 6%;
-  margin: 0 auto;
-  background-color: #000; }
-
-.section--error {
-  margin-top: 100px; }
-
-.section--stylists {
-  margin-bottom: 40px; }
-
-.section--home {
-  margin-top: 100px; }
-
-.error-img {
+.error-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 500px; }
+
+.error-page__img {
+  margin: auto; }
 
 .communication {
   margin-top: 20px;
@@ -999,7 +982,7 @@ textarea {
   margin-top: 60px; }
 
 .card__margin:first-child {
-  margin-top: 30px; }
+  margin-top: 40px; }
 
 .card__margin:last-child {
   margin-bottom: 60px; }
@@ -1389,9 +1372,24 @@ textarea {
   border-bottom: 2px solid #ddd; }
 
 .title-block {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Montserrat";
   margin-bottom: 10px; }
+
+.section__title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-family: "Montserrat"; }
+
+.section__title:after {
+  display: block;
+  content: "";
+  height: 2px;
+  width: 6%;
+  margin: 0 auto;
+  background-color: #000; }
 
 .link-change-content {
   font-size: 15px;
@@ -1722,6 +1720,43 @@ textarea {
 
 .category__description {
   text-align: center; }
+
+.admin-request {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 50px; }
+
+.admin-request__new {
+  width: 20%;
+  border-right: 2px solid #ddd;
+  padding-right: 10px; }
+
+.admin-request__person {
+  display: block;
+  padding-bottom: 10px;
+  color: #555; }
+
+.admin-request__person:hover {
+  color: #f76270; }
+
+.admin-request__person--active {
+  color: #f76270; }
+
+.admin-request__about {
+  width: 75%; }
+
+.admin-request__accept-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.admin-request__accept-buttons button {
+  width: 20%;
+  margin-right: 20px; }
 
 .chat {
   position: fixed;

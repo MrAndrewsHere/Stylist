@@ -3,7 +3,7 @@
 @section('title','Наши услуги')
 
 @section('content')
-  <section class="section section--services section__home">
+  <section class="section section--services">
     <h1 class="section__title">Наши услуги</h1>
     <div class="container">
       <select id="filter-services" class="select">

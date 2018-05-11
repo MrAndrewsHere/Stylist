@@ -3,7 +3,7 @@
 @section('title','Настройки')
 
 @section('content')
-  <section class="section section--settings section__home">
+  <section class="section section--settings">
     <div class="container-lk">
       <h1 class="section__title">Настройки</h1>
       @if(Session::has('success'))
