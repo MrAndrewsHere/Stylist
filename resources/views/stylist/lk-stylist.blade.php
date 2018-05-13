@@ -36,12 +36,7 @@
                 </div>
                 <div class="card__description__title">Класс:
                   <span class="card__description__text">
-                    {{Auth::user()->stylist->category->name}}
-                  </span>
-                </div>
-                <div class="card__description__title">Образование:
-                  <span class="card__description__text">
-                    {{Auth::user()->stylist->education}}
+                     {{isset(Auth::user()->stylist->category) ? Auth::user()->stylist->category->name : ''}}
                   </span>
                 </div>
                 <div class="card__description__title">Город:
