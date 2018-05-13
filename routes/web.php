@@ -25,7 +25,7 @@ Route::get('/lk_client', 'ClientController@lk_client');
 Route::get('/my_style', 'ClientController@my_style');
 Route::get('/my_orders', 'HomeController@my_orders');
 Route::get('/portfolio', 'HomeController@portfolio');
-Route::get('/test/', 'WelcomeController@test');
+Route::get('/test', 'WelcomeController@test');
 Route::get('/settings', 'HomeController@settings');
 Route::get('/contacts', 'WelcomeController@contacts');
 Route::get('/answers', 'WelcomeController@answers');
@@ -45,6 +45,10 @@ Route::post('/ordered','ClientController@ordered');
 Route::post('delete_order','ClientController@delete_order');
 Route::post('/save_info', 'StylistController@store');
 Route::post('/saveinfo', 'ClientController@store');
+Route::post('/diplom_delete','StylistController@diplom_delete');
+Route::post('/show_stylist_profile','HomeController@show_stylist_profile');
+Route::post('/accept_stylist','HomeController@accept_stylist');
+
 
 Route::get('/chat', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');

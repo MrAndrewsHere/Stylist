@@ -31,4 +31,8 @@ class stylist extends Model
   {
     return $this->hasMany('App\portfolio');
   }
+  public function files()
+  {
+    return $this->hasMany('App\file');
+  }
 }

@@ -55,7 +55,32 @@ class HomeController extends Controller
 
   public function admin()
   {
-    return view('admin');
+    $stylists = Stylist::all();
+    return view('admin',compact('stylists'));
+  }
+
+  public function show_stylist_profile(Request $request)
+  {
+      $stylist = Stylist::find($request->input('id'));
+      if ($stylist !== null) {
+        return view('blocks.stylist_block', compact('stylist'));
+      }
+      return $error='Ошибка, перезагрузите страницу';
+
+
+  }
+  public function accept_stylist(Request $request)
+  {
+    $stylist = Stylist::find($request->input('id'));
+    if ($stylist !== null) {
+     $stylist->update([
+        'Confirmed' => '1',
+        'category_id' => $request->input('category'),
+      ]);
+
+      return redirect('/admin');
+    }
+    return redirect('/admin');
   }
 
   public function my_orders()

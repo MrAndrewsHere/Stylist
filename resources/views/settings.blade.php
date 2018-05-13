@@ -56,7 +56,7 @@
           </label>
 
           <label>Дипломы и сертификаты
-            <input type="file" id="diploms" name="diploms" class="form__input" multiple/>
+              <input class="form__input" type="file" name="files[]" multiple accept="image/*"/>
           </label>
 
           <div class="start-change">

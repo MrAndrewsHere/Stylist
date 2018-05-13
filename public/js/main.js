@@ -36,11 +36,12 @@ $(document).ready(() => {
     educationBlock.addEventListener('click', (e) => {
       if (!e.target.classList.contains('btn--diplom-delete')) return;
       e.target.parentNode.style.display = 'none';
+
     });
   }
 
   if (editDiploms) {
-    editDiploms.addEventListener('click', () => {
+    editDiploms.addEventListener('click', (e) => {
       if (state === false) {
         editDiploms.textContent = 'готово';
         for (let i = 0; i < btn.length; i += 1) {
