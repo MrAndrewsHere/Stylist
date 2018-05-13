@@ -15,7 +15,7 @@
           <form class="show_stylist_profile">
             {{csrf_field()}}
             <input hidden name="id" value={{$stylist->id}} />
-            <button type="submit" class="admin-request__person admin-request__person--active">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>
+            <button type="submit" class="admin-request__person">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>
           </form>
             @endforeach
           @endif
