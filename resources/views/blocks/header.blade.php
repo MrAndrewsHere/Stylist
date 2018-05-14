@@ -23,10 +23,17 @@
           <button class="btn btn--registration">Регистрация</button>
         </div>@else
         <div class="enter-panel-stylist">
-          @if (Auth::user()->role->name !== 'client' )
+          @if (Auth::user()->role->name == 'client' )
+            <a class="nav-link" href="/my_orders">Мои заказы</a>
+          @endif
+          @if(Auth::user()->role->name == 'stylist')
+            <a class="nav-link" href="/my_orders">Мои заказы</a>
             <a class="nav-link" href="/portfolio">Мое портфолио</a>
           @endif
-          <a class="nav-link" href="/my_orders">Мои заказы</a>
+          @if(Auth::user()->role->name == 'admin')
+            <a class="nav-link" href="/admin">Панель администратора</a>
+          @endif
+
           <a class="nav-link nav-profile" href="#">
             <div class="nav-profile__img"><img class="nav-profile__img" src="{{Auth::user()->avatar}}"/></div>
             <div class="nav-profile__arrow"></div>
@@ -42,7 +49,7 @@
             @endif
 
             @if(Auth::user()->role->name == 'admin')
-              <a class="nav-profile__menu-link nav-link" href="/admin">Панель администратора</a>
+            
             @endif
 
 
