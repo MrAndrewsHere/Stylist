@@ -12,11 +12,11 @@
           <h3 class="title-block">Стилисты:</h3>
           @if(isset($stylists))
             @foreach($stylists as $stylist)
-          <form class="show_stylist_profile">
-            {{csrf_field()}}
-            <input hidden name="id" value={{$stylist->id}} />
-            <button type="submit" class="admin-request__person">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>
-          </form>
+              <form class="show_stylist_profile">
+                {{csrf_field()}}
+                <input hidden name="id" value={{$stylist->id}} />
+                <button type="submit" class="admin-request__person">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>
+              </form>
             @endforeach
           @endif
         </div>

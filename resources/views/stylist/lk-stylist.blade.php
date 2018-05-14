@@ -142,58 +142,60 @@
           </div>
         </div>
 
-        <div class="orders-list">
-          <h3 class="title-second">Список заказов</h3>
-          <ul class="orders-list__names-list">
-            <li class="orders-list__names-item">
-              <a class="link-change-content link-change-content--active" href="#">Все заказы</a>
-            </li>
-            <li class="orders-list__names-item">
-              <a class="link-change-content" href="#">Одобренные для вас</a>
-            </li>
-            <li class="orders-list__names-item">
-              <a class="link-change-content" href="#">Вас выбрал клиент</a>
-            </li>
-            <li class="orders-list__names-item">
-              <a class="link-change-content" href="#">Выполненные заказы</a>
-            </li>
-          </ul>
-        </div>
+        <div class="lk-stylist__block">
+          <div class="orders-list">
+            <h3 class="title-second">Список заказов</h3>
+            <ul class="orders-list__names-list">
+              <li class="orders-list__names-item">
+                <a class="link-change-content link-change-content--active" href="#">Все заказы</a>
+              </li>
+              <li class="orders-list__names-item">
+                <a class="link-change-content" href="#">Одобренные для вас</a>
+              </li>
+              <li class="orders-list__names-item">
+                <a class="link-change-content" href="#">Вас выбрал клиент</a>
+              </li>
+              <li class="orders-list__names-item">
+                <a class="link-change-content" href="#">Выполненные заказы</a>
+              </li>
+            </ul>
+          </div>
 
-        <div class="orders orders__wrapper">
-          <ul class="orders__title">
-            <li class="orders__checkbox"></li>
-            <li class="orders__id">Номер</li>
-            <li class="orders__date-name">Дата/Имя</li>
-            <li class="orders__service">Услуга</li>
-            <li class="orders__status">Статус</li>
-            <li class="orders__format">Формат</li>
-            <li class="orders__price">Цена</li>
-          </ul>
-          @if (isset($orders))
-            @foreach($orders as $order)
-              <ul class="orders__item">
-                <li class="orders__checkbox">
-                  <input class="input-checkbox" type="checkbox"/>
-                </li>
-                <li class="orders__id"><span>{{$order->id}}</span></li>
-                <li class="orders__date-name">
-                  <div>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->service->updated_at)->toDateString()}}</div>
-                  <div>{{$order->client->user->name}}</div>
-                </li>
-                <li class="orders__service"><span>{{$order->service->name}}</span></li>
-                <li class="orders__status"><span>{{$order->confirmed_by_stylist}}</span></li>
-                <li class="orders__format"><span>online</span></li>
-                <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
-              </ul>
-            @endforeach
-          @endif
-        </div>
+          <div class="orders orders__wrapper">
+            <ul class="orders__title">
+              <li class="orders__checkbox"></li>
+              <li class="orders__id">Номер</li>
+              <li class="orders__date-name">Дата/Имя</li>
+              <li class="orders__service">Услуга</li>
+              <li class="orders__status">Статус</li>
+              <li class="orders__format">Формат</li>
+              <li class="orders__price">Цена</li>
+            </ul>
+            @if (isset($orders))
+              @foreach($orders as $order)
+                <ul class="orders__item">
+                  <li class="orders__checkbox">
+                    <input class="input-checkbox" type="checkbox"/>
+                  </li>
+                  <li class="orders__id"><span>{{$order->id}}</span></li>
+                  <li class="orders__date-name">
+                    <div>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->service->updated_at)->toDateString()}}</div>
+                    <div>{{$order->client->user->name}}</div>
+                  </li>
+                  <li class="orders__service"><span>{{$order->service->name}}</span></li>
+                  <li class="orders__status"><span>{{$order->confirmed_by_stylist}}</span></li>
+                  <li class="orders__format"><span>online</span></li>
+                  <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
+                </ul>
+              @endforeach
+            @endif
+          </div>
 
-        <div class="orders__take">
-          <input class="btn btn--action" type="submit" value="Взять заказ"/>
-        </div>
+          <div class="orders__take">
+            <input class="btn btn--action" type="submit" value="Взять заказ"/>
+          </div>
 
+        </div>
       </div>
     </div>
   </section>

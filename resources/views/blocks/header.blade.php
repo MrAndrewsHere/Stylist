@@ -42,9 +42,7 @@
             @endif
 
             @if(Auth::user()->role->name == 'admin')
-              <a class="nav-profile__menu-link nav-link" href="/lk_stylist">Личный кабинет</a>
-              <a class="nav-profile__menu-link nav-link" href="/lk_client">Личный кабинет</a>
-              <a class="nav-profile__menu-link nav-link" href="/my_style">Мой стиль</a>
+              <a class="nav-profile__menu-link nav-link" href="/admin">Панель администратора</a>
             @endif
 
 

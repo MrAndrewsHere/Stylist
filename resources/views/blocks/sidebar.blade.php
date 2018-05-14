@@ -11,7 +11,6 @@
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/stylists">Наши стилисты</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/answers">Стилисты отвечают</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/contacts">Контакты</a></li>
-          <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/admin">Панель администратора</a></li>
         </ul>
       </nav>
 
