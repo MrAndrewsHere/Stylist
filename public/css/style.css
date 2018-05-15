@@ -267,8 +267,7 @@ textarea {
   resize: none; }
 
 .wrapper {
-  width: 82%;
-  margin-left: 18%; }
+  margin-left: 242px; }
 
 .container {
   width: 90%;
@@ -499,8 +498,8 @@ textarea {
 
 .navigation__profile-img {
   border-radius: 50%;
-  height: 40px;
-  width: 40px; }
+  width: 40px;
+  max-height: 40px; }
 
 .navigation__profile-arrow {
   background-image: url(../img/arrow.svg);
@@ -617,7 +616,7 @@ textarea {
   position: relative; }
 
 .sidebar {
-  width: 18%;
+  width: 242px;
   height: 100%;
   background-color: #fdf0da;
   background-image: url(../img/background.png);
@@ -663,18 +662,21 @@ textarea {
   color: #111; }
 
 .social-icons-list {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 20px;
   margin-top: auto; }
 
 .social-icon-link,
 .social-icon {
   width: 25px;
+  height: 25px; }
+
+.social-link {
+  cursor: pointer;
+  display: block;
   height: 25px; }
 
 .enter-panel {
@@ -1641,17 +1643,23 @@ textarea {
   margin-right: 50px;
   margin-bottom: 40px; }
 
+.service-page__stylist-name {
+  margin-top: 10px; }
+
 .service-page__stylist-photo {
-  width: 100%;
+  width: 120px;
+  height: 120px;
   border-radius: 50%; }
 
 .service-page__stylist-stars {
-  font-size: 26px;
-  margin-top: auto; }
+  font-size: 26px; }
 
 .service-page__stylist-status {
   font-weight: bold;
   margin: 10px 0; }
+
+.add_service_to_client {
+  margin-top: auto; }
 
 .message-success,
 .message-error {

@@ -56,17 +56,25 @@
   margin-bottom: 40px;
 }
 
+.service-page__stylist-name {
+  margin-top: 10px;
+}
+
 .service-page__stylist-photo {
-  width: 100%;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 
 .service-page__stylist-stars {
   font-size: 26px;
-  margin-top: auto;
 }
 
 .service-page__stylist-status {
   font-weight: bold;
   margin: 10px 0;
+}
+
+.add_service_to_client {
+  margin-top: auto;
 }

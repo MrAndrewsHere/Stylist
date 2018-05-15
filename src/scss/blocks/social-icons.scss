@@ -1,13 +1,17 @@
 .social-icons-list {
-  width: 100%;
   display: flex;
   justify-content: space-around;
-  height: 20px;
   margin-top: auto;
 }
 
 .social-icon-link,
 .social-icon {
   width: 25px;
+  height: 25px;
+}
+
+.social-link {
+  cursor: pointer;
+  display: block;
   height: 25px;
 }
