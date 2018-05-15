@@ -1,66 +1,72 @@
-<header class="header-home__margin">
+<header class="header-home__wrapper">
   <div class="container-home">
     <div class="header-home">
-      <a class="phone-number header__link" href="tel:+7(843)2922222">
+      <a class="header__link" href="tel:+7(843)2922222">
         +7 (843) 292-22-22
       </a>
+
       @if (isset($error))
         @if ($errors->has('password'))
           <span class="help-block">
             <strong>{{ $errors->first('password') }}</strong>
           </span>
         @endif
+
         @if ($errors->has('email'))
           <span class="help-block">
             <strong>{{ $errors->first('email') }}</strong>
           </span>
         @endif
       @endif
+
       @if (Auth::guest())
-        <div class="enter-panel-guest">
+        <div class="enter-panel">
           <button class="btn btn--auth">Вход</button>
-          <span> |</span>
+          <span class="enter-panel__divider">|</span>
           <button class="btn btn--registration">Регистрация</button>
-        </div>@else
-        <div class="enter-panel-stylist">
-          @if (Auth::user()->role->name == 'client' )
-            <a class="nav-link" href="/my_orders">Мои заказы</a>
-          @endif
-          @if(Auth::user()->role->name == 'stylist')
-            <a class="nav-link" href="/my_orders">Мои заказы</a>
-            <a class="nav-link" href="/portfolio">Мое портфолио</a>
-          @endif
-          @if(Auth::user()->role->name == 'admin')
-            <a class="nav-link" href="/admin">Панель администратора</a>
+        </div>
+
+      @else
+        <div class="enter-panel">
+          @if (Auth::user()->role->name == 'client')
+            <a class="navigation__link" href="/my_orders">Мои заказы</a>
           @endif
 
-          <a class="nav-link nav-profile" href="#">
-            <div class="nav-profile__img"><img class="nav-profile__img" src="{{Auth::user()->avatar}}"/></div>
-            <div class="nav-profile__arrow"></div>
+          @if(Auth::user()->role->name == 'stylist')
+            <a class="navigation__link" href="/my_orders">Мои заказы</a>
+            <a class="navigation__link" href="/portfolio">Моё портфолио</a>
+          @endif
+
+          @if(Auth::user()->role->name == 'admin')
+            <a class="navigation__link" href="/admin">Панель администратора</a>
+          @endif
+
+          <a class="navigation__link navigation__profile" href="#">
+            <div class="navigation__profile-img">
+              <img class="navigation__profile-img" src="{{Auth::user()->avatar}}"/>
+            </div>
+            <div class="navigation__profile-arrow"></div>
           </a>
-          <div class="nav-profile__menu"><a class="nav-profile__menu-link nav-link">{{Auth::user()->name}}</a>
+
+          <div class="navigation__profile-menu">
+            <a class="navigation__profile-menu-link navigation__link">{{Auth::user()->name}}</a>
             @if(Auth::user()->role->name == 'stylist')
-              <a class="nav-profile__menu-link nav-link" href="/lk_stylist">Личный кабинет</a>
+              <a class="navigation__profile-menu-link navigation__link" href="/lk_stylist">Личный кабинет</a>
             @endif
 
             @if(Auth::user()->role->name == 'client')
-              <a class="nav-profile__menu-link nav-link" href="/lk_client">Личный кабинет</a>
-              <a class="nav-profile__menu-link nav-link" href="/my_style">Мой стиль</a>
+              <a class="navigation__profile-menu-link navigation__link" href="/lk_client">Личный кабинет</a>
+              <a class="navigation__profile-menu-link navigation__link" href="/my_style">Мой стиль</a>
             @endif
 
-            @if(Auth::user()->role->name == 'admin')
-            
-            @endif
-
-
-            <a class="nav-profile__menu-link nav-link" href="/settings">Настройки</a>
-            <a class="nav-profile__menu-link nav-link" href="/logout"
+            <a class="navigation__profile-menu-link navigation__link" href="/settings">Настройки</a>
+            <a class="navigation__profile-menu-link navigation__link" href="/logout"
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выход</a>
             <form id="logout-form" action="{{ url('/logout') }}" method="POST"
                   style="display: none;">{{ csrf_field() }}</form>
           </div>
-        </div>@endif
-
+        </div>
+      @endif
     </div>
   </div>
 </header>

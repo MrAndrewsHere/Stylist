@@ -303,13 +303,14 @@ textarea {
           align-items: center;
   min-height: 40px; }
 
-.header-home__margin {
+.header-home__wrapper {
   padding-top: 10px;
   padding-bottom: 10px; }
 
 .header__link {
   color: #000;
-  font-weight: 600; }
+  font-weight: 600;
+  font-family: "Montserrat"; }
 
 .logo {
   display: -webkit-box;
@@ -479,7 +480,7 @@ textarea {
   background-color: #5a2627;
   color: #fdf0da; }
 
-.nav-link {
+.navigation__link {
   text-transform: uppercase;
   margin: 0 15px;
   color: #000;
@@ -487,7 +488,7 @@ textarea {
   font-weight: 600;
   line-height: normal; }
 
-.nav-profile {
+.navigation__profile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -496,21 +497,20 @@ textarea {
           align-items: center;
   margin-right: 0; }
 
-.nav-profile__img {
+.navigation__profile-img {
   border-radius: 50%;
   height: 40px;
   width: 40px; }
 
-.nav-profile__arrow {
+.navigation__profile-arrow {
   background-image: url(../img/arrow.svg);
   background-repeat: no-repeat;
-  color: #eee;
   margin-left: 5px;
   width: 15px;
   height: 10px;
   opacity: 0.7; }
 
-.nav-profile__menu {
+.navigation__profile-menu {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -530,14 +530,14 @@ textarea {
   border-radius: 5px;
   z-index: 11; }
 
-.nav-profile__menu-link {
+.navigation__profile-menu-link {
   padding: 5px 0; }
 
-.nav-profile__menu-link:first-child {
+.navigation__profile-menu-link:first-child {
   margin-bottom: 10px;
   border-bottom: 1px solid #000; }
 
-.nav-profile__visible {
+.navigation__profile-visible {
   visibility: visible; }
 
 .main {
@@ -677,8 +677,7 @@ textarea {
   width: 25px;
   height: 25px; }
 
-.enter-panel-stylist,
-.enter-panel-client {
+.enter-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -691,8 +690,10 @@ textarea {
   position: relative;
   color: #000;
   font-weight: 600;
-  font-size: 12px;
-  font-family: "Montserrat", Arial; }
+  font-size: 12px; }
+
+.enter-panel__divider {
+  padding: 0 10px; }
 
 .slider {
   margin-top: 30px;

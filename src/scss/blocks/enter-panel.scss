@@ -1,5 +1,4 @@
-.enter-panel-stylist,
-.enter-panel-client {
+.enter-panel {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,5 +6,8 @@
   color: #000;
   font-weight: 600;
   font-size: 12px;
-  font-family: "Montserrat", Arial;
+
+  &__divider {
+    padding: 0 10px;
+  }
 }

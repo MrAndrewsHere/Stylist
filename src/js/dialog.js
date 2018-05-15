@@ -9,8 +9,8 @@
   const login = document.querySelector('.input-login');
   const ESC_CODE = 27;
 
-  const profileMenu = document.querySelector('.nav-profile');
-  const profileMenuBlock = document.querySelector('.nav-profile__menu');
+  const profileMenu = document.querySelector('.navigation__profile');
+  const profileMenuBlock = document.querySelector('.navigation__profile-menu');
 
   const formAuth = document.querySelector('.form-auth');
   const password = document.querySelector('.input-password');
@@ -60,7 +60,7 @@
   // меню пользователя при клике на аватарке
   if (profileMenu) {
     profileMenu.addEventListener('click', () => {
-      profileMenuBlock.classList.toggle('nav-profile__visible');
+      profileMenuBlock.classList.toggle('navigation__profile-visible');
     });
   }
 

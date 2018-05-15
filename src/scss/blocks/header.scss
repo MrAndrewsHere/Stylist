@@ -4,7 +4,7 @@
   align-items: center;
   min-height: 40px;
 
-  &__margin {
+  &__wrapper {
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -13,4 +13,5 @@
 .header__link {
   color: #000;
   font-weight: 600;
+  font-family: "Montserrat";
 }
