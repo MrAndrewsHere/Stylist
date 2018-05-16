@@ -131,7 +131,7 @@
       </div>
 
       <div class="lk-stylist__block">
-        <h2 class="title-second">Вид внешности и психотип</h2>
+        <h2 class="title-second">Советы</h2>
         
         <div class="slider-tips">
           <div class="lk-client__style">
@@ -140,7 +140,6 @@
             </div>
             <div class="lk-client__style-seasons">
               <div class="lk-client__style-tips">
-                <h3 class="title-block">Советы:</h3>
                 <p class="lk-client__paragraph">Мешковатые изделия лучше не носить, так как они
                   откровенно портят фигуру, столь красивую от природы. Чаще всего она становится прямоугольником. На
                   бедрах акценты ставить не стоит. Подбирая топы и блузки для фигуры типа песочные часы, не нужно
@@ -163,7 +162,6 @@
             </div>
             <div class="lk-client__style-seasons">
               <div class="lk-client__style-tips">
-                <h3 class="title-block">Советы:</h3>
                 <p class="lk-client__paragraph">Мешковатые изделия лучше не носить, так как они
                   откровенно портят фигуру, столь красивую от природы. Чаще всего она становится прямоугольником. На
                   бедрах акценты ставить не стоит. Подбирая топы и блузки для фигуры типа песочные часы, не нужно
@@ -180,23 +178,32 @@
             </div>
           </div>
         </div>
-        <div class="slider-tips__number">2 / 2</div>
+
+        <div class="slider-tips__numbers">
+          <span class="slider-tips__numbers-current"></span>
+          <span>/</span>
+          <span class="slider-tips__numbers-all"></span>
+        </div>
       </div>
 
       <div class="lk-stylist__block">
         <h2 class="title-second">Фото до и после</h2>
         <div class="lk-client__style">
           <div class="lk-client__style-photo-before-after">
-            <img src="img/clients/4before.png" alt=""/>
-            <img src="img/clients/4-1after.png" alt=""/>
-          </div>
-
-          <div>
-            <div class="lk-client__style-description">
-              <h3 class="title-block">Фото до и после от 20 сентября 2016</h3>
-              <p class="lk-client__paragraph">Для того чтобы его поддержать, лучше брать такие топы, у которых бретелек нет, где есть глубокое декольте. Чтобы привлечь внимание к талии, можно рассмотреть прилегающие вещи, модели с запахом.</p>
+            <div class="photo__first">
+              <img src="img/clients/4before.png" alt=""/>
+            </div>
+            <div class="photo__second">
+              <img src="img/clients/4-1after.png" alt=""/>
             </div>
           </div>
+
+          
+          <div class="lk-client__style-description">
+            <h3 class="title-block">Фото до и после от 20 сентября 2016</h3>
+            <p class="lk-client__paragraph">Для того чтобы его поддержать, лучше брать такие топы, у которых бретелек нет, где есть глубокое декольте. Чтобы привлечь внимание к талии, можно рассмотреть прилегающие вещи, модели с запахом.</p>
+          </div>
+          
         </div>
       </div>
     </div>

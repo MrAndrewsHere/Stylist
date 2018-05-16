@@ -5,6 +5,10 @@
 .card__margin {
   margin-top: 60px;
 
+  &--profile {
+    margin-bottom: 50px;
+  }
+
   &:first-child {
     margin-top: 40px;
   }

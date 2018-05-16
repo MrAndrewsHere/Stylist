@@ -5,8 +5,7 @@
   height: 320px;
 
   &--portfolio {
-    width: 100%;
-    padding: 0;
+    height: 100%;
   }
 }
 
@@ -30,14 +29,8 @@
   display: flex;
 }
 
-.slider-tips__number {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 300px;
-  text-align: center;
-}
-
 .slider-tips {
+  position: relative;
   user-select: text;
 
   .lk-client__style {
@@ -53,4 +46,11 @@
     top: 424px;
     left: 0;
   }
+}
+
+.slider-tips__numbers {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 300px;
+  text-align: center;
 }

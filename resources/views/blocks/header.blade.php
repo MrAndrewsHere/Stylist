@@ -49,7 +49,7 @@
           </a>
 
           <div class="navigation__profile-menu">
-            <a class="navigation__profile-menu-link navigation__link">{{Auth::user()->name}}</a>
+            <a class="navigation__profile-menu-link">{{Auth::user()->name}}</a>
             @if(Auth::user()->role->name == 'stylist')
               <a class="navigation__profile-menu-link navigation__link" href="/lk_stylist">Личный кабинет</a>
             @endif

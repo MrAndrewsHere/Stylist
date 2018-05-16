@@ -1,6 +1,6 @@
 const gulp = require('gulp');
-const blade = require('gulp-blade');
 const sass = require('gulp-sass');
+const minifyCss = require('gulp-clean-css'); // минификация css
 const plumber = require('gulp-plumber'); // отлавливает ошибки в себя
 const browserSync = require('browser-sync').create(); // перезагрузка страницы после изменения файлов
 const imagemin = require('gulp-imagemin'); // оптимизация изображений
@@ -40,12 +40,6 @@ const path = {
   },
 };
 
-gulp.task('compile', () => {
-  gulp.src('*.blade')
-    .pipe(blade())
-    .pipe(gulp.dest('resources/views'));
-});
-
 // css
 gulp.task('css', () => gulp
   .src(path.src.scss)
@@ -55,6 +49,7 @@ gulp.task('css', () => gulp
   .pipe(autoprefixer({
     browsers: ['last 2 versions'],
   }))
+  .pipe(minifyCss())
   .pipe(gulp.dest(path.build.scss))
   .pipe(browserSync.stream()));
 
@@ -65,14 +60,10 @@ gulp.task('js', () => gulp
   .pipe(browserSync.stream()));
 
 // img
+
 gulp.task('img', () => gulp
   .src(path.src.img)
   .pipe(newer(path.build.img))
-  .pipe(gulp.dest(path.build.img))
-  .pipe(browserSync.stream()));
-
-gulp.task('imgmin', ['img'], () => gulp
-  .src('public/img/**/*{jpg,png}')
   .pipe(imagemin([
     imagemin.optipng({ optimizationLevel: 3 }),
     imagemin.jpegtran({ progressive: true }),
@@ -98,7 +89,7 @@ gulp.task('fonts', () => gulp
 
 // public
 gulp.task('public', (fn) => {
-  run('css', 'js', 'imgmin', 'spritesvg', 'fonts', fn);
+  run('css', 'js', 'img', 'spritesvg', 'fonts', fn);
 });
 
 // server
@@ -110,7 +101,7 @@ gulp.task('serve', () => {
 
   gulp.watch(path.watch.scss, ['css']);
   gulp.watch(path.watch.js, ['js']);
-  gulp.watch(path.watch.img, ['imgmin']);
+  gulp.watch(path.watch.img, ['img']);
   gulp.watch(path.watch.spritesvg, ['spritesvg']);
   gulp.watch(path.watch.fonts, ['fonts']);
 });

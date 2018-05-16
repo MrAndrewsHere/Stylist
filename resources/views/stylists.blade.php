@@ -40,9 +40,9 @@
               </div>
 
               <div class="card__description">
-                <div class="card__description__title">
+                <a class="card__description__title" href="{{ url('/stylist_profile', $stylist->id) }}">
                   {{ $stylist->user->name }}
-                </div>
+                </a>
                 <div class="card__description__text">
                   {!! nl2br(e($stylist->about))!!}
                 </div>

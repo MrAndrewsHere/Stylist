@@ -76,7 +76,6 @@
               </li>
             </ul>
           </div>
-          <a class="link-common link-common--right" href="#">Посмотреть все заказы</a>
         </div>
       </div>
     </div>

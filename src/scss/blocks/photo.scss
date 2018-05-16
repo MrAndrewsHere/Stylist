@@ -1,4 +1,11 @@
+.photo__first,
+.photo__second {
+  position: relative;
+}
+
 .photo__first {
+  margin-right: 10px;
+
   &:before {
     content: "До";
     position: absolute;
@@ -12,8 +19,6 @@
 }
 
 .photo__second {
-  margin-left: 10px;
-
   &:before {
     content: "После";
     position: absolute;
@@ -26,15 +31,4 @@
   }
 }
 
-.photo__before {
-  height: 400px;
-}
 
-.photo__after {
-  height: 400px;
-}
-
-.photo__first,
-.photo__second {
-  position: relative;
-}

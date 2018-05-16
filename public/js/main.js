@@ -9,10 +9,28 @@ $(document).ready(() => {
     arrows: true,
   });
 
+
+  // слайдер на странице «мой стиль»
+
+  $('.slider-tips').on('init', (event, slick) => {
+    const num = slick.slideCount;
+    const currNum = slick.currentSlide + 1;
+
+    $('.slider-tips__numbers-current').text(`${currNum}`);
+    $('.slider-tips__numbers-all').text(`${num}`);
+  });
+
   $('.slider-tips').slick({
     autoplay: false,
     dots: false,
   });
+
+  $('.slider-tips').on('afterChange', (event, slick, currentSlide) => {
+    $('.slider-tips__numbers-current').text(`${currentSlide + 1}`);
+  });
+
+  // конец слайдера на странице «мой стиль»
+
 
   $('.link-tab').click(function () {
     $('.link-tab').removeClass('link-active').eq($(this).index()).addClass('link-active');
