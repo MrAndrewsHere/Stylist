@@ -86,9 +86,11 @@ class WelcomeController extends Controller
         $Categoryservices = $category->first()->service;
       return view('services', compact('Categoryservices'));
     }
-
+    if (isset($categoryName))
+    {
     $Categoryservices = service::all();
     return view('services', compact('Categoryservices'));
+    }
   }
 
   public function sendmail(Request $request)

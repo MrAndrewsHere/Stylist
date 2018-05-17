@@ -4,7 +4,7 @@
 
 @section ('content')
   <section class="section">
-    <h1 class="section__title">Стилисты отвечают</h1>
+    <h1 class="section__title">Часто задаваемые вопросы</h1>
     <div class="ask-question">
       <div class="container">
         <div class="ask-question__preview ask-question__preview__wrapper">

@@ -147,13 +147,10 @@
             <h3 class="title-second">Список заказов</h3>
             <ul class="orders-list__names-list">
               <li class="orders-list__names-item">
-                <a class="link-change-content link-change-content--active" href="#">Все заказы</a>
+                <a class="link-change-content link-change-content--active" href="#">Новые заказы</a>
               </li>
               <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Одобренные для вас</a>
-              </li>
-              <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Вас выбрал клиент</a>
+                <a class="link-change-content" href="#">Подтвержденные заказы</a>
               </li>
               <li class="orders-list__names-item">
                 <a class="link-change-content" href="#">Выполненные заказы</a>

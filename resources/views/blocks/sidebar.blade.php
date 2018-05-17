@@ -9,7 +9,7 @@
         <ul class="sidebar__menu-list">
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/services/all">Наши услуги</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/stylists">Наши стилисты</a></li>
-          <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/answers">Стилисты отвечают</a></li>
+          <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/answers">Часто задаваемые вопросы</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/contacts">Контакты</a></li>
         </ul>
       </nav>
