@@ -19,43 +19,53 @@
 
             @if (Auth::user()->role->name == 'stylist')
               <div class="card__description">
-                <div class="card__description__title">Имя:
-                  <span class="card__description__text">
-                    {{Auth::user()->name}} 
+                <div class="card__description__text">
+                  <span class="card__description__title">
+                    Имя:
                   </span>
+                  {{Auth::user()->name}}
                 </div>
-                <div class="card__description__title">Фамилия:
-                  <span class="card__description__text">
+
+                <div class="card__description__text">
+                  <span class="card__description__title">
+                    Фамилия:
+                  </span>
                   {{Auth::user()->second_name}}
-                  </span>
                 </div>
-                <div class="card__description__title">Обо мне:
-                  <span class="card__description__text">
-                    {{Auth::user()->stylist->about}}
+
+                <div class="card__description__text">
+                  <span class="card__description__title">
+                    Обо мне:
                   </span>
+                  {{Auth::user()->stylist->about}}
                 </div>
-                <div class="card__description__title">Класс:
-                  <span class="card__description__text">
-                     {{isset(Auth::user()->stylist->category) ? Auth::user()->stylist->category->name : ''}}
-                  </span>
+
+                <div class="card__description__text">
+                  <span class="card__description__title">
+                    Класс:
+                  </span> 
+                     {{isset(Auth::user()->stylist->category) ? 
+                      Auth::user()->stylist->category->name : ''}}
                 </div>
-                <div class="card__description__title">Город:
-                  <span class="card__description__text">
-                    {{Auth::user()->city}}
+
+                <div class="card__description__text">
+                  <span class="card__description__title">
+                    Город:
                   </span>
+                  {{Auth::user()->city}}
                 </div>
               </div>
             @else
               <div class="card__description">
                 <div class="card__description">
-                  <div class="card__description__title">{{Auth::user()->name}} {{Auth::user()->second_name}}</div>
-                  <div class="card__description__text"></div>
-                  <div class="card__description__title">Класс</div>
-                  <div class="card__description__text"></div>
-                  <div class="card__description__title">Опыт работы</div>
-                  <div class="card__description__text"></div>
-                  <div class="card__description__title">Образование</div>
-                  <div class="card__description__text"></div>
+                  <div class="card__description__text">{{Auth::user()->name}} {{Auth::user()->second_name}}</div>
+                  <div class="card__description__title"></div>
+                  <div class="card__description__text">Класс</div>
+                  <div class="card__description__title"></div>
+                  <div class="card__description__text">Опыт работы</div>
+                  <div class="card__description__title"></div>
+                  <div class="card__description__text">Образование</div>
+                  <div class="card__description__title"></div>
                 </div>
               </div>
             @endif

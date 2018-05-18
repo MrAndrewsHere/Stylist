@@ -5,28 +5,34 @@
         <img class="lk__photo" src={{$stylist->user->avatar}} alt="стилист"/>
       </a>
     </div>
-
+    
     <div class="card__description">
-      <div class="card__description__title">Имя:
-        <span class="card__description__text">
-                      {{$stylist->user->name}}
-                    </span>
-      </div>
-      <div class="card__description__title">Фамилия:
-        <span class="card__description__text">
-                    {{$stylist->user->second_name}}
-                    </span>
-      </div>
-      <div class="card__description__title">Обо мне:
-        <span class="card__description__text">
-                      {{$stylist->about}}
-                    </span>
+      <div class="card__description__text">
+        <span class="card__description__title">
+          Имя:
+        </span>
+        {{$stylist->user->name}}
       </div>
 
-      <div class="card__description__title">Город:
-        <span class="card__description__text">
-                      {{$stylist->user->city}}
-                    </span>
+      <div class="card__description__text">
+        <span class="card__description__title">
+          Фамилия:
+        </span>
+        {{$stylist->user->second_name}}
+      </div>
+
+      <div class="card__description__text">
+        <span class="card__description__title">
+          Обо мне:
+        </span>
+        {{$stylist->about}}
+      </div>
+
+      <div class="card__description__text">
+        <span class="card__description__title">
+          Город:
+        </span>
+        {{$stylist->user->city}}
       </div>
     </div>
   </div>

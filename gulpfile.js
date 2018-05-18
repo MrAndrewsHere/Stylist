@@ -8,7 +8,7 @@ const newer = require('gulp-newer'); // добавляет только новы
 const rename = require('gulp-rename'); // переименовывает файлы
 const svgstore = require('gulp-svgstore'); // создает svg спрайт
 const svgmin = require('gulp-svgmin'); // минифицирует svg
-// const   del = require("del"); // удаляет файлы и папки
+// const del = require("del"); // удаляет файлы и папки
 const run = require('run-sequence'); // для последовательного запуска задач
 const autoprefixer = require('gulp-autoprefixer'); // добавляет автопрефиксеры
 
@@ -60,7 +60,6 @@ gulp.task('js', () => gulp
   .pipe(browserSync.stream()));
 
 // img
-
 gulp.task('img', () => gulp
   .src(path.src.img)
   .pipe(newer(path.build.img))

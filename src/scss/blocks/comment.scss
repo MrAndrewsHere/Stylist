@@ -1,0 +1,21 @@
+.comment {
+  width: 600px;
+  margin: 30px auto 0;
+  display: flex;
+  align-items: center;
+}
+
+.comment__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment__title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.comment__text {
+  font-size: 14px;
+  margin-bottom: 10px;
+}

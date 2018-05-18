@@ -45,24 +45,15 @@
   }
 
   &__title {
+    font-weight: 600;
     color: $color-text;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 16px;
-    margin-bottom: 10px;
-
-    &--center {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
+    margin-bottom: 8px;
   }
 
   &__text {
     font-size: 15px;
-    font-weight: 400;
-    line-height: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
+    color: $color-text;
   }
 }
 
