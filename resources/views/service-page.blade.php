@@ -53,6 +53,7 @@
       @if(Auth::check())
       <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif </div>
       <div class="message-error">Извините, что-то пошло не так</div>
+      
       <h2 class="service-page__title">Выберите своего стилиста</h2>
 
         <div class="service-page__stylists">

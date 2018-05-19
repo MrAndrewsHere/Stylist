@@ -31,7 +31,8 @@ class ClientController extends Controller
     return view('client.my-style');
   }
 
-  protected function delete_order(Request $request) // Удаление заказа из моих заказов
+  // Удаление заказа из моих заказов
+  protected function delete_order(Request $request)
   {
     try {
       $order = Order::find($request->input('id'));
@@ -40,9 +41,9 @@ class ClientController extends Controller
       return;
     } catch (\Exception $exception) {
     }
-
   }
 
+  // Добавление клиентом услуг
   protected function add_service_to_client(Request $request)
   {
 
@@ -56,13 +57,14 @@ class ClientController extends Controller
         'stylist_id' => $stylist->id,
         'price' => $service->priceForStylist($stylist)
       ]);
-      return $request->session()->flash('success', 'Услуга добавлена');;
+      return $request->session()->flash('success', 'Услуга добавлена');
     }
 
     return $request->session()->flash('error', 'Ошибка');;
   }
 
-  protected function store(Request $request) // Сохранение настроек клиента
+  // Сохранение настроек клиента
+  protected function store(Request $request)
   {
     $data = $request;
     $user = Auth::user();
@@ -89,15 +91,14 @@ class ClientController extends Controller
     }
     $request->session()->flash('success', 'Данные успешно сохранены');
     return redirect('/settings');
-
   }
 
-  protected function ordered(Request $request) //Заказ услгуи у стилиста
+  //Заказ услгуи у стилиста
+  protected function ordered(Request $request) 
   {
     $order = Auth::user()->client->orders->find($request->input('order_id'))->first();
     $order->ordered = 1;
     $order->save();
     return $request->session()->flash('success', 'Услуга заказана');
-
   }
 }

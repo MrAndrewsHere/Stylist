@@ -42,3 +42,18 @@
     border-color: $color-accent-light;
   }
 }
+
+.form__output-avatar {
+  width: 100%;
+  padding: 8px;
+  border: 2px dashed #ddd;
+}
+
+.form__output-diploms {
+  display: inline-block;
+  max-width: 100%;
+  height: 150px;
+  padding: 5px;
+  border: 1px dashed #ddd;
+  margin: 10px 5px 0 0;
+}

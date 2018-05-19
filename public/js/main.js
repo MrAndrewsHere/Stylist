@@ -106,10 +106,57 @@ $(document).ready(() => {
       data: $(this).serialize(),
       success() {
         $('.message-success').css('display', 'block');
+        $('.message-success').text('Заказ успешно удален');
       },
       error() {
         $('.message-error').css('display', 'block');
       },
     });
   });
+
+  // добавление превью загружаемого изображения
+  function handleFileSelectSingle(evt) {
+    const file = evt.target.files;
+
+    const f = file[0];
+
+    const reader = new FileReader();
+
+    reader.onload = (function (theFile) {
+      return function (e) {
+        const span = document.createElement('span');
+        span.innerHTML = ['<img class="form__output-avatar" src="', e.target.result,
+          '" title="', escape(theFile.name), '"/>'].join('');
+        document.getElementById('form__output-avatar').innerHTML = '';
+        document.getElementById('form__output-avatar').insertBefore(span, null);
+      };
+    }(f));
+
+    reader.readAsDataURL(f);
+  }
+  document.getElementById('avatar').addEventListener('change', handleFileSelectSingle, false);
+
+  // добавление превью загружаемых дипломов
+  function handleFileSelectMulti(evt) {
+    const files = evt.target.files;
+
+    document.getElementById('form__output-diploms').innerHTML = '';
+
+    for (let i = 0, f; f = files[i]; i += 1) {
+      const reader = new FileReader();
+
+      reader.onload = (function (theFile) {
+        return function (e) {
+          const span = document.createElement('span');
+          span.innerHTML = ['<img class="form__output-diploms" src="', e.target.result,
+            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('form__output-diploms').insertBefore(span, null);
+        };
+      }(f));
+
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('diploms').addEventListener('change', handleFileSelectMulti, false);
 });
