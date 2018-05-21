@@ -55,7 +55,7 @@
             @endif
 
             @if(Auth::user()->role->name == 'client')
-              <a class="navigation__profile-menu-link navigation__link" href="/lk_client">Личный кабинет</a>
+              {{--<a class="navigation__profile-menu-link navigation__link" href="/lk_client">Личный кабинет</a>--}}
               <a class="navigation__profile-menu-link navigation__link" href="/my_style">Мой стиль</a>
             @endif
 

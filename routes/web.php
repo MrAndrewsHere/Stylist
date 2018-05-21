@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/lk_stylist', 'StylistController@lk_stylist');
-Route::get('/lk_client', 'ClientController@lk_client');
+//Route::get('/lk_client', 'ClientController@lk_client');
 Route::get('/my_style', 'ClientController@my_style');
 Route::get('/my_orders', 'HomeController@my_orders');
 Route::get('/portfolio', 'HomeController@portfolio');
