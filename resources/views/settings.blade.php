@@ -23,7 +23,7 @@
           
           <!-- написать проверку, если в бд у пользователя есть аватарка, то вывести её в <img class="form__output-avatar" src="ссылка на фотку" alt="ссылка на имя + фамилия пользователя">-->
           <span id="form__output-avatar">
-            <!-- ................. -->
+            <img class="form__output-avatar" src="{{Auth::user()->avatar}}" alt="{{Auth::user()->name.' '.Auth::user()->second_name}}">
           </span>
 
           <label>Имя
