@@ -44,9 +44,11 @@
 }
 
 .form__output-avatar {
-  width: 100%;
+  max-width: 100%;
   padding: 8px;
   border: 2px dashed #ddd;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .form__output-diploms {
