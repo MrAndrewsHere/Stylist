@@ -10,9 +10,9 @@
                 Мы позаботимся о том, чтобы вы это носили
             </p>
             @if(Auth::check())
-                <button class="btn btn--banner btn--registration">Начать преображение</button> // перенаправление на наши услгу
+                <a href="/services/all" class="btn btn--banner">Начать преображение</a>
             @else
-                <button class="btn btn--banner btn--registration">Начать преображение</button> // регистрация (уже работает)
+                <button class="btn btn--banner btn--registration">Начать преображение</button>
             @endif
         </div>
     </div>

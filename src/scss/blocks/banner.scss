@@ -6,6 +6,9 @@
 }
 
 .banner__slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   left: 4%;
   top: 32%;

@@ -106,7 +106,6 @@ $(document).ready(() => {
       data: $(this).serialize(),
       success() {
         $('.message-success').css('display', 'block');
-        $('.message-success').text('Заказ успешно удален');
       },
       error() {
         $('.message-error').css('display', 'block');
