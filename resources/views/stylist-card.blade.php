@@ -60,7 +60,7 @@
 
       <h2 class="title-second">Портфолио</h2>
 
-      <div class="slider slider--portfolio">
+      <div class="slider-portfolio">
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
@@ -82,6 +82,7 @@
             </div>
           </div>
         </div>
+
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
@@ -96,7 +97,7 @@
                   Подобрать новые вещи к гардеробу и обновить стиль
                 </div>
                 <div class="comment__text">
-                  <span class="comment__user-text-title">Комментарий стилиста — </span>
+                  <span class="comment__title">Комментарий стилиста — </span>
                   После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж
                 </div>
               </div>
@@ -112,12 +113,12 @@
 
             <div class="comment">
               <div class="comment__info">
-                <div class="comment__user-text-text">
-                  <span class="comment__user-text-title">Цель клиента — </span>
+                <div class="comment__text">
+                  <span class="comment__title">Цель клиента — </span>
                   Подобрать новые вещи к гардеробу и обновить стиль
                 </div>
-                <div class="comment__user-text-text">
-                  <span class="comment__user-text-title">Комментарий стилиста — </span>
+                <div class="comment__text">
+                  <span class="comment__title">Комментарий стилиста — </span>
                   После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж
                 </div>
               </div>

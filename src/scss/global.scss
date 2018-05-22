@@ -43,9 +43,27 @@ textarea {
   padding: 0 10px;
 }
 
-.container-lk {
-  width: 40%;
-  margin: 0 auto;
+@media ($xs) {
+  .container-lk {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media ($md) {
+  .container-lk {
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media ($xl) {
+  .container-lk {
+    width: 40%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 .container-communication {

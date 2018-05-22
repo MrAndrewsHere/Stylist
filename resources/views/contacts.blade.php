@@ -30,7 +30,7 @@
             <label>Вопрос
               <textarea class="form__textarea" name="ques" cols="30" rows="10"></textarea>
             </label>
-            <input class="btn btn--action btn--action-small" type="submit" value="Отправить"/>
+            <button class="btn btn--action btn--action-small" type="submit">Отправить</button>
           </form>
 
         </div>

@@ -70,7 +70,7 @@
           </span>
 
           <div class="start-change">
-            <input class="btn btn--action" type="submit" value="Сохранить"/>
+            <button class="btn btn--action" type="submit">Сохранить</button>
           </div>
         </form>
 
@@ -102,7 +102,7 @@
           </label>
 
           <div class="start-change">
-            <input class="btn btn--action" type="submit" value="Сохранить"/>
+            <button class="btn btn--action" type="submit">Сохранить</button>
           </div>
         </form>
       @endif

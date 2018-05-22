@@ -34,12 +34,11 @@
 }
 
 .btn--action {
+  padding: 15px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 250px;
-  padding: 0 20px;
-  height: 50px;
   border-radius: 25px;
   color: $white;
   font-weight: 700;
@@ -59,7 +58,6 @@
   &-super-small {
     width: 100%;
     min-width: 100px;
-    padding: 0 5px;
     font-size: 12px;
   }
 
@@ -152,8 +150,9 @@
   justify-content: center;
   align-items: center;
   min-width: 250px;
-  max-width: 250px;
+  max-width: 260px;
   padding: 0 20px;
+  margin: 0 auto;
   height: 50px;
   border-radius: 25px;
   text-transform: uppercase;
@@ -166,5 +165,15 @@
   &:hover {
     background-color: #5a2627;
     color: $cream;
+  }
+
+  &-reverse {
+    color: $cream;
+    background-color: #5a2627;
+
+    &:hover {
+      background-color: $cream;
+      color: $color-text;
+    }
   }
 }

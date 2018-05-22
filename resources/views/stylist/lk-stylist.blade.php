@@ -199,7 +199,7 @@
           </div>
 
           <div class="orders__take">
-            <input class="btn btn--action" type="submit" value="Взять заказ"/>
+            <button class="btn btn--action" type="submit">Взять заказ</button>
           </div>
 
         </div>
