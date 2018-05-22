@@ -11,7 +11,7 @@
           <div class="ask-question__preview-text">
             Eсть вопрос к нашим стилистам? Вы можете задать его здесь и получить развернутый ответ
           </div>
-          <input class="btn btn--action" type="submit" value="Задать вопрос"/>
+          <button class="btn btn--action" type="submit">Задать вопрос</button>
         </div>
         <div class="ask-question__quest">
           <div class="ask-question__quest-icon">?</div>

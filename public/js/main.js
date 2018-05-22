@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('.slider').slick({
+  $('.slider-portfolio').slick({
     dots: false,
     arrows: true,
   });
@@ -133,7 +133,12 @@ $(document).ready(() => {
 
     reader.readAsDataURL(f);
   }
-  document.getElementById('avatar').addEventListener('change', handleFileSelectSingle, false);
+
+  const avatar = document.getElementById('avatar');
+  if (avatar) {
+    avatar.addEventListener('change', handleFileSelectSingle, false);
+  }
+
 
   // добавление превью загружаемых дипломов
   function handleFileSelectMulti(evt) {
@@ -157,5 +162,8 @@ $(document).ready(() => {
     }
   }
 
-  document.getElementById('diploms').addEventListener('change', handleFileSelectMulti, false);
+  const diploms = document.getElementById('diploms');
+  if (diploms) {
+    diploms.addEventListener('change', handleFileSelectMulti, false);
+  }
 });

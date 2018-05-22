@@ -1,5 +1,3 @@
-@import "slick";
-@import "slick-theme";
 @import "variables";
 @import "fonts";
 @import "global";
@@ -13,6 +11,8 @@
 @import "blocks/sidebar";
 @import "blocks/social-icons";
 @import "blocks/enter-panel";
+@import "slick";
+@import "slick-theme";
 @import "blocks/slider";
 @import "blocks/comment";
 @import "blocks/information";
@@ -37,3 +37,5 @@
 @import "blocks/category";
 @import "blocks/admin-request";
 @import "blocks/chat";
+
+

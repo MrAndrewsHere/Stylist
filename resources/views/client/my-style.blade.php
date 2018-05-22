@@ -136,7 +136,7 @@
         <div class="slider-tips">
           <div class="lk-client__style">
             <div class="lk-client__style-photo">
-              <img src="img/my-style/tip1.png" alt=""/>
+              <img src="img/my-style/tip1.jpg" alt=""/>
             </div>
             <div class="lk-client__style-seasons">
               <div class="lk-client__style-tips">
@@ -158,7 +158,7 @@
           
           <div class="lk-client__style">
             <div class="lk-client__style-photo">
-              <img src="img/my-style/tip1.png" alt=""/>
+              <img src="img/my-style/tip1.jpg" alt=""/>
             </div>
             <div class="lk-client__style-seasons">
               <div class="lk-client__style-tips">

@@ -24,8 +24,10 @@
 
           <div class="portfolio-item__text portfolio-item__text--add">
             <label>Дата
+              <br>
               <input class="form__input" type="date" name="date" required/>
             </label>
+            <br>
             <label>Цель клиента
               <input class="form__input" name="purpose" type="text" required/>
             </label>
@@ -36,7 +38,7 @@
               <input class="form__input" name="comments" type="text" required/>
             </label>
             <div class="start-change">
-              <input class="btn btn--action" type="submit" value="Добавить"/>
+              <button class="btn btn--action" type="submit">Добавить</button>
             </div>
           </div>
         </form>
