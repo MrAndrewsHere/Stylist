@@ -186,10 +186,21 @@
     width: 20px;
     height: 20px;
   }
+
+  .btn--sidebar-open {
+    display: block;
+    width: 25px;
+    height: 27px;
+    margin-right: 20px;
+  }
 }
 
-@media ($md) {
+@media ($xl) {
   .btn--sidebar-cancel {
+    display: none;
+  }
+
+  .btn--sidebar-open {
     display: none;
   }
 }

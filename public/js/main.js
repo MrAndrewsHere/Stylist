@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // выезжающее меню
-  $('.header__menu-icon').click(() => {
+  $('.btn--sidebar-open').click(() => {
     $('.sidebar').animate({
       left: '0px',
     }, 200);

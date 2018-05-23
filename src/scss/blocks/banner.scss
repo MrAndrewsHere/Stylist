@@ -22,19 +22,6 @@
   }
 }
 
-@media ($md) {
-  .banner {
-    background-image: url(../img/banners/banner-small.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .banner__slogan {
-    position: relative;
-  }
-}
-
 @media ($xl) {
   .banner {
     background-image: url(../img/banners/banner.jpg);
