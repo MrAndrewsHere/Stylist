@@ -14,4 +14,20 @@
   color: #000;
   font-weight: 600;
   font-family: "Montserrat";
+  margin-right: auto;
+}
+
+@media ($xs) {
+  .header__menu-icon {
+    display: block;
+    width: 25px;
+    height: 27px;
+    margin-right: 20px;
+  }
+}
+
+@media ($md) {
+  .header__menu-icon {
+    display: none;
+  }
 }

@@ -75,7 +75,7 @@
 
     <section class="information information--profit">
       <h2 class="information__title-first">
-        Что это вам дает
+        Что это вам даст
       </h2>
       <p class="information__title-second">
         Навыки, которые вы получите работая с нашими специалистами
@@ -86,7 +86,7 @@
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#hanger"></use>
           </svg>
           <h3 class="profit__title">Все сочетается</h3>
-          <p class="profit__description">
+          <p class="category__description">
             Умение составлять образы из вашей одежды и новых вещей. Ваша одежда подружиться с вами и между собой.
           </p>
         </div>
@@ -96,7 +96,7 @@
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#wallet"></use>
           </svg>
           <h3 class="profit__title">В рамках бюджета</h3>
-          <p class="profit__description">
+          <p class="category__description">
             Выглядеть дорого и не тратить больше, чем планировали.
           </p>
         </div>
@@ -106,7 +106,7 @@
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#diamond"></use>
           </svg>
           <h3 class="profit__title">Всегда в тренде</h3>
-          <p class="profit__description">
+          <p class="category__description">
             Не отставать за изменениями в мире моды при этом подчеркивать свою индивидуальность.
           </p>
         </div>

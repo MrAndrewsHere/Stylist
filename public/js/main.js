@@ -1,4 +1,19 @@
 $(document).ready(() => {
+  // выезжающее меню
+  $('.header__menu-icon').click(() => {
+    $('.sidebar').animate({
+      left: '0px',
+    }, 200);
+  });
+
+  $('.btn--sidebar-cancel').click(() => {
+    $('.sidebar').animate({
+      left: '-242px',
+    }, 200);
+  });
+
+  // конец меню
+
   $('.slider-portfolio').slick({
     dots: false,
     arrows: true,

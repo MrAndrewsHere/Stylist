@@ -1,6 +1,12 @@
 <header class="header-home__wrapper">
   <div class="container-home">
     <div class="header-home">
+      <button class="btn header__menu-icon">
+        <svg class="header__menu-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#menu"></use>
+        </svg>
+      </button>
+
       <a class="header__link" href="tel:+7(843)2922222">
         +7 (843) 292-22-22
       </a>

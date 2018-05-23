@@ -32,8 +32,16 @@ textarea {
   resize: none;
 }
 
-.wrapper {
-  margin-left: 242px;
+@media ($xs) {
+  .wrapper {
+    margin-left: 0;
+  }
+}
+
+@media ($md) {
+  .wrapper {
+    margin-left: 242px;
+  }
 }
 
 .container {

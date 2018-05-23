@@ -177,3 +177,19 @@
     }
   }
 }
+
+@media ($xs) {
+  .btn--sidebar-cancel {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media ($md) {
+  .btn--sidebar-cancel {
+    display: none;
+  }
+}

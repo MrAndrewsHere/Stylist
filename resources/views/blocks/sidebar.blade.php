@@ -1,9 +1,17 @@
 <aside class="sidebar">
   <div class="container-sidebar">
     <div class="sidebar__wrapper">
-      <a class="logo" href="/">
-        <img src="../img/logo.png" alt=""/>
-      </a>
+      
+        <a class="logo" href="/">
+          <img src="../img/logo.png" alt=""/>
+        </a>
+
+        <button class="btn">
+          <svg class="btn--sidebar-cancel">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#cancel"></use>
+          </svg>
+        </button>
+      
 
       <nav class="sidebar__menu">
         <ul class="sidebar__menu-list">
