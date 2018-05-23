@@ -1,16 +1,33 @@
-.stylists__sort {
-  display: flex;
-  justify-content: flex-start;
+@media ($xs) {
+  .stylists__sort {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 
-  &-category {
+    &-category {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .stylists__service {
     margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
-.stylists__service {
-  margin-right: 10px;
+@media ($sm) {
+  .stylists__sort {
+    flex-direction: row;
 
-  &:last-child {
-    margin-right: 0;
+    &-category {
+      margin-right: 10px;
+    }
   }
 }
