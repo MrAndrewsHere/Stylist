@@ -120,7 +120,7 @@
       <p class="information__title-second">
         Познакомьтесь с нашими стилистами не выходя из дома
       </p>
-      <div class="infotmation__section">
+      <div class="infotmation__section infotmation__section--all">
         <div class="information__stylist">
           <img src="img/stylist1.jpg" alt="" class="information__stylist-img">
           <p class="information__stylist-name">Евгения Удальцова</p>

@@ -62,9 +62,14 @@
                 <div class="card__description__title">Цель клиента</div>
                 <div class="card__description__text">{{$portfol->client_purpose}}</div>
                 <div class="card__description__title">Заказанные услуги</div>
-                <div class="card__description__text">Подбор макияжа, Подбор стиля</div>
+                <div class="card__description__text">
+                  <!-- Заполнить! -->
+                </div>
                 <div class="card__description__title">Комментарии стилиста</div>
-                <div class="card__description__text">{{$portfol->comment}}</div>
+                <div class="card__description__text">
+                  <!-- Не выводит! -->
+                  {{$portfol->comment}}
+                </div>
               </div>
             </div>
           @endforeach
