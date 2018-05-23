@@ -13,7 +13,14 @@
   }
 }
 
+.ask-question__quests {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .ask-question__quest {
+  width: 48%;
   margin-bottom: 50px;
   display: flex;
 
@@ -35,10 +42,14 @@
     flex-direction: column;
 
     &-title {
-      text-decoration: underline;
       color: $color-accent;
+      font-size: 16px;
       font-weight: 600;
       margin-bottom: 10px;
+    }
+
+    &-text {
+      font-size: 15px;
     }
   }
 }

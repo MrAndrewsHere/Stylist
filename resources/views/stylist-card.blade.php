@@ -64,8 +64,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/1before.png" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/1after.png" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/1before.jpg" alt=""/></div>
+              <div class="photo__second"><img src="/img/clients/1after.jpg" alt=""/></div>
             </div>
 
             <div class="comment">
@@ -86,8 +86,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/2before.png" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/2after.png" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/2before.jpg" alt=""/></div>
+              <div class="photo__second"><img src="/img/clients/2after.jpg" alt=""/></div>
             </div>
 
             <div class="comment">
@@ -107,8 +107,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/3before.png" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/3after.png" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/3before.jpg" alt=""/></div>
+              <div class="photo__second"><img src="/img/clients/3after.jpg" alt=""/></div>
             </div>
 
             <div class="comment">
