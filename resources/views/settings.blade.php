@@ -65,9 +65,13 @@
           </label>
 
           <!-- написать проверку, если в бд у пользователя есть аватарка, то вывести её в <img class="form__output-avatar" src="ссылка на фотку" alt="ссылка на имя + фамилия пользователя">-->
+          @if(isset(Auth::user()->stylist->files ))
+            @foreach(Auth::user()->stylist->files as $diplom)
           <span id="form__output-diploms">
-            <!-- ................. -->
+            <img class="form__output-avatar" src="{{$diplom->path}}">
           </span>
+            @endforeach
+          @endif
 
           <div class="start-change">
             <button class="btn btn--action" type="submit">Сохранить</button>
