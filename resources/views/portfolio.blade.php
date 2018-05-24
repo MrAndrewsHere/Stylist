@@ -14,10 +14,18 @@
           <div class="portfolio-item__photos">
             <div class="slide__photos">
               <label class="label__photo">Фото до
-                <input class="input__photo" name="before" type="file" required/>
+                
+                  <input class="input__photo" id="photo-before" name="before" type="file" required/>
+                
+                <span class="form__output">
+                
+                </span>
               </label>
               <label class="label__photo">Фото после
-                <input class="input__photo" name="after" type="file" required/>
+                <input class="input__photo" id="photo-after" name="after" type="file" required/>
+                <span class="form__output-two">
+                
+                </span>
               </label>
             </div>
           </div>

@@ -26,7 +26,7 @@
 <script src="/js/dialog.js"></script>
 <script src="/js/filter.js"></script>
 <script src="/js/Custom.js"></script>
-<script src="//ulogin.ru/js/ulogin.js"></script>
+<!-- <script src="//ulogin.ru/js/ulogin.js"></script> -->
 
 </body>
 </html>

@@ -21,7 +21,7 @@
             <input type="file" id="avatar" name="avatar" class="form__input"/>
           </label>
           
-          <span id="form__output-avatar">
+          <span class="form__output">
             <img class="form__output-avatar" src="{{Auth::user()->avatar}}" alt="{{Auth::user()->name.' '.Auth::user()->second_name}}">
           </span>
 
