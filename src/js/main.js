@@ -1,4 +1,20 @@
 $(document).ready(() => {
+  // выезжающее меню
+
+  $('.btn--sidebar-open').click(() => {
+    $('.sidebar').animate({
+      left: '0px',
+    }, 200);
+  });
+
+  $('.btn--sidebar-cancel').click(() => {
+    $('.sidebar').animate({
+      left: '-242px',
+    }, 200);
+  });
+
+  // конец меню
+
   $('.slider-portfolio').slick({
     dots: false,
     arrows: true,
@@ -114,6 +130,7 @@ $(document).ready(() => {
   });
 
   // добавление превью загружаемого изображения
+
   function handleFileSelectSingle(evt) {
     const file = evt.target.files;
 
@@ -126,8 +143,30 @@ $(document).ready(() => {
         const span = document.createElement('span');
         span.innerHTML = ['<img class="form__output-avatar" src="', e.target.result,
           '" title="', escape(theFile.name), '"/>'].join('');
-        document.getElementById('form__output-avatar').innerHTML = '';
-        document.getElementById('form__output-avatar').insertBefore(span, null);
+
+        document.querySelector('.form__output').innerHTML = '';
+        document.querySelector('.form__output').insertBefore(span, null);
+      };
+    }(f));
+
+    reader.readAsDataURL(f);
+  }
+
+  function handleFileSelectSingleTwo(evt) {
+    const file = evt.target.files;
+
+    const f = file[0];
+
+    const reader = new FileReader();
+
+    reader.onload = (function (theFile) {
+      return function (e) {
+        const span = document.createElement('span');
+        span.innerHTML = ['<img class="form__output-avatar" src="', e.target.result,
+          '" title="', escape(theFile.name), '"/>'].join('');
+
+        document.querySelector('.form__output-two').innerHTML = '';
+        document.querySelector('.form__output-two').insertBefore(span, null);
       };
     }(f));
 
@@ -139,8 +178,19 @@ $(document).ready(() => {
     avatar.addEventListener('change', handleFileSelectSingle, false);
   }
 
+  const photoBefore = document.getElementById('photo-before');
+  if (photoBefore) {
+    photoBefore.addEventListener('change', handleFileSelectSingle, false);
+  }
+
+  const photoAfter = document.getElementById('photo-after');
+  if (photoAfter) {
+    photoAfter.addEventListener('change', handleFileSelectSingleTwo, false);
+  }
+
 
   // добавление превью загружаемых дипломов
+
   function handleFileSelectMulti(evt) {
     const files = evt.target.files;
 

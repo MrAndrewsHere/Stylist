@@ -7,16 +7,11 @@
     <h1 class="section__title">Мои заказы</h1>
     <div class="container-home">
       <div class="my-orders">
-        <div class="my-orders__status">
-          <a class="link-tab link-active" href="#">Новые заказы</a>
-          <a class="link-tab" href="#">История заказов</a>
-        </div>
         <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif </div>
         <div class="message-error">@if(Session::has('error')) {{Session::get('error')}} @endif </div>
         <div class="my-orders__item my-orders__item--active">
           <div class="scroll-block scroll-block--orders scroll-block--slim scroll-block__wrapper">
             <ul class="orders__title">
-              <li class="orders__photo">Фото</li>
               <li class="orders__service orders__service--big">Услуга</li>
               <li class="orders__price orders__price--big">Цена</li>
               <li class="orders__status">Статус</li>
@@ -26,9 +21,6 @@
             @if(isset($orders))
               @foreach($orders as $order)
               <ul class="orders__item">
-                <li class="orders__photo">
-                  <img src="{{$order->service->picture}}" alt="" width="70%"/>
-                </li>
                 <li class="orders__service orders__service--big">
                   <span>{{$order->service->name}}</span><br/>
                   <span>{{$order->stylist->category->name}}</span>

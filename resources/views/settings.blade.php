@@ -21,8 +21,7 @@
             <input type="file" id="avatar" name="avatar" class="form__input"/>
           </label>
           
-          <!-- написать проверку, если в бд у пользователя есть аватарка, то вывести её в <img class="form__output-avatar" src="ссылка на фотку" alt="ссылка на имя + фамилия пользователя">-->
-          <span id="form__output-avatar">
+          <span class="form__output">
             <img class="form__output-avatar" src="{{Auth::user()->avatar}}" alt="{{Auth::user()->name.' '.Auth::user()->second_name}}">
           </span>
 
@@ -64,12 +63,11 @@
               <input class="form__input" type="file" id="diploms" name="files[]" multiple accept="image/*"/>
           </label>
 
-          <!-- написать проверку, если в бд у пользователя есть аватарка, то вывести её в <img class="form__output-avatar" src="ссылка на фотку" alt="ссылка на имя + фамилия пользователя">-->
-          @if(isset(Auth::user()->stylist->files ))
+          @if(isset(Auth::user()->stylist->files))
             @foreach(Auth::user()->stylist->files as $diplom)
-          <span id="form__output-diploms">
-            <img class="form__output-avatar" src="{{$diplom->path}}">
-          </span>
+              <span id="form__output-diploms">
+                <img class="form__output-diploms" src="{{$diplom->path}}">
+              </span>
             @endforeach
           @endif
 

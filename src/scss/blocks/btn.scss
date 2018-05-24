@@ -38,7 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 250px;
+  width: 250px;
   border-radius: 25px;
   color: $white;
   font-weight: 700;
@@ -175,5 +175,32 @@
       background-color: $cream;
       color: $color-text;
     }
+  }
+}
+
+@media ($xs) {
+  .btn--sidebar-cancel {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn--sidebar-open {
+    display: block;
+    width: 25px;
+    height: 27px;
+    margin-right: 20px;
+  }
+}
+
+@media ($xl) {
+  .btn--sidebar-cancel {
+    display: none;
+  }
+
+  .btn--sidebar-open {
+    display: none;
   }
 }

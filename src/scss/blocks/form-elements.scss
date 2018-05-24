@@ -45,10 +45,8 @@
 
 .form__output-avatar {
   max-width: 100%;
-  padding: 8px;
-  border: 2px dashed #ddd;
   display: block;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .form__output-diploms {
@@ -58,4 +56,8 @@
   padding: 5px;
   border: 1px dashed #ddd;
   margin: 10px 5px 0 0;
+}
+
+.label__photo {
+  margin-right: 10px;
 }

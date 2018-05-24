@@ -14,10 +14,16 @@
           <div class="portfolio-item__photos">
             <div class="slide__photos">
               <label class="label__photo">Фото до
-                <input class="input__photo" name="before" type="file" required/>
+                <input class="input__photo" id="photo-before" name="before" type="file" required/>
+                <span class="form__output">
+                
+                </span>
               </label>
               <label class="label__photo">Фото после
-                <input class="input__photo" name="after" type="file" required/>
+                <input class="input__photo" id="photo-after" name="after" type="file" required/>
+                <span class="form__output-two">
+                
+                </span>
               </label>
             </div>
           </div>
@@ -62,9 +68,25 @@
                 <div class="card__description__title">Цель клиента</div>
                 <div class="card__description__text">{{$portfol->client_purpose}}</div>
                 <div class="card__description__title">Заказанные услуги</div>
-                <div class="card__description__text">Подбор макияжа, Подбор стиля</div>
+                <div class="card__description__text">
+
+                  <!-- Заполнить из бд! -->
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugiat saepe eligendi quaerat maxime debitis. Ab aliquam ipsum fugiat deserunt. Harum, odit deleniti hic ab ratione tempora tenetur doloremque error?
+
+                </div>
                 <div class="card__description__title">Комментарии стилиста</div>
-                <div class="card__description__text">{{$portfol->comment}}</div>
+                <div class="card__description__text">
+
+                  <!-- Заполнить из бд! -->
+                  {{$portfol->comment}}
+                  
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugiat saepe eligendi quaerat maxime debitis. Ab aliquam ipsum fugiat deserunt. Harum, odit deleniti hic ab ratione tempora tenetur doloremque error?
+                </div>
+                <div class="start-change">
+
+                  <!-- Сделать, чтобы удалялось -->
+                  <button class="btn btn--action" type="submit">Удалить</button>
+                </div>
               </div>
             </div>
           @endforeach

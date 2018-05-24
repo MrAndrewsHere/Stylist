@@ -20,7 +20,7 @@
 
             <div class="lk-client__style-seasons-description lk-client__style-seasons-description--active">
               <div class="lk-client__style-photo">
-                <img class="lk-client__style-seasons-photo" src="/img/my-style/winter.png" alt="" />
+                <img class="lk-client__style-seasons-photo" src="/img/my-style/winter.jpg" alt="" />
               </div>
 
               <div>
@@ -114,7 +114,7 @@
         <h2 class="title-second">Тип фигуры</h2>
         <div class="lk-client__style">
           <div class="lk-client__style-photo">
-            <img src="img/my-style/type-body-pear.png" alt=""/>
+            <img src="img/my-style/type-body-pear.jpg" alt=""/>
           </div>
           <div class="lk-client__style-seasons">
             <div class="lk-client__style-body-type">
@@ -191,10 +191,10 @@
         <div class="lk-client__style">
           <div class="lk-client__style-photo-before-after">
             <div class="photo__first">
-              <img src="img/clients/4before.png" alt=""/>
+              <img src="img/clients/4before.jpg" alt=""/>
             </div>
             <div class="photo__second">
-              <img src="img/clients/4-1after.png" alt=""/>
+              <img src="img/clients/4-1after.jpg" alt=""/>
             </div>
           </div>
 

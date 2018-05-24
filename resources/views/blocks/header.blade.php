@@ -1,7 +1,13 @@
 <header class="header-home__wrapper">
   <div class="container-home">
     <div class="header-home">
-      <a class="header__link" href="tel:+7(843)2922222">
+      <button class="btn btn--sidebar-open">
+        <svg class="btn--sidebar-open">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#menu"></use>
+        </svg>
+      </button>
+
+      <a class="header__phone-number" href="tel:+7(843)2922222">
         +7 (843) 292-22-22
       </a>
 
@@ -34,7 +40,6 @@
 
           @if(Auth::user()->role->name == 'stylist')
             <a class="navigation__link" href="/my_orders">Мои заказы</a>
-            <a class="navigation__link" href="/portfolio">Моё портфолио</a>
           @endif
 
           @if(Auth::user()->role->name == 'admin')
@@ -52,6 +57,7 @@
             <a class="navigation__profile-menu-link">{{Auth::user()->name}}</a>
             @if(Auth::user()->role->name == 'stylist')
               <a class="navigation__profile-menu-link navigation__link" href="/lk_stylist">Личный кабинет</a>
+              <a class="navigation__profile-menu-link navigation__link" href="/portfolio">Моё портфолио</a>
             @endif
 
             @if(Auth::user()->role->name == 'client')

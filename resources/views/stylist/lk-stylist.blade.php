@@ -159,12 +159,12 @@
               <li class="orders-list__names-item">
                 <a class="link-change-content link-change-content--active" href="#">Новые заказы</a>
               </li>
-              <li class="orders-list__names-item">
+              <!-- <li class="orders-list__names-item">
                 <a class="link-change-content" href="#">Подтвержденные заказы</a>
               </li>
               <li class="orders-list__names-item">
                 <a class="link-change-content" href="#">Выполненные заказы</a>
-              </li>
+              </li> -->
             </ul>
           </div>
 

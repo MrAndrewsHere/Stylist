@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use function Symfony\Component\VarDumper\Dumper\esc;
 use ElForastero\Transliterate;
 
@@ -38,8 +39,17 @@ class WelcomeController extends Controller
   }
 
   public function test(Request $request)
-  {
-    return view('stylist-card');
+  {$data['name'] = 'Андрей';
+
+   return dump(
+       Mail::send('test1',$data,function ($msg) use ($data)
+      {
+          $msg->from("stilisty.com@yandex.ru",'Портал стилистов');
+          $msg->to("andrews.mr@yandex.ru");
+
+      })
+   );
+
   }
 
   public function service_page($id)

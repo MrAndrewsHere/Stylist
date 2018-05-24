@@ -1,11 +1,32 @@
-.banner {
-  background-image: url(../img/banners/banner.jpg);
-  background-size: cover;
-  min-height: 60vh;
-  position: relative;
+@media ($xs) {
+  .banner {
+    background-image: url(../img/banners/banner.jpg);
+    background-size: cover;
+    min-height: 60vh;
+    position: relative;
+  }
+
+  .banner__slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 4%;
+    top: 32%;
+    font-size: 19px;
+    text-align: center;
+
+    &-text {
+      margin-bottom: 10px;
+    }
+  }
 }
 
-@media ($xs) {
+@media ($xl) {
+  .banner {
+    background-image: url(../img/banners/banner.jpg);
+  }
+
   .banner__slogan {
     display: flex;
     flex-direction: column;
