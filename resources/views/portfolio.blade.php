@@ -85,7 +85,7 @@
                 <div class="start-change">
 
                   <!-- Сделать, чтобы удалялось -->
-                  <button class="btn btn--action" type="submit">Удалить</button>
+                  <button class="btn btn--action btn--delete-portfolio" type="submit">Удалить</button>
                 </div>
               </div>
             </div>

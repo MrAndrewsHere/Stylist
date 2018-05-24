@@ -59,6 +59,17 @@ $(document).ready(() => {
     $('.lk-client__style-seasons-description').hide().eq($(this).index()).css('display', 'flex');
   }).eq(0).addClass('.lk-client__style-seasons-description--active');
 
+  // кнопка удаления портфолио
+
+  const portfolioBlock = document.querySelector('.portfolio');
+
+  if (portfolioBlock) {
+    portfolioBlock.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('btn--delete-portfolio')) return;
+      e.target.parentNode.parentNode.parentNode.style.display = 'none';
+    });
+  }
+
   /* дипломы */
 
   const educationBlock = document.querySelector('.lk-stylist__education--filled');
