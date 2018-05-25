@@ -63,7 +63,6 @@
               <input class="form__input" type="file" id="diploms" name="files[]" multiple accept="image/*"/>
           </label>
 
-          <!-- написать проверку, если в бд у пользователя есть аватарка, то вывести её в <img class="form__output-avatar" src="ссылка на фотку" alt="ссылка на имя + фамилия пользователя">-->
           @if(isset(Auth::user()->stylist->files))
             @foreach(Auth::user()->stylist->files as $diplom)
               <span id="form__output-diploms">

@@ -77,10 +77,7 @@
                 <div class="card__description__title">Комментарии стилиста</div>
                 <div class="card__description__text">
 
-                  <!-- Заполнить из бд! -->
                   {{$portfol->comment}}
-                  
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugiat saepe eligendi quaerat maxime debitis. Ab aliquam ipsum fugiat deserunt. Harum, odit deleniti hic ab ratione tempora tenetur doloremque error?
                 </div>
                 <div class="start-change">
 
