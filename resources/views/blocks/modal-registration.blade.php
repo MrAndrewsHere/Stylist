@@ -1,4 +1,3 @@
-
 <div class="modal-registration">
   <div class="modal-content modal-content--registration">
     <button class="btn btn--close-registration" arial-label="Закрыть окно">&times;</button>

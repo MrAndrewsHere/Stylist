@@ -8,7 +8,7 @@ class portfolio extends Model
 {
     protected $fillable = [
       'client_purpose',
-      'comments',
+      'comment',
       'updated_at',
       'picture_before',
       'picture_after',

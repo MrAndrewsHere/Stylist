@@ -6,7 +6,7 @@
   const closeAuth = document.querySelector('.btn--close-auth');
   const closeRegistration = document.querySelector('.btn--close-registration');
   const email = document.querySelector('.input-email');
-  const login = document.querySelector('.input-login');
+  const name = document.querySelector('.input-name');
   const ESC_CODE = 27;
 
   const profileMenu = document.querySelector('.navigation__profile');
@@ -34,7 +34,7 @@
     }
   };
   openDialog(btnAuth, modalAuth, email, password);
-  openDialog(btnRegistration, modalRegistration, login);
+  openDialog(btnRegistration, modalRegistration, name);
 
   // закрытие модального окна
   const closeDialog = function (closeModal, modalWindow) {

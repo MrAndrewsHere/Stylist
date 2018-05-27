@@ -42,7 +42,7 @@
 
                 <div class="card__description__text">
                   <span class="card__description__title">
-                    Класс:
+                    Категория:
                   </span> 
                      {{isset(Auth::user()->stylist->category) ? 
                       Auth::user()->stylist->category->name : ''}}
@@ -60,7 +60,7 @@
                 <div class="card__description">
                   <div class="card__description__text">{{Auth::user()->name}} {{Auth::user()->second_name}}</div>
                   <div class="card__description__title"></div>
-                  <div class="card__description__text">Класс</div>
+                  <div class="card__description__text">Категория</div>
                   <div class="card__description__title"></div>
                   <div class="card__description__text">Опыт работы</div>
                   <div class="card__description__title"></div>
@@ -105,66 +105,21 @@
         @endif
 
         <div class="lk-stylist__block">
-          <h2 class="title-second">Обратите внимание</h2>
-          <div class="lk-stylist__attention-orders">
-            <div class="order order__inner"><a class="order__number" href="#">127609</a>
-              <div class="order__status order__number__order__status">
-                <div class="order__status-text">Заказ оплачен</div>
-                <div class="order__status-pay">Вы можете оплатить заказ <a class="order__pay-link" href="#">здесь</a>
-                </div>
-              </div>
-            </div>
-            <div class="order order__inner"><a class="order__number" href="#">127610</a>
-              <div class="order__status order__number__order__status">
-                <div class="order__status-text">По заказу получен положительный отзыв</div>
-                <div class="order__status-pay">Вы можете оплатить заказ <a class="order__pay-link" href="#">здесь</a>
-                </div>
-              </div>
-            </div>
-            <div class="order order__inner"><a class="order__number" href="#">127611</a>
-              <div class="order__status order__number__order__status">
-                <div class="order__status-text">Заказ оплачен</div>
-                <div class="order__status-pay">Вы можете оплатить заказ <a class="order__pay-link" href="#">здесь</a>
-                </div>
-              </div>
-            </div>
-            <div class="order order__inner"><a class="order__number" href="#">127612</a>
-              <div class="order__status order__number__order__status">
-                <div class="order__status-text">По заказу получен положительный отзыв</div>
-                <div class="order__status-pay">Вы можете оплатить заказ <a class="order__pay-link" href="#">здесь</a>
-                </div>
-              </div>
-            </div>
-            <div class="order order__inner"><a class="order__number" href="#">127613</a>
-              <div class="order__status order__number__order__status">
-                <div class="order__status-text">По заказу получен положительный отзыв</div>
-                <div class="order__status-pay">Вы можете оплатить заказ <a class="order__pay-link" href="#">здесь</a>
-                </div>
-              </div>
-            </div>
-            <div class="order order__inner"><a class="order__number" href="#">127614</a>
-              <div class="order__status order__number__order__status">
-                <div class="order__status-text">Заказ оплачен</div>
-                <div class="order__status-pay">Вы можете оплатить заказ <a class="order__pay-link" href="#">здесь</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="lk-stylist__block">
           <div class="orders-list">
             <h3 class="title-second">Список заказов</h3>
             <ul class="orders-list__names-list">
               <li class="orders-list__names-item">
                 <a class="link-change-content link-change-content--active" href="#">Новые заказы</a>
               </li>
-              <!-- <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Подтвержденные заказы</a>
+              <li class="orders-list__names-item">
+                <a class="link-change-content" href="#">Выполняемые заказы</a>
               </li>
               <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Выполненные заказы</a>
-              </li> -->
+                <a class="link-change-content" href="#">Завершенные заказы</a>
+              </li>
+              <li class="orders-list__names-item">
+                <a class="link-change-content" href="#">Отмененные заказы</a>
+              </li>
             </ul>
           </div>
 
@@ -174,8 +129,6 @@
               <li class="orders__id">Номер</li>
               <li class="orders__date-name">Дата/Имя</li>
               <li class="orders__service">Услуга</li>
-              <li class="orders__status">Статус</li>
-              <li class="orders__format">Формат</li>
               <li class="orders__price">Цена</li>
             </ul>
             @if (isset($orders))
@@ -190,17 +143,18 @@
                     <div>{{$order->client->user->name}}</div>
                   </li>
                   <li class="orders__service"><span>{{$order->service->name}}</span></li>
-                  <li class="orders__status"><span>{{$order->confirmed_by_stylist}}</span></li>
-                  <li class="orders__format"><span>online</span></li>
                   <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
                 </ul>
               @endforeach
             @endif
           </div>
 
-          <div class="orders__take">
-            <button class="btn btn--action" type="submit">Взять заказ</button>
-          </div>
+          
+          <!-- <div class="lk-stylist__education lk-stylist__education--empty">
+            <div>
+              <span>У вас нет новых заказов</span>
+            </div>
+          </div> -->
 
         </div>
       </div>

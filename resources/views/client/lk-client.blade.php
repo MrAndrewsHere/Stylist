@@ -39,6 +39,19 @@
             </div>
           </div>
         </div>
+
+        <div class="lk-stylist__block">
+          <h2 class="title-second">Email-рассылка</h2>
+          <label>
+            <input type="checkbox">
+            Подписаться на email-рассылку интересных материалов
+          </label>
+          <br>
+          <label>
+            <input type="checkbox">
+            Подписаться на email-рассылку новостей и обновлений
+          </label>
+        </div>
       </div>
     </div>
   </section>

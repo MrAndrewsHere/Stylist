@@ -4,6 +4,10 @@
   display: none;
 }
 
+body.modal-auth-show {
+  overflow: hidden;
+}
+
 .modal-auth-show {
   display: block;
   position: fixed;
@@ -20,14 +24,14 @@
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: 5% auto;
+  margin: 50px auto;
   padding: 20px;
   border: 1px solid #999;
-  width: 35%;
-  min-width: 350px;
+  max-width: 400px;
+  min-width: 300px;
 
   &--registration {
-    margin: 2% auto 0 auto;
+    margin: 10px auto;
   }
 }
 

@@ -69,14 +69,10 @@
                 <div class="card__description__text">{{$portfol->client_purpose}}</div>
                 <div class="card__description__title">Заказанные услуги</div>
                 <div class="card__description__text">
-
-                  <!-- Заполнить из бд! -->
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa fugiat saepe eligendi quaerat maxime debitis. Ab aliquam ipsum fugiat deserunt. Harum, odit deleniti hic ab ratione tempora tenetur doloremque error?
-
+                <!-- заполнить -->
                 </div>
                 <div class="card__description__title">Комментарии стилиста</div>
                 <div class="card__description__text">
-
                   {{$portfol->comment}}
                 </div>
                 <div class="start-change">

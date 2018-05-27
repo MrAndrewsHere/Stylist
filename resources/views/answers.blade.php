@@ -7,13 +7,6 @@
     <h1 class="section__title">Вопросы и ответы</h1>
     <div class="ask-question">
       <div class="container">
-        <div class="ask-question__preview ask-question__preview__wrapper">
-          <div class="ask-question__preview-text">
-            Eсть вопрос к нашим стилистам? Вы можете задать его здесь и получить развернутый ответ
-          </div>
-          <button class="btn btn--action" type="submit">Задать вопрос</button>
-        </div>
-        
         <div class="ask-question__quests">
           <div class="ask-question__quest">
             <div class="ask-question__quest-icon">?</div>
