@@ -43,7 +43,6 @@ $(document).ready(() => {
     $('.slider-tips__numbers-current').text(`${currentSlide + 1}`);
   });
 
-
   // табы заказов
   $('.link-order').click(function () {
     $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
@@ -52,11 +51,10 @@ $(document).ready(() => {
 
 
   // табы цветотипов
-  $('.link-change-content').click(function (e) {
-    e.preventDefault();
-    $('.link-change-content').removeClass('link-change-content--active').eq($(this).index()).addClass('link-change-content--active');
-    $('.lk-client__style-seasons-description').hide().eq($(this).index()).css('display', 'flex');
-  }).eq(0).addClass('.lk-client__style-seasons-description--active');
+  $('.lk__item-color-type').click(function () {
+    $('.lk__item-color-type').removeClass('lk__item-color-type--active').eq($(this).index()).addClass('lk__item-color-type--active');
+    $('.lk__style-color-type').removeClass('lk__style-color-type--active').eq($(this).index()).addClass('lk__style-color-type--active');
+  });
 
 
   // кнопка удаления портфолио
