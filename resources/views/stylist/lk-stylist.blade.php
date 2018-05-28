@@ -105,56 +105,7 @@
         @endif
 
         <div class="lk-stylist__block">
-          <div class="orders-list">
-            <h3 class="title-second">Список заказов</h3>
-            <ul class="orders-list__names-list">
-              <li class="orders-list__names-item">
-                <a class="link-change-content link-change-content--active" href="#">Новые заказы</a>
-              </li>
-              <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Выполняемые заказы</a>
-              </li>
-              <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Завершенные заказы</a>
-              </li>
-              <li class="orders-list__names-item">
-                <a class="link-change-content" href="#">Отмененные заказы</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="orders orders__wrapper">
-            <ul class="orders__title">
-              <li class="orders__checkbox"></li>
-              <li class="orders__id">Номер</li>
-              <li class="orders__date-name">Дата/Имя</li>
-              <li class="orders__service">Услуга</li>
-              <li class="orders__price">Цена</li>
-            </ul>
-            @if (isset($orders))
-              @foreach($orders as $order)
-                <ul class="orders__item">
-                  <li class="orders__checkbox">
-                    <input class="input-checkbox" type="checkbox"/>
-                  </li>
-                  <li class="orders__id"><span>{{$order->id}}</span></li>
-                  <li class="orders__date-name">
-                    <div>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $order->service->updated_at)->toDateString()}}</div>
-                    <div>{{$order->client->user->name}}</div>
-                  </li>
-                  <li class="orders__service"><span>{{$order->service->name}}</span></li>
-                  <li class="orders__price"><span>{{$order->service->price}}</span><span>р</span></li>
-                </ul>
-              @endforeach
-            @endif
-          </div>
-
           
-          <!-- <div class="lk-stylist__education lk-stylist__education--empty">
-            <div>
-              <span>У вас нет новых заказов</span>
-            </div>
-          </div> -->
 
         </div>
       </div>
