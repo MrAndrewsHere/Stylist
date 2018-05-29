@@ -99,7 +99,7 @@ class ClientController extends Controller
   protected function ordered(Request $request) 
   {
     $order = Auth::user()->client->orders->find($request->input('order_id'))->first();
-    $order->ordered = 1;
+    $order->ordered_by_client = 1;
     $order->save();
     $request->session()->flash('success', 'Услуга заказана');
       return;

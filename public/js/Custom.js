@@ -63,6 +63,23 @@ $('.show_stylist_profile').on('submit', function (e) {
 });
 
 
+$('.delete_portfolio').on('submit', function (e) {
+    e.preventDefault();
+
+    e.target.parentNode.parentNode.parentNode.style.display = 'none';
+    $.ajax({
+        type: 'POST',
+        url: '/delete_portfolio',
+        data: $(this).serialize(),
+        success: function () {
+            $('.message-success').css('display', 'block');
+        },
+        error: function () {
+            $('.message-error').css('display', 'block');
+        }
+    });
+});
+
 $('.btn--filter').click(function () {
   // e.preventDefault();
   // $(this).toggleClass("btn--filter-non-active");

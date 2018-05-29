@@ -38,7 +38,7 @@
               <input class="form__input" name="purpose" type="text" required/>
             </label>
             <label>Заказанные услуги
-              <input class="form__input" type="text" required/>
+              <input class="form__input" name="orders" type="text" required/>
             </label>
             <label>Комментарии стилиста
               <input class="form__input" name="comments" type="text" required/>
@@ -69,7 +69,7 @@
                 <div class="card__description__text">{{$portfol->client_purpose}}</div>
                 <div class="card__description__title">Заказанные услуги</div>
                 <div class="card__description__text">
-                <!-- заполнить -->
+                  {{$portfol->orders}}
                 </div>
                 <div class="card__description__title">Комментарии стилиста</div>
                 <div class="card__description__text">
@@ -77,8 +77,11 @@
                 </div>
                 <div class="start-change">
 
-                  <!-- Сделать, чтобы удалялось -->
+                 <form class="delete_portfolio">
+                   {{csrf_field()}}
+                   <input hidden name="id" value="{{$portfol->id}}"/>
                   <button class="btn btn--action btn--delete-portfolio" type="submit">Удалить</button>
+                 </form>
                 </div>
               </div>
             </div>

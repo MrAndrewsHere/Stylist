@@ -22,16 +22,14 @@ class StylistController extends Controller
 
   public function lk_stylist()
   {
-    $orders = null;
 
     try {
-      $orders = Auth::user()->stylist->orders->where('Ordered', '1');
       $files = Auth::user()->stylist->files;
     } catch (\ErrorException $error) {
 
     }
 
-    return view('stylist.lk-stylist', compact('orders'), compact('files'));
+    return view('stylist.lk-stylist',  compact('files'));
   }
 
 //  public function store_files(Request $request)
@@ -118,5 +116,13 @@ class StylistController extends Controller
 
     $request->session()->flash('error', 'Упс, ошибка!');
     return redirect('/settings');
+  }
+
+  public function delete_portfolio(Request $request)
+  {
+      $stylist = Auth::user()->stylist->portfolios->find($request->input('id'))->delete();
+      return "true";
+
+
   }
 }

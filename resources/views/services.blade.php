@@ -24,9 +24,7 @@
 
             <div class="card__description card__description--services">
               <a class="card__description__title" href="{{url('/service-page',$service->id)}}">{{$service->name}}</a>
-              <div class="card__description__text card__description__text--price">от
-              <!-- здесь надо вывести стоимость этой услуги у мастера-новичка (то есть самую минимальную) -->
-              ₽</div>
+              <div class="card__description__text card__description__text--price">{{$service->PriceForVip4()." ₽"}}</div>
               <div class="card__description__text">{{$service->description}}</div>
               <div class="card__description__text"><b>Результат: </b>
                 <span class="card__description__result">{{$service->result}}</span>

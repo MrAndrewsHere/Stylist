@@ -96,7 +96,7 @@
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>
-                  <span>₽</span>
+                  {{--<span> {{$order->service->priceForStylist()." ₽"}}</span>--}}
                 </li>
                 <li class="orders__status">
                   <span>Не подтвержден</span>

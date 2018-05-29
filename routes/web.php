@@ -48,6 +48,7 @@ Route::post('/saveinfo', 'ClientController@store');
 Route::post('/diplom_delete','StylistController@diplom_delete');
 Route::post('/show_stylist_profile','HomeController@show_stylist_profile');
 Route::post('/accept_stylist','HomeController@accept_stylist');
+Route::post('/delete_portfolio','StylistController@delete_portfolio');
 
 
 Route::get('/chat', 'ChatsController@index');
