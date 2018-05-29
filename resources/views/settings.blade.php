@@ -63,13 +63,13 @@
               <input class="form__input" type="file" id="diploms" name="files[]" multiple accept="image/*"/>
           </label>
 
-          @if(isset(Auth::user()->stylist->files))
-            @foreach(Auth::user()->stylist->files as $diplom)
-              <span id="form__output-diploms">
-                <img class="form__output-diploms" src="{{$diplom->path}}">
-              </span>
-            @endforeach
-          @endif
+          <span id="form__output-diploms">
+            @if(isset(Auth::user()->stylist->files))
+              @foreach(Auth::user()->stylist->files as $diplom)
+                  <img class="form__output-diploms" src="{{$diplom->path}}">
+              @endforeach
+            @endif
+          </span>
 
           <div class="start-change">
             <button class="btn btn--action" type="submit">Сохранить</button>

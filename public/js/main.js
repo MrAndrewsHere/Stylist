@@ -59,14 +59,30 @@ $(document).ready(() => {
 
   // кнопка удаления портфолио
   // const portfolioBlock = document.querySelector('.portfolio');
-  //
+
   // if (portfolioBlock) {
   //   portfolioBlock.addEventListener('click', (e) => {
   //     if (!e.target.classList.contains('btn--delete-portfolio')) return;
   //     e.target.parentNode.parentNode.parentNode.style.display = 'none';
-  //
   //   });
   // }
+
+  $('.delete_portfolio').on('submit', function (e) {
+    e.preventDefault();
+
+    e.target.parentNode.parentNode.parentNode.style.display = 'none';
+    $.ajax({
+      type: 'POST',
+      url: '/delete_portfolio',
+      data: $(this).serialize(),
+      success() {
+        $('.message-success').css('display', 'block');
+      },
+      error() {
+        $('.message-error').css('display', 'block');
+      },
+    });
+  });
 
   /* дипломы */
   const educationBlock = document.querySelector('.lk-stylist__education--filled');
