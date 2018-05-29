@@ -44,12 +44,12 @@
         <h2 class="title-second">Email-рассылка</h2>
         <label>
           <input type="checkbox">
-          Подписаться на email-рассылку интересных материалов
+          <span class="lk__email-send">Подписаться на email-рассылку интересных материалов</span>
         </label>
         <br>
         <label>
           <input type="checkbox">
-          Подписаться на email-рассылку новостей и обновлений
+          <span class="lk__email-send">Подписаться на email-рассылку новостей и обновлений портала</span>
         </label>
       </div>
     </div>
