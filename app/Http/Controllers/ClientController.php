@@ -57,7 +57,9 @@ class ClientController extends Controller
         'stylist_id' => $stylist->id,
         'price' => $service->priceForStylist($stylist)
       ]);
-      return $request->session()->flash('success', 'Услуга добавлена');
+
+      $request->session()->flash('success', 'Услуга добавлена');
+      return ;
     }
 
     return $request->session()->flash('error', 'Ошибка');;
@@ -99,6 +101,7 @@ class ClientController extends Controller
     $order = Auth::user()->client->orders->find($request->input('order_id'))->first();
     $order->ordered = 1;
     $order->save();
-    return $request->session()->flash('success', 'Услуга заказана');
+    $request->session()->flash('success', 'Услуга заказана');
+      return;
   }
 }

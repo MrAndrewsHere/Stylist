@@ -50,7 +50,7 @@
         </li>
       </ul>
 
-      @if(Auth::check())
+      @if(Auth::user()->role->name == 'client')
       <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif  </div>
       <div class="message-error">Извините, что-то пошло не так</div>
       

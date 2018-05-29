@@ -23,7 +23,7 @@
               <ul class="orders__item">
                 <li class="orders__service orders__service--big">
                   <span>{{$order->service->name}}</span><br/>
-                  <span>{{$order->stylist->category->name}}</span>
+                  <a href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->stylist->category->name}}</a>
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>
