@@ -11,6 +11,8 @@ const svgmin = require('gulp-svgmin'); // минифицирует svg
 // const del = require("del"); // удаляет файлы и папки
 const run = require('run-sequence'); // для последовательного запуска задач
 const autoprefixer = require('gulp-autoprefixer'); // добавляет автопрефиксеры
+const concat = require('gulp-concat'); // конкатиниция
+// const uglify = require('gulp-uglify');
 
 
 const path = {
@@ -55,7 +57,8 @@ gulp.task('css', () => gulp
 
 // js
 gulp.task('js', () => gulp
-  .src(path.src.js)
+  .src(['src/js/slick.js', 'src/js/main.js', 'src/js/dialog.js', 'src/js/filter.js'])
+  .pipe(concat('scripts.js'))
   .pipe(gulp.dest(path.build.js))
   .pipe(browserSync.stream()));
 
