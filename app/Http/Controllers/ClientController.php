@@ -37,8 +37,7 @@ class ClientController extends Controller
     try {
       $order = Order::find($request->input('id'));
       $order->delete();
-      $request->session()->flash('success', 'Услуга удалена');
-      return;
+      return 'Услуга удалена';
     } catch (\Exception $exception) {
     }
   }
@@ -58,11 +57,11 @@ class ClientController extends Controller
         'price' => $service->priceForStylist($stylist)
       ]);
 
-      $request->session()->flash('success', 'Услуга добавлена');
-      return ;
+
+      return "Услуга добавлена в мои заказы";
     }
 
-    return $request->session()->flash('error', 'Ошибка');;
+    return "Извините, не пошло не так";
   }
 
   // Сохранение настроек клиента
@@ -96,12 +95,21 @@ class ClientController extends Controller
   }
 
   //Заказ услгуи у стилиста
-  protected function ordered(Request $request) 
+  protected function ordered(Request $request)
   {
-    $order = Auth::user()->client->orders->find($request->input('order_id'))->first();
-    $order->ordered_by_client = 1;
-    $order->save();
-    $request->session()->flash('success', 'Услуга заказана');
+    try {
+
+      $order = Auth::user()->client->orders->find($request->input('order_id'));
+      $order->ordered_by_client = 1;
+      $order->save();
+      return "Услуга заказана";
+    } catch (\Exception $exception) {
       return;
+    }
   }
+
+
+
+
+
 }

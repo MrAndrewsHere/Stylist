@@ -49,11 +49,11 @@
           <span class="service-page__price">{{$service->PriceForVip4()}} р / час</span>
         </li>
       </ul>
+ @if(Auth::check())
+      @if( Auth::user()->role->name == 'client')
+      <div class="message-success"></div>
+      <div class="message-error"></div>
 
-      @if(Auth::user()->role->name == 'client')
-      <div class="message-success">@if(Session::has('success')) {{Session::get('success')}} @endif  </div>
-      <div class="message-error">Извините, что-то пошло не так</div>
-      
       <h2 class="service-page__title">Выберите своего стилиста</h2>
 
         <div class="service-page__stylists">
@@ -74,6 +74,7 @@
           @endif
         </div>
       @endif
+   @endif
 
     </div>
   </section>

@@ -1,18 +1,47 @@
 $(document).ready(() => {
+
   $('.ordered').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
       type: 'POST',
       url: '/ordered',
       data: $(this).serialize(),
-      success() {
-        $('.message-success').css('display', 'block');
+      success(result) {
+          $('.message-success').text(result);
+          $('.message-success').css('display', 'block');
+          setTimeout(function(){
+              $('.message-success').css('display', 'none');
+          },3000);
       },
-      error() {
-        $('.message-error').css('display', 'block');
+      error(result) {
+          $('.message-error').text(result);
+          $('.message-error').css('display', 'block');
       },
     });
   });
+
+$('.delete_order').on('submit', function (e) {
+    e.preventDefault();
+
+    const a = this.closest('ul');
+    a.parentElement.removeChild(a);
+
+    $.ajax({
+        type: 'POST',
+        url: '/delete_order',
+        data: $(this).serialize(),
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(function(){
+                $('.message-success').css('display', 'none');
+            },3000);
+        },
+        error() {
+            $('.message-error').css('display', 'block');
+        },
+    });
+});
 
 
   $('.add_service_to_client').on('submit', function (e) {
@@ -21,10 +50,15 @@ $(document).ready(() => {
       type: 'POST',
       url: '/add_service_to_client',
       data: $(this).serialize(),
-      success() {
+      success(result) {
+        $('.message-success').text(result);
         $('.message-success').css('display', 'block');
+          setTimeout(function(){
+              $('.message-success').css('display', 'none');
+          },3000);
       },
       error() {
+
         $('.message-error').css('display', 'block');
       },
     });
@@ -36,7 +70,8 @@ $(document).ready(() => {
       type: 'POST',
       url: '/diplom_delete',
       data: $(this).serialize(),
-      success() {
+      success(result) {
+        $('.message-success').text(result);
         $('.message-success').css('display', 'block');
       },
       error() {
