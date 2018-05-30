@@ -1,6 +1,5 @@
 $(document).ready(() => {
   // выезжающее меню
-
   $('.btn--sidebar-open').click(() => {
     $('.sidebar').animate({
       left: '0px',
@@ -27,7 +26,6 @@ $(document).ready(() => {
 
 
   // слайдер на странице «мой стиль»
-
   $('.slider-tips').on('init', (event, slick) => {
     const num = slick.slideCount;
     const currNum = slick.currentSlide + 1;
@@ -45,33 +43,48 @@ $(document).ready(() => {
     $('.slider-tips__numbers-current').text(`${currentSlide + 1}`);
   });
 
-  // конец слайдера на странице «мой стиль»
+  // табы заказов
+  $('.link-order').click(function () {
+    $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
+    $('.orders').removeClass('orders--active').eq($(this).index()).addClass('orders--active');
+  });
 
 
-  $('.link-tab').click(function () {
-    $('.link-tab').removeClass('link-active').eq($(this).index()).addClass('link-active');
-    $('.my-orders__item').hide().eq($(this).index()).show();
-  }).eq(0).addClass('.my-orders__item--active');
+  // табы цветотипов
+  $('.lk__item-color-type').click(function () {
+    $('.lk__item-color-type').removeClass('lk__item-color-type--active').eq($(this).index()).addClass('lk__item-color-type--active');
+    $('.lk__style-color-type').removeClass('lk__style-color-type--active').eq($(this).index()).addClass('lk__style-color-type--active');
+  });
 
-  $('.link-change-content').click(function (e) {
-    e.preventDefault();
-    $('.link-change-content').removeClass('link-change-content--active').eq($(this).index()).addClass('link-change-content--active');
-    $('.lk-client__style-seasons-description').hide().eq($(this).index()).css('display', 'flex');
-  }).eq(0).addClass('.lk-client__style-seasons-description--active');
 
   // кнопка удаления портфолио
+  // const portfolioBlock = document.querySelector('.portfolio');
 
-  const portfolioBlock = document.querySelector('.portfolio');
+  // if (portfolioBlock) {
+  //   portfolioBlock.addEventListener('click', (e) => {
+  //     if (!e.target.classList.contains('btn--delete-portfolio')) return;
+  //     e.target.parentNode.parentNode.parentNode.style.display = 'none';
+  //   });
+  // }
 
-  if (portfolioBlock) {
-    portfolioBlock.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('btn--delete-portfolio')) return;
-      e.target.parentNode.parentNode.parentNode.style.display = 'none';
+  $('.delete_portfolio').on('submit', function (e) {
+    e.preventDefault();
+
+    e.target.parentNode.parentNode.parentNode.style.display = 'none';
+    $.ajax({
+      type: 'POST',
+      url: '/delete_portfolio',
+      data: $(this).serialize(),
+      success() {
+        $('.message-success').css('display', 'block');
+      },
+      error() {
+        $('.message-error').css('display', 'block');
+      },
     });
-  }
+  });
 
   /* дипломы */
-
   const educationBlock = document.querySelector('.lk-stylist__education--filled');
   const editDiploms = document.querySelector('.btn--edit-diploms');
   const btn = document.querySelectorAll('.btn--diplom-delete');
@@ -140,8 +153,8 @@ $(document).ready(() => {
     });
   });
 
-  // добавление превью загружаемого изображения
 
+  // добавление превью загружаемого изображения
   function handleFileSelectSingle(evt) {
     const file = evt.target.files;
 
@@ -165,9 +178,7 @@ $(document).ready(() => {
 
   function handleFileSelectSingleTwo(evt) {
     const file = evt.target.files;
-
     const f = file[0];
-
     const reader = new FileReader();
 
     reader.onload = (function (theFile) {
@@ -201,7 +212,6 @@ $(document).ready(() => {
 
 
   // добавление превью загружаемых дипломов
-
   function handleFileSelectMulti(evt) {
     const files = evt.target.files;
 
