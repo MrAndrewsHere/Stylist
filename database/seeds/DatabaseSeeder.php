@@ -72,15 +72,15 @@ class DatabaseSeeder extends Seeder
     App\client::create(['id'=>'1','user_id'=>'2']);
     DB::table('users')->insert(
       ['id' => '3',
-        'name' => 'Виктория',
+        'name' => 'Евгения',
         'email' => 'Vika@yandex.ru',
         'password' => bcrypt('123456789'),
-        'second_name' => 'Викторовна',
+        'second_name' => 'Удальцова',
         'city' => 'Дубна',
         'cityTranslit' => Transliterate\Transliteration::make('Дубна'),
         'phone_number' => '89996633221',
         'role_id' => '2',
-        'avatar' => '/img/stylist1.png',
+        'avatar' => '/img/stylist1.jpg',
 
       ]);
     DB::table('users')->insert(
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
         'name' => 'Екатерина',
         'email' => 'Kate@yandex.ru',
         'password' => bcrypt('123456789'),
-        'second_name' => 'Владимировна',
+        'second_name' => 'Романова',
         'city' => 'Москва',
         'cityTranslit' => Transliterate\Transliteration::make('Москва'),
         'phone_number' => '87776565851',
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
         'cityTranslit' => Transliterate\Transliteration::make('Дмитров'),
         'phone_number' => '89996644221',
         'role_id' => '2',
-        'avatar' => '/img/stylist2.png',
+        'avatar' => '/img/stylist2.jpg',
       ]
     );
 

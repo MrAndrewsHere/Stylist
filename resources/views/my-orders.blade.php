@@ -102,7 +102,7 @@
                 </li>
                 <li class="orders__service orders__service--big">
                   <span>{{$order->client->user->name." ".$order->client->user->second_name}}</span><br/>
-                  <a href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->service->name}}</a>
+                  <a>{{$order->service->name}}</a>
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>
@@ -162,7 +162,7 @@
                 </li>
                 <li class="orders__service orders__service--big">
                   <span>{{$order->client->user->name." ".$order->client->user->second_name}}</span><br/>
-                  <a href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->service->name}}</a>
+                  <a>{{$order->service->name}}</a>
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>
@@ -219,7 +219,7 @@
                 </li>
                 <li class="orders__service orders__service--big">
                   <span>{{$order->client->user->name." ".$order->client->user->second_name}}</span><br/>
-                  <a href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->service->name}}</a>
+                  <a">{{$order->service->name}}</a>
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>
@@ -274,7 +274,7 @@
                 </li>
                 <li class="orders__service orders__service--big">
                   <span>{{$order->client->user->name." ".$order->client->user->second_name}}</span><br/>
-                  <a href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->service->name}}</a>
+                  <a">{{$order->service->name}}</a>
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>
