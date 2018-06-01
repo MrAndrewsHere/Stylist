@@ -118,7 +118,7 @@ class ClientController extends Controller
    {}
 
    protected function Canceled_Orders()
-   {} 
+   {}
 
 
 
