@@ -3017,7 +3017,6 @@ $(document).ready(() => {
     }, 200);
   });
 
-  // конец меню
 
   $('.slider-portfolio').slick({
     dots: false,
@@ -3047,6 +3046,7 @@ $(document).ready(() => {
   $('.slider-tips').on('afterChange', (event, slick, currentSlide) => {
     $('.slider-tips__numbers-current').text(`${currentSlide + 1}`);
   });
+
 
   // табы заказов
   $('.link-order').click(function () {

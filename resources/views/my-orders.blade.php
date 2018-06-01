@@ -52,7 +52,7 @@
                   <form class="delete_order">
                     {{csrf_field()}}
                     <input name="id" value="{{$order->id}}" hidden>
-                    <button class="btn" type="submit" class="btn__delete-order">
+                    <button class="btn" type="submit" class="btn__delete-order" title="удалить">
                       <svg class="orders__delete__pic">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
                       </svg>
@@ -62,7 +62,6 @@
               </ul>
             @endforeach
           @endif
-
         </div>
       @endif
 
@@ -84,7 +83,6 @@
         </ul>
 
         <div class="orders orders--active">
-
           @if (isset($orders) && $orders->count() != 0)
             <ul class="orders__title">
               <li class="orders__checkbox">Номер</li>
@@ -125,12 +123,11 @@
                     <input name="id" value="{{$order->id}}" hidden>
                     <button class="btn" type="submit" class="btn__delete-order">
                       <svg class="orders__delete__pic">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#cancel-order"></use>
                       </svg>
                     </button>
                   </form>
                 </li>
-
               </ul>
             @endforeach
           @else
@@ -185,7 +182,7 @@
                     <input name="id" value="{{$order->id}}" hidden>
                     <button class="btn" type="submit" class="btn__delete-order">
                       <svg class="orders__delete__pic">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#cancel-order"></use>
                       </svg>
                     </button>
                   </form>
@@ -242,7 +239,7 @@
                     <input name="id" value="{{$order->id}}" hidden>
                     <button class="btn" type="submit" class="btn__delete-order">
                       <svg class="orders__delete__pic">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#cancel-order"></use>
                       </svg>
                     </button>
                   </form>
