@@ -55,10 +55,6 @@
             </label>
           @endif
 
-          <label>Образование
-            <textarea name="education" class="form__input" cols="30" rows="10">{{$currentUser->stylist->education}}</textarea>
-          </label>
-
           <label>Дипломы и сертификаты
               <input class="form__input" type="file" id="diploms" name="files[]" multiple accept="image/*"/>
           </label>

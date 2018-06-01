@@ -47,6 +47,7 @@
   }
 
   &__checkbox {
+    text-align: center;
     width: 5%;
   }
 
@@ -131,4 +132,8 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.orders__link {
+  color: $color-text;
 }

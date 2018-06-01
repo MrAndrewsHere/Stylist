@@ -44,13 +44,6 @@
 
           <div class="card__description__text">
             <span class="card__description__title">
-              Образование:
-            </span>
-            {!! nl2br(e($stylist->education))!!}
-          </div>
-
-          <div class="card__description__text">
-            <span class="card__description__title">
               Город:
             </span>
             {{$stylist->user->city}}
@@ -76,7 +69,7 @@
                 </div>
                 <div class="comment__text">
                   <span class="comment__title">Комментарий стилиста — </span>
-                  После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж
+                  После работы с образом Евгении, у неё появилось множество новых ярких стилевых сочетаний
                 </div>
               </div>
             </div>

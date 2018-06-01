@@ -41,7 +41,7 @@
               <input class="form__input" name="orders" type="text" required/>
             </label>
             <label>Комментарии стилиста
-              <input class="form__input" name="comments" type="text" required/>
+              <textarea class="form__input" name="comments" type="text" required/></textarea>
             </label>
             <div class="start-change">
               <button class="btn btn--action" type="submit">Добавить</button>

@@ -29,9 +29,8 @@
                   <span>{{$order->id}}</span><br/>
                 </li>
                 <li class="orders__service orders__service--big">
-                  <a href="{{url('/service-page',$order->service->id)}}">{{$order->service->name}}</a><br/>
-                  <a
-                    href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->stylist->user->name." ".$order->stylist->user->second_name}}</a>
+                  <a class="orders__link" href="{{url('/service-page',$order->service->id)}}">{{$order->service->name}}</a><br/>
+                  <a class="orders__link" href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->stylist->user->name." ".$order->stylist->user->second_name}}</a>
                 </li>
                 <li class="orders__price orders__price--big">
                   <span>{{$order->price}}</span>

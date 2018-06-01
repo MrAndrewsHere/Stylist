@@ -3139,7 +3139,24 @@ $(document).ready(() => {
   });
 
 
+  $('.delete_order').on('submit', function (e) {
+    e.preventDefault();
 
+    const a = this.closest('ul');
+    a.parentElement.removeChild(a);
+
+    $.ajax({
+      type: 'POST',
+      url: '/delete_order',
+      data: $(this).serialize(),
+      success() {
+        $('.message-success').css('display', 'block');
+      },
+      error() {
+        $('.message-error').css('display', 'block');
+      },
+    });
+  });
 
 
   // добавление превью загружаемого изображения
