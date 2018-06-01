@@ -92,6 +92,16 @@ textarea {
   color: $alert;
 }
 
+.notification {
+  width: 27px;
+  height: 27px;
+  background-color: $alert;
+  display: inline-block;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+}
+
 .paragraph {
   margin-bottom: 20px;
 
