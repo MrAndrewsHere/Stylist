@@ -108,6 +108,18 @@ class ClientController extends Controller
     }
   }
 
+   protected function New_orders()
+   {}
+
+   protected function Accepted_orders()
+   {}
+
+   protected function Complited_Orders()
+   {}
+
+   protected function Canceled_Orders()
+   {} 
+
 
 
 

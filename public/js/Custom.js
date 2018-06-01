@@ -1,4 +1,5 @@
 $(document).ready(() => {
+
   $('.ordered').on('submit', function (e) {
     e.preventDefault();
     $.ajax({

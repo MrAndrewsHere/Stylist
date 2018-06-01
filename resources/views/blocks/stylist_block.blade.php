@@ -69,25 +69,25 @@
     </div>
   </form>
 </div>
-{{--<script>--}}
-    {{--$('.admin-request__accept_form').on('submit', function (e) {--}}
-        {{--e.preventDefault();--}}
-        {{--$.ajax({--}}
-            {{--type: 'POST',--}}
-            {{--url: '/accept_stylist',--}}
-            {{--data: $(this).serialize(),--}}
-            {{--success(result) {--}}
-                {{--$('.message-success').text(result);--}}
-                {{--$('.message-success').css('display', 'block');--}}
-                {{--setTimeout(function(){--}}
-                    {{--$('.message-success').css('display', 'none');--}}
-                {{--},3000);--}}
-            {{--},--}}
-            {{--error(result) {--}}
-                {{--$('.message-error').text(result);--}}
-                {{--$('.message-error').css('display', 'block');--}}
-            {{--},--}}
-        {{--});--}}
-    {{--});--}}
-  {{--</script>--}}
+<script>
+    $('.admin-request__accept_form').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/accept_stylist',
+            data: $(this).serialize(),
+            success(result) {
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(function(){
+                    $('.message-success').css('display', 'none');
+                },3000);
+            },
+            error(result) {
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
+            },
+        });
+    });
+  </script>
 
