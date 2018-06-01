@@ -29,27 +29,9 @@ class StylistController extends Controller
 
     }
 
-    return view('stylist.lk-stylist',  compact('files'));
+    return view('stylist.lk-stylist', compact('files'));
   }
 
-//  public function store_files(Request $request)
-//  {
-//    if ($request->hasFile('files')) {
-//      $files = $request->file('files');
-//      foreach ($files as $file) {
-//        try {
-//          Auth::user()->stylist->files()->create([
-//            'path' => Storage::url(Storage::putFile('public/files', $file)),
-//            'type' => 'achievements',
-//          ]);
-//        } catch (\Exception $e) {
-//        }
-//
-//      }
-//      return redirect('/lk_stylist');
-//    }
-//    return redirect('lk_stylist');
-//  }
 
   public function diplom_delete(Request $request)
   {
@@ -57,16 +39,15 @@ class StylistController extends Controller
       $id = $request->input('diplom');
       $user = Auth::user();
       $file = $user->stylist->files->find($id);
-      if($file !== null)
-      {
+      if ($file !== null) {
         Storage::delete('public/files/' . substr($file->path, 15));
         $result = $file->delete();
-        return $result='true';
+        return $result = 'true';
       }
       $result = 'Ошибка';
       return $result;
     }
-    return $result='false';
+    return $result = 'false';
   }
 
   protected function store(Request $request)
@@ -103,7 +84,7 @@ class StylistController extends Controller
       $files = $request->file('files');
       foreach ($files as $file) {
         try {
-        $user->stylist->files()->create([
+          $user->stylist->files()->create([
             'path' => Storage::url(Storage::putFile('public/files', $file)),
             'type' => 'achievements',
           ]);
@@ -120,9 +101,39 @@ class StylistController extends Controller
 
   public function delete_portfolio(Request $request)
   {
-      $stylist = Auth::user()->stylist->portfolios->find($request->input('id'))->delete();
-      return "true";
+    $stylist = Auth::user()->stylist->portfolios->find($request->input('id'))->delete();
+    return "true";
 
 
   }
+
+  protected function New_orders()
+  {
+  }
+
+  protected function Processing_orders()
+  {
+  }
+
+  protected function Complited_Orders()
+  {
+  }
+
+  protected function Canceled_Orders()
+  {
+  }
+
+  protected function Accept_Order()
+  {
+  }
+
+  protected function Cancel_Order()
+  {
+  }
+
+  protected function Complite_Order()
+  {
+
+  }
+
 }

@@ -109,7 +109,9 @@ class ClientController extends Controller
   }
 
    protected function New_orders()
-   {}
+   {
+     $orders = Auth::user()->client()->orders->where('ordered_by_client','0');
+   }
 
    protected function Accepted_orders()
    {}
