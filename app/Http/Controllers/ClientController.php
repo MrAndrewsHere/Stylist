@@ -110,17 +110,46 @@ class ClientController extends Controller
 
    protected function New_orders()
    {
-     $orders = Auth::user()->client()->orders->where('ordered_by_client','0');
+     $orders = Auth::user()->client->orders->where('confirmed_by_stylist','=','0');
+     $orders = $orders->where('canceled_by_stylist','0');
+     $orders = $orders->where('complited','0');
+     return view('client.new_orders',compact('orders'));
    }
 
    protected function Accepted_orders()
-   {}
+   {
+     $orders = Auth::user()->client->orders->where('confirmed_by_stylist','1');
+     return view('client.processing_orders',compact('orders'));
+   }
 
    protected function Complited_Orders()
-   {}
+   {
+     $orders = Auth::user()->client->orders->where('complited','1');
+     return view('client.complited_orders',compact('orders'));
+   }
 
    protected function Canceled_Orders()
-   {}
+   {
+     $orders = Auth::user()->client->orders->where('canceled_by_stylist','1');
+     return view('client.canceled_orders',compact('orders'));
+   }
+   protected function OpenChat()
+   {
+
+   }
+
+  protected function Cancel_Order(Request $request)
+  {
+    $order_id = $request->input('order_id');
+    $order = Order::find($order_id);
+    $order->ordered_by_client = 0;
+    $order->confirmed_by_stylist = 0;
+    $order->complited = 0;
+    $order->canceled_by_stylist = 1;
+    $order->save();
+    return 'Заказ отменён';
+  }
+
 
 
 

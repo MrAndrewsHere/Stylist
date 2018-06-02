@@ -3052,6 +3052,24 @@ $(document).ready(() => {
   $('.link-order').click(function () {
     $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
     $('.orders').removeClass('orders--active').eq($(this).index()).addClass('orders--active');
+
+      $.ajax({
+          type: 'GET',
+          url: '/'+$(this).attr('id').toString(),
+          data: '',
+          success(result) {
+              var div = $('.my_orders');
+              div.empty();
+             div.html(result);
+
+          },
+          error() {
+              alert('Что-то пошло не так');
+          },
+      });
+
+
+
   });
 
 

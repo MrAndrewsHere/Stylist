@@ -39,7 +39,7 @@
           @endif
 
           @if(Auth::user()->role->name == 'stylist')
-            <a class="navigation__link" href="/my_orders">Мои заказы</a>
+            <a class="navigation__link" href="/my_orders">Мои заказы </a>
           @endif
 
           @if(Auth::user()->role->name == 'admin')

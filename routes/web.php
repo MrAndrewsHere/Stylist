@@ -58,3 +58,19 @@ Route::get('/chat', 'ChatsController@index');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 
+
+Route::get('/stylist_new_orders','StylistController@New_orders');
+Route::get('/stylist_Processing_orders','StylistController@Processing_orders');
+Route::get('/stylist_Complited_Orders','StylistController@Complited_Orders');
+Route::get('/stylist_Canceled_Orders','StylistController@Canceled_Orders');
+
+Route::post('/Accept_Order','StylistController@Accept_Order');
+Route::post('/stylist_Cancel_Order','StylistController@Cancel_Order');
+Route::post('/Complite_Order','StylistController@Complite_Order');
+
+Route::get('client_New_orders','ClientController@New_orders');
+Route::get('client_Accepted_orders','ClientController@Accepted_orders');
+Route::get('client_Complited_Orders','ClientController@Complited_Orders');
+Route::get('client_Canceled_Orders','ClientController@Canceled_Orders');
+Route::post('/client_Cancel_Order','ClientController@Cancel_Order');
+

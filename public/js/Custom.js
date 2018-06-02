@@ -11,6 +11,7 @@ $(document).ready(() => {
         $('.message-success').css('display', 'block');
         setTimeout(() => {
           $('.message-success').css('display', 'none');
+          $('.message-success').text('');
         }, 3000);
       },
       error(result) {
@@ -38,7 +39,6 @@ $(document).ready(() => {
         }, 3000);
       },
       error() {
-        $('.message-error').css('display', 'block');
       },
     });
   });
@@ -96,3 +96,35 @@ $(document).ready(() => {
     });
   });
 });
+
+
+$('.accept_order').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '/Accept_Order',
+        data: $(this).serialize(),
+        success(result) {
+            e.target.parentNode.parentNode.style.display = 'none';
+        },
+        error(result) {
+            alert(result);
+        },
+    });
+});
+
+$('.cancel_order').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: '/Cancel_Order',
+        data: $(this).serialize(),
+        success(result) {
+            e.target.parentNode.parentNode.style.display = 'none';
+        },
+        error(result) {
+            alert(result);
+        },
+    });
+});
+

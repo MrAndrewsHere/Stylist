@@ -90,7 +90,9 @@ class HomeController extends Controller
 //        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
 
     if (Auth::user()->role_id == '1') {
-      $orders = Auth::user()->client->orders;
+      $orders = Auth::user()->client->orders->where('confirmed_by_stylist','=','0');
+     $orders = $orders->where('canceled_by_stylist','0');
+      $orders = $orders->where('complited','0');
       return view('my-orders', compact('orders'));
     }
     if (Auth::user()->role_id == '2')
