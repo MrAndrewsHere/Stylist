@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
   $('.ordered').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
@@ -99,32 +98,32 @@ $(document).ready(() => {
 
 
 $('.accept_order').on('submit', function (e) {
-    e.preventDefault();
-    $.ajax({
-        type: 'POST',
-        url: '/Accept_Order',
-        data: $(this).serialize(),
-        success(result) {
-            e.target.parentNode.parentNode.style.display = 'none';
-        },
-        error(result) {
-            alert(result);
-        },
-    });
+  e.preventDefault();
+  $.ajax({
+    type: 'POST',
+    url: '/Accept_Order',
+    data: $(this).serialize(),
+    success(result) {
+      e.target.parentNode.parentNode.style.display = 'none';
+    },
+    error(result) {
+      alert(result);
+    },
+  });
 });
 
 $('.cancel_order').on('submit', function (e) {
-    e.preventDefault();
-    $.ajax({
-        type: 'POST',
-        url: '/Cancel_Order',
-        data: $(this).serialize(),
-        success(result) {
-            e.target.parentNode.parentNode.style.display = 'none';
-        },
-        error(result) {
-            alert(result);
-        },
-    });
+  e.preventDefault();
+  $.ajax({
+    type: 'POST',
+    url: '/Cancel_Order',
+    data: $(this).serialize(),
+    success(result) {
+      e.target.parentNode.parentNode.style.display = 'none';
+    },
+    error(result) {
+      alert(result);
+    },
+  });
 });
 

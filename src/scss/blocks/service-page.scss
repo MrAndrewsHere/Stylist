@@ -1,3 +1,19 @@
+@media ($xs) {
+  .service-page__list-item-price {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+@media ($sm) {
+  .service-page__list-item-price {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+}
+
 .container-service-page {
   width: 80%;
   margin: 0 auto;
@@ -25,10 +41,6 @@
 
 .service-page__list-item-result:before {
   content: "✓ ";
-}
-
-.service-page__list-item-price {
-  display: flex;
 }
 
 .service-page__stars {
