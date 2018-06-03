@@ -33,6 +33,7 @@
         <div class="orders orders--active">
 
           <div class="my_orders">
+
             <ul class="orders__title">
               <li class="orders__checkbox">Номер</li>
               <li class="orders__service orders__service--big">Услуга/Стилист</li>

@@ -30,7 +30,7 @@
 
       </li>
       <li class="orders__buy">
-        <form class="ordered">
+        <form class="accept_by_client">
           {{csrf_field()}}
           <input type="hidden" name="order_id" value="{{$order->id}}">
           <button type="submit" class="btn btn--action btn--action-buy">
@@ -59,7 +59,7 @@
   </div>
 @endif
 <script>
-    $('.ordered').on('submit', function (e) {
+        $('.accept_by_client').on('submit', function (e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
@@ -68,14 +68,9 @@
             success(result) {
                 $('.message-success').text(result);
                 $('.message-success').css('display', 'block');
-                setTimeout(() = > {
-                    $('.message-success'
-            ).
-                css('display', 'none');
-            },
-                3000
-            )
-                ;
+                setTimeout( function () {
+                    $('.message-success').css('display', 'none');
+                },2000);
             },
             error(result) {
                 $('.message-error').text(result);
@@ -97,15 +92,9 @@
             success(result) {
                 $('.message-success').text(result);
                 $('.message-success').css('display', 'block');
-                setTimeout(() = > {
-                    $('.message-success'
-            ).
-                css('display', 'none');
-            },
-                3000
-            )
-                ;
-            },
+                setTimeout(function () {
+                    $('.message-success').css('display', 'none');},3000);
+                },
             error() {
             },
         });
