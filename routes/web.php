@@ -19,9 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/register','RegisterController@showform');
-Route::post('/register','RegisterController@register');
-
+Route::get('/login', function (){ return redirect('/');});
 Route::get('/home', 'HomeController@index');
 Route::get('/lk_stylist', 'StylistController@lk_stylist');
 Route::get('/lk_client', 'ClientController@lk_client');
