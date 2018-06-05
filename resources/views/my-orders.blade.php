@@ -35,7 +35,7 @@
           <div class="my_orders">
 
             <ul class="orders__title">
-              <li class="orders__checkbox">Номер</li>
+              <li class="orders__id">№ заказа</li>
               <li class="orders__service orders__service--big">Услуга/Стилист</li>
               <li class="orders__price orders__price--big">Цена</li>
               <li class="orders__status">Статус</li>
@@ -46,7 +46,7 @@
             @if(isset($orders))
               @foreach($orders as $order)
                 <ul class="orders__item">
-                  <li class="orders__checkbox">
+                  <li class="orders__id">
                     <span>{{$order->id}}</span><br/>
                   </li>
                   <li class="orders__service orders__service--big">
@@ -148,7 +148,7 @@
           <div class="my_orders">
             @if (isset($orders) && $orders->count() != 0)
               <ul class="orders__title">
-                <li class="orders__checkbox">Номер</li>
+                <li class="orders__id">№ заказа</li>
                 <li class="orders__service orders__service--big">Клиент/услуга</li>
                 <li class="orders__price orders__price--big">Цена</li>
                 <li class="orders__status">Статус</li>
@@ -157,7 +157,7 @@
               </ul>
               @foreach($orders as $order)
                 <ul class="orders__item">
-                  <li class="orders__checkbox">
+                  <li class="orders__id">
                     <span>{{$order->id}}</span><br/>
                   </li>
                   <li class="orders__service orders__service--big">
