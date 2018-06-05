@@ -23,8 +23,8 @@ $(document).ready(() => {
   $('.delete_order').on('submit', function (e) {
     e.preventDefault();
 
-    const a = this.closest('ul');
-    a.parentElement.removeChild(a);
+    // const a = this.closest('ul');
+    // a.parentElement.removeChild(a);
 
     $.ajax({
       type: 'POST',
