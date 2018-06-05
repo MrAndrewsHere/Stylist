@@ -1,12 +1,13 @@
-<ul class="orders__title">
-  <li class="orders__checkbox">Номер</li>
-  <li class="orders__service orders__service--big">Услуга/Стилист</li>
-  <li class="orders__price orders__price--big">Цена</li>
-  <li class="orders__status">Статус</li>
-  <li class="orders__buy"></li>
-  <li class="orders__delete"></li>
-</ul>
+
 @if(isset($orders))
+    <ul class="orders__title">
+        <li class="orders__id">№ заказа</li>
+        <li class="orders__service orders__service--big">Услуга/Стилист</li>
+        <li class="orders__price orders__price--big">Цена</li>
+        <li class="orders__status">Статус</li>
+        <li class="orders__buy"></li>
+        <li class="orders__delete"></li>
+    </ul>
   @foreach($orders as $order)
     <ul class="orders__item">
       <li class="orders__checkbox">

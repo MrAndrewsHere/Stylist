@@ -3048,11 +3048,11 @@ $(document).ready(() => {
   });
 
 
-  // табы заказов
-  $('.link-order').click(function () {
-    $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
-    $('.orders').removeClass('orders--active').eq($(this).index()).addClass('orders--active');
-  });
+  // // табы заказов
+  // $('.link-order').click(function () {
+  //   $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
+  //   $('.orders').removeClass('orders--active').eq($(this).index()).addClass('orders--active');
+  // });
 
 
   // табы цветотипов
