@@ -36,7 +36,7 @@
           @foreach($stylists as $stylist)
             <div class="card card__margin" data-category="{{ $stylist->category->describe }}" data-cities="{{ $stylist->user->cityTranslit }}">
               <div class="card__photo-block">
-                <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
+                <img class="card__photo card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист {{ $stylist->user->name }}"/>
               </div>
 
               <div class="card__description">
@@ -48,13 +48,13 @@
                 </div>
                 <ul class="card__photo-list">
                   <li class="card__photo-list__block">
-                    <img class="card__photo-list__photo" src="img/client1.jpg" alt=""/>
+                    <img class="card__photo-list__photo" src="img/client1.jpg" alt="фотография клиента"/>
                   </li>
                   <li class="card__photo-list__block">
-                    <img class="card__photo-list__photo" src="img/client2.jpg" alt=""/>
+                    <img class="card__photo-list__photo" src="img/client2.jpg" alt="фотография клиента"/>
                   </li>
                   <li class="card__photo-list__block">
-                    <img class="card__photo-list__photo" src="img/client3.jpg" alt=""/>
+                    <img class="card__photo-list__photo" src="img/client3.jpg" alt="фотография клиента"/>
                   </li>
                 </ul>
                 <a href="{{ url('/stylist_profile', $stylist->id) }}" class="btn btn--action btn--action-small">

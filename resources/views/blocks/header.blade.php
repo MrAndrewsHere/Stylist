@@ -48,7 +48,7 @@
 
           <a class="navigation__link navigation__profile" href="#">
             <div class="navigation__profile-img">
-              <img class="navigation__profile-img" src="{{Auth::user()->avatar}}"/>
+              <img class="navigation__profile-img" src="{{Auth::user()->avatar}}" alt="аватар пользователя"/>
             </div>
             <div class="navigation__profile-arrow"></div>
           </a>

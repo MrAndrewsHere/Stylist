@@ -60,7 +60,7 @@
           @if(isset($stylists))
             @foreach($stylists as $stylist)
               <div class="service-page__stylist">
-                <img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}  " alt="">
+                <img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}" alt="{{$stylist->user->name}} {{$stylist->user->second_name}}">
                 <span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>
                 <span class="service-page__stylist-status">{{$stylist->category->name}}</span>
                 <form class="add_service_to_client">

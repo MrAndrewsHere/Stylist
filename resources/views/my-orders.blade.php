@@ -185,8 +185,7 @@
                       <input name="order_id" value="{{$order->id}}" hidden>
                       <button class="btn" type="submit" class="btn__delete-order">
                         <svg class="orders__delete__pic">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                               xlink:href="img/spritesvg.svg#cancel-order"></use>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#cancel-order"></use>
                         </svg>
                       </button>
                     </form>

@@ -55,10 +55,10 @@
               <div class="portfolio-item__photos">
                 <div class="slide__photos">
                   <div class="photo__first">
-                    <img src="{{$portfol->picture_before}}" class="portfolio__photo" alt=""/>
+                    <img src="{{$portfol->picture_before}}" class="portfolio__photo" alt="фото до услуги"/>
                   </div>
                   <div class="photo__second">
-                    <img src="{{$portfol->picture_after}}" class="portfolio__photo" alt=""/>
+                    <img src="{{$portfol->picture_after}}" class="portfolio__photo" alt="фото после услуги"/>
                   </div>
                 </div>
               </div>
