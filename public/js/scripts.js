@@ -3077,7 +3077,7 @@ $(document).ready(() => {
   });
 
   /* дипломы */
-  const educationBlock = document.querySelector('.lk-stylist__education--filled',);
+  const educationBlock = document.querySelector('.lk-stylist__education--filled');
   const editDiploms = document.querySelector('.btn--edit-diploms');
   const btn = document.querySelectorAll('.btn--diplom-delete');
   let state = false;

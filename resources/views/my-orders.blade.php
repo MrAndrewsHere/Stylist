@@ -7,6 +7,9 @@
     <h1 class="section__title">Мои заказы</h1>
     <div class="container-home">
 
+      <div class="message-success"></div>
+      <div class="message-error"></div>
+
       <!-- ЗАКАЗЫ КЛИЕНТА -->
 
       @if (Auth::user()->role->name == 'client')
@@ -28,10 +31,6 @@
         <!-- НОВЫЕ ЗАКАЗЫ КЛИЕНТА -->
 
         <div class="orders orders--active">
-
-          <div class="message-success"></div>
-          <div class="message-error"></div>
-
           <div class="my_orders">
 
             <ul class="orders__title">

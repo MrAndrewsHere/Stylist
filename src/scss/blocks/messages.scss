@@ -15,6 +15,13 @@
     left: 35%;
     box-shadow: 0px 0px 16px 0px rgba(17, 17, 17, 1);
   }
+
+  .message-success--servicepage {
+    top: 1410px;
+    left: 30%;
+    z-index: 99;
+    min-height: 53px;
+  }
 }
 
 @media ($xl) {
@@ -23,11 +30,11 @@
     left: 48%;
   }
 
-  .message-success--section,
-  .message-error--section {
+  .message-success--servicepage {
+    top: 1410px;
+    left: 46%;
     z-index: 99;
-    left: 34.5%;
-    bottom: 0;
+    min-height: 53px;
   }
 }
 
