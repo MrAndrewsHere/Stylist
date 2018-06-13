@@ -4,6 +4,9 @@
 
 @section('content')
   <section class="section">
+    <div class="message-success message-success--section"></div>
+    <div class="message-error message-error--section"></div>
+
     <div class="container-service-page">
       <h1 class="section__title">{{$service->name}}</h1>
       <img class="service-page__photo" src="{{$service->picture}}" alt="шоппинг">
@@ -51,12 +54,13 @@
       </ul>
  @if(Auth::check())
       @if( Auth::user()->role->name == 'client')
-      <div class="message-success"></div>
-      <div class="message-error"></div>
 
       <h2 class="service-page__title">Выберите своего стилиста</h2>
 
         <div class="service-page__stylists">
+
+          
+
           @if(isset($stylists))
             @foreach($stylists as $stylist)
               <div class="service-page__stylist">

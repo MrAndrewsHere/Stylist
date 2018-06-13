@@ -145,8 +145,5 @@ $('.link-order').click(function () {
             alert('Что-то пошло не так');
         },
     });
-
-
-
 });
 
