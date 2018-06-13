@@ -28,14 +28,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/delete_order',
       data: $(this).serialize(),
-      success(result) {
-        $('.message-success').text(result);
-        $('.message-success').css('display', 'block');
-        setTimeout(() => {
-          $('.message-success').css('display', 'none');
-        }, 3000);
-      },
-      error() {},
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
   });
 
@@ -46,16 +50,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/add_service_to_client',
       data: $(this).serialize(),
-      success(result) {
-        $('.message-success').text(result);
-        $('.message-success').css('display', 'block');
-        setTimeout(() => {
-          $('.message-success').css('display', 'none');
-        }, 3000);
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
   });
 
@@ -66,13 +72,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/diplom_delete',
       data: $(this).serialize(),
-      success(result) {
-        $('.message-success').text(result);
-        $('.message-success').css('display', 'block');
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
     e.target.parentNode.style.display = 'none';
   });
@@ -101,12 +112,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/delete_portfolio',
       data: $(this).serialize(),
-      success() {
-        $('.message-success').css('display', 'block');
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
   });
 
@@ -136,12 +153,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/delete_order',
       data: $(this).serialize(),
-      success() {
-        $('.message-success').css('display', 'block');
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
   });
 
@@ -152,10 +175,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/Accept_Order',
       data: $(this).serialize(),
-      success() {
-        e.target.parentNode.parentNode.style.display = 'none';
-      },
-      error() {},
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
   });
 
@@ -166,10 +197,18 @@ $(document).ready(() => {
       type: 'POST',
       url: '/Cancel_Order',
       data: $(this).serialize(),
-      success() {
-        e.target.parentNode.parentNode.style.display = 'none';
-      },
-      error() {},
+        success(result) {
+            $('.message-success').text(result);
+            $('.message-success').css('display', 'block');
+            setTimeout(() => {
+                $('.message-success').css('display', 'none');
+                $('.message-success').text('');
+            }, 3000);
+        },
+        error(result) {
+            $('.message-error').text(result);
+            $('.message-error').css('display', 'block');
+        },
     });
   });
 
@@ -186,10 +225,7 @@ $(document).ready(() => {
 
     $.ajax({
       type: 'GET',
-      url: `/
-        $(this)
-          .attr('id')
-          .toString()`,
+      url: '/'+ $(this).attr('id').toString(),
       data: '',
       success(result) {
         const div = $('.my_orders');

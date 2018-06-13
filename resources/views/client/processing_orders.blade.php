@@ -64,9 +64,16 @@
             data: $(this).serialize(),
             success(result) {
                 e.target.parentNode.parentNode.style.display = 'none';
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
             },
             error(result) {
-                alert(result);
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
             },
         });
     });

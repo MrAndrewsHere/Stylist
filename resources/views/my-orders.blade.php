@@ -5,6 +5,10 @@
 @section('content')
   <section class="section">
     <h1 class="section__title">Мои заказы</h1>
+
+    <div class="message-success"></div>
+    <div class="message-error"></div>
+
     <div class="container-home">
 
       <!-- ЗАКАЗЫ КЛИЕНТА -->
@@ -28,9 +32,6 @@
         <!-- НОВЫЕ ЗАКАЗЫ КЛИЕНТА -->
 
         <div class="orders orders--active">
-
-          <div class="message-success"></div>
-          <div class="message-error"></div>
 
           <div class="my_orders">
 
@@ -127,6 +128,9 @@
     <!-- ЗАКАЗЫ СТИЛИСТА -->
 
       @if (Auth::user()->role->name == 'stylist')
+        <div class="message-success"></div>
+        <div class="message-error"></div>
+
         <ul class="orders-list-links">
           <li class="link-order link-order--active" id="stylist_new_orders">
             Новые заказы
@@ -195,7 +199,7 @@
             @else
               <div class="lk-stylist__education lk-stylist__education--empty">
                 <div>
-                  <span>У вас нет выполняемых заказов</span>
+                  <span>У вас нет новых заказов</span>
                 </div>
               </div>
             @endif

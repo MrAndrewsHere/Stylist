@@ -104,7 +104,8 @@ class ClientController extends Controller
       $order->save();
       return "Услуга заказана";
     } catch (\Exception $exception) {
-      return;
+
+      return $exception->getMessage();
     }
   }
 
