@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  // заказ услуг
   $('.ordered').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
@@ -20,12 +21,9 @@ $(document).ready(() => {
     });
   });
 
+  // удаление услуги в моих заказах
   $('.delete_order').on('submit', function (e) {
     e.preventDefault();
-
-    // const a = this.closest('ul');
-    // a.parentElement.removeChild(a);
-
     $.ajax({
       type: 'POST',
       url: '/delete_order',
@@ -37,12 +35,11 @@ $(document).ready(() => {
           $('.message-success').css('display', 'none');
         }, 3000);
       },
-      error() {
-      },
+      error() {},
     });
   });
 
-
+  // что тут
   $('.add_service_to_client').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
@@ -62,6 +59,7 @@ $(document).ready(() => {
     });
   });
 
+  // удаление дипломов из настроек стилиста
   $('.diplom_delete').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
@@ -76,10 +74,10 @@ $(document).ready(() => {
         $('.message-error').css('display', 'block');
       },
     });
-
     e.target.parentNode.style.display = 'none';
   });
 
+  // просмотр профиля стилиста
   $('.show_stylist_profile').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
@@ -94,56 +92,111 @@ $(document).ready(() => {
       },
     });
   });
-});
 
-
-$('.accept_order').on('submit', function (e) {
-  e.preventDefault();
-  $.ajax({
-    type: 'POST',
-    url: '/Accept_Order',
-    data: $(this).serialize(),
-    success(result) {
-      e.target.parentNode.parentNode.style.display = 'none';
-    },
-    error(result) {
-      alert(result);
-    },
+  // удаление элемента фортфолио стилистом
+  $('.delete_portfolio').on('submit', function (e) {
+    e.preventDefault();
+    e.target.parentNode.parentNode.parentNode.style.display = 'none';
+    $.ajax({
+      type: 'POST',
+      url: '/delete_portfolio',
+      data: $(this).serialize(),
+      success() {
+        $('.message-success').css('display', 'block');
+      },
+      error() {
+        $('.message-error').css('display', 'block');
+      },
+    });
   });
-});
 
-$('.cancel_order').on('submit', function (e) {
-  e.preventDefault();
-  $.ajax({
-    type: 'POST',
-    url: '/Cancel_Order',
-    data: $(this).serialize(),
-    success(result) {
-      e.target.parentNode.parentNode.style.display = 'none';
-    },
-    error(result) {
-      alert(result);
-    },
+  // форма обратной связи
+  $('#contactform').on('submit', (e) => {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/sendmail',
+      data: $('#contactform').serialize(),
+      success() {
+        $('.message-success').css('display', 'block');
+        $('#contactform').trigger('reset');
+      },
+      error() {
+        $('.message-error').css('display', 'block');
+      },
+    });
   });
-});
 
-$('.link-order').click(function () {
-    $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
-    $('.orders').removeClass('orders--active').eq($(this).index()).addClass('orders--active');
+  // удаление заказа
+  $('.delete_order').on('submit', function (e) {
+    e.preventDefault();
+    const a = this.closest('ul');
+    a.parentElement.removeChild(a);
+    $.ajax({
+      type: 'POST',
+      url: '/delete_order',
+      data: $(this).serialize(),
+      success() {
+        $('.message-success').css('display', 'block');
+      },
+      error() {
+        $('.message-error').css('display', 'block');
+      },
+    });
+  });
+
+  // принятие заказа
+  $('.accept_order').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/Accept_Order',
+      data: $(this).serialize(),
+      success() {
+        e.target.parentNode.parentNode.style.display = 'none';
+      },
+      error() {},
+    });
+  });
+
+  // отмена заказа
+  $('.cancel_order').on('submit', function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: '/Cancel_Order',
+      data: $(this).serialize(),
+      success() {
+        e.target.parentNode.parentNode.style.display = 'none';
+      },
+      error() {},
+    });
+  });
+
+  // перемещение по разным заказам
+  $('.link-order').click(function () {
+    $('.link-order')
+      .removeClass('link-order--active')
+      .eq($(this).index())
+      .addClass('link-order--active');
+    $('.orders')
+      .removeClass('orders--active')
+      .eq($(this).index())
+      .addClass('orders--active');
 
     $.ajax({
-        type: 'GET',
-        url: '/'+$(this).attr('id').toString(),
-        data: '',
-        success(result) {
-            var div = $('.my_orders');
-            div.empty();
-            div.html(result);
-
-        },
-        error() {
-            alert('Что-то пошло не так');
-        },
+      type: 'GET',
+      url: `/
+        $(this)
+          .attr('id')
+          .toString()`,
+      data: '',
+      success(result) {
+        const div = $('.my_orders');
+        div.empty();
+        div.html(result);
+      },
+      error() {},
     });
+  });
 });
-

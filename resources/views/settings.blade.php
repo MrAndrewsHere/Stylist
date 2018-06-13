@@ -6,11 +6,6 @@
   <section class="section section--settings">
     <div class="container-lk">
       <h1 class="section__title">Настройки</h1>
-      @if(Session::has('success'))
-      <div class="success">
-       {{Session::get('success')}}
-      </div>
-      @endif
 
       @if (Auth::user()->role->name == 'stylist')
         <form class="form-settings" action="{{url('/save_info')}}" method="post" enctype="multipart/form-data">
