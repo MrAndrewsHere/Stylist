@@ -3,30 +3,30 @@ $(document).ready(() => {
   $('.btn--sidebar-open').click(() => {
     $('.sidebar').animate(
       {
-        left: '0px'
+        left: '0px',
       },
-      200
+      200,
     );
   });
 
   $('.btn--sidebar-cancel').click(() => {
     $('.sidebar').animate(
       {
-        left: '-242px'
+        left: '-242px',
       },
-      200
+      200,
     );
   });
 
   // вызов плагина со слайдером
   $('.slider-portfolio').slick({
     dots: false,
-    arrows: true
+    arrows: true,
   });
 
   $('.slider-my-style').slick({
     dots: false,
-    arrows: true
+    arrows: true,
   });
 
   // слайдер на странице «мой стиль»
@@ -40,7 +40,7 @@ $(document).ready(() => {
 
   $('.slider-tips').slick({
     autoplay: false,
-    dots: false
+    dots: false,
   });
 
   $('.slider-tips').on('afterChange', (event, slick, currentSlide) => {
@@ -118,7 +118,7 @@ $(document).ready(() => {
           e.target.result,
           '" title="',
           escape(theFile.name),
-          '"/>'
+          '"/>',
         ].join('');
 
         document.querySelector('.form__output').innerHTML = '';
@@ -142,7 +142,7 @@ $(document).ready(() => {
           e.target.result,
           '" title="',
           escape(theFile.name),
-          '"/>'
+          '"/>',
         ].join('');
 
         document.querySelector('.form__output-two').innerHTML = '';
@@ -185,7 +185,7 @@ $(document).ready(() => {
             e.target.result,
             '" title="',
             escape(theFile.name),
-            '"/>'
+            '"/>',
           ].join('');
           document
             .getElementById('form__output-diploms')
