@@ -4,8 +4,8 @@
 
 @section('content')
   <section class="section">
-    <div class="message-success message-success--section"></div>
-    <div class="message-error message-error--section"></div>
+    <div class="message-success message-success--servicepage"></div>
+    <div class="message-error message-error--servicepage"></div>
 
     <div class="container-service-page">
       <h1 class="section__title">{{$service->name}}</h1>
