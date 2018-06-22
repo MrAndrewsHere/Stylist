@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-  protected $fillable = ['client_id','service_id','stylist_id','price'];
+  protected $fillable = ['client_id', 'service_id', 'stylist_id', 'price'];
   public $timestamps = false;
+
   public function client()
   {
     return $this->belongsTo('App\client');
@@ -22,7 +23,6 @@ class Order extends Model
   {
     return $this->belongsTo('App\service');
   }
-
 
 
 }

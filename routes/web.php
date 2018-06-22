@@ -19,9 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/register','RegisterController@showform');
-Route::post('/register','RegisterController@register');
-
 Route::get('/home', 'HomeController@index');
 Route::get('/lk_stylist', 'StylistController@lk_stylist');
 Route::get('/lk_client', 'ClientController@lk_client');
@@ -51,12 +48,14 @@ Route::post('/saveinfo', 'ClientController@store');
 Route::post('/diplom_delete','StylistController@diplom_delete');
 Route::post('/show_stylist_profile','HomeController@show_stylist_profile');
 Route::post('/accept_stylist','HomeController@accept_stylist');
-Route::post('/delete_portfolio','StylistController@delete_portfolio');
+Route::post('/delete_po rtfolio','StylistController@delete_portfolio');
+
+Route::get('/services', 'WelcomeController@services');
 
 
-Route::get('/chat', 'ChatsController@index');
-Route::get('messages', 'ChatsController@fetchMessages');
-Route::post('messages', 'ChatsController@sendMessage');
+//Route::get('/chat', 'ChatsController@index');
+//Route::get('messages', 'ChatsController@fetchMessages');
+//Route::post('messages', 'ChatsController@sendMessage');
 
 
 Route::get('/stylist_new_orders','StylistController@New_orders');

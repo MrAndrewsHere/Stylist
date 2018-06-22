@@ -50,4 +50,6 @@ class service extends Model
     return $call->first()->pivot->price;
   }
 
+
+
 }

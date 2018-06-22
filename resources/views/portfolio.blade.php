@@ -7,6 +7,8 @@
     <h1 class="section__title">Портфолио</h1>
     <div class="container">
       <span>@if(Session::has('success')) {{Session::get('success')}} @endif</span>
+
+
       <div class="portfolio portfolio__title">
         <form class="portfolio-item portfolio-item--editing portfolio__margin" method="POST" action="/portfolio"
               enctype="multipart/form-data">

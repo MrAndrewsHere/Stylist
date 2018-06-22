@@ -28,10 +28,8 @@ class StylistController extends Controller
     } catch (\ErrorException $error) {
 
     }
-
     return view('stylist.lk-stylist', compact('files'));
   }
-
 
   public function diplom_delete(Request $request)
   {
@@ -108,60 +106,30 @@ class StylistController extends Controller
   }
 
   protected function New_orders()
-  { $stylist = Auth::user()->stylist;
+  {
+    $stylist = Auth::user()->stylist;
     $orders = $stylist->orders->where('ordered_by_client', '1');
-    return view('stylist.new_orders',compact('orders'));
+    return view('stylist.new_orders', compact('orders'));
   }
 
   protected function Processing_orders()
   {
     $orders = Auth::user()->stylist->orders->where('confirmed_by_stylist', '1');
-    return view('stylist.processing_orders',compact('orders'));
+    return view('stylist.processing_orders', compact('orders'));
   }
 
   protected function Complited_Orders()
   {
     $orders = Auth::user()->stylist->orders->where('complited', '1');
-    return view('stylist.complited_orders',compact('orders'));
+    return view('stylist.complited_orders', compact('orders'));
   }
 
   protected function Canceled_Orders()
   {
     $orders = Auth::user()->stylist->orders->where('canceled_by_stylist', '1');
-    return view('stylist.canceled_orders',compact('orders'));
+    return view('stylist.canceled_orders', compact('orders'));
 
   }
 
-  protected function Accept_Order(Request $request)
-  {
-    $order = Order::find($request->input('order_id'));
-    $order->ordered_by_client = 0;
-    $order->confirmed_by_stylist = 1;
-    $order->save();
-    return 'Заказ принят';
-
-  }
-
-  protected function Cancel_Order(Request $request)
-  {
-    $order_id = $request->input('order_id');
-    $order = Order::find($order_id);
-    $order->ordered_by_client = 0;
-    $order->confirmed_by_stylist = 0;
-    $order->complited = 0;
-    $order->canceled_by_stylist = 1;
-    $order->save();
-    return 'Заказ отменён';
-  }
-
-  protected function Complite_Order(Request $request)
-  {
-    $order = Order::find($request->input('order_id'));
-    $order->confirmed_by_stylist = 0;
-    $order->complited = 1;
-    $order->save();
-    return 'Заказ выполнен';
-
-  }
 
 }
