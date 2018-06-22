@@ -1,5 +1,5 @@
 
-@if(isset($orders))
+@if(isset($orders)&& $orders->count() != 0)
     <ul class="orders__title">
         <li class="orders__id">№ заказа</li>
         <li class="orders__service orders__service--big">Услуга/Стилист</li>

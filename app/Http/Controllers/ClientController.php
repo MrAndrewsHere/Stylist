@@ -61,7 +61,7 @@ class ClientController extends Controller
       return "Услуга добавлена в мои заказы";
     }
 
-    return "Извините, не пошло не так";
+    return "Извините, что то пошло не так";
   }
 
   // Сохранение настроек клиента

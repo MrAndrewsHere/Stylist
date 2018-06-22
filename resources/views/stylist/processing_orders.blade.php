@@ -5,6 +5,7 @@
         <li class="orders__price orders__price--big">Цена</li>
         <li class="orders__status">Статус</li>
         <li class="orders__buy"></li>
+        <li class="orders__buy"></li>
         <li class="orders__delete"></li>
     </ul>
     @foreach($orders as $order)
@@ -21,6 +22,15 @@
             </li>
             <li class="orders__status">
                 <span>Не подтвержден</span>
+            </li>
+            <li class="orders__buy">
+                <form class="complite_order">
+                    {{csrf_field()}}
+                    <input type="hidden" name="order_id" value="{{$order->id}}">
+                    <button type="submit" class="btn btn--action btn--action-buy">
+                       Чат
+                    </button>
+                </form>
             </li>
             <li class="orders__buy">
                 <form class="complite_order">

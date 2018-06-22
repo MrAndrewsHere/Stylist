@@ -46,7 +46,7 @@
               <li class="orders__delete"></li>
             </ul>
 
-            @if(isset($orders))
+            @if(isset($orders) && $orders->count() != 0))
               @foreach($orders as $order)
                 <ul class="orders__item">
                   <li class="orders__id">

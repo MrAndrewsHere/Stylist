@@ -37,12 +37,12 @@
       <h2 class="service-page__title">Стоимость</h2>
       <ul>
         <li class="service-page__list-item-price">
-          <span class="service-page__stars">★★★</span>
+          <span class="service-page__stars">★</span>
           <span class="service-page__status">VIP-стилист</span>
           <span class="service-page__price">{{$service->PriceForVip()}} р / час</span>
         </li>
         <li class="service-page__list-item-price">
-          <span class="service-page__stars">★★</span>
+          <span class="service-page__stars">★</span>
           <span class="service-page__status">Стилист 1 категории</span>
           <span class="service-page__price">{{$service->PriceForVip2()}} р / час</span>
         </li>
@@ -52,33 +52,35 @@
           <span class="service-page__price">{{$service->PriceForVip4()}} р / час</span>
         </li>
       </ul>
- @if(Auth::check())
-      @if( Auth::user()->role->name == 'client')
 
-      <h2 class="service-page__title">Выберите своего стилиста</h2>
+      <h2 class="service-page__title">Выберите категорию стилиста</h2>
 
         <div class="service-page__stylists">
 
-          
 
-          @if(isset($stylists))
-            @foreach($stylists as $stylist)
+
+          @if(isset($categorystylists))
+            @foreach($categorystylists as $categorystylist)
               <div class="service-page__stylist">
-                <img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}" alt="{{$stylist->user->name}} {{$stylist->user->second_name}}">
-                <span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>
-                <span class="service-page__stylist-status">{{$stylist->category->name}}</span>
-                <form class="add_service_to_client">
-                  {{csrf_field()}}
-                  <input type="hidden" name="stylist_id" value="{{$stylist->id}}">
-                  <input type="hidden" name="service_id" value="{{$service->id}}">
-                  <button class="btn btn--action btn--action-super-small">Выбрать</button>
-                </form>
+                {{--<img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}" alt="{{$stylist->user->name}} {{$stylist->user->second_name}}">--}}
+                {{--<span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>--}}
+                <span class="service-page__stylist-status">{{$categorystylist->name}}</span>
+                @if(Auth::check() && Auth::user()->role->name == "client")
+                  <form class="add_service_to_client">
+                    {{csrf_field()}}
+                    <input type="hidden" name="category_id" value="{{$categorystylist->id}}">
+                    <input type="hidden" name="service_id" value="{{$service->id}}">
+                    <button class="btn btn--action btn--action-super-small">Выбрать</button>
+                  </form>
+                @else
+                  <button class="btn  btn--registration">Выбрать</button>
+                @endif
+
               </div>
             @endforeach
           @endif
         </div>
-      @endif
-   @endif
+
 
     </div>
   </section>
