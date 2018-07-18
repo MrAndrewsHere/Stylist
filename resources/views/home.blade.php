@@ -29,7 +29,7 @@
       <div class="infotmation__section">
         <div class="category">
           <a href="/services/all">
-            <img src="img/category/online-services.jpg" alt="онлайн-услуги" class="category__image">
+            <img src="img/category/online-services.jpg" alt="категория услуг онлайн-услуги" class="category__image">
           </a>
           <a href="/services/all" class="category__link" href="">Онлайн услуги</a>
           <p class="category__description">
@@ -40,7 +40,7 @@
 
         <div class="category">
           <a href="/services/all">
-            <img src="img/category/wedding.jpeg" alt="онлайн-услуги" class="category__image">
+            <img src="img/category/wedding.jpeg" alt="категория услуг особый случай" class="category__image">
           </a>
           <a href="/services/all" class="category__link" href="">Особый случай</a>
           <p class="category__description">
@@ -51,7 +51,7 @@
 
         <div class="category">
           <a href="/services/all">
-            <img src="img/category/shopping.jpg" alt="онлайн-услуги" class="category__image">
+            <img src="img/category/shopping.jpg" alt="категория услуг шоппинг-споровождение" class="category__image">
           </a>
           <a href="/services/all" class="category__link" href="">Шоппинг-сопровождение</a>
           <p class="category__description">
@@ -62,7 +62,7 @@
 
         <div class="category">
           <a href="/services/all">
-            <img src="img/category/style-solution.jpg" alt="онлайн-услуги" class="category__image">
+            <img src="img/category/style-solution.jpg" alt="категория услуг разбор стилевого решения" class="category__image">
           </a>
           <a href="/services/all" class="category__link" href="">Разбор стилевого решения</a>
           <p class="category__description">
@@ -122,15 +122,15 @@
       </p>
       <div class="infotmation__section infotmation__section--all">
         <div class="information__stylist">
-          <img src="img/stylist1.jpg" alt="" class="information__stylist-img">
+          <img src="img/stylist1.jpg" alt="стилист Евгения Удальцова" class="information__stylist-img">
           <p class="information__stylist-name">Евгения Удальцова</p>
         </div>
         <div class="information__stylist">
-          <img src="img/stylist2.jpg" alt="" class="information__stylist-img">
+          <img src="img/stylist2.jpg" alt="стилсит Алиса Селезнева" class="information__stylist-img">
           <p class="information__stylist-name">Алиса Селезнева</p>
         </div>
         <div class="information__stylist">
-          <img src="img/stylist3.jpg" alt="" class="information__stylist-img">
+          <img src="img/stylist3.jpg" alt="стилист Екатерина Романова" class="information__stylist-img">
           <p class="information__stylist-name">Екатерина Романова</p>
         </div>
       </div>

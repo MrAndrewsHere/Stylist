@@ -130,7 +130,7 @@
         <div class="lk-client__style">
 
           <div class="lk-client__style-photo">
-            <img src="img/my-style/type-body-pear.jpg" alt=""/>
+            <img src="img/my-style/type-body-pear.jpg" alt="тип фигуры груша"/>
           </div>
 
           <div>
@@ -196,25 +196,6 @@
           <span class="slider-tips__numbers-current"></span>
           <span>/</span>
           <span class="slider-tips__numbers-all"></span>
-        </div>
-      </div>
-
-      <div class="lk__block">
-        <h2 class="title-second">Фото до и после</h2>
-        <div class="lk-client__style">
-          <div class="lk-client__style-photo-before-after">
-            <div class="photo__first">
-              <img src="img/clients/4before.jpg" alt=""/>
-            </div>
-            <div class="photo__second">
-              <img src="img/clients/4-1after.jpg" alt=""/>
-            </div>
-          </div>
-          
-          <div>
-            <h3 class="title-block">Фото до и после от 20 сентября 2016</h3>
-            <p class="paragraph">Для того чтобы его поддержать, лучше брать такие топы, у которых бретелек нет, где есть глубокое декольте. Чтобы привлечь внимание к талии, можно рассмотреть прилегающие вещи, модели с запахом.</p>
-          </div>
         </div>
       </div>
     </div>

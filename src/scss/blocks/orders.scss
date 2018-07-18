@@ -28,7 +28,7 @@
   &__title {
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border-bottom: 1px solid #000;
   }
@@ -68,7 +68,8 @@
   }
 
   &__id {
-    width: 10%;
+    width: 7%;
+    text-align: center;
   }
 
   &__class {

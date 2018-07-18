@@ -6,11 +6,6 @@
   <section class="section section--settings">
     <div class="container-lk">
       <h1 class="section__title">Настройки</h1>
-      @if(Session::has('success'))
-      <div class="success">
-       {{Session::get('success')}}
-      </div>
-      @endif
 
       @if (Auth::user()->role->name == 'stylist')
         <form class="form-settings" action="{{url('/save_info')}}" method="post" enctype="multipart/form-data">
@@ -79,7 +74,7 @@
             <input type="file" id="avatar" name="avatar" class="form__input"/>
           </label>
 
-          <span id="form__output-avatar">
+          <span class="form__output">
              <img class="form__output-avatar" src="{{Auth::user()->avatar}}" alt="{{Auth::user()->name.' '.Auth::user()->second_name}}">
           </span>
 

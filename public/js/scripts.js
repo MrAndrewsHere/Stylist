@@ -3006,18 +3006,24 @@
 $(document).ready(() => {
   // выезжающее меню
   $('.btn--sidebar-open').click(() => {
-    $('.sidebar').animate({
-      left: '0px',
-    }, 200);
+    $('.sidebar').animate(
+      {
+        left: '0px',
+      },
+      200,
+    );
   });
 
   $('.btn--sidebar-cancel').click(() => {
-    $('.sidebar').animate({
-      left: '-242px',
-    }, 200);
+    $('.sidebar').animate(
+      {
+        left: '-242px',
+      },
+      200,
+    );
   });
 
-
+  // вызов плагина со слайдером
   $('.slider-portfolio').slick({
     dots: false,
     arrows: true,
@@ -3027,7 +3033,6 @@ $(document).ready(() => {
     dots: false,
     arrows: true,
   });
-
 
   // слайдер на странице «мой стиль»
   $('.slider-tips').on('init', (event, slick) => {
@@ -3047,64 +3052,28 @@ $(document).ready(() => {
     $('.slider-tips__numbers-current').text(`${currentSlide + 1}`);
   });
 
-
   // табы заказов
   $('.link-order').click(function () {
-    $('.link-order').removeClass('link-order--active').eq($(this).index()).addClass('link-order--active');
-    $('.orders').removeClass('orders--active').eq($(this).index()).addClass('orders--active');
-
-      $.ajax({
-          type: 'GET',
-          url: '/'+$(this).attr('id').toString(),
-          data: '',
-          success(result) {
-              var div = $('.my_orders');
-              div.empty();
-             div.html(result);
-
-          },
-          error() {
-              alert('Что-то пошло не так');
-          },
-      });
-
-
-
+    $('.link-order')
+      .removeClass('link-order--active')
+      .eq($(this).index())
+      .addClass('link-order--active');
+    $('.orders')
+      .removeClass('orders--active')
+      .eq($(this).index())
+      .addClass('orders--active');
   });
-
 
   // табы цветотипов
   $('.lk__item-color-type').click(function () {
-    $('.lk__item-color-type').removeClass('lk__item-color-type--active').eq($(this).index()).addClass('lk__item-color-type--active');
-    $('.lk__style-color-type').removeClass('lk__style-color-type--active').eq($(this).index()).addClass('lk__style-color-type--active');
-  });
-
-
-  // кнопка удаления портфолио
-  // const portfolioBlock = document.querySelector('.portfolio');
-
-  // if (portfolioBlock) {
-  //   portfolioBlock.addEventListener('click', (e) => {
-  //     if (!e.target.classList.contains('btn--delete-portfolio')) return;
-  //     e.target.parentNode.parentNode.parentNode.style.display = 'none';
-  //   });
-  // }
-
-  $('.delete_portfolio').on('submit', function (e) {
-    e.preventDefault();
-
-    e.target.parentNode.parentNode.parentNode.style.display = 'none';
-    $.ajax({
-      type: 'POST',
-      url: '/delete_portfolio',
-      data: $(this).serialize(),
-      success() {
-        $('.message-success').css('display', 'block');
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
-    });
+    $('.lk__item-color-type')
+      .removeClass('lk__item-color-type--active')
+      .eq($(this).index())
+      .addClass('lk__item-color-type--active');
+    $('.lk__style-color-type')
+      .removeClass('lk__style-color-type--active')
+      .eq($(this).index())
+      .addClass('lk__style-color-type--active');
   });
 
   /* дипломы */
@@ -3138,45 +3107,6 @@ $(document).ready(() => {
     });
   }
 
-
-  $('#contactform').on('submit', (e) => {
-    e.preventDefault();
-
-    $.ajax({
-      type: 'POST',
-      url: '/sendmail',
-      data: $('#contactform').serialize(),
-      success() {
-        $('.message-success').css('display', 'block');
-        $('#contactform').trigger('reset');
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
-    });
-  });
-
-
-  $('.delete_order').on('submit', function (e) {
-    e.preventDefault();
-
-    const a = this.closest('ul');
-    a.parentElement.removeChild(a);
-
-    $.ajax({
-      type: 'POST',
-      url: '/delete_order',
-      data: $(this).serialize(),
-      success() {
-        $('.message-success').css('display', 'block');
-      },
-      error() {
-        $('.message-error').css('display', 'block');
-      },
-    });
-  });
-
-
   // добавление превью загружаемого изображения
   function handleFileSelectSingle(evt) {
     const file = evt.target.files;
@@ -3188,8 +3118,13 @@ $(document).ready(() => {
     reader.onload = (function (theFile) {
       return function (e) {
         const span = document.createElement('span');
-        span.innerHTML = ['<img class="form__output-avatar" src="', e.target.result,
-          '" title="', escape(theFile.name), '"/>'].join('');
+        span.innerHTML = [
+          '<img class="form__output-avatar" src="',
+          e.target.result,
+          '" title="',
+          escape(theFile.name),
+          '"/>',
+        ].join('');
 
         document.querySelector('.form__output').innerHTML = '';
         document.querySelector('.form__output').insertBefore(span, null);
@@ -3207,8 +3142,13 @@ $(document).ready(() => {
     reader.onload = (function (theFile) {
       return function (e) {
         const span = document.createElement('span');
-        span.innerHTML = ['<img class="form__output-avatar" src="', e.target.result,
-          '" title="', escape(theFile.name), '"/>'].join('');
+        span.innerHTML = [
+          '<img class="form__output-avatar" src="',
+          e.target.result,
+          '" title="',
+          escape(theFile.name),
+          '"/>',
+        ].join('');
 
         document.querySelector('.form__output-two').innerHTML = '';
         document.querySelector('.form__output-two').insertBefore(span, null);
@@ -3233,22 +3173,28 @@ $(document).ready(() => {
     photoAfter.addEventListener('change', handleFileSelectSingleTwo, false);
   }
 
-
   // добавление превью загружаемых дипломов
   function handleFileSelectMulti(evt) {
     const files = evt.target.files;
 
     document.getElementById('form__output-diploms').innerHTML = '';
 
-    for (let i = 0, f; f = files[i]; i += 1) {
+    for (let i = 0, f; (f = files[i]); i += 1) {
       const reader = new FileReader();
 
       reader.onload = (function (theFile) {
         return function (e) {
           const span = document.createElement('span');
-          span.innerHTML = ['<img class="form__output-diploms" src="', e.target.result,
-            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('form__output-diploms').insertBefore(span, null);
+          span.innerHTML = [
+            '<img class="form__output-diploms" src="',
+            e.target.result,
+            '" title="',
+            escape(theFile.name),
+            '"/>',
+          ].join('');
+          document
+            .getElementById('form__output-diploms')
+            .insertBefore(span, null);
         };
       }(f));
 

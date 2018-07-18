@@ -55,8 +55,8 @@ class WelcomeController extends Controller
   public function service_page($id)
   {
     $service = service::findorfail($id);
-    $stylists = $service->stylists;
-    return view('service-page', compact('service'), compact('stylists'));
+    $categorystylists = stylistcategory::all();
+    return view('service-page', compact('service'), compact('categorystylists'));
 
   }
 

@@ -5,6 +5,10 @@
 @section('content')
   <section class="section">
     <h1 class="section__title">Мои заказы</h1>
+
+    <div class="message-success"></div>
+    <div class="message-error"></div>
+
     <div class="container-home">
 
       <div class="message-success"></div>
@@ -31,11 +35,10 @@
         <!-- НОВЫЕ ЗАКАЗЫ КЛИЕНТА -->
 
         <div class="orders orders--active">
-
           <div class="my_orders">
 
             <ul class="orders__title">
-              <li class="orders__checkbox">Номер</li>
+              <li class="orders__id">№ заказа</li>
               <li class="orders__service orders__service--big">Услуга/Стилист</li>
               <li class="orders__price orders__price--big">Цена</li>
               <li class="orders__status">Статус</li>
@@ -43,10 +46,10 @@
               <li class="orders__delete"></li>
             </ul>
 
-            @if(isset($orders))
+            @if(isset($orders) && $orders->count() != 0))
               @foreach($orders as $order)
                 <ul class="orders__item">
-                  <li class="orders__checkbox">
+                  <li class="orders__id">
                     <span>{{$order->id}}</span><br/>
                   </li>
                   <li class="orders__service orders__service--big">
@@ -127,6 +130,9 @@
     <!-- ЗАКАЗЫ СТИЛИСТА -->
 
       @if (Auth::user()->role->name == 'stylist')
+        <div class="message-success"></div>
+        <div class="message-error"></div>
+
         <ul class="orders-list-links">
           <li class="link-order link-order--active" id="stylist_new_orders">
             Новые заказы
@@ -148,7 +154,7 @@
           <div class="my_orders">
             @if (isset($orders) && $orders->count() != 0)
               <ul class="orders__title">
-                <li class="orders__checkbox">Номер</li>
+                <li class="orders__id">№ заказа</li>
                 <li class="orders__service orders__service--big">Клиент/услуга</li>
                 <li class="orders__price orders__price--big">Цена</li>
                 <li class="orders__status">Статус</li>
@@ -157,7 +163,7 @@
               </ul>
               @foreach($orders as $order)
                 <ul class="orders__item">
-                  <li class="orders__checkbox">
+                  <li class="orders__id">
                     <span>{{$order->id}}</span><br/>
                   </li>
                   <li class="orders__service orders__service--big">
@@ -185,8 +191,7 @@
                       <input name="order_id" value="{{$order->id}}" hidden>
                       <button class="btn" type="submit" class="btn__delete-order">
                         <svg class="orders__delete__pic">
-                          <use xmlns:xlink="http://www.w3.org/1999/xlink"
-                               xlink:href="img/spritesvg.svg#cancel-order"></use>
+                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#cancel-order"></use>
                         </svg>
                       </button>
                     </form>
@@ -196,7 +201,7 @@
             @else
               <div class="lk-stylist__education lk-stylist__education--empty">
                 <div>
-                  <span>У вас нет выполняемых заказов</span>
+                  <span>У вас нет новых заказов</span>
                 </div>
               </div>
             @endif

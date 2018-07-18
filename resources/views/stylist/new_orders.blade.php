@@ -1,6 +1,6 @@
 @if (isset($orders) && $orders->count() != 0)
   <ul class="orders__title">
-    <li class="orders__checkbox">Номер</li>
+      <li class="orders__id">№ заказа</li>
     <li class="orders__service orders__service--big">Клиент/услуга</li>
     <li class="orders__price orders__price--big">Цена</li>
     <li class="orders__status">Статус</li>
@@ -60,9 +60,16 @@
             data: $(this).serialize(),
             success(result) {
                 e.target.parentNode.parentNode.style.display = 'none';
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
             },
             error(result) {
-               alert(result);
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
             },
         });
     });
@@ -74,10 +81,15 @@
             url: '/stylist_Cancel_Order',
             data: $(this).serialize(),
             success(result) {
-                e.target.parentNode.parentNode.style.display = 'none';
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout( function () {
+                    $('.message-success').css('display', 'none');
+                },2000);
             },
             error(result) {
-               alert(result);
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
             },
         });
     });

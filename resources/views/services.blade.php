@@ -19,7 +19,7 @@
         @foreach($services as $service)
           <div class="card card__margin {{ $service ->category->first()->name }}">
             <div class="card__photo-block card__photo-block--service">
-              <img class="card__photo card__photo--service" src="{{ $service->picture }}" alt="стилист"/>
+              <img class="card__photo card__photo--service" src="{{ $service->picture }}" alt="услуга {{$service->name}}"/>
             </div>
 
             <div class="card__description card__description--services">

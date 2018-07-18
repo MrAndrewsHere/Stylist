@@ -1,12 +1,13 @@
-<ul class="orders__title">
-  <li class="orders__checkbox">Номер</li>
-  <li class="orders__service orders__service--big">Услуга/Стилист</li>
-  <li class="orders__price orders__price--big">Цена</li>
-  <li class="orders__status">Статус</li>
-  <li class="orders__buy"></li>
-  <li class="orders__delete"></li>
-</ul>
-@if(isset($orders))
+
+@if(isset($orders)&& $orders->count() != 0)
+    <ul class="orders__title">
+        <li class="orders__id">№ заказа</li>
+        <li class="orders__service orders__service--big">Услуга/Стилист</li>
+        <li class="orders__price orders__price--big">Цена</li>
+        <li class="orders__status">Статус</li>
+        <li class="orders__buy"></li>
+        <li class="orders__delete"></li>
+    </ul>
   @foreach($orders as $order)
     <ul class="orders__item">
       <li class="orders__checkbox">
@@ -22,7 +23,7 @@
         <span>₽</span>
       </li>
       <li class="orders__status">
-        @if($order->ordered_by_client ==1)
+        @if($order->ordered_by_client == '1')
           <span>Заказан</span>
         @else
           <span>Не подтвержден</span>
@@ -90,12 +91,17 @@
             url: '/delete_order',
             data: $(this).serialize(),
             success(result) {
+                e.target.parentNode.parentNode.style.display = 'none';
                 $('.message-success').text(result);
                 $('.message-success').css('display', 'block');
-                setTimeout(function () {
-                    $('.message-success').css('display', 'none');},3000);
-                },
-            error() {
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
+            },
+            error(result) {
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
             },
         });
     });

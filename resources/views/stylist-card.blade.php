@@ -8,7 +8,7 @@
     <div class="container">
       <div class="card card__margin card__margin--profile">
         <div class="card__photo-block">
-          <img class="card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист"/>
+          <img class="card__photo--stylist" src="{{$stylist->user->avatar}}" alt="стилист {{$stylist->user->name}} {{$stylist->user->second_name}}"/>
         </div>
 
         <div class="card__description">
@@ -57,8 +57,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/1before.jpg" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/1after.jpg" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/1before.jpg" alt="фотография клиента до"/></div>
+              <div class="photo__second"><img src="/img/clients/1after.jpg" alt="фотография клиента после"/></div>
             </div>
 
             <div class="comment">
@@ -79,8 +79,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/2before.jpg" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/2after.jpg" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/2before.jpg" alt="фотография клиента до"/></div>
+              <div class="photo__second"><img src="/img/clients/2after.jpg" alt="фотография клиента после"/></div>
             </div>
 
             <div class="comment">
@@ -100,8 +100,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/3before.jpg" alt=""/></div>
-              <div class="photo__second"><img src="/img/clients/3after.jpg" alt=""/></div>
+              <div class="photo__first"><img src="/img/clients/3before.jpg" alt="фотография клиента до"/></div>
+              <div class="photo__second"><img src="/img/clients/3after.jpg" alt="фотография клиента после"/></div>
             </div>
 
             <div class="comment">
