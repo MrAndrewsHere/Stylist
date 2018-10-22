@@ -11,7 +11,7 @@ class message extends Model
    *
    * @var array
    */
-  protected $fillable = ['message'];
+  protected $fillable = ['message','peer_id'];
   /**
    * A message belong to a user
    *
