@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\MailController;
 use App\Http\Middleware\Stylist;
 use App\User;
 use App\role;
@@ -52,6 +53,7 @@ class RegisterController extends Controller
         'user_id' => $user->id,
       ]);
     }
+    MailController::registration_send($user);
     return $user;
   }
 }

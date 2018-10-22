@@ -4,31 +4,32 @@
     <h3 class="modal__title">Регистрация</h3>
     <p class="modal__text">Войти через соцсети</p>
 
-    <div class="social-icons-list modal__social" id="uLogin" data-ulogin="display=buttons;callback=myfunc">
-      <li class="social-icon-item">
-        <a class="social-link" data-uloginbutton="vkontakte">
-          <svg class="social-icon vk">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#vk"></use>
-          </svg>
-        </a>
-      </li>
+    <ul class="social-icons-list modal__social">
+      <div id="ulogina1e78bdc" data-ulogin="display=panel;fields=first_name,last_name,email,photo,photo_big;optional=phone,city;verify=1;lang=ru;providers=vkontakte,instagram,facebook;redirect_uri=;callback=UloginRegister"></div>
 
-      <li class="social-icon-item">
-        <a class="social-link" data-uloginbutton="facebook">
-          <svg class="social-icon fb">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#facebook"></use>
-          </svg>
-        </a>
-      </li>
+      {{--<a class="social-link" data-uloginbutton="vkontakte">--}}
+          {{--<svg class="social-icon vk">--}}
+            {{--<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#vk"></use>--}}
+          {{--</svg>--}}
+        {{--</a>--}}
+      {{--</li>--}}
 
-      <li class="social-icon-item">
-        <a class="social-link" data-uloginbutton="instagram" arial-label="Ссылка на инстаграм">
-          <svg class="social-icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#instagram"></use>
-          </svg>
-        </a>
-      </li>
-    </div>
+      {{--<li class="social-icon-item">--}}
+        {{--<a class="social-link" data-uloginbutton="facebook">--}}
+          {{--<svg class="social-icon fb">--}}
+            {{--<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#facebook"></use>--}}
+          {{--</svg>--}}
+        {{--</a>--}}
+      {{--</li>--}}
+
+      {{--<li class="social-icon-item">--}}
+        {{--<a class="social-link" data-uloginbutton="instagram" arial-label="Ссылка на инстаграм">--}}
+          {{--<svg class="social-icon">--}}
+            {{--<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#instagram"></use>--}}
+          {{--</svg>--}}
+        {{--</a>--}}
+      {{--</li>--}}
+    </ul>
 
     <p class="modal__text">или</p>
 

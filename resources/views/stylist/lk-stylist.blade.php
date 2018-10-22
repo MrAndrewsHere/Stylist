@@ -41,9 +41,17 @@
               <div class="card__description__text">
                 <span class="card__description__title">
                   Категория:
-                </span> 
-                    {{isset(Auth::user()->stylist->category) ? 
-                    Auth::user()->stylist->category->name : ''}}
+                </span>
+                @if (isset(Auth::user()->stylist->category))
+                <span class="card__description__text card__description__text--price" >
+                      {{Auth::user()->stylist->category->name}}
+                  </span>
+                @else
+                  <span class="card__description__text card__description__text--price" style="color: #7c008b">
+                    Не подтверждён
+                  </span>
+                @endif
+
               </div>
 
               <div class="card__description__text">

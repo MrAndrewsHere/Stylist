@@ -14,4 +14,9 @@ class portfolio extends Model
         'picture_before',
         'picture_after',
     ];
+
+    public function stylist()
+    {
+        return $this->hasOne('App\stylist');
+    }
 }

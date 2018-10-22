@@ -55,8 +55,35 @@ class HomeController extends Controller
 
     public function admin()
     {
-        $stylists = Stylist::where('Confirmed','0')->get();
+        $stylists = Stylist::where('Confirmed','0')->where('Send_Confirm', '1')->get();
         return view('admin', compact('stylists'));
+    }
+
+    public function admin_stylists()
+    {
+         $stylists = Stylist::where('Confirmed','1')->get();
+        $stylistcategories = stylistcategory::all();
+        return view('admin_stylists', compact('stylists'),compact('stylistcategories'));
+    }
+
+    public function admin_orders(Request $request)
+    {
+        $stylist = Stylist::find($request->input('id'));
+
+        if ($stylist !== null) {
+            $Allorders = $stylist->orders;
+            return view('admin.stylist_orders.stylist_orders', compact('Allorders'));
+        }
+        return $error = 'Ошибка, перезагрузите страницу';
+
+
+    }
+
+    public function admin_find_orders()
+    {
+        return view('admin_orders');
+
+
     }
 
     public function show_stylist_profile(Request $request)
@@ -74,7 +101,27 @@ class HomeController extends Controller
     public function accept_stylist(Request $request)
     {
         $stylist = Stylist::find($request->input('id'));
+        if ($stylist !== null && $stylist->Confirmed == 1)
+        {
+            if ($request->input('category') == '0')
+            {
+                $stylist->Confirmed = 0;
+                $stylist->Send_Confirm = 0;
+                $stylist->save();
+                return 'Стилист отклонён';
+            }
+            else
+            {
+                $stylist->update([
+                    'category_id' => $request->input('category'),
+                ]);
+                $stylist->save();
+                return "Категория изменена";
+            }
+        }
         if ($stylist !== null && $request->input('category') == '0') {
+            $stylist->Send_Confirm = 0;
+            $stylist->save();
              return "Отклонено";
 
         } else {
@@ -90,8 +137,7 @@ class HomeController extends Controller
     }
 
 
-    public
-    function my_orders()
+    public function my_orders()
     {
 //        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
 //        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
@@ -112,8 +158,7 @@ class HomeController extends Controller
 
     }
 
-    public
-    function settings()
+    public function settings()
     {
         $currentUser = Auth::user();
         return view('settings', compact('currentUser'));

@@ -29,8 +29,9 @@ class WelcomeController extends Controller
     $stylist = null;
     if (isset($id)) {
       $stylist = stylist::findorfail($id);
+      $portfolios = $stylist->portfolios;
     }
-    return view('stylist-card', compact('stylist'));
+    return view('stylist-card', compact('stylist'),compact('portfolios'));
   }
 
   public function index()
@@ -38,18 +39,18 @@ class WelcomeController extends Controller
     return view('welcome');
   }
 
+  public function register_callback(Request $request)
+
+  {
+
+      $data = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+      $user = json_decode($data, TRUE);
+      return dump($user);
+  }
   public function test(Request $request)
-  {$data['name'] = 'Андрей';
+  {
 
-   return dump(
-       Mail::send('test1',$data,function ($msg) use ($data)
-      {
-          $msg->from("stilisty.com@yandex.ru",'Портал стилистов');
-          $msg->to("andrews.mr@yandex.ru");
-
-      })
-   );
-
+   return view ('test1');
   }
 
   public function service_page($id)
@@ -83,8 +84,10 @@ class WelcomeController extends Controller
     return view('answers');
   }
 
-  public function services($categoryName)
+  public function services()
   {
+    $AllServices = service::all();
+      return view('services', compact('AllServices'));
     if (isset($categoryName)) {
       if ($categoryName == 'all') {
         $Categoryservices = service::all();
@@ -119,8 +122,14 @@ class WelcomeController extends Controller
         ['RU' =>  $city = $stylist->user->city, 'Translit' => $stylist->user->cityTranslit]
       );
     }
-    $cities = $cities->unique();
-    $cities->values()->all();
+   $cities = $cities->unique();
+
+    $cities = $cities->filter(function ($value) {
+          return $value['Translit'] !== null;
+      });
+
+
+      $cities->values()->all();
     return view('stylists', compact('stylists'), compact('stylistcategories'))->with('cities', $cities);
   }
 }

@@ -9,9 +9,8 @@
         Покупайте, что вам нравится<br>
         Мы позаботимся о том, чтобы вы это носили
       </p>
-
       @if(Auth::check())
-        <a href="/services/all" class="btn btn--banner">Начать преображение</a>
+        <a href="/services" class="btn btn--banner">Начать преображение</a>
       @else
         <button class="btn btn--banner btn--registration">Начать преображение</button>
       @endif
@@ -28,10 +27,10 @@
       </p>
       <div class="infotmation__section">
         <div class="category">
-          <a href="/services/all">
+          <a href="/services">
             <img src="img/category/online-services.jpg" alt="категория услуг онлайн-услуги" class="category__image">
           </a>
-          <a href="/services/all" class="category__link" href="">Онлайн услуги</a>
+          <a href="/services" class="category__link" href="">Онлайн услуги</a>
           <p class="category__description">
             Узнайте все о «своём» гардеробе, типе внешности, цветах, фасонах, получите оптимальные
             рекомендации онлайн в любом удобном для вас месте.
@@ -39,10 +38,10 @@
         </div>
 
         <div class="category">
-          <a href="/services/all">
+          <a href="/services">
             <img src="img/category/wedding.jpeg" alt="категория услуг особый случай" class="category__image">
           </a>
-          <a href="/services/all" class="category__link" href="">Особый случай</a>
+          <a href="/services" class="category__link" href="">Особый случай</a>
           <p class="category__description">
             Хотите получить новый стильный образ и сэкономить время на поиске идеальных вещей? Образ для
             вашего особого случая доверьте стилисту! Блистайте, наслаждайтесь событием или отпуском!
@@ -50,10 +49,10 @@
         </div>
 
         <div class="category">
-          <a href="/services/all">
+          <a href="/services">
             <img src="img/category/shopping.jpg" alt="категория услуг шоппинг-споровождение" class="category__image">
           </a>
-          <a href="/services/all" class="category__link" href="">Шоппинг-сопровождение</a>
+          <a href="/services" class="category__link" href="">Шоппинг-сопровождение</a>
           <p class="category__description">
             Творческая помощь в выборе одежды — это огромная экономия личных средств. Эффективный
             шоппинг-маршрут индивидуально для вас, согласно вашему бюджету, запросу, целям, пожеланиям.
@@ -61,10 +60,10 @@
         </div>
 
         <div class="category">
-          <a href="/services/all">
+          <a href="/services">
             <img src="img/category/style-solution.jpg" alt="категория услуг разбор стилевого решения" class="category__image">
           </a>
-          <a href="/services/all" class="category__link" href="">Разбор стилевого решения</a>
+          <a href="/services" class="category__link" href="">Разбор стилевого решения</a>
           <p class="category__description">
             Каждый человек уникален, и не существует на свете другого человека, в точности похожего на Вас.
             Получите свою личную концепцию стиля с учетом всех характеристик.

@@ -18,16 +18,16 @@
 
       @if (Auth::user()->role->name == 'client')
         <ul class="orders-list-links">
-          <li class="link-order link-order--active" id="client_New_orders">
+          <li class="link-order link-order--active" id="client_New_orders" value="0">
             Новые заказы
           </li>
-          <li class="link-order" id="client_Accepted_orders">
+          <li class="link-order" id="client_Accepted_orders" value="0">
             Принятые заказы
           </li>
-          <li class="link-order" id="client_Complited_Orders">
+          <li class="link-order" id="client_Complited_Orders"  value="0">
             Завершенные заказы
           </li>
-          <li class="link-order" id="client_Canceled_Orders">
+          <li class="link-order" id="client_Canceled_Orders"  value="0">
             Отмененные заказы
           </li>
         </ul>
@@ -46,15 +46,14 @@
               <li class="orders__delete"></li>
             </ul>
 
-            @if(isset($orders) && $orders->count() != 0))
+            @if(isset($orders) && $orders->count() != 0)
               @foreach($orders as $order)
                 <ul class="orders__item">
-                  <li class="orders__id">
+                  <li class="orders__checkbox">
                     <span>{{$order->id}}</span><br/>
                   </li>
                   <li class="orders__service orders__service--big">
-                    <a class="orders__link"
-                       href="{{url('/service-page',$order->service->id)}}">{{$order->service->name}}</a><br/>
+                    <a class="orders__link" href="{{url('/service-page',$order->service->id)}}">{{$order->service->name}}</a><br/>
                     <a class="orders__link"
                        href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->stylist->user->name." ".$order->stylist->user->second_name}}</a>
                   </li>
@@ -62,15 +61,16 @@
                     <span>{{$order->price}}</span>
                     <span>₽</span>
                   </li>
-                    <li class="orders__status">
-                      @if($order->ordered_by_client ==1)
-                        <span>Заказан</span>
-                      @else
-                        <span>Не подтвержден</span>
-                      @endif
-                    </li>
+                  <li class="orders__status">
+                    @if($order->ordered_by_client == '1')
+                      <span>Заказан</span>
+                    @else
+                      <span>Не подтвержден</span>
+                    @endif
+
+                  </li>
                   <li class="orders__buy">
-                    <form class="ordered">
+                    <form class="accept_by_client">
                       {{csrf_field()}}
                       <input type="hidden" name="order_id" value="{{$order->id}}">
                       <button type="submit" class="btn btn--action btn--action-buy">
@@ -134,16 +134,16 @@
         <div class="message-error"></div>
 
         <ul class="orders-list-links">
-          <li class="link-order link-order--active" id="stylist_new_orders">
+          <li class="link-order link-order--active" id="stylist_new_orders" value="0">
             Новые заказы
           </li>
-          <li class="link-order" id="stylist_Processing_orders">
+          <li class="link-order" id="stylist_Processing_orders" value="0">
             Выполняемые заказы
           </li>
-          <li class="link-order" id="stylist_Complited_Orders">
+          <li class="link-order" id="stylist_Complited_Orders" value="0">
             Завершенные заказы
           </li>
-          <li class="link-order" id="stylist_Canceled_Orders">
+          <li class="link-order" id="stylist_Canceled_Orders" value="0">
             Отмененные заказы
           </li>
         </ul>
@@ -163,7 +163,7 @@
               </ul>
               @foreach($orders as $order)
                 <ul class="orders__item">
-                  <li class="orders__id">
+                  <li class="orders__checkbox">
                     <span>{{$order->id}}</span><br/>
                   </li>
                   <li class="orders__service orders__service--big">

@@ -228,6 +228,8 @@ return [
     'Validator' => Illuminate\Support\Facades\Validator::class,
     'View' => Illuminate\Support\Facades\View::class,
     'Transliterate' => ElForastero\Transliterate\TransliterationFacade::class,
+      'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
+
 
   ],
 

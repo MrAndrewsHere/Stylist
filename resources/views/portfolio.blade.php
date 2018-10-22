@@ -39,9 +39,6 @@
             <label>Цель клиента
               <input class="form__input" name="purpose" type="text" required/>
             </label>
-            <label>Заказанные услуги
-              <input class="form__input" name="orders" type="text" required/>
-            </label>
             <label>Комментарии стилиста
               <textarea class="form__input" name="comments" type="text" required/></textarea>
             </label>

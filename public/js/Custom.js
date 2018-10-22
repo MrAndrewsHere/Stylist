@@ -1,12 +1,16 @@
 $(document).ready(() => {
+  var $val = "g";
+
+
   // заказ услуг
-  $('.ordered').on('submit', function (e) {
+  $('.accept_by_client').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
       type: 'POST',
       url: '/ordered',
       data: $(this).serialize(),
       success(result) {
+          e.target.parentNode.parentNode.style.display = 'none';
         $('.message-success').text(result);
         $('.message-success').css('display', 'block');
         setTimeout(() => {
@@ -23,25 +27,28 @@ $(document).ready(() => {
 
   // удаление услуги в моих заказах
   $('.delete_order').on('submit', function (e) {
-    e.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: '/delete_order',
-      data: $(this).serialize(),
-        success(result) {
-            $('.message-success').text(result);
-            $('.message-success').css('display', 'block');
-            setTimeout(() => {
-                $('.message-success').css('display', 'none');
-                $('.message-success').text('');
-            }, 3000);
-        },
-        error(result) {
-            $('.message-error').text(result);
-            $('.message-error').css('display', 'block');
-        },
+        e.preventDefault();
+      const a = this.closest('ul');
+      a.parentElement.removeChild(a);
+        $.ajax({
+            type: 'POST',
+            url: '/delete_order',
+            data: $(this).serialize(),
+            success(result) {
+                e.target.parentNode.parentNode.style.display = 'none';
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
+            },
+            error(result) {
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
+            },
+        });
     });
-  });
 
   // что тут
   $('.add_service_to_client').on('submit', function (e) {
@@ -102,17 +109,30 @@ $(document).ready(() => {
         $('.message-error').css('display', 'block');
       },
     });
+      $.ajax({
+          type: 'POST',
+          url: '/admin_orders',
+          data: $(this).serialize(),
+          success(result) {
+              $('.clear_after').html(result);
+              // $('.orders-list-links').after(result);
+          },
+          error() {
+              $('.message-error').css('display', 'block');
+          },
+      });
   });
 
   // удаление элемента фортфолио стилистом
   $('.delete_portfolio').on('submit', function (e) {
     e.preventDefault();
-    e.target.parentNode.parentNode.parentNode.style.display = 'none';
+
     $.ajax({
       type: 'POST',
       url: '/delete_portfolio',
       data: $(this).serialize(),
         success(result) {
+            e.target.parentNode.parentNode.parentNode.style.display = 'none';
             $('.message-success').text(result);
             $('.message-success').css('display', 'block');
             setTimeout(() => {
@@ -154,6 +174,7 @@ $(document).ready(() => {
       url: '/delete_order',
       data: $(this).serialize(),
         success(result) {
+            e.target.parentNode.parentNode.style.display = 'none';
             $('.message-success').text(result);
             $('.message-success').css('display', 'block');
             setTimeout(() => {
@@ -171,11 +192,13 @@ $(document).ready(() => {
   // принятие заказа
   $('.accept_order').on('submit', function (e) {
     e.preventDefault();
+      const a = this.closest('ul');
     $.ajax({
       type: 'POST',
       url: '/Accept_Order',
       data: $(this).serialize(),
         success(result) {
+            e.target.parentNode.parentNode.style.display = 'none';
             $('.message-success').text(result);
             $('.message-success').css('display', 'block');
             setTimeout(() => {
@@ -222,8 +245,8 @@ $(document).ready(() => {
       .removeClass('orders--active')
       .eq($(this).index())
       .addClass('orders--active');
-
-    $.ajax({
+   if ($(this).attr('value').toString() != 'none')
+   { $.ajax({
       type: 'GET',
       url: '/'+ $(this).attr('id').toString(),
       data: '',
@@ -233,6 +256,6 @@ $(document).ready(() => {
         div.html(result);
       },
       error() {},
-    });
+    });}
   });
 });

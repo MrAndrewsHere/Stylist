@@ -9,8 +9,9 @@ use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Storage;
-use ElForastero\Transliterate;
+use Transliterate;
 
 class StylistController extends Controller
 {
@@ -60,13 +61,18 @@ class StylistController extends Controller
             'name' => $data->name,
             'second_name' => $data->second_name,
             'city' => $data->city,
-            'cityTranslit' => Transliterate\Transliteration::make($data->city),
         ]);
+        $user->cityTranslit = Transliterate::make($user->city);
+        $user->save();
 
         $user->stylist->update([
             'education' => $data->education,
-            'about' => $data->about
+            'about' => $data->about,
+
         ]);
+        $stylist = $user->stylist;
+        $stylist->Send_Confirm = 1;
+        $stylist->save();
 
         if ($request->hasFile('avatar')) {
             $picture = $request->file('avatar');
@@ -166,6 +172,8 @@ class StylistController extends Controller
             $order->ordered_by_client = 0;
             $order->confirmed_by_stylist = 1;
             $order->save();
+
+            MailController::send(Auth::user(),$order);
             return 'Заказ принят';
         } catch (\Exception $exception) {
             return $exception->getMessage();
@@ -202,4 +210,6 @@ class StylistController extends Controller
         }
 
     }
+
+
 }

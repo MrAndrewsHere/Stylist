@@ -21,7 +21,7 @@
                 <span>{{$order->price." ₽"}}</span>
             </li>
             <li class="orders__status">
-                <span>Не подтвержден</span>
+                <span>Выполняется</span>
             </li>
             <li class="orders__buy">
                 <form class="complite_order">

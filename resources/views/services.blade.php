@@ -15,8 +15,8 @@
       </select>
 
       <div id="services">
-      @if(isset($services))
-        @foreach($services as $service)
+      @if(isset($AllServices))
+        @foreach($AllServices as $service)
           <div class="card card__margin {{ $service ->category->first()->name }}">
             <div class="card__photo-block card__photo-block--service">
               <img class="card__photo card__photo--service" src="{{ $service->picture }}" alt="услуга {{$service->name}}"/>

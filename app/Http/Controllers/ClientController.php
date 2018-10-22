@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use ElForastero\Transliterate;
+use Transliterate;
+
 
 class ClientController extends Controller
 {
@@ -39,6 +40,7 @@ class ClientController extends Controller
       $order->delete();
       return 'Услуга удалена';
     } catch (\Exception $exception) {
+        return "Сорян";
     }
   }
 
@@ -47,7 +49,7 @@ class ClientController extends Controller
   {
 
     $service = service::find($request->input('service_id'));
-    $stylist = $service->stylists->find($request->input('stylist_id'));
+    $stylist = $service->stylists->find($request->input('category_id'));
 
     if ($stylist !== null && $service !== null) {
       Order::create([
@@ -74,8 +76,9 @@ class ClientController extends Controller
       'name' => $data->name,
       'second_name' => $data->second_name,
       'city' => $data->city,
-      'cityTranslit' => Transliterate\Transliteration::make($data->city),
     ]);
+      $user->cityTranslit = Transliterate::make($user->city);
+      $user->save();
     if ($request->hasFile('avatar')) {
       $picture = $request->file('avatar');
       $oldPath = $user->avatar;

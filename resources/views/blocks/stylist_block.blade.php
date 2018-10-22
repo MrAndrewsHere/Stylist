@@ -1,7 +1,8 @@
+
 <div class="lk-stylist__block">
     <div class="card">
         <div class="card__photo-block">
-            <a href="{{url('/settings')}}">
+            <a >
                 <img class="lk__photo" src={{$stylist->user->avatar}} alt="стилист"/>
             </a>
         </div>
@@ -34,12 +35,26 @@
         </span>
                 {{$stylist->user->city}}
             </div>
+
+            <div class="card__description__text">
+        <span class="card__description__title">
+          Категория:
+        </span>
+                @if(isset($stylist->category))
+                    {{$stylist->category->name}}
+               @else
+                {
+                ''
+                    }
+                    @endif
+
+            </div>
         </div>
     </div>
 </div>
 
 <div class="lk-stylist__block">
-    <h2 class="title-block">Дипломы и сертификаты</h2>
+    <h2 class="title-block" style="text-align: center">Дипломы и сертификаты</h2>
     <div class="lk-stylist__education lk-stylist__education--filled">
         @foreach($stylist->files as $file)
 
@@ -53,11 +68,12 @@
     </div>
 </div>
 <div class="admin-request__accept">
-    <h3 class="title-block">Выберите категорию стилиста или отклоните заявку</h3>
+    <h3 class="title-block">Изменить категорию</h3>
     <form class="admin-request__accept_form">
+        <ul class="stylists__sort">
         {{csrf_field()}}
         <input name="id" value="{{$stylist->id}}" hidden>
-
+            <li class="stylists__sort-category">
         <select class="select" name="category">
             <option value="0">Отклонить</option>
             @if(isset($categories))
@@ -66,12 +82,17 @@
                 @endforeach
             @endif
         </select>
+            </li>
+            <li class="stylists__sort-category">
         <div class="admin-request__accept-buttons">
-            <button type="submit" class="btn btn__card btn--edit">Выбрать</button>
+            <button type="submit" class="btn btn--action btn--action-small">Выбрать</button>
 
         </div>
+            </li>
+        </ul>
     </form>
 </div>
+
 <script>
     $('.admin-request__accept_form').on('submit', function (e) {
         e.preventDefault();

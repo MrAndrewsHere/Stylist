@@ -15,14 +15,16 @@
 
       <nav class="sidebar__menu">
         <ul class="sidebar__menu-list">
-          <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/services/all">Наши услуги</a></li>
+          <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/services">Наши услуги</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/stylists">Наши стилисты</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/answers">Вопросы и ответы</a></li>
           <li class="sidebar__menu-item"><a class="sidebar__menu-link" href="/contacts">Контакты</a></li>
+
         </ul>
       </nav>
 
-      <ul class="social-icons-list" id="uLogin" data-ulogin="display=buttons;callback=myfunc">
+      <ul class="social-icons-list" id="social">
+
         <li class="social-icon-item">
           <a class="social-link" data-uloginbutton="vkontakte" arial-label="Ссылка на вконтате">
             <svg class="social-icon">

@@ -52,7 +52,6 @@ class PortfolioController extends Controller
             Auth::user()->stylist->portfolios()->create([
                 'client_purpose' => $request->input('purpose'),
                 'comment' => $request->input('comments'),
-                'orders' => $request->input('orders'),
                 'updated_at' => new Carbon($request->input('date') . '00:00:00'),
                 'picture_before' => Storage::url(Storage::putFile('public/portfolio', $request->file('before'))),
                 'picture_after' => Storage::url(Storage::putFile('public/portfolio', $request->file('after'))),

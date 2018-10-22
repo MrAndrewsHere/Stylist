@@ -65,13 +65,15 @@
                 {{--<img class="service-page__stylist-photo" src="{{$stylist->user->avatar}}" alt="{{$stylist->user->name}} {{$stylist->user->second_name}}">--}}
                 {{--<span class="service-page__stylist-name">{{$stylist->user->name}} {{$stylist->user->second_name}}</span>--}}
                 <span class="service-page__stylist-status">{{$categorystylist->name}}</span>
-                @if(Auth::check() && Auth::user()->role->name == "client")
+                @if(Auth::check())
+                  @if(Auth::user()->role->name == "client")
                   <form class="add_service_to_client">
                     {{csrf_field()}}
                     <input type="hidden" name="category_id" value="{{$categorystylist->id}}">
                     <input type="hidden" name="service_id" value="{{$service->id}}">
                     <button class="btn btn--action btn--action-super-small">Выбрать</button>
                   </form>
+                    @endif
                 @else
                   <button class="btn  btn--registration">Выбрать</button>
                 @endif

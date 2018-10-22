@@ -1,1 +1,2 @@
-Hey {{$name}}, Welcome to our website.
+
+Hey , Welcome to our website.

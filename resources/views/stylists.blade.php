@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 
 @section('title','Наши стилисты')

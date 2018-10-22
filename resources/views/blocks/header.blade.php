@@ -43,7 +43,13 @@
           @endif
 
           @if(Auth::user()->role->name == 'admin')
-            <a class="navigation__link" href="/admin">Панель администратора</a>
+            <a class="navigation__link" href="/admin">Новые заявки</a>
+              <span class="enter-panel__divider">|</span>
+              <a class="navigation__link" href="/admin_stylists">Стилисты</a>
+              <span class="enter-panel__divider">|</span>
+              <a class="navigation__link" href="/admin_find_orders">Заказы</a>
+
+
           @endif
 
           <a class="navigation__link navigation__profile" href="#">

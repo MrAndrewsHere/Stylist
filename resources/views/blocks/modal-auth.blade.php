@@ -4,22 +4,11 @@
     <button class="btn btn--close-auth" arial-label="Закрыть окно">&times;</button>
     <h3 class="modal__title">Вход</h3>
     <p class="modal__text">Войти через соцсети</p>
-    <ul class="social-icons-list modal__social">
-      <li class="social-icon-item">
-        <a class="social-link" href="#">
-          <svg class="social-icon vk">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#vk"></use>
-          </svg>
-        </a>
-      </li>
 
-      <li class="social-icon-item">
-        <a class="social-link" href="#">
-          <svg class="social-icon fb">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/spritesvg.svg#facebook"></use>
-          </svg>
-        </a>
-      </li>
+    <ul class="social-icons-list modal__social">
+
+      <div id="uLogina1e78bdc" data-ulogin="display=panel;fields=first_name,last_name,email,photo,photo_big;optional=phone,city;verify=1;lang=ru;providers=vkontakte,instagram,facebook;redirect_uri=;callback=UloginRegister"></div>
+
     </ul>
 
     <p class="modal__text">или</p>

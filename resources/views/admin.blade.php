@@ -6,8 +6,15 @@
   <section class="section section--admin">
     <h1 class="section__title">Панель администратора</h1>
     <div class="container">
+
       <h2 class="title-second">Новые заявки <span class="notification">{{$stylists->count()}}</span></h2>
-      <div class="admin-request">
+
+
+
+
+        <div class="admin-request">
+        <!-- Новые заявки -->
+
         <div class="admin-request__new">
           <h3 class="title-block">Стилисты:</h3>
           @if(isset($stylists))
@@ -22,9 +29,12 @@
         </div>
 
         <div class="admin-request__about">
-
         </div>
+
       </div>
+
+
+
     </div>
   </section>
 @endsection

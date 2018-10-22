@@ -1,3 +1,4 @@
+
 @extends('layouts.layout')
 
 @section('title','Наши стилисты')
@@ -52,73 +53,76 @@
       </div>
 
       <h2 class="title-second">Портфолио</h2>
-
+ @if(isset($portfolios))
       <div class="slider-portfolio">
+        @foreach($portfolios as $portfolio)
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/1before.jpg" alt="фотография клиента до"/></div>
-              <div class="photo__second"><img src="/img/clients/1after.jpg" alt="фотография клиента после"/></div>
+              <div class="photo__first"><img src="{{$portfolio->picture_before}}" alt="фотография клиента до"/></div>
+              <div class="photo__second"><img src="{{$portfolio->picture_after}}" alt="фотография клиента после"/></div>
             </div>
 
             <div class="comment">
               <div class="comment__info">
                 <div class="comment__text">
                   <span class="comment__title">Цель клиента — </span>
-                  Подобрать новые вещи к гардеробу и обновить стиль
+                 {{$portfolio->client_purpose}}
                 </div>
                 <div class="comment__text">
                   <span class="comment__title">Комментарий стилиста — </span>
-                  После работы с образом Евгении, у неё появилось множество новых ярких стилевых сочетаний
+                  {{$portfolio->comment}}
                 </div>
               </div>
             </div>
           </div>
         </div>
+        @endforeach
 
-        <div class="slide">
-          <div class="slide__wrapper">
-            <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/2before.jpg" alt="фотография клиента до"/></div>
-              <div class="photo__second"><img src="/img/clients/2after.jpg" alt="фотография клиента после"/></div>
-            </div>
+        {{--<div class="slide">--}}
+          {{--<div class="slide__wrapper">--}}
+            {{--<div class="slide__photos">--}}
+              {{--<div class="photo__first"><img src="/img/clients/2before.jpg" alt="фотография клиента до"/></div>--}}
+              {{--<div class="photo__second"><img src="/img/clients/2after.jpg" alt="фотография клиента после"/></div>--}}
+            {{--</div>--}}
 
-            <div class="comment">
-              <div class="comment__info">
-                <div class="comment__text">
-                  <span class="comment__title">Цель клиента — </span>
-                  Подобрать новые вещи к гардеробу и обновить стиль
-                </div>
-                <div class="comment__text">
-                  <span class="comment__title">Комментарий стилиста — </span>
-                  После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="slide__wrapper">
-            <div class="slide__photos">
-              <div class="photo__first"><img src="/img/clients/3before.jpg" alt="фотография клиента до"/></div>
-              <div class="photo__second"><img src="/img/clients/3after.jpg" alt="фотография клиента после"/></div>
-            </div>
+            {{--<div class="comment">--}}
+              {{--<div class="comment__info">--}}
+                {{--<div class="comment__text">--}}
+                  {{--<span class="comment__title">Цель клиента — </span>--}}
+                  {{--Подобрать новые вещи к гардеробу и обновить стиль--}}
+                {{--</div>--}}
+                {{--<div class="comment__text">--}}
+                  {{--<span class="comment__title">Комментарий стилиста — </span>--}}
+                  {{--После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж--}}
+                {{--</div>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="slide">--}}
+          {{--<div class="slide__wrapper">--}}
+            {{--<div class="slide__photos">--}}
+              {{--<div class="photo__first"><img src="/img/clients/3before.jpg" alt="фотография клиента до"/></div>--}}
+              {{--<div class="photo__second"><img src="/img/clients/3after.jpg" alt="фотография клиента после"/></div>--}}
+            {{--</div>--}}
 
-            <div class="comment">
-              <div class="comment__info">
-                <div class="comment__text">
-                  <span class="comment__title">Цель клиента — </span>
-                  Подобрать новые вещи к гардеробу и обновить стиль
-                </div>
-                <div class="comment__text">
-                  <span class="comment__title">Комментарий стилиста — </span>
-                  После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            {{--<div class="comment">--}}
+              {{--<div class="comment__info">--}}
+                {{--<div class="comment__text">--}}
+                  {{--<span class="comment__title">Цель клиента — </span>--}}
+                  {{--Подобрать новые вещи к гардеробу и обновить стиль--}}
+                {{--</div>--}}
+                {{--<div class="comment__text">--}}
+                  {{--<span class="comment__title">Комментарий стилиста — </span>--}}
+                  {{--После нашего преображения Евгения стала такой няшкой милашкой, что теперь её точно возьмут замуж--}}
+                {{--</div>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+        {{--</div>--}}
       </div>
+   @endif
     </div>
   </section>
 @endsection

@@ -59,6 +59,7 @@
     </div>
   </div>
 @endif
+
 <script>
         $('.accept_by_client').on('submit', function (e) {
         e.preventDefault();
@@ -67,6 +68,7 @@
             url: '/ordered',
             data: $(this).serialize(),
             success(result) {
+                e.target.parentNode.parentNode.style.display = 'none';
                 $('.message-success').text(result);
                 $('.message-success').css('display', 'block');
                 setTimeout( function () {

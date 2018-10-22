@@ -81,6 +81,7 @@
             url: '/stylist_Cancel_Order',
             data: $(this).serialize(),
             success(result) {
+                e.target.parentNode.parentNode.style.display = 'none';
                 $('.message-success').text(result);
                 $('.message-success').css('display', 'block');
                 setTimeout( function () {

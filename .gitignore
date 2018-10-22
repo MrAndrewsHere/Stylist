@@ -4,3 +4,5 @@ node_modules
 .vscode
 public/storage
 storage
+vendor
+vendor/bin/psysh

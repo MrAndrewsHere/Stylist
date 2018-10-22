@@ -15,7 +15,8 @@
 
  */
 /* global window, document, define, jQuery, setInterval, clearInterval */
-;(function(factory) {
+;
+(function(factory) {
     'use strict';
     if (typeof define === 'function' && define.amd) {
         define(['jquery'], factory);
@@ -3061,8 +3062,13 @@ $(document).ready(() => {
     $('.orders')
       .removeClass('orders--active')
       .eq($(this).index())
+      .eq($(this).index())
       .addClass('orders--active');
   });
+
+
+
+
 
   // табы цветотипов
   $('.lk__item-color-type').click(function () {
@@ -3210,11 +3216,17 @@ $(document).ready(() => {
 
 (function () {
   const modalAuth = document.querySelector('.modal-auth');
+  const modalSuccess = document.querySelector('.modal-success');
   const modalRegistration = document.querySelector('.modal-registration');
+  const modalWindowDialog = document.querySelector('.modal-dialog');
   const btnAuth = document.querySelectorAll('.btn--auth');
+  const btnSuccess = document.querySelectorAll('.btn--success');
   const btnRegistration = document.querySelectorAll('.btn--registration');
+  const btnWindowDialog = document.querySelectorAll('.btn--dialog');
   const closeAuth = document.querySelector('.btn--close-auth');
+  const closeSuccess = document.querySelector('.btn--close-success');
   const closeRegistration = document.querySelector('.btn--close-registration');
+  const closeWindowDialog = document.querySelector('.btn--close-dialog');
   const email = document.querySelector('.input-email');
   const name = document.querySelector('.input-name');
   const ESC_CODE = 27;
@@ -3245,6 +3257,8 @@ $(document).ready(() => {
   };
   openDialog(btnAuth, modalAuth, email, password);
   openDialog(btnRegistration, modalRegistration, name);
+  openDialog(btnSuccess, modalSuccess, email, password);
+  openDialog(btnWindowDialog, modalWindowDialog);
 
   // закрытие модального окна
   const closeDialog = function (closeModal, modalWindow) {
@@ -3255,15 +3269,24 @@ $(document).ready(() => {
   };
   closeDialog(closeAuth, modalAuth);
   closeDialog(closeRegistration, modalRegistration);
+    closeDialog(closeSuccess, modalSuccess);
+    closeDialog(closeWindowDialog, modalWindowDialog);
 
   // закрытие модальных окон на ESC
   window.addEventListener('keydown', (event) => {
     if (event.keyCode === ESC_CODE) {
       if (modalAuth.classList.contains('modal-auth-show')) {
         modalAuth.classList.remove('modal-auth-show');
-      } else if (modalRegistration.classList.contains('modal-auth-show')) {
+      }
+      if (modalRegistration.classList.contains('modal-auth-show')) {
         modalRegistration.classList.remove('modal-auth-show');
       }
+        if (modalSuccess.classList.contains('modal-auth-show')) {
+            modalSuccess.classList.remove('modal-auth-show');
+        }
+        if (modalWindowDialog.classList.contains('modal-auth-show')) {
+            modalWindowDialog.classList.remove('modal-auth-show');
+        }
     }
   });
 
