@@ -30,7 +30,7 @@ class ChatsController extends Controller
 
     $message = $user->messages()->create([
         'message' => $request->input('message'),
-        'peer_id' => 1,
+        'peer_id' => '1',
     ]);
 
     broadcast(new MessageSent($user, $message))->toOthers();
