@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Stylist;
+use App\service;
+use App\stylist;
+use App\stylistcategory;
 use App\User;
 use App\Order;
 use Illuminate\Http\Request;
@@ -30,10 +32,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
     public function test()
     {
         return view('test1');
     }
+
     public function contacts()
     {
         return view('contacts');
@@ -44,61 +48,121 @@ class HomeController extends Controller
         return view('answers');
     }
 
-    public function services()
-    {
-        return view('services');
-    }
-    public function lk_stylist()
-    {
-        return view('lk-stylist');
-    }
-    public function lk_client()
-    {
-        return view('lk-client');
-    }
     public function portfolio()
     {
         return view('portfolio');
     }
 
-    public function my_style()
+    public function admin()
     {
-        return view('my-style');
+        $stylists = Stylist::where('Confirmed','0')->where('Send_Confirm', '1')->get();
+        return view('admin', compact('stylists'));
     }
+
+    public function admin_stylists()
+    {
+         $stylists = Stylist::where('Confirmed','1')->get();
+        $stylistcategories = stylistcategory::all();
+        return view('admin_stylists', compact('stylists'),compact('stylistcategories'));
+    }
+
+    public function admin_orders(Request $request)
+    {
+        $stylist = Stylist::find($request->input('id'));
+
+        if ($stylist !== null) {
+            $Allorders = $stylist->orders;
+            return view('admin.stylist_orders.stylist_orders', compact('Allorders'));
+        }
+        return $error = 'Ошибка, перезагрузите страницу';
+
+
+    }
+
+    public function admin_find_orders()
+    {
+        return view('admin_orders');
+
+
+    }
+
+    public function show_stylist_profile(Request $request)
+    {
+        $stylist = Stylist::find($request->input('id'));
+        $categories = stylistcategory::all()->sortByDesc('id');
+        if ($stylist !== null) {
+            return view('blocks.stylist_block', compact('stylist'), compact('categories'));
+        }
+        return $error = 'Ошибка, перезагрузите страницу';
+
+
+    }
+
+    public function accept_stylist(Request $request)
+    {
+        $stylist = Stylist::find($request->input('id'));
+        if ($stylist !== null && $stylist->Confirmed == 1)
+        {
+            if ($request->input('category') == '0')
+            {
+                $stylist->Confirmed = 0;
+                $stylist->Send_Confirm = 0;
+                $stylist->save();
+                return 'Стилист отклонён';
+            }
+            else
+            {
+                $stylist->update([
+                    'category_id' => $request->input('category'),
+                ]);
+                $stylist->save();
+                return "Категория изменена";
+            }
+        }
+        if ($stylist !== null && $request->input('category') == '0') {
+            $stylist->Send_Confirm = 0;
+            $stylist->save();
+             return "Отклонено";
+
+        } else {
+           $stylist->Confirmed = 1;
+           $stylist->save();
+            $stylist->update([
+                'Confirmed' => '1',
+                'category_id' => $request->input('category'),
+            ]);
+            return "Категория выставлена";
+        }
+        return "Такого стилиста не существует или неправильно назначена категория";
+    }
+
+
     public function my_orders()
     {
+//        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
+//        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
 
-        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
-        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
+        if (Auth::user()->role_id == '1') {
+            $orders = Auth::user()->client->orders->where('confirmed_by_stylist', '=', '0');
+            $orders = $orders->where('canceled_by_stylist', '0');
+            $orders = $orders->where('complited', '0');
+            return view('my-orders', compact('orders'));
+        }
+        if (Auth::user()->role_id == '2')
+            try {
+                $orders = Auth::user()->stylist->orders->where('ordered_by_client', '1');
+                return view('my-orders', compact('orders'));
+            } catch (\ErrorException $error) {
 
-       return view('my-orders',compact('Neworders'),compact('Savedorders'));
-    }
-    public function social()
-    {
-        return view('auth.social');
+            }
+
     }
 
     public function settings()
     {
-
-			$currentSt = Auth::user()->stylist;
-			$currentUser = Auth::user();
-//
-
-				return view('settings', compact('currentSt'),compact('currentUser'));
-
-
-
+        $currentUser = Auth::user();
+        return view('settings', compact('currentUser'));
     }
 
-    protected function store(Request $request)
-    {
-        $data = $request;
 
-       Auth::user()->update(['name' => $data->name,'second_name'=>$data->second_name]);
-       Stylist::find(Auth::user()->id)->update(['about'=>$data->about,'education'=>$data->education]);
-  $request->session()->flash('success','Данные успешно сохранены');
-        return redirect('/settings');
-
-    }
 }

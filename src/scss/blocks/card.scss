@@ -1,60 +1,86 @@
-.card {
-  display: flex;
+@media ($xs) {
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__photo-block {
+    width: 270px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &--service {
+      min-width: 240px;
+    }
+  }
+
+  .card__description {
+    margin-left: 0px;
+
+    &--services {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #555;
+    }
+
+    &__title {
+      font-weight: 600;
+      color: $color-text;
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: $color-text;
+
+      &--price {
+        font-size: 16px;
+        font-weight: bold;
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+@media (min-width: '645px') {
+  .card {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card__photo-block {
+    margin: 0;
+  }
+
+  .card__description {
+    margin-left: 30px;
+  }
 }
 
 .card__margin {
   margin-top: 60px;
+
+  &--profile {
+    margin-bottom: 50px;
+  }
+
+  &:first-child {
+    margin-top: 40px;
+  }
 
   &:last-child {
     margin-bottom: 60px;
   }
 }
 
-.card__photo-block {
-  min-width: 300px;
-  text-align: center;
-
-  &--service {
-    min-width: 240px;
-  }
-}
-
-.card__title-second {
-  color: $color-text;
-  font-family: "Open Sans";
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-}
-
-.card__description {
-  margin-left: 30px;
-
-  &--services {
-    padding-bottom: 30px;
-    border-bottom: 1px solid #555;
-  }
-
-  &__title {
-    color: $color-text;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 18px;
-    margin-bottom: 10px;
-
-    &--center {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-    }
-  }
-
-  &__text {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    margin-bottom: 15px;
-  }
+.card__photo--stylist {
+  max-width: 270px;
 }
 
 .card__photo-list {
@@ -78,6 +104,8 @@
 .card__choose-price {
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
 
   &-block {
     width: 150px;

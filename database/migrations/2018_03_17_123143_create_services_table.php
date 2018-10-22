@@ -15,12 +15,13 @@ class CreateServicesTable extends Migration
 	{
 		Schema::create('services', function (Blueprint $table) {
 
-			$table->increments('service_id');
-			$table->integer('stylist_id')->unsigned()->index();
-			$table->integer('category_id')->unsigned()->index();
-			$table->foreign('category_id')->references('category_id')->on('servicecategory');
-			$table->string('describe')->nullable;
-			$table->float('price')->nullable;
+			$table->increments('id');
+			$table->string('name')->nullable();
+			$table->longText('description')->nullable();
+			$table->longText('HowTo')->nullable();
+			$table->longText('result')->nullable();
+			$table->string('picture')->nullable();
+			$table->string('banner')->nullable();
 			$table->timestamps();
 		});
 	}

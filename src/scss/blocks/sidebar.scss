@@ -1,29 +1,61 @@
-.sidebar {
-  width: 18%;
-  min-width: 250px;
+@media ($xs) {
+  .sidebar {
+    left: -242px;
+    display: block;
+    width: 242px;
+    height: 100%;
+    background-color: $cream;
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 0;
+    position: fixed;
+    z-index: 99;
+  }
+}
+
+@media ($xl) {
+  .sidebar {
+    left: 0;
+  }
+}
+
+.container-sidebar {
+  max-width: 86%;
+  margin: 0 auto;
   height: 100%;
-  background-color: $cream;
-  background-image: url(../img/background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px 0;
-  position: fixed;
+}
+
+.sidebar__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar__menu {
-  margin-top: 50px;
+  margin-top: 30%;
   background-color: $cream;
   padding: 20px 0px;
+  text-align: center;
 }
 
 .sidebar__menu-item {
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .sidebar__menu-link {
-  @include flex-container($spacing: center);
   text-transform: uppercase;
   font-size: 15px;
-  font-weight: bold;
-  color: #111;
+  font-weight: 600;
+  color: $color-text;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.sidebar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

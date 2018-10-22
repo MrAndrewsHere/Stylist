@@ -1,22 +1,12 @@
 .enter-panel {
-  margin-top: 20px;
-  padding: 10px 10px;
-  border: 2px solid #909192;
-  @include flex-container($direction: column);
-  background-color: $cream;
-
-  &__btn {
-    padding: 5px 0;
-  }
-}
-
-.enter-panel-stylist,
-.enter-panel-client {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   color: #000;
   font-weight: 600;
-  font-size: 12px;
+
+  &__divider {
+    padding: 0 10px;
+  }
 }

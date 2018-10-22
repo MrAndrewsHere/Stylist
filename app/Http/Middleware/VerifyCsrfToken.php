@@ -12,6 +12,10 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        //
+        'getUlogin',
+        'chat',
+      'broadcasting',
+      'broadcasting/auth',
+      'auth'
     ];
 }

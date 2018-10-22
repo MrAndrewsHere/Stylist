@@ -10,15 +10,23 @@
   }
 }
 
-.portfolio-item {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 35px;
-  border-bottom: 1px solid $color-input;
+@media ($xs) {
+  .portfolio-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+    border-bottom: 1px solid $color-input;
 
-  &--editing {
-    border: 1px dashed $color-input;
-    padding: 30px;
+    &--editing {
+      border: 1px dashed $color-input;
+      padding: 30px;
+    }
+  }
+}
+
+@media (min-width: '1200px') {
+  .portfolio-item {
+    flex-direction: row;
   }
 }
 
@@ -28,4 +36,9 @@
   &--add {
     max-width: 47%;
   }
+}
+
+.portfolio__photo {
+  max-width: 250px;
+  max-height: 310px;
 }

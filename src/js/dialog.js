@@ -1,30 +1,31 @@
 (function () {
-  var modalAuth = document.querySelector(".modal-auth");
-  var modalRegistration = document.querySelector(".modal-registration");
-  var btnAuth = document.querySelectorAll(".btn--auth");
-  var btnRegistration = document.querySelectorAll(".btn--registration");
-  var closeAuth = document.querySelector(".btn--close-auth");
-  var closeRegistration = document.querySelector(".btn--close-registration");
-  var email = document.querySelector(".input-email");
-  var login = document.querySelector(".input-login");
-  var ESC_CODE = 27;
+  const modalAuth = document.querySelector('.modal-auth');
+  const modalRegistration = document.querySelector('.modal-registration');
+  const btnAuth = document.querySelectorAll('.btn--auth');
+  const btnRegistration = document.querySelectorAll('.btn--registration');
+  const closeAuth = document.querySelector('.btn--close-auth');
+  const closeRegistration = document.querySelector('.btn--close-registration');
+  const email = document.querySelector('.input-email');
+  const name = document.querySelector('.input-name');
+  const ESC_CODE = 27;
 
-  var profileMenu = document.querySelector(".nav-profile");
-  var profileMenuBlock = document.querySelector(".nav-profile__menu");
+  const profileMenu = document.querySelector('.navigation__profile');
+  const profileMenuBlock = document.querySelector('.navigation__profile-menu');
 
-  var formAuth = document.querySelector(".form-auth");
-  var password = document.querySelector(".input-password");
-  var storage = localStorage.getItem("email");
+  const formAuth = document.querySelector('.form-auth');
+  const password = document.querySelector('.input-password');
+  const storage = localStorage.getItem('email');
 
   // открытие модального окна
-  var openDialog = function (btn, modalWindow, inputFocus, inputFocusTwo) {
-    for (var i = 0; i < btn.length; i++) {
-      btn[i].addEventListener("click", function (event) {
+  const openDialog = function (btn, modalWindow, inputFocus, inputFocusTwo) {
+    for (let i = 0; i < btn.length; i += 1) {
+      btn[i].addEventListener('click', (event) => {
         event.preventDefault();
-        modalWindow.classList.add("modal-auth-show");
+        modalWindow.classList.add('modal-auth-show');
 
-        if (storage && modalAuth.classList.contains("modal-auth-show")) {
-          inputFocus.value = storage;
+        if (storage && modalAuth.classList.contains('modal-auth-show')) {
+          const inputFocusValue = inputFocus;
+          inputFocusValue.value = storage;
           inputFocusTwo.focus();
         } else {
           inputFocus.focus();
@@ -33,56 +34,42 @@
     }
   };
   openDialog(btnAuth, modalAuth, email, password);
-  openDialog(btnRegistration, modalRegistration, login);
+  openDialog(btnRegistration, modalRegistration, name);
 
   // закрытие модального окна
-  var closeDialog = function (closeModal, modalWindow) {
-    closeModal.addEventListener("click", function (event) {
+  const closeDialog = function (closeModal, modalWindow) {
+    closeModal.addEventListener('click', (event) => {
       event.preventDefault();
-      modalWindow.classList.remove("modal-auth-show");
+      modalWindow.classList.remove('modal-auth-show');
     });
   };
   closeDialog(closeAuth, modalAuth);
   closeDialog(closeRegistration, modalRegistration);
 
   // закрытие модальных окон на ESC
-  window.addEventListener("keydown", function (event) {
+  window.addEventListener('keydown', (event) => {
     if (event.keyCode === ESC_CODE) {
-      if (modalAuth.classList.contains("modal-auth-show")) {
-        modalAuth.classList.remove("modal-auth-show");
-      } else if (modalRegistration.classList.contains("modal-auth-show")) {
-        modalRegistration.classList.remove("modal-auth-show");
+      if (modalAuth.classList.contains('modal-auth-show')) {
+        modalAuth.classList.remove('modal-auth-show');
+      } else if (modalRegistration.classList.contains('modal-auth-show')) {
+        modalRegistration.classList.remove('modal-auth-show');
       }
     }
   });
 
   // меню пользователя при клике на аватарке
-  profileMenu.addEventListener("click", function () {
-    profileMenuBlock.classList.toggle("nav-profile__visible");
-  });
+  if (profileMenu) {
+    profileMenu.addEventListener('click', () => {
+      profileMenuBlock.classList.toggle('navigation__profile-visible');
+    });
+  }
 
   // добавление данных в localStorage
-  formAuth.addEventListener("submit", function (event) {
+  formAuth.addEventListener('submit', (event) => {
     if (!email.value || !password.value) {
       event.preventDefault();
     } else {
-      localStorage.setItem("email", email.value);
+      localStorage.setItem('email', email.value);
     }
   });
-
-  var formSettings = document.querySelector(".form-settings");
-
-  formSettings.addEventListener("submit", function () {
-    event.preventDefault();
-    var node = document.createElement("div");
-    node.classList.add("success");
-
-    node.textContent = "Изменения успешно сохранены";
-    formSettings.appendChild(node);
-
-    setTimeout(function () {
-      $(node).fadeOut("fast");
-    }, 2000);
-  });
-
-})();
+}());

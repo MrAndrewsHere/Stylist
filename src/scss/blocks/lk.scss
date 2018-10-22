@@ -1,15 +1,71 @@
 /* Общие стили личного кабинета */
 
-/* Стили личного кабинета стилиста */
-
-.lk-stylist__attention {
-  border: 3px solid $color-accent;
-  padding: 20px;
+.lk__photo {
+  max-width: 270px;
 }
 
-.lk-stylist__attention-orders {
-  height: 250px;
-  overflow-y: scroll;
+.lk__block {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.lk__items-list {
+  width: 215px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.lk__item-color-type {
+  cursor: pointer;
+  font-size: 15px;
+  color: $color-accent;
+  border-bottom: 1px dashed $color-accent;
+
+  &--active {
+    color: #000;
+    border-bottom: none;
+    font-weight: bold;
+  }
+}
+
+.lk__style-color-type {
+  display: none;
+
+  &--active {
+    display: flex;
+  }
+}
+
+.lk__description-block {
+  margin-left: 40px;
+}
+
+/* Стили личного кабинета стилиста */
+
+.lk-stylist__education {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  &--empty {
+    padding: 40px 0;
+    text-align: center;
+    border: 2px dashed #ddd;
+  }
+
+  &-document {
+    position: relative;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
+
+.lk-stylist__diplom {
+  width: 130px;
 }
 
 /* Стили личного кабинета клиента */
@@ -19,44 +75,15 @@
 }
 
 .lk-client__style-photo {
-  min-width: 280px;
+  max-width: 280px;
   margin-right: 40px;
-  text-align: center;
-
-  &--before-after {
-    flex-shrink: 0;
-  }
 }
 
-.lk-client__style-seasons {
+.lk-client__style-photo-before-after {
   display: flex;
-  flex-direction: column;
+  margin-right: 40px;
 }
 
-.lk-client__style-seasons-list {
-  width: 215px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.lk-client__style-seasons-item {
-  margin-right: 30px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-}
-
-.lk-client__style-seasons-description-text {
-  margin-top: 20px;
-  font-size: 16px;
-  line-height: 1.4em;
-}
-
-.lk-client__style-seasons-description {
-  display: none;
-
-  &--active {
-    display: block;
-  }
+.lk__email-send {
+  font-size: 15px;
 }

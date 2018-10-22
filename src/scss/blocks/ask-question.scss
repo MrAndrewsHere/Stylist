@@ -2,6 +2,7 @@
   background-color: $cream;
   padding: 40px 80px;
   display: flex;
+  align-items: center;
 
   &-text {
     margin-right: 10%;
@@ -12,32 +13,56 @@
   }
 }
 
-.ask-question__quest {
-  margin-bottom: 50px;
+.ask-question__quests {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-  &-icon {
+@media ($xs) {
+  .ask-question__quest {
+    width: 100%;
+    min-width: 250px;
+    margin-bottom: 50px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    min-width: 50px;
-    height: 50px;
-    border: 1px solid $color-accent;
-    border-radius: 50%;
-    color: $color-accent;
-    font-weight: bold;
-  }
 
-  &-block {
-    display: flex;
-    flex-direction: column;
-
-    &-title {
-      text-decoration: underline;
-      color: $color-accent;
-      font-weight: 600;
-      margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
     }
+
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      min-width: 50px;
+      height: 50px;
+      border: 1px solid $color-accent;
+      border-radius: 50%;
+      color: $color-accent;
+      font-weight: bold;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        color: $color-accent;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      &-text {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media ($md) {
+  .ask-question__quest {
+    width: 48%;
   }
 }

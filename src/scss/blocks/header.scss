@@ -1,14 +1,33 @@
-.header-home {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@media ($xs) {
+  .header-home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+    font-size: 10px;
 
-  &__margin {
-    padding-top: 10px;
+    &__wrapper {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .header__phone-number {
+    color: #000;
+    font-weight: 600;
+    font-family: "Montserrat";
+    margin-right: auto;
   }
 }
 
-.header__link {
-  color: #000;
-  font-weight: 600;
+@media (min-width: '400px') {
+  .header-home {
+    font-size: 12px;
+  }
+}
+
+@media ($sm) {
+  .header__phone-number {
+    font-size: 16px;
+  }
 }

@@ -1,34 +1,21 @@
 .comment {
-  width: 430px;
-  margin: 0 auto;
+  width: 600px;
+  margin: 30px auto 0;
   display: flex;
-
-  &__slider {
-    margin-top: 20px;
-  }
+  align-items: center;
 }
 
-.comment__user-photo {
-  margin-right: 20px;
-}
-
-.comment__user-block {
+.comment__info {
   display: flex;
   flex-direction: column;
 }
 
-.comment__user-text-title {
-  color: #050505;
-  font-family: "Open Sans";
+.comment__title {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1.05px;
 }
 
-.comment__user-text-text {
-  color: $color-text;
-  font-family: "Open Sans";
+.comment__text {
   font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
+  margin-bottom: 10px;
 }

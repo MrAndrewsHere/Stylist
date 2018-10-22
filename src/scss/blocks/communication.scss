@@ -1,16 +1,35 @@
-.communication {
-  margin-top: 20px;
-  display: flex;
+@media ($xs) {
+  .communication {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .communication__contacts,
+  .communication__feedback {
+    width: 100%;
+    min-width: 300px;
+    padding: 10px;
+  }
 }
 
-.communication__contacts,
-.communication__feedback {
-  width: 50%;
-  padding: 10px;
-}
+@media ($md) {
+  .communication {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
 
-.communication__feedback {
-  border-right: 1px solid $color-input;
+  .communication__contacts,
+  .communication__feedback {
+    width: 50%;
+    min-width: 300px;
+    padding: 10px;
+  }
+
+  .communication__feedback {
+    border-right: 1px solid $color-input;
+  }
 }
 
 .communication__accent {
@@ -30,7 +49,7 @@
 
 .communication__contacts__phone-number {
   font-size: 22px;
-  color: #000;
+  color: $color-text;
   font-weight: 700;
 }
 
