@@ -2,7 +2,7 @@
   <div class="modal-content modal-content--registration">
     <button class="btn btn--close-registration" arial-label="Закрыть окно">&times;</button>
     <h3 class="modal__title">Регистрация</h3>
-    <p class="modal__text">Войти через соцсети</p>
+    <p class="modal__text">Зарегистрироваться через соцсети</p>
 
     <ul class="social-icons-list modal__social">
       <div id="ulogina1e78bdc" data-ulogin="display=panel;fields=first_name,last_name,email,photo,photo_big;optional=phone,city;verify=1;lang=ru;providers=vkontakte,instagram,facebook;redirect_uri=;callback=UloginRegister"></div>
