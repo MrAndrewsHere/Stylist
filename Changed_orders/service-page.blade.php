@@ -86,7 +86,7 @@
 
     </div>
   </section>
-  @include('blocks.modal-dialog')
+
 
 @endsection
 

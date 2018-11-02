@@ -15,41 +15,49 @@ use Transliterate;
 
 class ClientController extends Controller
 {
-  public function __construct()
-  {
-    $this->middleware('auth');
-    $this->middleware('client');
-  }
-
-  public function lk_client()
-  {
-    return view('client.lk-client');
-  }
-
-
-  public function my_style()
-  {
-    return view('client.my-style');
-  }
-
-  // Удаление заказа из моих заказов
-  protected function delete_order(Request $request)
-  {
-    try {
-      $order = Order::find($request->input('id'));
-      $order->delete();
-      return 'Услуга удалена';
-    } catch (\Exception $exception) {
-        return "Сорян";
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('client');
     }
-  }
+
+    public function lk_client()
+    {
+        return view('client.lk-client');
+    }
+
+
+    public function my_style()
+    {
+        return view('client.my-style');
+    }
+
+    // Удаление заказа из моих заказов
+    protected function delete_order(Request $request)
+    {
+        try {
+            $order = Order::find($request->input('id'));
+            $order->delete();
+            return 'Услуга удалена';
+        } catch (\Exception $exception) {
+            return "Сорян";
+        }
+    }
+
+    public function get_stylists_by_category(Request $request)
+    {
+        $service = service::find($request->input('service_id'));
+        $stylists = $service->stylists->where('category_id',$request->input('category_id'));
+
+        return view('blocks.list_stylists', compact('stylists'));
+    }
 
   // Добавление клиентом услуг
   protected function add_service_to_client(Request $request)
   {
 
     $service = service::find($request->input('service_id'));
-    $stylist = $service->stylists->find($request->input('category_id'));
+    $stylist = $service->stylists->find($request->input('stylist_id'));
 
     if ($stylist !== null && $service !== null) {
       Order::create([

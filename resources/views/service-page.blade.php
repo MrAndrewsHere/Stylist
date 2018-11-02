@@ -69,8 +69,8 @@
                   @if(Auth::user()->role->name == "client")
                   <form class="add_service_to_client">
                     {{csrf_field()}}
-                    <input type="hidden" name="category_id" value="{{$categorystylist->id}}">
-                    <input type="hidden" name="service_id" value="{{$service->id}}">
+                    <input type="hidden"  name="category_id" value="{{$categorystylist->id}}">
+                    <input type="hidden" class = "service_id_help" name="service_id" value="{{$service->id}}">
                     <button class="btn btn--action btn--action-super-small">Выбрать</button>
                   </form>
                     @endif
@@ -86,4 +86,41 @@
 
     </div>
   </section>
+
+
 @endsection
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(() => {
+
+$('.lk-stylist__education-document').attr('src',$('.service-page__photo').attr('src'));
+        $('#modal_service_section__title').text($('.section__title').text());
+
+        $('.add_service_to_client').on('submit', function (e) {
+            e.preventDefault();
+            $('.flush_service_id').attr('value', $(this).find('.service_id_help').val());
+            $.ajax({
+                type: 'POST',
+                url: '/get_stylists_by_category',
+                data: $(this).serialize(),
+                success(result) {
+
+
+                     $('#stylists_list').html(result);
+
+
+                    $('.modal-dialog').addClass('modal-auth-show');
+
+                },
+                error(result) {
+                    $('.message-error').text('Произошла ошибка. Попробуйте перезагрузить страницу');
+                    $('.message-error').css('display', 'block');
+                },
+            });
+
+        });
+    });
+
+  </script>
