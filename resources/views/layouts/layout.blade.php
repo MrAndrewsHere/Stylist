@@ -150,15 +150,15 @@
           <img class="sc-closed-icon" src="/assets/595b1b3b-d15b-4335-beff-91703a6863a3.png" />
         </div>
 
-        <div class="sc-chat-window closed" >
+        <div class="sc-chat-window " >
           <div class="sc-header">
 
             <div class="sc-header--title">
                @foreach(\App\User::all() as $user)
-                 @if($user->id < 6)
 
-              <img class="sc-header--close-button-2" src="{{$user->avatar}}" onclick="ChangePeer()" alt=""  />
-                @endif
+
+              <img title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}" onclick="ChangePeer()" alt=""  />
+
               @endforeach
 
             </div>
@@ -166,6 +166,7 @@
               <img src="/assets/close-icon.png" alt="" />
             </div>
           </div>
+
 
           <ul class="sc-message-list" >
             {{--<Message v-for="(message, idx) in messages" :message="message" :chatImageUrl="chatImageUrl(message.author)" :authorName="authorName(message.author)" :key="idx" :colors="colors" />--}}
@@ -252,7 +253,7 @@
                 role="button"
                 tabIndex="0"
                 contentEditable="true"
-                placeholder="placeholder"
+                placeholder="Введите сообщение..."
                 class="sc-user-input--text"
               >
               </div>
@@ -271,6 +272,7 @@
                   <button
                     @click.prevent="onClick"
                     class="sc-user-input--send-icon-wrapper"
+                    title="Отправить"
                   >
                     <svg
                       version='1.1'

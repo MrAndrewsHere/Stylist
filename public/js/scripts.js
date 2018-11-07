@@ -3308,14 +3308,16 @@ $(document).ready(() => {
 }());
 function OpenChat() {
 
+    $('.sc-launcher').css('display','none');
     $('.sc-chat-window').removeClass('closed');
-    CloseChat
+
 
 }
 
 function CloseChat() {
 
     $('.sc-chat-window').addClass('closed');
+    $('.sc-launcher').css('display','block');
 
 
 }
