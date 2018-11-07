@@ -3306,6 +3306,24 @@ $(document).ready(() => {
     }
   });
 }());
+function OpenChat() {
+
+    $('.sc-chat-window').removeClass('closed');
+    CloseChat
+
+}
+
+function CloseChat() {
+
+    $('.sc-chat-window').addClass('closed');
+
+
+}
+
+function ChangePeer() {
+    alert('PeerChanged');
+
+}
 
 (function () {
   const filterServices = document.getElementById('filter-services');

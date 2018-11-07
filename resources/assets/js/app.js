@@ -6,7 +6,7 @@
  */
 
 require('./bootstrap');
-
+window.Vue = require('vue');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -21,35 +21,72 @@ Vue.component('chat-form', require('./components/ChatForm.vue'));
 const app = new Vue({
     el: '#app',
 
+    props:[
 
+    ],
     data: {
-        messages: []
+        messages: [],
+        peer_id: 1,
+        user_id: 1,
+
+
     },
 
     created() {
-        this.fetchMessages();
+        Echo.private('chat')
+            .listen('MessageSent', (e) => {
+                if(e.message.peer_id == this.user_id && this.peer_id == e.user.id ) {
+                    this.messages.push({
+                        message: e.message.message,
+                        user: e.user
+                    });
+                }
+            });
+
     },
+
+
     methods: {
 
         fetchMessages() {
             axios.get('/messages').then(response => {
                 this.messages = response.data;
             });
-            Echo.private('chat')
-                .listen('MessageSent', (e) => {
-                    this.messages.push({
-                        message: e.message.message,
-                        user: e.user
-                    });
-                });
-            
         },
+
+
+
+        feetch() {
+            this.messages = '';
+            axios.get('/messages',{ params: { peer_id:this.peer_id } }).then(response => {
+
+                this.messages = response.data;
+            });
+
+        },
+
+        changePeer(peer){
+            this.peer_id = peer;
+            this.to_peer_id = peer;
+            this.feetch();
+        },
+
+
+        currentUser($user){
+            this.user_id = $user.id;
+
+        },
+
+
+
+
 
         addMessage(message) {
             this.messages.push(message);
-
-            axios.post('/messages', message).then(response => {
+            message.peer_id = this.peer_id;
+            axios.post('/messages',message).then(response => {
                 console.log(response.data);
+
             });
         }
     }

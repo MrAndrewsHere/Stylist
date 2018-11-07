@@ -14,21 +14,37 @@
     export default {
         props: ['user'],
 
+
         data() {
             return {
                 newMessage: ''
             }
         },
+        mounted(){
+            this.sendUser();
 
+        },
         methods: {
             sendMessage() {
                 this.$emit('messagesent', {
                     user: this.user,
-                    message: this.newMessage
+                    message: this.newMessage,
                 });
 
+
                 this.newMessage = ''
+            },
+
+            sendUser() {
+                this.$emit('sendinguser', {
+
+                    id: this.user.id,
+
+                });
+
             }
+
+
         }
     }
 </script>
