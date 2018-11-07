@@ -150,7 +150,7 @@
           <img class="sc-closed-icon" src="/assets/595b1b3b-d15b-4335-beff-91703a6863a3.png" />
         </div>
 
-        <div class="sc-chat-window" >
+        <div class="sc-chat-window closed" >
           <div class="sc-header">
 
             <div class="sc-header--title">
