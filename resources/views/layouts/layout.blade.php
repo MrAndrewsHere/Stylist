@@ -132,11 +132,9 @@
         <div class="sc-header">
 
           <div class="sc-header--title">
-            <img  style=" background:  rgba(14,126,119,0.7);" title="Андрей Долженко" src="https://pp.userapi.com/c841129/v841129878/3128f/YSoTmTuI51c.jpg?ava=1" onclick="ChangePeer()" alt="Андрей Долженко" class="sc-header--close-button-2">
-            <img style=" background:  rgba(14,126,119,0.7);" title="Евгения Удальцова" src="/img/stylist1.jpg" onclick="ChangePeer()" alt="Евгения Удальцова" class="sc-header--close-button-2">
-            @foreach(\App\User::all() as $user)
+           @foreach(\App\User::all() as $user)
 
-              <img title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}" onclick="ChangePeer()" alt="{{$user->name.' '.$user->second_name}}"  />
+              <img id="btn-chat"  @click='changePeer("{{$user->id}}")' title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}"  alt="pic"  />
 
             @endforeach
 
@@ -147,126 +145,94 @@
         </div>
 
 
-        <ul class="sc-message-list" >
+        {{--<ul class="sc-message-list" >--}}
           {{--<Message v-for="(message, idx) in messages" :message="message" :chatImageUrl="chatImageUrl(message.author)" :authorName="authorName(message.author)" :key="idx" :colors="colors" />--}}
           {{--<Message v-show="showTypingIndicator !== ''" :message="{author: showTypingIndicator, type: 'typing'}" :chatImageUrl="chatImageUrl(showTypingIndicator)" :colors="colors" />--}}
 
-          <li class="left clearfix">
-            <div class="chat-body clearfix">
-              <div class="header">
-                <strong class="primary-font">
-                  Имя
-                </strong>
-              </div>
-              <p style="padding-left: 3%">
-                Сообщение
-              </p>
-            </div>
-          </li>
-          <li class="left clearfix">
-            <div class="chat-body clearfix">
-              <div class="header">
-                <strong class="primary-font">
-                  Имя
-                </strong>
-              </div>
-              <p style="padding-left: 2%">
-                Сообщение
-              </p>
-            </div>
-          </li>
-          <li class="left clearfix">
-            <div class="chat-body clearfix">
-              <div class="header">
-                <strong class="primary-font">
-                  Имя
-                </strong>
-              </div>
-              <p style="padding-left: 2%">
-                Сообщение
-              </p>
-            </div>
-          </li>
-          <li class="left clearfix">
-            <div class="chat-body clearfix" >
-              <div class="header">
-                <strong class="primary-font" style="  word-break: break-all;">
-                  Андрей Долженко Андрей Долженко Андрей Долженко Андрей Долженко
-                </strong>
-              </div>
-              <p style="padding-left: 2%" >
-                Привет это я привет это я  Привет это я привет это я Привет это я привет это я Привет это я привет это я  Привет это я привет это я
-              </p>
-            </div>
-          </li>
-          <li class="left clearfix">
-            <div class="chat-body clearfix">
-              <div class="header">
-                <strong class="primary-font">
-                  Имя
-                </strong>
-              </div>
-              <p style="padding-left: 2%">
-                Сообщение
-              </p>
-            </div>
-          </li>
-          <li class="left clearfix">
-            <div class="chat-body clearfix">
-              <div class="header">
-                <strong class="primary-font">
-                  Имя
-                </strong>
-              </div>
-              <p style="padding-left: 2%">
-                Сообщение
-              </p>
-            </div>
-          </li>
+          {{--<li class="left clearfix">--}}
+            {{--<div class="chat-body clearfix">--}}
+              {{--<div class="header">--}}
+                {{--<strong class="primary-font">--}}
+                  {{--Имя--}}
+                {{--</strong>--}}
+              {{--</div>--}}
+              {{--<p style="padding-left: 3%">--}}
+                {{--Сообщение--}}
+              {{--</p>--}}
+            {{--</div>--}}
+          {{--</li>--}}
+          {{--<li class="left clearfix">--}}
+            {{--<div class="chat-body clearfix">--}}
+              {{--<div class="header">--}}
+                {{--<strong class="primary-font">--}}
+                  {{--Имя--}}
+                {{--</strong>--}}
+              {{--</div>--}}
+              {{--<p style="padding-left: 2%">--}}
+                {{--Сообщение--}}
+              {{--</p>--}}
+            {{--</div>--}}
+          {{--</li>--}}
+          {{--<li class="left clearfix">--}}
+            {{--<div class="chat-body clearfix">--}}
+              {{--<div class="header">--}}
+                {{--<strong class="primary-font">--}}
+                  {{--Имя--}}
+                {{--</strong>--}}
+              {{--</div>--}}
+              {{--<p style="padding-left: 2%">--}}
+                {{--Сообщение--}}
+              {{--</p>--}}
+            {{--</div>--}}
+          {{--</li>--}}
+          {{--<li class="left clearfix">--}}
+            {{--<div class="chat-body clearfix" >--}}
+              {{--<div class="header">--}}
+                {{--<strong class="primary-font" style="  word-break: break-all;">--}}
+                  {{--Андрей Долженко Андрей Долженко Андрей Долженко Андрей Долженко--}}
+                {{--</strong>--}}
+              {{--</div>--}}
+              {{--<p style="padding-left: 2%" >--}}
+                {{--Привет это я привет это я  Привет это я привет это я Привет это я привет это я Привет это я привет это я  Привет это я привет это я--}}
+              {{--</p>--}}
+            {{--</div>--}}
+          {{--</li>--}}
+          {{--<li class="left clearfix">--}}
+            {{--<div class="chat-body clearfix">--}}
+              {{--<div class="header">--}}
+                {{--<strong class="primary-font">--}}
+                  {{--Имя--}}
+                {{--</strong>--}}
+              {{--</div>--}}
+              {{--<p style="padding-left: 2%">--}}
+                {{--Сообщение--}}
+              {{--</p>--}}
+            {{--</div>--}}
+          {{--</li>--}}
+          {{--<li class="left clearfix">--}}
+            {{--<div class="chat-body clearfix">--}}
+              {{--<div class="header">--}}
+                {{--<strong class="primary-font">--}}
+                  {{--Имя--}}
+                {{--</strong>--}}
+              {{--</div>--}}
+              {{--<p style="padding-left: 2%">--}}
+                {{--Сообщение--}}
+              {{--</p>--}}
+            {{--</div>--}}
+          {{--</li>--}}
 
-        </ul>
-        <div>
+        {{--</ul>--}}
 
-          <form class="sc-user-input active" >
-            <div
-                    role="button"
-                    tabIndex="0"
-                    contentEditable="true"
-                    placeholder="Введите сообщение..."
-                    class="sc-user-input--text"
-            >
-            </div>
+        <chat-messages :messages="messages"  :user="{{ Auth::user() }}"></chat-messages>
+        <div class="panel-footer">
+          <chat-form
+            v-on:messagesent="addMessage"
+            v-on:sendinguser="currentUser"
+            :user="{{ Auth::user() }}"
 
-            <div class="sc-user-input--buttons">
 
-              <div class="sc-user-input--button">
-                <button
-                        @click.prevent="onClick"
-                        class="sc-user-input--send-icon-wrapper"
-                        title="Отправить"
-                >
-                  <svg
-                          version='1.1'
-                          class="sc-user-input--send-icon"
-                          xmlns='http://www.w3.org/2000/svg'
-                          x='0px'
-                          y='0px'
-                          width='37.393px'
-                          height='37.393px'
-                          viewBox='0 0 37.393 37.393'
-                          enableBackground='new 0 0 37.393 37.393'>
-                    <g id='Layer_2'>
-                      <path :style="{fill: color}" d='M36.511,17.594L2.371,2.932c-0.374-0.161-0.81-0.079-1.1,0.21C0.982,3.43,0.896,3.865,1.055,4.241l5.613,13.263
-          L2.082,32.295c-0.115,0.372-0.004,0.777,0.285,1.038c0.188,0.169,0.427,0.258,0.67,0.258c0.132,0,0.266-0.026,0.392-0.08
-          l33.079-14.078c0.368-0.157,0.607-0.519,0.608-0.919S36.879,17.752,36.511,17.594z M4.632,30.825L8.469,18.45h8.061
-          c0.552,0,1-0.448,1-1s-0.448-1-1-1H8.395L3.866,5.751l29.706,12.757L4.632,30.825z' />
-                    </g>
-                  </svg>
-                </button>
-              </div>
-
-            </div>
-          </form>
+          ></chat-form>
         </div>
       </div>
 

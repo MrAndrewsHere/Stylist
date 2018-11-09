@@ -41484,7 +41484,11 @@ var PusherConnector = function (_Connector) {
     createClass(PusherConnector, [{
         key: 'connect',
         value: function connect() {
-            this.pusher = new Pusher(this.options.key, this.options);
+            if (typeof this.options.client !== 'undefined') {
+                this.pusher = this.options.client;
+            } else {
+                this.pusher = new Pusher(this.options.key, this.options);
+            }
         }
     }, {
         key: 'listen',
@@ -41573,7 +41577,7 @@ var SocketIoConnector = function (_Connector) {
             if (typeof io !== 'undefined') {
                 return io;
             }
-            if (this.options.client !== 'undefined') {
+            if (typeof this.options.client !== 'undefined') {
                 return this.options.client;
             }
             throw new Error('Socket.io client not found. Should be globally available or passed via options.client');
@@ -50724,7 +50728,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "ul",
-    { staticClass: "chat" },
+    { staticClass: "sc-message-list", attrs: { id: "panel_body_id" } },
     _vm._l(_vm.messages, function(message) {
       return _c("li", { staticClass: "left clearfix" }, [
         _c("div", { staticClass: "chat-body clearfix" }, [
@@ -50738,7 +50742,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("p", [
+          _c("p", { staticStyle: { "word-wrap": "break-word" } }, [
             _vm._v(
               "\n                " + _vm._s(message.message) + "\n            "
             )
@@ -50823,6 +50827,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['user'],
@@ -50864,52 +50902,85 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "input-group" }, [
-    _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.newMessage,
-          expression: "newMessage"
-        }
-      ],
-      staticClass: "form-control input-sm",
-      attrs: {
-        id: "btn-input",
-        type: "text",
-        name: "message",
-        placeholder: "Type your message here..."
-      },
-      domProps: { value: _vm.newMessage },
-      on: {
-        keyup: function($event) {
-          if (
-            !("button" in $event) &&
-            _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-          ) {
-            return null
+    _c("div", { staticClass: "sc-user-input active" }, [
+      _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.newMessage,
+            expression: "newMessage"
           }
-          return _vm.sendMessage($event)
+        ],
+        staticClass: "sc-user-input--text",
+        attrs: {
+          tabIndex: "0",
+          placeholder: "Отправить сообщение - Ctrl+Enter ",
+          name: "message"
         },
-        input: function($event) {
-          if ($event.target.composing) {
-            return
+        domProps: { value: _vm.newMessage },
+        on: {
+          keyup: function($event) {
+            if (
+              !("button" in $event) &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            if (!$event.ctrlKey) {
+              return null
+            }
+            return _vm.sendMessage($event)
+          },
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.newMessage = $event.target.value
           }
-          _vm.newMessage = $event.target.value
         }
-      }
-    }),
-    _vm._v(" "),
-    _c("span", { staticClass: "input-group-btn" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary btn-sm",
-          attrs: { id: "btn-chat" },
-          on: { click: _vm.sendMessage }
-        },
-        [_vm._v("\n            Send\n        ")]
-      )
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "sc-user-input--buttons" }, [
+        _c("div", { staticClass: "sc-user-input--button" }, [
+          _c(
+            "button",
+            {
+              staticClass: "sc-user-input--send-icon-wrapper",
+              attrs: { id: "btn-chat", title: "Отправить" },
+              on: { click: _vm.sendMessage }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "sc-user-input--send-icon",
+                  attrs: {
+                    version: "1.1",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    x: "0px",
+                    y: "0px",
+                    width: "37.393px",
+                    height: "37.393px",
+                    viewBox: "0 0 37.393 37.393",
+                    enableBackground: "new 0 0 37.393 37.393"
+                  }
+                },
+                [
+                  _c("g", { attrs: { id: "Layer_2" } }, [
+                    _c("path", {
+                      attrs: {
+                        d:
+                          "M36.511,17.594L2.371,2.932c-0.374-0.161-0.81-0.079-1.1,0.21C0.982,3.43,0.896,3.865,1.055,4.241l5.613,13.263\n      L2.082,32.295c-0.115,0.372-0.004,0.777,0.285,1.038c0.188,0.169,0.427,0.258,0.67,0.258c0.132,0,0.266-0.026,0.392-0.08\n      l33.079-14.078c0.368-0.157,0.607-0.519,0.608-0.919S36.879,17.752,36.511,17.594z M4.632,30.825L8.469,18.45h8.061\n      c0.552,0,1-0.448,1-1s-0.448-1-1-1H8.395L3.866,5.751l29.706,12.757L4.632,30.825z"
+                      }
+                    })
+                  ])
+                ]
+              )
+            ]
+          )
+        ])
+      ])
     ])
   ])
 }
