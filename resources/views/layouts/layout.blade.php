@@ -132,11 +132,11 @@
         <div class="sc-header">
 
           <div class="sc-header--title">
-            <img  style=" background:  rgba(14,126,119,0.7);" title="Андрей Долженко" src="https://pp.userapi.com/c841129/v841129878/3128f/YSoTmTuI51c.jpg?ava=1" onclick="ChangePeer()" alt="pic" class="sc-header--close-button-2">
-            <img style=" background:  rgba(14,126,119,0.7);" title="Евгения Удальцова" src="/img/stylist1.jpg" onclick="ChangePeer()" alt="pic" class="sc-header--close-button-2">
+            <img  style=" background:  rgba(14,126,119,0.7);" title="Андрей Долженко" src="https://pp.userapi.com/c841129/v841129878/3128f/YSoTmTuI51c.jpg?ava=1" onclick="ChangePeer()" alt="Андрей Долженко" class="sc-header--close-button-2">
+            <img style=" background:  rgba(14,126,119,0.7);" title="Евгения Удальцова" src="/img/stylist1.jpg" onclick="ChangePeer()" alt="Евгения Удальцова" class="sc-header--close-button-2">
             @foreach(\App\User::all() as $user)
 
-              <img title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}" onclick="ChangePeer()" alt="pic"  />
+              <img title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}" onclick="ChangePeer()" alt="{{$user->name.' '.$user->second_name}}"  />
 
             @endforeach
 
