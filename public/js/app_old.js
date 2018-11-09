@@ -41484,7 +41484,11 @@ var PusherConnector = function (_Connector) {
     createClass(PusherConnector, [{
         key: 'connect',
         value: function connect() {
-            this.pusher = new Pusher(this.options.key, this.options);
+            if (typeof this.options.client !== 'undefined') {
+                this.pusher = this.options.client;
+            } else {
+                this.pusher = new Pusher(this.options.key, this.options);
+            }
         }
     }, {
         key: 'listen',
@@ -41573,7 +41577,7 @@ var SocketIoConnector = function (_Connector) {
             if (typeof io !== 'undefined') {
                 return io;
             }
-            if (this.options.client !== 'undefined') {
+            if (typeof this.options.client !== 'undefined') {
                 return this.options.client;
             }
             throw new Error('Socket.io client not found. Should be globally available or passed via options.client');

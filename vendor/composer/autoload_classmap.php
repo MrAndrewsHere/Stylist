@@ -58,6 +58,7 @@ return array(
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'Carbon\\Laravel\\ServiceProvider' => $vendorDir . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
+    'ChangeTypeOfMessageField' => $baseDir . '/database/migrations/2018_11_08_231952_change__type__of__message__field.php',
     'ClientService' => $baseDir . '/database/old_migration/2018_04_01_232802_client_service.php',
     'CreateClientsTable' => $baseDir . '/database/migrations/2018_03_17_123120_create_clients_table.php',
     'CreateFilesTable' => $baseDir . '/database/migrations/2018_05_12_174320_create_files_table.php',

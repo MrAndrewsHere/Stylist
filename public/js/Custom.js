@@ -1,6 +1,10 @@
 $(document).ready(() => {
   var $val = "g";
+    $('.sc-message-list').scrollTop(1000000);
+    $('.sc-message-list').bind("DOMSubtreeModified",function(){
 
+        $('.sc-message-list').scrollTop(1000000);
+    });
 
   // заказ услуг
   $('.accept_by_client').on('submit', function (e) {
@@ -10,7 +14,6 @@ $(document).ready(() => {
       url: '/ordered',
       data: $(this).serialize(),
       success(result) {
-          e.target.parentNode.parentNode.style.display = 'none';
         $('.message-success').text(result);
         $('.message-success').css('display', 'block');
         setTimeout(() => {
@@ -50,27 +53,7 @@ $(document).ready(() => {
         });
     });
 
-  // что тут
-  $('.add_service_to_client').on('submit', function (e) {
-    e.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: '/add_service_to_client',
-      data: $(this).serialize(),
-        success(result) {
-            $('.message-success').text(result);
-            $('.message-success').css('display', 'block');
-            setTimeout(() => {
-                $('.message-success').css('display', 'none');
-                $('.message-success').text('');
-            }, 3000);
-        },
-        error(result) {
-            $('.message-error').text(result);
-            $('.message-error').css('display', 'block');
-        },
-    });
-  });
+
 
   // удаление дипломов из настроек стилиста
   $('.diplom_delete').on('submit', function (e) {

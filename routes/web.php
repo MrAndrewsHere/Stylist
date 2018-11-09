@@ -88,7 +88,7 @@ Route::get('client_Accepted_orders','ClientController@Accepted_orders');
 Route::get('client_Complited_Orders','ClientController@Complited_Orders');
 Route::get('client_Canceled_Orders','ClientController@Canceled_Orders');
 Route::post('/client_Cancel_Order','ClientController@Cancel_Order');
-
+Route::post('/get_stylists_by_category','ClientController@get_stylists_by_category');
 
 
 // LaruloginController --> Guard: Авторизация через соцсети

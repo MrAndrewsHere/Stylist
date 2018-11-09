@@ -19,9 +19,10 @@ class ChatsController extends Controller
     return view('chat');
   }
 
-  public function fetchMessages()
-  {
-    return Message::with('user')->get();
+  public function fetchMessages(Request $request)
+  { $user = Auth::user();
+
+    return Message::with('user')->where('peer_id',$request->input('peer_id'))->where('user_id',$user->id)->orWhere('peer_id',$user->id)->where('user_id',$request->input('peer_id'))->get();
   }
 
   public function sendMessage(Request $request)
@@ -29,8 +30,10 @@ class ChatsController extends Controller
     $user = Auth::user();
 
     $message = $user->messages()->create([
-        'message' => $request->input('message'),
-        'peer_id' => '1',
+      'message' => $request->input('message'),
+      'host_id' => $user->id,
+      'peer_id' => $request->input('peer_id'),
+
     ]);
 
     broadcast(new MessageSent($user, $message))->toOthers();
