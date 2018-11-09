@@ -1,6 +1,10 @@
 $(document).ready(() => {
   var $val = "g";
+    $('.sc-message-list').scrollTop(1000000);
+    $('.sc-message-list').bind("DOMSubtreeModified",function(){
 
+        $('.sc-message-list').scrollTop(1000000);
+    });
 
   // заказ услуг
   $('.accept_by_client').on('submit', function (e) {

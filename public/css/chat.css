@@ -30,17 +30,21 @@
    overflow-y: scroll;
  }
 .sc-launcher {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   background-position: center;
   background-repeat: no-repeat;
+  background: rgba(14,126,119,0.7);
+
   position: fixed;
   right: 25px;
   bottom: 10px;
   border-radius: 50%;
+  border: 1px solid rgba(95,189,238,0.9);
   box-shadow: none;
   transition: box-shadow 0.2s ease-in-out;
   cursor: pointer;
+  box-shadow: 0 0px 26px 2.5px rgba(14,126,119,0.5);
 }
 
 .sc-launcher:before {
@@ -55,22 +59,22 @@
 
 .sc-launcher .sc-open-icon,
 .sc-launcher .sc-closed-icon {
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
   position: fixed;
-  right: 25px;
-  bottom: 10px;
+  right: 32px;
+  bottom: 15px;
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
 }
 
 .sc-launcher .sc-closed-icon {
   transition: opacity 100ms ease-in-out, transform 100ms ease-in-out;
-  width: 56px;
-  height: 56px;
+  width: 50px;
+  height: 50px;
 }
 
 .sc-launcher .sc-open-icon {
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
   opacity: 0;
 }
@@ -101,9 +105,28 @@
   font-size: 12px;
   font-weight: 500;
 }
+
+.sc-new-messsages-count-user {
+
+  top: -3px;
+  left: 41px;
+
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  background: #ff4646;
+  color: white;
+  text-align: center;
+  margin: auto;
+  font-size: 12px;
+  font-weight: 500;
+}
 .sc-chat-window {
-  width:30%;
-  height:60%;
+
+  width:32%;
+  height:55%;
   max-height: 590px;
   position: fixed;
   right: 25px;
@@ -160,7 +183,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   background-size: 100%;
-  padding: 4%;
+
 
   box-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
@@ -182,9 +205,18 @@
   border-bottom-right-radius: 10px;
   transition: background-color .2s ease,box-shadow .2s ease;
 }
-.left clearfix li{
-  max-width: 90%;
-  padding-top: 2px;
+.left{
+
+  padding-top: 15px;
+
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,.2);
+
+}
+.chat-body
+{
+  padding-left: 7px;
+  padding-right: 5px;
+  padding-bottom: 3px;
 }
 .sc-user-input--text {
   width: 80%;
@@ -240,11 +272,11 @@
 }
 
 .sc-user-input--buttons {
-  width: 100px;
-  position: absolute;
+
+
   right: 30px;
   height: 100%;
-  display: flex;
+
 }
 
 .sc-user-input--button:first-of-type {
@@ -254,7 +286,7 @@
 .sc-user-input--button {
   width: 30px;
   height: 55px;
-  margin-left: 2px;
+
   margin-right: 2px;
   display: flex;
   flex-direction: column;
@@ -391,11 +423,13 @@
 
 
 .sc-header--close-button-2 {
-  width: 55px;
-  align-self: right;
-  height: 45px;
-padding-left: 4px;
-  padding-right: 1px;
+  width: 57px;
+  align-self: center;
+  height: 47px;
+padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   cursor: pointer;
   border-radius: 5px;
   box-sizing: border-box;
@@ -403,7 +437,7 @@ padding-left: 4px;
 }
 
 .sc-header--close-button-2:hover {
-  box-shadow: 0px 2px 5px rgba(0.2, 0.2, 0.5, .1);
+  box-shadow: 0px 2px 5px rgba(1, 1, 1, 0.7);
 }
 
 .sc-header--close-button-2 img {
@@ -412,6 +446,7 @@ padding-left: 4px;
   height: 100%;
 
   box-sizing: border-box;
+
 }
 
 @media (max-width: 450px) {
