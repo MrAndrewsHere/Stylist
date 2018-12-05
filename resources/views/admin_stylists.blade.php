@@ -47,9 +47,7 @@
             </form>
 
 
-
             <h2 class="title-second"></h2>
-
 
 
 
@@ -73,6 +71,11 @@
 
 
             </div>
+
+            <h2 class="title-second"> </h2>
+            <h1 class="section__title">Услуги стилсита</h1>
+            <div class="ask-question__quests" ></div>
+
             <h2 class="title-second"> </h2>
             <h1 class="section__title">Заказы стилиста</h1>
             <div class="container-home" style="max-width: 100%">

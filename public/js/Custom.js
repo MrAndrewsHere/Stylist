@@ -10,6 +10,38 @@ $(document).ready(() => {
 
 
     });
+    $('.AddService_To_Stylist').on('submit', function (e) {
+        e.preventDefault();
+
+
+
+        $.ajax({
+            type: 'POST',
+            url: '/AddService_To_Stylist',
+            data: $(this).serialize(),
+            success() {
+
+            },
+            error() {
+
+            },
+        });
+
+        if ($(this).hasClass('red'))
+        {
+
+            $(this).children('.btn--action-small').css('background-color','darkred');
+            $(this).children('.btn--action-small').text('Удалить');
+            $(this).removeClass('red');
+        }
+        else
+        {
+            $(this).children('.btn--action-small').css('background-color','#0e7e77');
+            $(this).children('.btn--action-small').text('Добавить');
+            $(this).addClass('red');
+        }
+    });
+
 
   // заказ услуг
   $('.accept_by_client').on('submit', function (e) {
@@ -97,6 +129,19 @@ $(document).ready(() => {
         $('.message-error').css('display', 'block');
       },
     });
+      $.ajax({
+          type: 'POST',
+          url: '/admin_stylist_services',
+          data: $(this).serialize(),
+          success(result) {
+              $('.ask-question__quests').html(result);
+              // $('.orders-list-links').after(result);
+          },
+          error() {
+              $('.message-error').css('display', 'block');
+          },
+      });
+
       $.ajax({
           type: 'POST',
           url: '/admin_orders',

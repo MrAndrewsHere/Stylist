@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\file;
+use App\service;
 use App\stylist;
 use App\User;
 use App\Order;
@@ -21,16 +22,32 @@ class StylistController extends Controller
         $this->middleware('stylist');
     }
 
+    public function AddService_To_Stylist(Request $request)
+    {
+        $stylist = Auth::user()->stylist;
+        $service_id = $request->input('service_id');
+        if($stylist->services->contains('id',$service_id))
+        { $stylist->services()->detach(service::find($service_id));
+        return $msg = "Deleted";
+        }
+        $stylist->services()->save(service::find($service_id));
+        return $msg = "Added";
+
+
+    }
+
     public function lk_stylist()
     {
 
         try {
             $files = Auth::user()->stylist->files;
+            $Services = service::all();
+
         } catch (\ErrorException $error) {
 
         }
 
-        return view('stylist.lk-stylist', compact('files'));
+        return view('stylist.lk-stylist', compact('files'),compact('Services'));
     }
 
 

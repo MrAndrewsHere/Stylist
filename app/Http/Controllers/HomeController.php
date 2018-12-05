@@ -52,7 +52,19 @@ class HomeController extends Controller
     {
         return view('portfolio');
     }
+ public function admin_stylist_services(Request $request)
+ {
+     $stylist = Stylist::find($request->input('id'));
 
+     if ($stylist !== null) {
+         $services = $stylist->services;
+         return view('admin.stylist_services', compact('services'));
+     }
+     else
+           return $error = 'Ошибка, перезагрузите страницу';
+
+
+ }
     public function admin()
     {
         $stylists = Stylist::where('Confirmed','0')->where('Send_Confirm', '1')->get();

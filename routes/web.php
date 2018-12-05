@@ -55,7 +55,7 @@ Route::post('/admin_orders', 'HomeController@admin_orders'); // Ajax подгр�
 Route::post('/save_portfolio', 'HomeController@save_portfolio'); // Сохраняет портфолио стилист ( перенести StylistController)
 Route::post('/show_stylist_profile','HomeController@show_stylist_profile'); // Ajax
 Route::post('/accept_stylist','HomeController@accept_stylist'); // Ajax Назначение категории или отклонение стилиста админом
-
+Route::post('/admin_stylist_services', 'HomeController@admin_stylist_services');
 
 
 // StylistController --> Guard: 'auth, stylist'
@@ -72,6 +72,7 @@ Route::get('/stylist_Canceled_Orders','StylistController@Canceled_Orders');
 Route::post('/Accept_Order','StylistController@Accept_Order');
 Route::post('/stylist_Cancel_Order','StylistController@Cancel_Order');
 Route::post('/Complite_Order','StylistController@Complite_Order');
+Route::post('/AddService_To_Stylist','StylistController@AddService_To_Stylist');
 
 
 
