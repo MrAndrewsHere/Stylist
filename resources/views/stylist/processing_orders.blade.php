@@ -1,4 +1,4 @@
-@if (isset($orders) && $orders->count() != 0)
+    @if (isset($orders) && $orders->count() != 0)
     <ul class="orders__title">
         <li class="orders__id">№ заказа</li>
         <li class="orders__service orders__service--big">Клиент/услуга</li>
@@ -24,10 +24,10 @@
                 <span>Выполняется</span>
             </li>
             <li class="orders__buy">
-                <form class="complite_order">
+                <form class="send_new_message">
                     {{csrf_field()}}
-                    <input type="hidden" name="order_id" value="{{$order->id}}">
-                    <button type="submit" class="btn btn--action btn--action-buy">
+                    <input type="hidden" name="peer_id" value="{{$order->client->id}}">
+                    <button type="submit" onclick="change({{$order->client->user->id}})"  class="btn btn--action btn--action-buy">
                        Чат
                     </button>
                 </form>
@@ -63,6 +63,19 @@
     </div>
 @endif
 <script>
+
+ function change(numb)
+ {
+     $('#peer_id').attr('value',numb);
+ }
+    $('.send_new_message').on('submit', function (e) {
+
+        e.preventDefault();
+        $('.modal-message').addClass('modal-auth-show');
+
+
+
+    });
     $('.complite_order').on('submit', function (e) {
         e.preventDefault();
         $.ajax({

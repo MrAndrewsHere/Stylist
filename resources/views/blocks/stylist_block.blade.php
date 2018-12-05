@@ -43,10 +43,23 @@
                 @if(isset($stylist->category))
                     {{$stylist->category->name}}
                @else
-                {
-                ''
-                    }
+
                     @endif
+
+            </div>
+
+            <div class="card__description__text">
+        <span class="card__description__title">
+
+        </span>
+
+
+                    <form class="send_new_message">
+                        {{csrf_field()}}
+                        <button type="submit" onclick="change({{$stylist->user->id}})"  class="btn btn--action btn--action-buy">
+                            Чат
+                        </button>
+                    </form>
 
             </div>
         </div>
@@ -113,6 +126,19 @@
                 $('.message-error').css('display', 'block');
             },
         });
+    });
+
+    function change(numb)
+    {
+        $('#peer_id').attr('value',numb);
+    }
+    $('.send_new_message').on('submit', function (e) {
+
+        e.preventDefault();
+        $('.modal-message').addClass('modal-auth-show');
+
+
+
     });
 </script>
 

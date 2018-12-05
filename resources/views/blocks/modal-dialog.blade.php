@@ -7,7 +7,7 @@
     <div class="lk-stylist__education lk-stylist__education--filled">
     <img class="lk-stylist__education-document" src="" >
     </div>
-    <p class="modal__text">Выберите подходящие для Вас дату и стилиста</p>
+    <p class="modal__text">Выберите подходящие для Вас стилиста и дату</p>
 
     <form class="form_add_service_to_client" action="{{ url('/login') }}" role="form" method="POST">
       {{ csrf_field() }}

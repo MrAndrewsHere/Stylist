@@ -1,5 +1,5 @@
 
-@extends('layouts.layout')
+@extends('layouts.layoutSlick')
 
 @section('title','Наши стилисты')
 
@@ -59,8 +59,8 @@
         <div class="slide">
           <div class="slide__wrapper">
             <div class="slide__photos">
-              <div class="photo__first"><img src="{{$portfolio->picture_before}}" alt="фотография клиента до"/></div>
-              <div class="photo__second"><img src="{{$portfolio->picture_after}}" alt="фотография клиента после"/></div>
+              <div class="photo__first"><img style="width: 300px; height: 350px" src="{{$portfolio->picture_before}}" alt="фотография клиента до"/></div>
+              <div class="photo__second"><img  style="width: 300px; height: 350px"  src="{{$portfolio->picture_after}}" alt="фотография клиента после"/></div>
             </div>
 
             <div class="comment">

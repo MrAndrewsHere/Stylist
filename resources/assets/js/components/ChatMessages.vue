@@ -1,5 +1,5 @@
 <template>
-    <ul class="chat">
+    <ul class="sc-message-list" id = "panel_body_id">
         <li class="left clearfix" v-for="message in messages">
             <div class="chat-body clearfix">
                 <div class="header">
@@ -7,7 +7,7 @@
                         {{ message.user.name }}
                     </strong>
                 </div>
-                <p>
+                <p style="  word-wrap: break-word;">
                     {{ message.message }}
                 </p>
             </div>

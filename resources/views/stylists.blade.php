@@ -49,13 +49,13 @@
                 </div>
                 <ul class="card__photo-list">
                   <li class="card__photo-list__block">
-                    <img class="card__photo-list__photo" src="img/client1.jpg" alt="фотография клиента"/>
+                    {{--<img class="card__photo-list__photo" src="img/client1.jpg" alt="фотография клиента"/>--}}
                   </li>
                   <li class="card__photo-list__block">
-                    <img class="card__photo-list__photo" src="img/client2.jpg" alt="фотография клиента"/>
+                    {{--<img class="card__photo-list__photo" src="img/client2.jpg" alt="фотография клиента"/>--}}
                   </li>
                   <li class="card__photo-list__block">
-                    <img class="card__photo-list__photo" src="img/client3.jpg" alt="фотография клиента"/>
+                    {{--<img class="card__photo-list__photo" src="img/client3.jpg" alt="фотография клиента"/>--}}
                   </li>
                 </ul>
                 <a href="{{ url('/stylist_profile', $stylist->id) }}" class="btn btn--action btn--action-small">
