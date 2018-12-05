@@ -64,6 +64,7 @@ class LaruloginController extends Controller
         {
             Auth::loginUsingId($check->user_id, true);
             return Redirect::to('/');
+
         }
         $rules = array(
             'network'   => 'required|max:255',
