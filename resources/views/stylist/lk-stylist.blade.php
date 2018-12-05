@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutSlick')
 
 @section('title','Личный кабинет')
 

@@ -7,9 +7,12 @@
 
         <h1 class="section__title">Заказы</h1>
         <div class="container">
-      <form class="form_filter">
-            <ul class="stylists__sort">
-                <li class="stylists__sort-category">
+      <form class="form_filter" style="width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;">
+            <ul class="stylists__sort" >
+                <li class="stylists__sort-category" style="min-width: 200px;   max-width: 350px">
                     <input id="filter-stylists-id" class="select" name="category" placeholder="№ Заказа">
                 </li>
 

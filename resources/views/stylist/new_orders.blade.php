@@ -3,7 +3,7 @@
       <li class="orders__id">№ заказа</li>
     <li class="orders__service orders__service--big">Клиент/услуга</li>
     <li class="orders__price orders__price--big">Цена</li>
-    <li class="orders__status">Статус</li>
+    <li class="orders__status">Чат</li>
     <li class="orders__buy"></li>
     <li class="orders__delete"></li>
   </ul>

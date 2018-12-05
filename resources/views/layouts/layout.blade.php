@@ -29,99 +29,6 @@
     <div class="container-communication">
       <div class="chat">
 
-        {{--<div class="panel-heading">Chats</div>--}}
-        {{--<div class="right-sidebar">--}}
-        {{--<button class="btn btn-primary btn-sm" id="btn-chat"  @click='changePeer("1")'>--}}
-        {{--1--}}
-        {{--</button>--}}
-        {{--<button class="btn btn-primary btn-sm" id="btn-chat" @click='changePeer("2")'>--}}
-        {{--2--}}
-        {{--</button>--}}
-        {{--<button class="btn btn-primary btn-sm" id="btn-chat"  @click='changePeer("3")'>--}}
-        {{--3--}}
-        {{--</button>--}}
-        {{--</div>--}}
-        {{--<div id = "panel_body_id" class="panel-body">--}}
-        {{--<ul class="chat-v">--}}
-        {{--<li class="left clearfix">--}}
-        {{--<div class="chat-body clearfix">--}}
-        {{--<div class="header">--}}
-        {{--<strong class="primary-font">--}}
-        {{--Имя--}}
-        {{--</strong>--}}
-        {{--</div>--}}
-        {{--<p>--}}
-        {{--Сообщение--}}
-        {{--</p>--}}
-        {{--</div>--}}
-        {{--</li>--}}
-        {{--<li class="left clearfix">--}}
-        {{--<div class="chat-body clearfix">--}}
-        {{--<div class="header">--}}
-        {{--<strong class="primary-font">--}}
-        {{--Имя--}}
-        {{--</strong>--}}
-        {{--</div>--}}
-        {{--<p>--}}
-        {{--Сообщение--}}
-        {{--</p>--}}
-        {{--</div>--}}
-        {{--</li>--}}
-        {{--<li class="left clearfix">--}}
-        {{--<div class="chat-body clearfix">--}}
-        {{--<div class="header">--}}
-        {{--<strong class="primary-font">--}}
-        {{--Имя--}}
-        {{--</strong>--}}
-        {{--</div>--}}
-        {{--<p>--}}
-        {{--Сообщение--}}
-        {{--</p>--}}
-        {{--</div>--}}
-        {{--</li>--}}
-        {{--<li class="left clearfix">--}}
-        {{--<div class="chat-body clearfix">--}}
-        {{--<div class="header">--}}
-        {{--<strong class="primary-font">--}}
-        {{--Имя--}}
-        {{--</strong>--}}
-        {{--</div>--}}
-        {{--<p>--}}
-        {{--Сообщение--}}
-        {{--</p>--}}
-        {{--</div>--}}
-        {{--</li>--}}
-        {{--<li class="left clearfix">--}}
-        {{--<div class="chat-body clearfix">--}}
-        {{--<div class="header">--}}
-        {{--<strong class="primary-font">--}}
-        {{--Имя--}}
-        {{--</strong>--}}
-        {{--</div>--}}
-        {{--<p>--}}
-        {{--Сообщение--}}
-        {{--</p>--}}
-        {{--</div>--}}
-        {{--</li>--}}
-        {{--</ul>--}}
-        {{--</div>--}}
-        {{--<div class="panel-footer"  >--}}
-        {{--<div class="input-group">--}}
-        {{--<input id="btn-input" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." v-model="newMessage" @keyup.enter="sendMessage">--}}
-
-        {{--<span class="input-group-btn">--}}
-        {{--<button class="btn btn-primary btn-sm" id="btn-chat" @click="sendMessage">--}}
-        {{--Send--}}
-        {{--</button>--}}
-        {{--</span>--}}
-        {{--<span class="input-group-btn">--}}
-        {{--<button class="btn btn-primary btn-sm" >--}}
-        {{--Send--}}
-        {{--</button>--}}
-        {{--</span>--}}
-        {{--</div>--}}
-        {{--</div>--}}
-
 
         <div class="sc-launcher" onclick="OpenChat()" >
           <div class="sc-new-messsages-count" >
@@ -135,9 +42,9 @@
           <div class="sc-header">
 
             <div class="sc-header--title">
-              @foreach(\App\User::all() as $user)
+              @foreach(\Illuminate\Support\Facades\Auth::user()->all() as $user)
 
-                <img id="btn-chat"  @click='changePeer("{{$user->id}}")' title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}"  alt="pic"  />
+                    <img id="btn-chat"  @click='changePeer("{{$user->id}}")' title="{{$user->name.' '.$user->second_name}}" class="sc-header--close-button-2" src="{{$user->avatar}}"  alt="pic"  />
 
               @endforeach
 
@@ -252,6 +159,7 @@
 @include('blocks.modal-registration')
 @include('blocks.modal-success')
 @include('blocks.modal-dialog')
+@include('blocks.sendNewMessage')
 <form id="goto" action="{{ url('/postUlogin') }}" role="form" method="POST">
   {{ csrf_field() }}
 

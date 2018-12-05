@@ -1,5 +1,5 @@
 
-@extends('layouts.layout')
+@extends('layouts.layoutSlick')
 
 @section('title','Настройки')
 

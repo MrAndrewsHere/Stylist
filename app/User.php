@@ -49,6 +49,10 @@ class User extends Authenticatable
     return $this->hasMany(message::class);
   }
 
+  public function peers()
+  {
+    return $this->hasMany(peer::class)->orderBy('updated_at');
+  }
 
 
 

@@ -6,6 +6,11 @@ $(document).ready(() => {
         $('.sc-message-list').scrollTop(1000000);
     });
 
+    $('.send_new_message').on('submit', function (e) {
+
+
+    });
+
   // заказ услуг
   $('.accept_by_client').on('submit', function (e) {
     e.preventDefault();

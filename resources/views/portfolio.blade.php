@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('layouts.layoutSlick')
 
 @section('title','Портфолио')
 
@@ -13,11 +13,11 @@
         <form class="portfolio-item portfolio-item--editing portfolio__margin" method="POST" action="/portfolio"
               enctype="multipart/form-data">
           {{csrf_field()}}
-          <div class="portfolio-item__photos">
-            <div class="slide__photos">
+          <div class="portfolio-item__photos" >
+            <div class="slide__photos" >
               <label class="label__photo">Фото до
                 <input class="input__photo" id="photo-before" name="before" type="file" required/>
-                <span class="form__output">
+                <span class="form__output" style="max-width: 230px">
                 
                 </span>
               </label>
