@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 Auth::routes(); //Группа роутов для стандартной авторизации
 
-
+Route::post('filter_orders','AdminController@filter_orders');
+Route::get('get_formachka','AdminController@get_formachka');
 
 // WelcomeController --> Guard: 'Guest'
 
@@ -73,6 +74,8 @@ Route::post('/Accept_Order','StylistController@Accept_Order');
 Route::post('/stylist_Cancel_Order','StylistController@Cancel_Order');
 Route::post('/Complite_Order','StylistController@Complite_Order');
 Route::post('/AddService_To_Stylist','StylistController@AddService_To_Stylist');
+Route::post('/Pay_Order','StylistController@Pay_Order');
+
 
 
 

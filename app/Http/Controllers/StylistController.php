@@ -135,7 +135,7 @@ class StylistController extends Controller
     {
         try {
             $stylist = Auth::user()->stylist;
-            $orders = $stylist->orders->where('ordered_by_client', '1');
+            $orders = $stylist->orders->where('ordered_by_client', '1')->sortByDesc('id');
             return view('stylist.new_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -147,7 +147,7 @@ class StylistController extends Controller
     protected function Processing_orders()
     {
         try {
-            $orders = Auth::user()->stylist->orders->where('confirmed_by_stylist', '1');
+            $orders = Auth::user()->stylist->orders->where('confirmed_by_stylist', '1')->sortByDesc('id');
             return view('stylist.processing_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -160,7 +160,7 @@ class StylistController extends Controller
     protected function Complited_Orders()
     {
         try {
-            $orders = Auth::user()->stylist->orders->where('complited', '1');
+            $orders = Auth::user()->stylist->orders->where('complited', '1')->sortByDesc('id');
             return view('stylist.complited_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -226,6 +226,20 @@ class StylistController extends Controller
             return $exception->getMessage();
         }
 
+    }
+
+    public function Pay_Order(Request $request)
+    {
+        try{
+            $order = Order::find($request->input('order_id'));
+            $order->paid = 1;
+            $order->save();
+            return 'Запрос отправлен';
+        }
+        catch (\Exception $exception)
+        {
+            return 'Серверная ошибка';
+        }
     }
 
 

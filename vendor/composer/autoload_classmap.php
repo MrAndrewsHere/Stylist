@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddColoumsToOrder' => $baseDir . '/database/migrations/2019_01_01_204033_add_coloums_to_order.php',
+    'AddColoumsToStylists' => $baseDir . '/database/migrations/2019_01_01_204934_add_coloums_to_stylists.php',
     'AddStatucIsAcceptedStilist' => $baseDir . '/database/migrations/2018_09_25_160609_add_statuc__is_accepted_stilist.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\MessageSent' => $baseDir . '/app/Events/MessageSent.php',
@@ -43,6 +45,7 @@ return array(
     'App\\client' => $baseDir . '/app/client.php',
     'App\\file' => $baseDir . '/app/file.php',
     'App\\message' => $baseDir . '/app/message.php',
+    'App\\peer' => $baseDir . '/app/peer.php',
     'App\\portfolio' => $baseDir . '/app/portfolio.php',
     'App\\role' => $baseDir . '/app/role.php',
     'App\\service' => $baseDir . '/app/service.php',
@@ -58,7 +61,6 @@ return array(
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'Carbon\\Laravel\\ServiceProvider' => $vendorDir . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
-    'ChangeTypeOfMessageField' => $baseDir . '/database/migrations/2018_11_08_231952_change__type__of__message__field.php',
     'ClientService' => $baseDir . '/database/old_migration/2018_04_01_232802_client_service.php',
     'CreateClientsTable' => $baseDir . '/database/migrations/2018_03_17_123120_create_clients_table.php',
     'CreateFilesTable' => $baseDir . '/database/migrations/2018_05_12_174320_create_files_table.php',
@@ -66,6 +68,7 @@ return array(
     'CreateMessagesTable' => $baseDir . '/database/migrations/2018_04_25_202300_create_messages_table.php',
     'CreateOrdersTable' => $baseDir . '/database/old_migration/2018_03_26_030428_create_orders_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePeersTable' => $baseDir . '/database/migrations/2018_11_10_011123_create_peers_table.php',
     'CreatePortfoliosTable' => $baseDir . '/database/migrations/2018_03_20_014002_create_portfolios_table.php',
     'CreateServicesTable' => $baseDir . '/database/migrations/2018_03_17_123143_create_services_table.php',
     'CreateTableOrders' => $baseDir . '/database/migrations/2018_04_02_014406_create_table_orders.php',
@@ -2361,7 +2364,7 @@ return array(
     'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => $vendorDir . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
     'PHPUnit\\Util\\TextTestListRenderer' => $vendorDir . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
     'PHPUnit\\Util\\Type' => $vendorDir . '/phpunit/phpunit/src/Util/Type.php',
-    'PHPUnit\\Util\\Xml' => $vendorDir . '/phpunit/phpunit/src/Util/Xml.php',
+    'PHPUnit\\Util\\Xml' => $vendorDir . '/phpunit/phpunit/src/Util/XML.php',
     'PHPUnit\\Util\\XmlTestListRenderer' => $vendorDir . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
     'PHPUnit_Framework_MockObject_MockObject' => $vendorDir . '/phpunit/phpunit-mock-objects/src/MockObject.php',
     'PHP_Timer' => $vendorDir . '/phpunit/php-timer/src/Timer.php',

@@ -60,12 +60,16 @@ class ClientController extends Controller
     $stylist = $service->stylists->find($request->input('stylist_id'));
 
     if ($stylist !== null && $service !== null) {
-      Order::create([
+     $order =  Order::create([
         'client_id' => Auth::user()->client->id,
         'service_id' => $service->id,
         'stylist_id' => $stylist->id,
-        'price' => $service->priceForStylist($stylist)
+        'price' => $service->priceForStylist($stylist),
+         'commission' => '10',
+         'payment' => '10.0'
       ]);
+     $order->commission($order->stylist->category->default_commission);
+     $order->save();
 
 
       return "Услуга добавлена в мои заказы";

@@ -7,41 +7,140 @@
 
         <h1 class="section__title">Заказы</h1>
         <div class="container">
-      <form class="form_filter" style="width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 10px;">
-            <ul class="stylists__sort" >
-                <li class="stylists__sort-category" style="min-width: 200px;   max-width: 350px">
-                    <input id="filter-stylists-id" class="select" name="category" placeholder="№ Заказа">
-                </li>
+            <form class="needs-validation"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
+                {{csrf_field()}}
+                <div class="form__output" style="text-align: center">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">№ заказа</label>
+                        <input type="text" class="form__input"  name="order_id" id="validationCustom01" placeholder="№ заказа">
 
-                <li class="stylists__sort-category">
-                    <input id="filter-stylists-cities" class="select" placeholder="...">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Стилист</label>
+                        <select class="form__input" name="stylist">
+                            <option value="">Все</option>
+                            @foreach(\App\stylist::all() as $stylist)
+                                <option value="{{$stylist->id}}">{{$stylist->user->name." ".$stylist->user->second_name}}</option>
+                            @endforeach
+                        </select>
 
-                </li>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustomUsername">Клиент</label>
+                        <div class="input-group">
+                            <select class="form__input" name="client">
+                                <option value="">Все</option>
+                                @foreach(\App\client::all() as $client)
+                                    <option value="{{$client->id}}"> {{$client->user->name." ".$client->user->second_name}}</option>
+                                @endforeach
+                            </select>
 
-                <li class="stylists__sort-category">
-                    <input id="filter-stylists-second_name" class="select" placeholder="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form__output" style="text-align: center">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom03">Статус</label>
+                        <select class="form__input" name="status">
+                            <option value="0">Все</option>
+                            <option value="1">Выполняемые</option>
+                            <option value="2">Завершенные</option>
+                            <option value="3">Без оплаты</option>
+                            <option value="4">Оплаченные</option>
+                            <option value="5">Отменённые</option>
+                        </select>
 
-                </li>
-                <li class="stylists__sort-category">
-                    <input id="filter-stylists-second_name2" class="select" placeholder="...">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom04">Услуга</label>
+                        <select class="form__input" name="service">
+                            <option value="0">Все</option>
+                            @foreach(\App\service::all() as $service)
+                            <option value="{{$service->id}}">{{$service->name}}</option>
+                            @endforeach
+                           </select>
 
-                </li>
-                <li class="stylists__sort-category">
-                    <input id="filter-stylists-second_name2" class="select" placeholder="...">
+                    </div>
 
-                </li>
-                <li class="stylists__sort-category">
-                    <button class="btn btn--action btn--action-small" type="submit">Найти</button>
-                </li>
+                   </div>
+
+                <div class="form__output" style="text-align: center">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom05">С</label>
+                        <input type="date" class="form__input" name="beginDate" id="validationCustom05" placeholder="Дата" >
+
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom05">По</label>
+                        <input type="date" class="form__input" name="EndDate" id="validationCustom06" placeholder="Дата" >
+
+                    </div>
+
+                </div>
+                <div style="text-align: center">
+                <button class="btn btn--action btn--action" style="margin: auto" type="submit">Найти</button>
+                </div>
+            </form>
+
+            <ul class="orders__title">
+                <li class="orders__id">№ заказа</li>
+                <li class="orders__status">Клиент/Стилист</li>
+                <li class="orders__service orders__service--big">Услуга/Цена (% / ₽)</li>
+                <li class="orders__status">Статус</li>
+                <li class="orders__delete"></li>
+                <li class="orders__delete"></li>
+                <li class="orders__delete"></li>
+
             </ul>
+            <div class="orders_table">
 
-      </form>
+            </div>
 
         </div>
     </section>
     <div class="message-success">Cообщение успешно отправлено</div>
     <div class="message-error">
+        <style>
+            .form__output
+            {
+                display: flex;
+            }
+
+
+            .col-md-4
+            {
+                width: 30%;
+                padding: 5px;
+                margin: auto;
+
+            }
+            .col-md-6
+            { margin: auto;
+                padding: 5px;
+                width: 50%;
+            }
+            .form__input
+            {
+
+            }
+            </style>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+        <script>
+            $('.needs-validation').on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type:'post',
+                    url:'/filter_orders',
+                    data: $(this).serialize(),
+                    success(result){
+                        $('.orders_table').html(result);
+                    },
+                    error(result){alert(result)},
+
+                });
+            });
+
+        </script>
+
 @endsection

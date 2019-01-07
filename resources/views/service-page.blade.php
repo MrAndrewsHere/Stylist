@@ -71,7 +71,7 @@
                     {{csrf_field()}}
                     <input type="hidden"  name="category_id" value="{{$categorystylist->id}}">
                     <input type="hidden" class = "service_id_help" name="service_id" value="{{$service->id}}">
-                    <button class="btn btn--action btn--action-super-small">Выбрать</button>
+                    <button class="btn btn--action btn--action-buy">Выбрать</button>
                   </form>
                     @endif
                 @else

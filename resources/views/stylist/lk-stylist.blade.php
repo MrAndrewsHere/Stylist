@@ -37,7 +37,12 @@
                 </span>
                 {{Auth::user()->stylist->about}}
               </div>
-
+              <div class="card__description__text">
+                <span class="card__description__title">
+                  Город:
+                </span>
+                {{Auth::user()->city}}
+              </div>
               <div class="card__description__text">
                 <span class="card__description__title">
                   Категория:
@@ -53,13 +58,16 @@
                 @endif
 
               </div>
-
               <div class="card__description__text">
                 <span class="card__description__title">
-                  Город:
+                  Комиссия
                 </span>
-                {{Auth::user()->city}}
+                <span class="card__description__text card__description__text--price" style="color: #8b0b3d">
+                    {{Auth::user()->stylist->category->default_commission." %"}}
+                  </span>
+
               </div>
+
             </div>
           @else
             <div class="card__description">

@@ -399,6 +399,8 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
     );
 
     public static $classMap = array (
+        'AddColoumsToOrder' => __DIR__ . '/../..' . '/database/migrations/2019_01_01_204033_add_coloums_to_order.php',
+        'AddColoumsToStylists' => __DIR__ . '/../..' . '/database/migrations/2019_01_01_204934_add_coloums_to_stylists.php',
         'AddStatucIsAcceptedStilist' => __DIR__ . '/../..' . '/database/migrations/2018_09_25_160609_add_statuc__is_accepted_stilist.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\MessageSent' => __DIR__ . '/../..' . '/app/Events/MessageSent.php',
@@ -436,6 +438,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'App\\client' => __DIR__ . '/../..' . '/app/client.php',
         'App\\file' => __DIR__ . '/../..' . '/app/file.php',
         'App\\message' => __DIR__ . '/../..' . '/app/message.php',
+        'App\\peer' => __DIR__ . '/../..' . '/app/peer.php',
         'App\\portfolio' => __DIR__ . '/../..' . '/app/portfolio.php',
         'App\\role' => __DIR__ . '/../..' . '/app/role.php',
         'App\\service' => __DIR__ . '/../..' . '/app/service.php',
@@ -451,7 +454,6 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
-        'ChangeTypeOfMessageField' => __DIR__ . '/../..' . '/database/migrations/2018_11_08_231952_change__type__of__message__field.php',
         'ClientService' => __DIR__ . '/../..' . '/database/old_migration/2018_04_01_232802_client_service.php',
         'CreateClientsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_17_123120_create_clients_table.php',
         'CreateFilesTable' => __DIR__ . '/../..' . '/database/migrations/2018_05_12_174320_create_files_table.php',
@@ -459,6 +461,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2018_04_25_202300_create_messages_table.php',
         'CreateOrdersTable' => __DIR__ . '/../..' . '/database/old_migration/2018_03_26_030428_create_orders_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePeersTable' => __DIR__ . '/../..' . '/database/migrations/2018_11_10_011123_create_peers_table.php',
         'CreatePortfoliosTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_20_014002_create_portfolios_table.php',
         'CreateServicesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_17_123143_create_services_table.php',
         'CreateTableOrders' => __DIR__ . '/../..' . '/database/migrations/2018_04_02_014406_create_table_orders.php',
@@ -2754,7 +2757,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
         'PHPUnit\\Util\\TextTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
-        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
+        'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XML.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
         'PHPUnit_Framework_MockObject_MockObject' => __DIR__ . '/..' . '/phpunit/phpunit-mock-objects/src/MockObject.php',
         'PHP_Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',

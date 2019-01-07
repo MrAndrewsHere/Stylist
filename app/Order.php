@@ -7,14 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
 
-  protected $fillable = ['client_id', 'service_id', 'stylist_id', 'price'];
+  protected $fillable = ['client_id', 'service_id', 'stylist_id', 'price', 'commission', 'payment'];
   public $timestamps = false;
+
 
   public function client()
   {
     return $this->belongsTo('App\client');
   }
 
+
+  public function commission($value)
+  {
+      if(is_int($value) ) {
+          $this->commission = $value;
+          $this->payment = ($this->price*$value/100);
+          return $this->save();
+      }
+      return false;
+  }
 
   public function stylist()
   {
@@ -25,6 +36,7 @@ class Order extends Model
   {
     return $this->belongsTo('App\service');
   }
+
 
 
   protected function Accept_Order(Request $request)

@@ -22,15 +22,8 @@
             </li>
             <li class="orders__status">
                 <span>Выполняется</span>
-            </li>
-            <li class="orders__buy">
-                <form class="send_new_message">
-                    {{csrf_field()}}
-                    <input type="hidden" name="peer_id" value="{{$order->client->id}}">
-                    <button type="submit" onclick="change({{$order->client->user->id}})"  class="btn btn--action btn--action-buy">
-                       Чат
-                    </button>
-                </form>
+                <br>
+                <span>Комиссия: {{$order->payment." ₽"}}</span>
             </li>
             <li class="orders__buy">
                 <form class="complite_order">
@@ -38,6 +31,15 @@
                     <input type="hidden" name="order_id" value="{{$order->id}}">
                     <button type="submit" class="btn btn--action btn--action-buy">
                         Выполнить
+                    </button>
+                </form>
+            </li>
+            <li class="orders__buy">
+                <form class="send_new_message">
+                    {{csrf_field()}}
+                    <input type="hidden" name="peer_id" value="{{$order->client->id}}">
+                    <button type="submit" onclick="change({{$order->client->user->id}})"  class="btn btn--action btn--action-buy">
+                        Чат
                     </button>
                 </form>
             </li>

@@ -219,6 +219,15 @@
         <!-- ЗАВЕРШЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->
 
         <div class="orders">
+          <div style="margin-bottom: 30px" class="lk-stylist__education lk-stylist__education--empty">
+            <div>
+              <span>Реквизиты:</span>
+              <br>
+              <span class="card__description__text card__description__text--price">Visa —  0000 0000 0000 0000  — Админ Админович А.</span>
+              <br>
+              <span class="card__description__text card__description__text--price" style="color: darkred">При оплате укажите № заказа из таблицы</span>
+            </div>
+          </div>
           <div class="my_orders">
 
           </div>

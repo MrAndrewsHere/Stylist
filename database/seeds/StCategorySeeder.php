@@ -15,17 +15,22 @@ class StCategorySeeder extends Seeder
       DB::table('stylistcategories')->insert(
         [ 'id' =>'1',
           'name' => 'VIP стилист',
-          'describe' => 'vip'
+          'describe' => 'vip',
+          'default_commission' => '13.0',
         ]);
+
       DB::table('stylistcategories')->insert(
         ['id' =>'3',
           'name' => 'Начинающий стилист',
-          'describe' => 'beginner'
+          'describe' => 'beginner',
+            'default_commission' => '15.0',
         ]);
+
       DB::table('stylistcategories')->insert(
         [ 'id' =>'2',
           'name' => 'Стилист первой категории',
-          'describe' => 'firstcat'
+          'describe' => 'firstcat',
+            'default_commission' => '10.0',
         ]
       );
     }

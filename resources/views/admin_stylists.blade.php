@@ -9,43 +9,59 @@
 
         <div class="container">
 
-            <form class="form_filter">
-                <ul class="stylists__sort">
-                    <li class="stylists__sort-category">
-                        <input id="filter-stylists-name" class="select" name="category" placeholder="Имя">
-                    </li>
+            <form class="needs-validation"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
+                {{csrf_field()}}
+                <div class="form__output" style="text-align: center">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">Имя</label>
+                        <input type="text" class="form__input"  name="name" id="validationCustom01" placeholder="Имя">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustom02">Фамилия</label>
+                        <input type="text" class="form__input" name="second_name" id="validationCustom02" placeholder="Фамилия">
 
-                    <li class="stylists__sort-category">
-                        <input id="filter-stylists-second_name" class="select" placeholder="Фамилия">
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationCustomUsername">Город</label>
+                        <div class="input-group">
+                            <input type="text" class="form__input" name="City" id="validationCustomUsername" placeholder="Город" aria-describedby="inputGroupPrepend">
 
-                    </li>
-
-                    <li class="stylists__sort-category">
-                        <input id="filter-stylists-city" class="select" placeholder="Город">
-
-                    </li>
-                    <li class="stylists__sort-category">
-                        <input id="filter-stylists-email" class="select" placeholder="Email">
-
-                    </li>
-                    <li class="stylists__sort-category">
-                        <select id="filter-stylists-category" class="select" name="category">
-                            <option value="all">Все категории</option>
-                            @if (isset($stylistcategories))
-                                @foreach($stylistcategories as $category)
-                                    <option value="{{$category->describe}}">{{$category->name}}</option>
-                                @endforeach
-                            @endif
+                        </div>
+                    </div>
+                </div>
+                <div class="form__output" style="text-align: center">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom03">Категория</label>
+                        <select class="form__input" name="status">
+                            <option value="0">Все</option>
+                            <option value="1">Выполняемые</option>
+                            <option value="2">Завершенные</option>
+                            <option value="3">Без оплаты</option>
+                            <option value="4">Оплаченные</option>
+                            <option value="5">Отменённые</option>
                         </select>
 
-                    </li>
-                    <li class="stylists__sort-category">
-                        <button class="btn btn--action btn--action-small" type="submit">Найти</button>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom04">Услуга</label>
+                        <select class="form__input" name="service">
+                            <option value="0">Все</option>
+                            <option value="1">Выполняемые</option>
+                            <option value="2">Завершенные</option>
+                            <option value="3">Без оплаты</option>
+                            <option value="4">Оплаченные</option>
+                            <option value="5">Отменённые</option>
+                        </select>
 
+                    </div>
+
+                </div>
+
+
+                <div style="text-align: center">
+                    <button class="btn btn--action btn--action" style="margin: auto" type="submit">Найти</button>
+                </div>
             </form>
-
 
             <h2 class="title-second"></h2>
 
@@ -73,7 +89,7 @@
             </div>
 
             <h2 class="title-second"> </h2>
-            <h1 class="section__title">Услуги стилсита</h1>
+            <h1 class="section__title">Услуги стилиста</h1>
             <div class="ask-question__quests" ></div>
 
             <h2 class="title-second"> </h2>
@@ -156,3 +172,28 @@
     <div class="message-success">Cообщение успешно отправлено</div>
     <div class="message-error">
 @endsection
+        <style>
+            .form__output
+            {
+                display: flex;
+            }
+
+
+            .col-md-4
+            {
+                width: 30%;
+                padding: 5px;
+                margin: auto;
+
+            }
+            .col-md-6
+            { margin: auto;
+                padding: 5px;
+                width: 50%;
+            }
+            .form__input
+            {
+
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
