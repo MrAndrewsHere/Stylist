@@ -3,16 +3,16 @@
 @section('title','Заказы стилистов')
 
 @section('content')
-    <section class="section section--admin">
+    <section class="section section--admin" >
 
         <h1 class="section__title">Заказы</h1>
-        <div class="container">
+        <div class="container" >
             <form class="needs-validation"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
                 {{csrf_field()}}
                 <div class="form__output" style="text-align: center">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-4 mb-3"  >
                         <label for="validationCustom01">№ заказа</label>
-                        <input type="text" class="form__input"  name="order_id" id="validationCustom01" placeholder="№ заказа">
+                        <input type="text" style="box-shadow: 0 0px 2px 1px rgba(164,0,116,0.5);" class="form__input" name="order_id" id="validationCustom01" placeholder="№ заказа">
 
                     </div>
                     <div class="col-md-4 mb-3">
@@ -43,14 +43,42 @@
                         <label for="validationCustom03">Статус</label>
                         <select class="form__input" name="status">
                             <option value="0">Все</option>
-                            <option value="1">Выполняемые</option>
-                            <option value="2">Завершенные</option>
-                            <option value="3">Без оплаты</option>
-                            <option value="4">Оплаченные</option>
-                            <option value="5">Отменённые</option>
+                            <option value="processing">Выполняемые</option>
+                            <option value="complited">Завершенные</option>
+                            <option value="notpaid">Без оплаты</option>
+                            <option value="paid">Оплаченные</option>
+                            <option value="confirmed_pay">С подтверждением оплаты</option>
+                            <option value="canceled">Отменённые</option>
                         </select>
 
                     </div>
+                    {{--<div class="col-md-6 mb-3" style="">--}}
+                        {{--<label for="validationCustom03">Статус</label>--}}
+                        {{--<div style="display: flex">--}}
+
+                            {{--<div class="row" style="width: 100%">--}}
+
+                                {{--<input type="checkbox" class="form__input">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                            {{--</div>--}}
+                            {{--<div class="row" style="width: 100%">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                            {{--</div>--}}
+                            {{--<div class="row" style="width: 100%">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                                {{--<input type="checkbox" class="form__input">--}}
+                            {{--</div>--}}
+
+
+
+
+                        {{--</div>--}}
+
+                    {{--</div>--}}
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom04">Услуга</label>
                         <select class="form__input" name="service">
@@ -92,7 +120,7 @@
                 <li class="orders__delete"></li>
 
             </ul>
-            <div class="orders_table">
+            <div class="orders_table"   >
 
             </div>
 
@@ -121,6 +149,12 @@
             }
             .form__input
             {
+
+            }
+
+            .container
+            {
+                padding: 1px;
 
             }
             </style>

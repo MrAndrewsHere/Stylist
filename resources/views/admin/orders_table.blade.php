@@ -1,7 +1,8 @@
 @if (isset($orders) && $orders->count() != 0)
+    <div style="max-height: 500px; overflow-y: auto; margin-bottom: 15px">
     @foreach($orders as $order)
 
-        <div style="max-height: 400px; overflow-y: auto; margin-bottom: 15px">
+
             <ul class="orders__item">
                 <li class="orders__id">
                     <span>{{$order->id}}</span>
@@ -18,26 +19,26 @@
                     <span>Не подтвержден</span>
                 </li>
                 <li class="orders__delete" style="width: 40px; height: 40px;background-image: url('img/apply.png');background-size: 100%">
-                    <form class="delete_order" style="width: 100%; height: 100%;">
+                    <form class="confirm_payment" style="width: 100%; height: 100%;">
                         {{csrf_field()}}
-                        <input name="id" value="{{$order->id}}" hidden>
+                        <input name="order_id" value="{{$order->id}}" hidden>
                         <button style="width: 100%; height: 100%" class="btn" type="submit" class="btn__delete-order" title="Подтвердить оплату">
                           </button>
                     </form>
                 </li>
                 <li class="orders__delete" style="width: 40px; height: 40px;background-image: url('img/button_cancel.png');background-size: 100%">
-                    <form class="delete_order" style="width: 100%; height: 100%;">
+                    <form class="cancel_payment" style="width: 100%; height: 100%;">
                         {{csrf_field()}}
-                        <input name="id" value="{{$order->id}}" hidden>
-                        <button  disabled="true" style="width: 100%; height: 100%" class="btn" type="submit" class="btn__delete-order" title="Отменить подтверждение">
+                        <input name="order_id" value="{{$order->id}}" hidden>
+                        <button   style="width: 100%; height: 100%" class="btn" type="submit" class="btn__delete-order" title="Отменить подтверждение">
                         </button>
 
                     </form>
                 </li>
                 <li class="orders__delete" style="min-width: 50px">
-                    <form class="delete_order">
+                    <form class="delete_order_by_admin">
                         {{csrf_field()}}
-                        <input name="id" value="{{$order->id}}" hidden>
+                        <input name="order_id" value="{{$order->id}}" hidden>
                         <button class="btn" type="submit" class="btn__delete-order" title="Удалить заказ">
                             <svg class="orders__delete__pic">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/spritesvg.svg#rubbish"></use>
@@ -50,13 +51,14 @@
 
 
             </ul>
-           </div>
+
 
     @endforeach
+    </div>
     <ul class="orders__title" style="border-bottom: none; border-top: 1px solid black;">
-        <li class="orders__buy">Найдено {{$orders->count()}}</li>
-        <li class="orders__buy">Общая сумма {{$orders->sum('price')}} ₽</li>
-        <li class="orders__buy">Сумма коммиссий {{$orders->sum('payment')}}  ₽</li>
+        <li class="orders__buy">Найдено <br>{{$orders->count()}}</li>
+        <li class="orders__buy">Общая сумма <br> {{$orders->sum('price')}} ₽</li>
+        <li class="orders__buy">Сумма коммиссий <br> {{$orders->sum('payment')}}  ₽</li>
         <li class="orders__buy"></li>
 
     </ul>
@@ -74,3 +76,62 @@
 
     </ul>
     @endif
+<script>
+    $('.confirm_payment').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type:'post',
+            url:'/confirm_payment',
+            data: $(this).serialize(),
+            success(result){
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
+            },
+            error(result){alert(result)},
+
+        });
+    });
+
+    $('.cancel_payment').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type:'post',
+            url:'/cancel_payment',
+            data: $(this).serialize(),
+            success(result){
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
+            },
+            error(result){alert(result)},
+
+        });
+    });
+
+    $('.delete_order_by_admin').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type:'post',
+            url:'/delete_order_by_admin',
+            data: $(this).serialize(),
+            success(result){
+                e.target.parentNode.parentNode.style.display = 'none';
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(() => {
+                    $('.message-success').css('display', 'none');
+                    $('.message-success').text('');
+                }, 3000);
+            },
+            error(result){alert(result)},
+
+        });
+    });
+    </script>
