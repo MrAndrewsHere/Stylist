@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\OrderFilter;
+use App\stylist;
+use App\StylistFilter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,9 +19,20 @@ class AdminController extends Controller
 
   public function filter_orders(Request $request)
   {
-      $orders = (new OrderFilter(Order::get(),$request))->apply();
- return view('admin.orders_table',compact('orders'));;
+         $orders = (new OrderFilter(Order::get(),$request))->apply();
+        return view('admin.orders_table',compact('orders'));;
   }
+
+  public function filter_stylist(Request $request)
+  {
+
+      $stylists = (new StylistFilter(stylist::where('confirmed','1')->get(),$request))->apply();
+      return view('admin.stylists_filter',compact('stylists'));
+  }
+
+
+
+
 
   public function get_formachka()
   {

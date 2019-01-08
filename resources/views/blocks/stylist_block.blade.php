@@ -58,7 +58,7 @@
                   Комиссия
                 </span>
                     <span class="card__description__text card__description__text--price" style="color: #8b0b3d">
-                    {{$stylist->category->default_commission." %"}}
+                    {{$stylist->commission." %"}}
                   </span>
 
                 </div>
@@ -94,10 +94,12 @@
 </div>
     <div class="admin-request__accept" style="height: 100px;display: flex">
               <form class="admin-request__accept_form" style="margin: auto;height: 100px">
+                  {{csrf_field()}}
+                  <input hidden name="id" value="{{$stylist->id}}">
                   <div class="form__output" style="text-align: center">
                       <div class="col-md-4 mb-3">
                           <label for="validationCustom03">Категория</label>
-                          <select class="form__input" name="status">
+                          <select class="form__input" name="category">
                               @foreach(\App\stylistcategory::all() as $category)
                                   @if($category->id != $stylist->category->id)
                                       <option  value="{{$category->id}}">{{$category->name}}</option>
@@ -111,19 +113,19 @@
                       </div>
                       <div class="col-md-4 mb-3">
                           <label for="validationCustom03">Рейтинг</label>
-                          <input class="form__input" type="text" name="rating">
+                          <input disabled class="form__input" type="text" name="rating">
 
                       </div>
 
                       <div class="col-md-4 mb-3">
                           <label for="validationCustom03">Комиссия</label>
-                          <input class="form__input" type="text" value="{{$stylist->category->default_commission}}" name="rating">
+                          <input class="form__input" type="text" value="{{$stylist->commission}}" name="commission">
 
                       </div>
                   </div>
                       <div class="form__output" style="text-align: center">
                           <div class="col-md-6 mb-3">
-                              <button class="btn btn--action btn--action-buy" style="margin: auto;background-color: white;color: black;box-shadow: 0 0px 2px 1px rgba(14,126,119,0.7)" type="submit">Чат</button>
+                              <button class="btn btn--action btn--action-buy" style="margin: auto;background-color: white;color: black;box-shadow: 0 0px 2px 1px rgba(14,126,119,0.7)" type="button">Чат</button>
 
                           </div>
                           <div class="col-md-6 mb-3">
@@ -217,6 +219,7 @@
 <script>
     $('.admin-request__accept_form').on('submit', function (e) {
         e.preventDefault();
+
         $.ajax({
             type: 'POST',
             url: '/accept_stylist',
@@ -227,7 +230,7 @@
                 setTimeout(function () {
                     $('.message-success').css('display', 'none');
                 }, 3000);
-                location.reload();
+
             },
             error(result) {
                 $('.message-error').text(result);

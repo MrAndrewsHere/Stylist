@@ -115,12 +115,30 @@ class HomeController extends Controller
         $stylist = Stylist::find($request->input('id'));
         if ($stylist !== null && $stylist->Confirmed == 1)
         {
+
+
+            if(is_numeric($request->input('commission'))){
+                $stylist->update([
+                    'commission' => $request->input('commission'),
+                ]);
+                $stylist->save();
+
+            }
+            if(is_numeric($request->input('category'))){
+                $stylist->update([
+                    'category_id' => $request->input('category'),
+
+                ]);
+                $stylist->commission = $stylist->category->default_commission;
+                $stylist->save();
+
+            }
             if ($request->input('category') == '0')
             {
                 $stylist->Confirmed = 0;
                 $stylist->Send_Confirm = 0;
                 $stylist->save();
-                return 'Стилист отклонён';
+
             }
             else
             {
@@ -128,8 +146,9 @@ class HomeController extends Controller
                     'category_id' => $request->input('category'),
                 ]);
                 $stylist->save();
-                return "Категория изменена";
+
             }
+            return "Saved";
         }
         if ($stylist !== null && $request->input('category') == '0') {
             $stylist->Send_Confirm = 0;

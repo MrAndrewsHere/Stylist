@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes(); //Группа роутов для стандартной авторизации
 
 Route::post('filter_orders','AdminController@filter_orders');
+Route::post('filter_stylist','AdminController@filter_stylist');
 Route::post('confirm_payment','AdminController@confirm_payment');
 Route::post('cancel_payment','AdminController@cancel_payment');
 Route::post('delete_order_by_admin','AdminController@delete_order_by_admin');

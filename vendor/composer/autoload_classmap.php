@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddColoumStylist' => $baseDir . '/database/migrations/2019_01_08_113843_add_coloum_stylist.php',
     'AddColoumsToOrder' => $baseDir . '/database/migrations/2019_01_01_204033_add_coloums_to_order.php',
     'AddColoumsToStylistcategories' => $baseDir . '/database/migrations/2019_01_01_204934_add_coloums_to_stylistcategories.php',
     'AddStatucIsAcceptedStilist' => $baseDir . '/database/migrations/2018_09_25_160609_add_statuc__is_accepted_stilist.php',
@@ -43,6 +44,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\QueryFilter' => $baseDir . '/app/QueryFilter.php',
+    'App\\StylistFilter' => $baseDir . '/app/StylistFilter.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\client' => $baseDir . '/app/client.php',
     'App\\file' => $baseDir . '/app/file.php',

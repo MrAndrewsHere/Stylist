@@ -9,7 +9,7 @@
 
         <div class="container">
 
-            <form class="needs-validation"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
+            <form class="needs-validation-filter-stylists"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
                 {{csrf_field()}}
                 <div class="form__output" style="text-align: center">
                     <div class="col-md-4 mb-3">
@@ -33,19 +33,18 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom03">Категория</label>
-                        <select class="form__input" name="status">
-                            <option value="0">Все</option>
-                            <option value="1">Выполняемые</option>
-                            <option value="2">Завершенные</option>
-                            <option value="3">Без оплаты</option>
-                            <option value="4">Оплаченные</option>
-                            <option value="5">Отменённые</option>
+                        <select class="form__input" name="category">
+                            <option value="all">Все</option>
+                            @foreach(\App\stylistcategory::all() as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+
                         </select>
 
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom03">Рейтинг</label>
-                        <select class="form__input" name="status">
+                        <select disabled class="form__input" name="raiting">
                             <option value="0">Все</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -60,11 +59,9 @@
                         <label for="validationCustom04">Услуга</label>
                         <select class="form__input" name="service">
                             <option value="0">Все</option>
-                            <option value="1">Выполняемые</option>
-                            <option value="2">Завершенные</option>
-                            <option value="3">Без оплаты</option>
-                            <option value="4">Оплаченные</option>
-                            <option value="5">Отменённые</option>
+                            @foreach(\App\service::all() as $service)
+                                <option value="{{$service->id}}">{{$service->name}}</option>
+                            @endforeach
                         </select>
 
                     </div>
@@ -84,17 +81,9 @@
             <div class="admin-request" style="height: 500px; padding-bottom: 10px">
 
                 <div class="admin-request__new" style="overflow-y: auto;padding: 2px;width: 15%">
-                    <h3 class="title-block">Всего: <span class="notification" style="background-color: #0e7e77">{{$stylists->count()}}</span></h3>
-                    @if(isset($stylists))
-                        @foreach($stylists as $stylist)
-                            <form class="show_stylist_profile">
-                                {{csrf_field()}}
-                                <input hidden name="id" value={{$stylist->id}} />
-                                <button type="submit" class="admin-request__person">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>
-                            </form>
-                        @endforeach
-                    @endif
+                    <div class="stylists_filter_container">
 
+                    </div>
                 </div>
 
                 <div class="admin-request__about" style="width: 80%;">
@@ -186,6 +175,27 @@
     </section>
     <div class="message-success">Cообщение успешно отправлено</div>
     <div class="message-error">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+
+
+
+
+            $('.needs-validation-filter-stylists').on('submit', function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type:'post',
+                    url:'/filter_stylist',
+                    data: $(this).serialize(),
+                    success(result){
+                        $('.stylists_filter_container').html(result);
+                    },
+                    error(result){alert(result)},
+
+                });
+            });
+
+        </script>
 @endsection
         <style>
             .form__output
@@ -211,4 +221,5 @@
 
             }
         </style>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+

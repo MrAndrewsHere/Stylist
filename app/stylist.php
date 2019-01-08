@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class stylist extends Model
 {
-  protected $fillable = ['user_id', 'category_id', 'about', 'education'];
+  protected $fillable = ['user_id', 'category_id', 'about', 'education','commission'];
   protected $hidden = ['user_id'];
   public $new_orders_count = 0;
   public $processing_orders_count = 0;

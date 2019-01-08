@@ -69,7 +69,7 @@ class ClientController extends Controller
          'payment' => '10.0',
          'confirmed_Date' => $request->input('date'),
       ]);
-     $order->commission($order->stylist->category->default_commission);
+     $order->commission($order->stylist->commission);
      $order->save();
 
 

@@ -63,7 +63,7 @@
                   Комиссия
                 </span>
                 <span class="card__description__text card__description__text--price" style="color: #8b0b3d">
-                    {{Auth::user()->stylist->category->default_commission." %"}}
+                    {{Auth::user()->stylist->commission." %"}}
                   </span>
 
               </div>

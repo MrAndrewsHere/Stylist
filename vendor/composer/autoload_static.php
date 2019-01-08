@@ -399,6 +399,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
     );
 
     public static $classMap = array (
+        'AddColoumStylist' => __DIR__ . '/../..' . '/database/migrations/2019_01_08_113843_add_coloum_stylist.php',
         'AddColoumsToOrder' => __DIR__ . '/../..' . '/database/migrations/2019_01_01_204033_add_coloums_to_order.php',
         'AddColoumsToStylistcategories' => __DIR__ . '/../..' . '/database/migrations/2019_01_01_204934_add_coloums_to_stylistcategories.php',
         'AddStatucIsAcceptedStilist' => __DIR__ . '/../..' . '/database/migrations/2018_09_25_160609_add_statuc__is_accepted_stilist.php',
@@ -436,6 +437,7 @@ class ComposerStaticInit2e7106eed44dc37c29bc37bbf1adc9d1
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\QueryFilter' => __DIR__ . '/../..' . '/app/QueryFilter.php',
+        'App\\StylistFilter' => __DIR__ . '/../..' . '/app/StylistFilter.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\client' => __DIR__ . '/../..' . '/app/client.php',
         'App\\file' => __DIR__ . '/../..' . '/app/file.php',
