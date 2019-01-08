@@ -12,13 +12,18 @@ class OrderSeed extends Seeder
     public function run()
     {
         $stylists = \App\stylist::all();
-        $client = \App\client::first();
         $services = \App\service::all();
         \App\Order::truncate();
         foreach ($stylists as $stylist)
         {
             for ($i=1;$i<10;$i++)
-            { $service = $services->random();
+            {
+
+                $client = \App\client::all()->random();
+                $service = $services->random();
+                $date = \Carbon\Carbon::now();
+                $date->month = rand(1,12);
+                $date->day = rand(1,30);
                 $order = $stylist->orders()->create([
                     'service_id' => $service->id,
                     'price' => $service->priceForStylist($stylist),
@@ -26,6 +31,7 @@ class OrderSeed extends Seeder
                     'ordered_by_client' => '1',
                     'commission' => '10',
                     'payment' => '10.2',
+                    'confirmed_Date' => $date->format('Y-m-d'),
 
                 ]);
                 $order->commission($stylist->category->default_commission);
@@ -37,14 +43,22 @@ class OrderSeed extends Seeder
         foreach ($stylists as $stylist)
         {
             for ($i=1;$i<10;$i++)
-            { $service = $services->random();
+            {
+                $date = \Carbon\Carbon::now();
+                $date->month = rand(1,12);
+                $date->day = rand(1,30);
+
+                $client = \App\client::all()->random();
+                $service = $services->random();
                 $order = $stylist->orders()->create([
                     'service_id' => $service->id,
                     'price' => $service->priceForStylist($stylist),
                     'client_id' => $client->id,
+                    'ordered_by_client' => '1',
                     'confirmed_by_stylist' => '1',
                     'commission' => '10',
                     'payment' => '10.2',
+                    'confirmed_Date' => $date->format('Y-m-d'),
 
                 ]);
                 $order->commission($stylist->category->default_commission);
@@ -56,14 +70,23 @@ class OrderSeed extends Seeder
         foreach ($stylists as $stylist)
         {
             for ($i=1;$i<10;$i++)
-            { $service = $services->random();
+            {
+                $date = \Carbon\Carbon::now();
+                $date->month = rand(1,12);
+                $date->day = rand(1,30);
+
+                $client = \App\client::all()->random();
+                $service = $services->random();
                 $order = $stylist->orders()->create([
                     'service_id' => $service->id,
                     'price' => $service->priceForStylist($stylist),
                     'client_id' => $client->id,
+                    'ordered_by_client' => '1',
+                    'confirmed_by_stylist' => '1',
                     'complited' => '1',
                     'commission' => '10',
                     'payment' => '10.2',
+                    'confirmed_Date' => $date->format('Y-m-d'),
 
                 ]);
                 $order->commission($stylist->category->default_commission);
@@ -74,14 +97,24 @@ class OrderSeed extends Seeder
         foreach ($stylists as $stylist) //payd
         {
             for ($i=1;$i<10;$i++)
-            { $service = $services->random();
+            {
+                $date = \Carbon\Carbon::now();
+                $date->month = rand(1,12);
+                $date->day = rand(1,30);
+
+                $client = \App\client::all()->random();
+                $service = $services->random();
                 $order = $stylist->orders()->create([
                     'service_id' => $service->id,
                     'price' => $service->priceForStylist($stylist),
                     'client_id' => $client->id,
+                    'ordered_by_client' => '1',
+                    'confirmed_by_stylist' => '1',
+                    'complited' => '1',
                     'paid' => '1',
                     'commission' => '10',
                     'payment' => '10.2',
+                    'confirmed_Date' => $date->format('Y-m-d'),
 
                 ]);
                 $order->commission($stylist->category->default_commission);

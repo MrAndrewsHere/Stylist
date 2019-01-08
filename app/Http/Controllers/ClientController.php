@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\client;
 use App\Order;
+use App\OrderFilter;
 use App\service;
 use App\stylist;
 use Illuminate\Support\Facades\Auth;
@@ -55,7 +56,6 @@ class ClientController extends Controller
   // Добавление клиентом услуг
   protected function add_service_to_client(Request $request)
   {
-
     $service = service::find($request->input('service_id'));
     $stylist = $service->stylists->find($request->input('stylist_id'));
 
@@ -66,7 +66,8 @@ class ClientController extends Controller
         'stylist_id' => $stylist->id,
         'price' => $service->priceForStylist($stylist),
          'commission' => '10',
-         'payment' => '10.0'
+         'payment' => '10.0',
+         'confirmed_Date' => $request->input('date'),
       ]);
      $order->commission($order->stylist->category->default_commission);
      $order->save();
@@ -126,42 +127,44 @@ class ClientController extends Controller
 
    protected function New_orders()
    {
-     $orders = Auth::user()->client->orders->where('confirmed_by_stylist','=','0');
-     $orders = $orders->where('canceled_by_stylist','0');
-     $orders = $orders->where('complited','0');
-     return view('client.new_orders',compact('orders'));
+
+       $ord = Auth::user()->client->orders;
+       $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'newOrders'])))->apply();
+
+       return view('client.new_orders',compact('orders'));
    }
 
    protected function Accepted_orders()
-   {
-     $orders = Auth::user()->client->orders->where('confirmed_by_stylist','1');
-     return view('client.processing_orders',compact('orders'));
-   }
 
-   protected function Complited_Orders()
    {
-     $orders = Auth::user()->client->orders->where('complited','1');
-     return view('client.complited_orders',compact('orders'));
+       $ord = Auth::user()->client->orders;
+       $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'processing'])))->apply();
+
+       return view('client.processing_orders',compact('orders'));
+   }
+    protected function Complited_Orders()
+   {
+       $ord = Auth::user()->client->orders;
+       $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'complited'])))->apply();
+
+
+       return view('client.complited_orders',compact('orders'));
    }
 
    protected function Canceled_Orders()
    {
-     $orders = Auth::user()->client->orders->where('canceled_by_stylist','1');
-     return view('client.canceled_orders',compact('orders'));
-   }
-   protected function OpenChat()
-   {
 
+       $ord = Auth::user()->client->orders;
+       $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'canceled'])))->apply();
+
+       return view('client.canceled_orders',compact('orders'));
    }
 
   protected function Cancel_Order(Request $request)
   {
     $order_id = $request->input('order_id');
     $order = Order::find($order_id);
-    $order->ordered_by_client = 0;
-    $order->confirmed_by_stylist = 0;
-    $order->complited = 0;
-    $order->canceled_by_stylist = 1;
+    $order->canceled_by_client = 1;
     $order->save();
     return 'Заказ отменён';
   }

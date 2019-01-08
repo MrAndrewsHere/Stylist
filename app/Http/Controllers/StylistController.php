@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\file;
+use App\OrderFilter;
 use App\service;
 use App\stylist;
 use App\User;
@@ -134,8 +135,10 @@ class StylistController extends Controller
     protected function New_orders()
     {
         try {
-            $stylist = Auth::user()->stylist;
-            $orders = $stylist->orders->where('ordered_by_client', '1')->sortByDesc('id');
+
+            $ord = Auth::user()->stylist->orders;
+            $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'newOrders'])))->apply();
+
             return view('stylist.new_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -147,7 +150,9 @@ class StylistController extends Controller
     protected function Processing_orders()
     {
         try {
-            $orders = Auth::user()->stylist->orders->where('confirmed_by_stylist', '1')->sortByDesc('id');
+            $ord = Auth::user()->stylist->orders;
+            $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'processing'])))->apply();
+
             return view('stylist.processing_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -160,7 +165,9 @@ class StylistController extends Controller
     protected function Complited_Orders()
     {
         try {
-            $orders = Auth::user()->stylist->orders->where('complited', '1')->sortByDesc('id');
+            $ord = Auth::user()->stylist->orders;
+            $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'complited'])))->apply();
+
             return view('stylist.complited_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -172,7 +179,9 @@ class StylistController extends Controller
     protected function Canceled_Orders()
     {
         try {
-            $orders = Auth::user()->stylist->orders->where('canceled_by_stylist', '1');
+            $ord = Auth::user()->stylist->orders;
+            $orders = (new OrderFilter($ord, Request::create(null,null,['status'=>'canceled'])))->apply();
+
             return view('stylist.canceled_orders', compact('orders'));
         } catch (\Exception $exception) {
 
@@ -186,7 +195,6 @@ class StylistController extends Controller
     {
         try {
             $order = Order::find($request->input('order_id'));
-            $order->ordered_by_client = 0;
             $order->confirmed_by_stylist = 1;
             $order->save();
 
@@ -201,11 +209,7 @@ class StylistController extends Controller
     protected function Cancel_Order(Request $request)
     {
         try {
-            $order_id = $request->input('order_id');
-            $order = Order::find($order_id);
-            $order->ordered_by_client = 0;
-            $order->confirmed_by_stylist = 0;
-            $order->complited = 0;
+            $order = Order::find($request->input('order_id'));
             $order->canceled_by_stylist = 1;
             $order->save();
             return 'Заказ отменён';
@@ -218,7 +222,6 @@ class StylistController extends Controller
     {
         try {
             $order = Order::find($request->input('order_id'));
-            $order->confirmed_by_stylist = 0;
             $order->complited = 1;
             $order->save();
             return 'Заказ выполнен';

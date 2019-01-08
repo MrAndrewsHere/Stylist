@@ -30,6 +30,7 @@
                     </div>
                 </div>
                 <div class="form__output" style="text-align: center">
+
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom03">Категория</label>
                         <select class="form__input" name="status">
@@ -42,6 +43,19 @@
                         </select>
 
                     </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationCustom03">Рейтинг</label>
+                        <select class="form__input" name="status">
+                            <option value="0">Все</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+
+                    </div>
+
                     <div class="col-md-6 mb-3">
                         <label for="validationCustom04">Услуга</label>
                         <select class="form__input" name="service">
@@ -67,9 +81,9 @@
 
 
 
-            <div class="admin-request">
+            <div class="admin-request" style="height: 500px; padding-bottom: 10px">
 
-                <div class="admin-request__new">
+                <div class="admin-request__new" style="overflow-y: auto;padding: 2px;width: 15%">
                     <h3 class="title-block">Всего: <span class="notification" style="background-color: #0e7e77">{{$stylists->count()}}</span></h3>
                     @if(isset($stylists))
                         @foreach($stylists as $stylist)
@@ -80,9 +94,10 @@
                             </form>
                         @endforeach
                     @endif
+
                 </div>
 
-                <div class="admin-request__about">
+                <div class="admin-request__about" style="width: 80%;">
                 </div>
 
 
@@ -92,77 +107,77 @@
             <h1 class="section__title">Услуги стилиста</h1>
             <div class="ask-question__quests" ></div>
 
-            <h2 class="title-second"> </h2>
-            <h1 class="section__title">Заказы стилиста</h1>
-            <div class="container-home" style="max-width: 100%">
+            {{--<h2 class="title-second"> </h2>--}}
+            {{--<h1 class="section__title">Заказы стилиста</h1>--}}
+            {{--<div class="container-home" style="max-width: 100%">--}}
 
 
-                <ul class="orders-list-links">
-                    <li class="link-order link-order--active" value="none">
-                        Новые заказы
-                    </li>
-                    <li class="link-order" value="none">
-                        Выполняемые заказы
-                    </li>
-                    <li class="link-order" value="none">
-                        Завершенные заказы
-                    </li>
-                    <li class="link-order" value="none">
-                        Отмененные заказы
-                    </li>
-                </ul>
+                {{--<ul class="orders-list-links">--}}
+                    {{--<li class="link-order link-order--active" value="none">--}}
+                        {{--Новые заказы--}}
+                    {{--</li>--}}
+                    {{--<li class="link-order" value="none">--}}
+                        {{--Выполняемые заказы--}}
+                    {{--</li>--}}
+                    {{--<li class="link-order" value="none">--}}
+                        {{--Завершенные заказы--}}
+                    {{--</li>--}}
+                    {{--<li class="link-order" value="none">--}}
+                        {{--Отмененные заказы--}}
+                    {{--</li>--}}
+                {{--</ul>--}}
 
-                <!-- НОВЫЕ ЗАКАЗЫ СТИЛИСТА -->
-            <div class="clear_after">
-                    <div class="orders orders--active">
-                        <div class="my_orders">
+                {{--<!-- НОВЫЕ ЗАКАЗЫ СТИЛИСТА -->--}}
+            {{--<div class="clear_after">--}}
+                    {{--<div class="orders orders--active">--}}
+                        {{--<div class="my_orders">--}}
 
-                                <div class="lk-stylist__education lk-stylist__education--empty">
-                                    <div>
-                                        <span>Выберите стилиста</span>
-                                    </div>
-                                </div>
+                                {{--<div class="lk-stylist__education lk-stylist__education--empty">--}}
+                                    {{--<div>--}}
+                                        {{--<span>Выберите стилиста</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
 
-                        </div>
-                    </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
 
-                    <!-- ПОДТВЕРЖДЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->
+                    {{--<!-- ПОДТВЕРЖДЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->--}}
 
-                        <div class="orders">
-                            <div class="my_orders">
-                                <div class="lk-stylist__education lk-stylist__education--empty">
-                                    <div>
-                                        <span>Выберите стилиста</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="orders">--}}
+                            {{--<div class="my_orders">--}}
+                                {{--<div class="lk-stylist__education lk-stylist__education--empty">--}}
+                                    {{--<div>--}}
+                                        {{--<span>Выберите стилиста</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                        <!-- ЗАВЕРШЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->
+                        {{--<!-- ЗАВЕРШЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->--}}
 
-                        <div class="orders">
-                            <div class="my_orders">
-                                <div class="lk-stylist__education lk-stylist__education--empty">
-                                    <div>
-                                        <span>Выберите стилиста</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {{--<div class="orders">--}}
+                            {{--<div class="my_orders">--}}
+                                {{--<div class="lk-stylist__education lk-stylist__education--empty">--}}
+                                    {{--<div>--}}
+                                        {{--<span>Выберите стилиста</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
-                        <!-- ОТМЕНЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->
+                        {{--<!-- ОТМЕНЕННЫЕ ЗАКАЗЫ СТИЛИСТА -->--}}
 
-                        <div class="orders">
-                            <div class="my_orders">
-                                <div class="lk-stylist__education lk-stylist__education--empty">
-                                    <div>
-                                        <span>Выберите стилиста</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                  </div>
-            </div>
+                        {{--<div class="orders">--}}
+                            {{--<div class="my_orders">--}}
+                                {{--<div class="lk-stylist__education lk-stylist__education--empty">--}}
+                                    {{--<div>--}}
+                                        {{--<span>Выберите стилиста</span>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                  {{--</div>--}}
+            {{--</div>--}}
 
 
 

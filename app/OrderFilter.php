@@ -21,6 +21,7 @@ class OrderFilter extends QueryFilter
             } else
                 return ($this->builder = $this->builder->where('id', '=', $this->request->order_id));
         }
+
         foreach ($this->filters() as $filter => $value) {
 
             if (method_exists($this, $filter)) {
@@ -73,27 +74,28 @@ class OrderFilter extends QueryFilter
 
         if (method_exists($this, $value)) {
             $this->$value();
+
         }
     }
 
     public function processing()
     {
-        return $this->builder = $this->builder->where('confirmed_by_stylist', '1')->where('complited','0');
+
+         $this->builder = $this->builder->where('ordered_by_client','1')->where('confirmed_by_stylist', '1')->where('complited','0');
+        return $this->builder = $this->builder->reject( function ($item){
+            return $item->canceled_by_client == 1 || $item->canceled_by_stylist == 1;
+        });
+
     }
 
     public function complited()
     {
-        return $this->builder = $this->builder->where('complited','1');
+        return $this->builder = $this->builder->where('ordered_by_client','1')->where('confirmed_by_stylist','1')->where('complited','1');
     }
 
     public function notpaid()
     {
-        return $this->builder = $this->builder->where('paid','0');
-    }
-
-    public function paid()
-    {
-        return $this->builder = $this->builder->where('paid','1');
+        return $this->builder = $this->builder->where('complited','1')->where('paid','0');
     }
 
     public function canceled()
@@ -105,11 +107,42 @@ class OrderFilter extends QueryFilter
         });
     }
 
+    public function paid()
+    {
+         $this->builder = $this->builder->where('complited','1')->where('paid','1');
+
+    }
+
+    public function newOrders()
+    {
+         $this->builder = $this->builder->where('confirmed_by_stylist','0')->where('complited','0');
+        return $this->builder = $this->builder->reject( function ($item){
+            return $item->canceled_by_client == 1 || $item->canceled_by_stylist == 1;
+        });
+
+    }
 
     public function confirmed_pay()
     {
         return $this->builder = $this->builder->where('confirmed_pay_by_admin','1');
     }
 
+    public function beginDate($value)
+    {
+        if (!$value) {
+            return;
+        }
+
+        return $this->builder = $this->builder->where('confirmed_Date','>=',$value);
+    }
+
+    public function endDate($value)
+    {
+        if (!$value) {
+            return;
+        }
+
+        return $this->builder = $this->builder->where('confirmed_Date','<=',$value);
+    }
 
 }

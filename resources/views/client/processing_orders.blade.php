@@ -24,7 +24,7 @@
         <span>₽</span>
       </li>
       <li class="orders__status">
-        <span>Выпонялется</span>
+        <span>Выполняется</span>
       </li>
       <li class="orders__buy">
         {{--<form class="ordered">--}}

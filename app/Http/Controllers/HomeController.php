@@ -158,11 +158,19 @@ class HomeController extends Controller
             $orders = Auth::user()->client->orders->where('confirmed_by_stylist', '=', '0');
             $orders = $orders->where('canceled_by_stylist', '0');
             $orders = $orders->where('complited', '0');
+             $orders->reject( function ($item){
+                 return $item->canceled_by_client == 1 || $item->canceled_by_stylist == 1;
+             });
+
             return view('my-orders', compact('orders'));
         }
         if (Auth::user()->role_id == '2')
             try {
                 $orders = Auth::user()->stylist->orders->where('ordered_by_client', '1');
+                $orders->reject( function ($item){
+                    return $item->canceled_by_client == 1 || $item->canceled_by_stylist == 1;
+                });
+
                 return view('my-orders', compact('orders'));
             } catch (\ErrorException $error) {
 

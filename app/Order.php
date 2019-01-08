@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
 
-  protected $fillable = ['client_id', 'service_id', 'stylist_id', 'price', 'commission', 'payment'];
+  protected $fillable = ['client_id', 'service_id', 'stylist_id', 'price', 'commission', 'payment','confirmed_Date'];
   public $timestamps = false;
 
 
