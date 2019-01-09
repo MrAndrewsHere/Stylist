@@ -13,7 +13,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example', require('./components/Example.vue'));
+Vue.component('example', require('./components/Example.vue'));
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
 
@@ -92,3 +92,28 @@ const app = new Vue({
         }
     }
 });
+const demo = new Vue(
+    {
+        el:"#demo",
+        props: [
+
+        ],
+
+        data:{
+            count:0,
+        },
+        created() {
+            console.log("Demo is mounted");
+        },
+
+        methods: {
+
+            up (){
+                this.count++;
+            },
+        },
+        template: '<button v-on:click="up">Счётчик кликов — {{ count }}</button>',
+
+
+    }
+);
