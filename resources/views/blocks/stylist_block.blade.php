@@ -1,4 +1,4 @@
-<div class="" style="height: 400px;overflow-y: auto;margin-bottom: 20px" >
+<div class="" style="height: 600px;overflow-y: auto;margin-bottom: 20px" >
     <div class="lk-stylist__block" style="padding-bottom: 10px">
 
         <div class="card">

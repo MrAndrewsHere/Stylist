@@ -30,6 +30,21 @@ class AdminController extends Controller
       return view('admin.stylists_filter',compact('stylists'));
   }
 
+  public function show_new_profile(Request $request)
+  {
+      try
+      {
+          $id = $request->input('id');
+          $stylist = stylist::find($id);
+          return view( 'blocks.new_stylist_block',compact("stylist"));
+      }
+      catch (\Exception $exception)
+      {
+
+      }
+  }
+
+
 
 
 

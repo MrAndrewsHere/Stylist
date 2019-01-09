@@ -115,6 +115,22 @@ $(document).ready(() => {
     e.target.parentNode.style.display = 'none';
   });
 
+
+    $('.show_new_profile').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/show_new_profile',
+            data: $(this).serialize(),
+            success(result) {
+                $('.admin-request__about').html(result);
+            },
+            error() {
+                $('.message-error').css('display', 'block');
+            },
+        });
+
+    });
   // просмотр профиля стилиста
   $('.show_stylist_profile').on('submit', function (e) {
     e.preventDefault();
@@ -155,7 +171,27 @@ $(document).ready(() => {
           },
       });
   });
+    $('#send_confirm_btn').on('click', function (e) {
+        e.preventDefault();
 
+        $.ajax({
+            type: 'GET',
+            url: '/Send_Confirm',
+            data: "",
+            success(result) {
+                $('.message-success').text(result);
+                $('.message-success').css('display', 'block');
+                setTimeout(function () {
+                    $('.message-success').css('display', 'none');
+                }, 3000);
+
+            },
+            error(result) {
+                $('.message-error').text(result);
+                $('.message-error').css('display', 'block');
+            },
+        });
+    });
   // удаление элемента фортфолио стилистом
   $('.delete_portfolio').on('submit', function (e) {
     e.preventDefault();

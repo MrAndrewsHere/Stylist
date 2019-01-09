@@ -70,6 +70,24 @@ class StylistController extends Controller
         return $result = 'false';
     }
 
+    public function Send_Confirm()
+    {
+        try {
+            $stylist = Auth::user()->stylist;
+            $stylist->send_confirm();
+            return "Временная ошибка " .
+                "Попробуйте позже";
+        }
+        catch (\Exception $exception)
+        {
+            return "Временная ошибка " .
+                "Попробуйте позже";
+
+
+        }
+
+    }
+
     protected function store(Request $request)
     {
         $data = $request;
@@ -89,8 +107,7 @@ class StylistController extends Controller
 
         ]);
         $stylist = $user->stylist;
-        $stylist->Send_Confirm = 1;
-        $stylist->save();
+
 
         if ($request->hasFile('avatar')) {
             $picture = $request->file('avatar');

@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Auth::routes(); //Группа роутов для стандартной авторизации
 
-Route::post('filter_orders','AdminController@filter_orders');
+Route::post('show_new_profile','AdminController@show_new_profile');
 Route::post('filter_stylist','AdminController@filter_stylist');
 Route::post('confirm_payment','AdminController@confirm_payment');
 Route::post('cancel_payment','AdminController@cancel_payment');
@@ -66,6 +66,7 @@ Route::post('/admin_stylist_services', 'HomeController@admin_stylist_services');
 // StylistController --> Guard: 'auth, stylist'
 
 Route::get('/lk_stylist', 'StylistController@lk_stylist');
+Route::get('/Send_Confirm', 'StylistController@Send_Confirm');
 Route::post('/save_info', 'StylistController@store'); // Сохранение настроек стилиста
 //Ajax
 Route::post('/diplom_delete','StylistController@diplom_delete');

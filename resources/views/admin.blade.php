@@ -43,7 +43,7 @@
           <h3 class="title-block"></h3>
           @if(isset($stylists))
             @foreach($stylists as $stylist)
-              <form class="show_stylist_profile">
+              <form class="show_new_profile">
                 {{csrf_field()}}
                 <input hidden name="id" value={{$stylist->id}} />
                 <button type="submit" class="admin-request__person">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>

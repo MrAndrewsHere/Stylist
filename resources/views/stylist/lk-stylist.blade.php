@@ -6,6 +6,8 @@
   <section class="section">
     <h1 class="section__title">Личный кабинет</h1>
     <div class="container">
+      <div class="message-success"></div>
+      <div class="message-error"></div>
       <div class="lk__block">
         <div class="card card__margin">
           <div class="card__photo-block">
@@ -13,6 +15,12 @@
               <img class="lk__photo" src="{{Auth::user()->avatar}}" alt="стилист {{Auth::user()->name}} {{Auth::user()->second_name}}"/>
             </a>
             <a class="btn btn__card btn--edit" href="{{url('/settings')}}">Редактировать</a>
+            @if (isset(Auth::user()->stylist->category))
+              @else
+              @if(! Auth::user()->stylist->is_Send_Confirmed())
+            <button class="btn btn__card btn--edit" id="send_confirm_btn" style="background-color: white;color: black;box-shadow: 0 0px 10px 5px rgba(8,76,71,0.5)">Отправить заявку на подтверждение</button>
+              @endif
+              @endif
           </div>
 
           @if (Auth::user()->role->name == 'stylist')
@@ -43,30 +51,42 @@
                 </span>
                 {{Auth::user()->city}}
               </div>
-              <div class="card__description__text">
+
+                @if (isset(Auth::user()->stylist->category))
+                <div class="card__description__text">
                 <span class="card__description__title">
                   Категория:
                 </span>
-                @if (isset(Auth::user()->stylist->category))
-                <span class="card__description__text card__description__text--price" >
+
+                  <span class="card__description__text card__description__text--price" >
                       {{Auth::user()->stylist->category->name}}
                   </span>
-                @else
-                  <span class="card__description__text card__description__text--price" style="color: #7c008b">
-                    Не подтверждён
-                  </span>
-                @endif
-
-              </div>
-              <div class="card__description__text">
+                </div>
+                <div class="card__description__text">
                 <span class="card__description__title">
                   Комиссия
                 </span>
-                <span class="card__description__text card__description__text--price" style="color: #8b0b3d">
+                  <span class="card__description__text card__description__text--price" style="color: #8b0b3d">
                     {{Auth::user()->stylist->commission." %"}}
                   </span>
 
-              </div>
+                </div>
+                @else
+                <div class="card__description__text">
+                <span class="card__description__title">
+                  Категория:
+                </span>
+                  @if(! Auth::user()->stylist->is_Send_Confirmed())
+                  <span style="color: darkred">Для активации профиля, отправте заявку администратору, предварительно заполнив данные о себе. После подтверждения Вам будет выставлена категория, а так же предоставлена возможность принимать заказы.</span>
+                  @else
+                    <span class="card__description__text card__description__text--price">Заявка отправлена</span>
+                  @endif
+
+                </div>
+                @endif
+
+
+
 
             </div>
           @else
@@ -121,7 +141,7 @@
         <h2 class="title-second">Мои услуги</h2>
 
           <div>
-            <div id="services">
+            <div id="services" style="max-height: 500px;overflow-y: auto">
               @if(isset($Services))
                 @foreach($Services as $service)
                   <div class="card card__margin {{ $service ->category->first()->name }}">
@@ -170,3 +190,6 @@
     </div>
   </section>
 @endsection
+<script>
+
+  </script>

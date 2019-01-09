@@ -78,7 +78,7 @@
 
 
 
-            <div class="admin-request" style="height: 500px; padding-bottom: 10px">
+            <div class="admin-request" style="height: 700px; padding-bottom: 10px">
 
                 <div class="admin-request__new" style="overflow-y: auto;padding: 2px;width: 15%">
                     <div class="stylists_filter_container">
