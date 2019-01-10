@@ -99,7 +99,7 @@
             </div>
             <div class="form__output" style="text-align: center">
                 <div class="col-md-6 mb-3">
-                    <button class="btn btn--action btn--action-buy" style="margin: auto;background-color: white;color: black;box-shadow: 0 0px 2px 1px rgba(14,126,119,0.7)" type="button">Чат</button>
+                    <button disabled class="btn btn--action btn--action-buy" style="margin: auto;background-color: white;color: black;box-shadow: 0 0px 2px 1px rgba(14,126,119,0.7)" type="button">Чат</button>
 
                 </div>
                 <div class="col-md-6 mb-3">
@@ -108,7 +108,7 @@
 
                 </div>
                 <div class="col-md-6 mb-3">
-                    <button class="btn btn--action btn--action-buy" id="reset-btn" style="margin: auto; background-color:white; color: black;box-shadow: 0 0px 2px 1px rgba(164,0,116,0.5)" type="button">Отклонить</button>
+                    <button disabled class="btn btn--action btn--action-buy" id="reset-btn" style="margin: auto; background-color:white; color: black;box-shadow: 0 0px 2px 1px rgba(164,0,116,0.5)" type="button">Отклонить</button>
 
                 </div>
 
