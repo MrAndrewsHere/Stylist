@@ -38,31 +38,7 @@
                         {{$stylist->user->city}}
                     </div>
 
-                    <div class="card__description__text">
-        <span class="card__description__title">
-          Категория:
-        </span>
-                        @if(isset($stylist->category))
-                            <span class="card__description__text card__description__text--price" >
-                      {{$stylist->category->name}}
-                  </span>
 
-
-                        @else
-
-                        @endif
-
-                    </div>
-
-                    <div class="card__description__text">
-                <span class="card__description__title">
-                  Комиссия
-                </span>
-                        <span class="card__description__text card__description__text--price" style="color: #8b0b3d">
-                    {{$stylist->commission." %"}}
-                  </span>
-
-                    </div>
 
 
                     <div class="card__description__text">
@@ -132,7 +108,7 @@
 
                 </div>
                 <div class="col-md-6 mb-3">
-                    <button class="btn btn--action btn--action-buy" id="reset-btn" style="margin: auto; background-color:white; color: black;box-shadow: 0 0px 2px 1px rgba(164,0,116,0.5)" type="button">Отключить</button>
+                    <button class="btn btn--action btn--action-buy" id="reset-btn" style="margin: auto; background-color:white; color: black;box-shadow: 0 0px 2px 1px rgba(164,0,116,0.5)" type="button">Отклонить</button>
 
                 </div>
 
