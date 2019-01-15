@@ -10,6 +10,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Mail;
 use function Symfony\Component\VarDumper\Dumper\esc;
@@ -20,6 +21,14 @@ class WelcomeController extends Controller
 {
   public function __construct()
   {
+
+  }
+
+  public function users()
+  {
+
+
+     return  User::with('role','stylist','messages','stylist.orders')->find(3)->toJson(0);
 
   }
 

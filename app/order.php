@@ -32,6 +32,7 @@ class Order extends Model
     return $this->belongsTo('App\stylist');
   }
 
+
   public function service()
   {
     return $this->belongsTo('App\service');

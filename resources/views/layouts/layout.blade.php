@@ -111,6 +111,29 @@
                 </div>
               </div>
             </div>                    </div>
+          <div class="sc-peers-container">
+            <ul class="peers_list">
+              <li class="peer-block">
+                <div class="peer_header_block">
+                  s
+                </div>
+                <div class="peer_body-block">c</div>
+              </li>
+              <li class="peer-block">
+                <div class="peer_header_block">
+                  s
+                </div>
+                <div class="peer_body-block">c</div>
+              </li>
+              <li class="peer-block">
+                <div class="peer_header_block">
+                  s
+                </div>
+                <div class="peer_body-block">c</div>
+              </li>
+
+            </ul>
+          </div>
         </div>
 
 
@@ -148,6 +171,11 @@
 
 <script>
     // $('.modal-dialog').addClass('modal-auth-show');
+    $(document).ready(() => {
+      OpenChat();
+      open_peers_list();
+    });
+
     function UloginRegister (token) {
 
 

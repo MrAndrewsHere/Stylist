@@ -3326,6 +3326,13 @@ function CloseChat() {
 
 }
 
+function open_peers_list()
+{
+    $('.sc-message-list').addClass('closed');
+    $('.panel-footer').addClass('closed');
+
+}
+
 function ChangePeer() {
     alert('PeerChanged');
 
