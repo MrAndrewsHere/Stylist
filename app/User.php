@@ -31,7 +31,7 @@ class User extends Authenticatable
 
   public function stylist()
   {
-    return $this->hasOne('App\stylist', 'user_id');
+    return $this->hasOne(stylist::class);
   }
 
   protected function client()

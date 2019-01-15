@@ -19,11 +19,12 @@ class stylist extends Model
   {
     return $this->belongsTo('App\User');
   }
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
 
-  public function orders()
-  {
-    return $this->hasMany('App\Order');
-  }
+
   public function services()
   {
     return $this->belongsToMany('App\service');
@@ -67,5 +68,6 @@ class stylist extends Model
         if($this->Send_Confirm == 1){return true;}
         return false;
     }
+
 
 }
