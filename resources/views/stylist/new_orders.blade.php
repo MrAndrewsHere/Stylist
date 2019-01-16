@@ -20,7 +20,8 @@
         <span>{{$order->price." ₽"}}</span>
       </li>
       <li class="orders__status">
-        <span>Не подтвержден</span>
+          @if(($order->ordered_by_client == 1 || $order->ordered_by_client == 0 ) && $order->confirmed_by_stylist == 0 && $order->canceled_by_stylist == 0 && $order->canceled_by_client == 0  ) <span>Новый </span><br> @endif
+              @if(isset($order->confirmed_Date)) <span> {{\Carbon\Carbon::parse($order->confirmed_Date)->format('d-m-Y')}}</span>@endif
       </li>
       <li class="orders__buy">
         <form class="accept_order">

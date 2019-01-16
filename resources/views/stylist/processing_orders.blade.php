@@ -19,11 +19,13 @@
             </li>
             <li class="orders__price orders__price--big">
                 <span>{{$order->price." ₽"}}</span>
+                <br>
+                <span>Комиссия: {{$order->payment." ₽"}}</span>
             </li>
             <li class="orders__status">
                 <span>Выполняется</span>
                 <br>
-                <span>Комиссия: {{$order->payment." ₽"}}</span>
+                @if(isset($order->confirmed_Date)) <span> {{\Carbon\Carbon::parse($order->confirmed_Date)->format('d-m-Y')}}</span>@endif
             </li>
             <li class="orders__buy">
                 <form class="complite_order">

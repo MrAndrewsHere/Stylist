@@ -72,7 +72,11 @@
               <a class="navigation__profile-menu-link navigation__link" href="/lk_client">Личный кабинет</a>
               <a class="navigation__profile-menu-link navigation__link" href="/my_style">Мой стиль</a>
             @endif
-            <a class="navigation__profile-menu-link navigation__link" href="/admin">Заявки</a>
+
+            @if(Auth::user()->role->name == 'admin')
+              <a class="navigation__profile-menu-link navigation__link" href="/admin">Заявки</a>
+            @endif
+
             <a class="navigation__profile-menu-link navigation__link" href="/settings">Настройки</a>
             <a class="navigation__profile-menu-link navigation__link" href="/logout"
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выход</a>

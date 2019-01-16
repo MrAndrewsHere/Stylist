@@ -54,7 +54,7 @@
                   </li>
                   <li class="orders__service orders__service--big">
                     <a class="orders__link" href="{{url('/service-page',$order->service->id)}}">{{$order->service->name}}</a><br/>
-                    <a class="orders__link"
+                    <a class="card__description__text card__description__text--price"
                        href="{{url('/stylist_profile',$order->stylist->id)}}">{{$order->stylist->user->name." ".$order->stylist->user->second_name}}</a>
                   </li>
                   <li class="orders__price orders__price--big">
@@ -65,17 +65,25 @@
                     @if($order->ordered_by_client == '1')
                       <span>Заказан</span>
                     @else
-                      <span>Не подтвержден</span>
+                      <span>Новый</span>
                     @endif
+                    <br>
+                    @if(isset($order->confirmed_Date)) <span> {{\Carbon\Carbon::parse($order->confirmed_Date)->format('d-m-Y')}}</span>@endif
 
                   </li>
                   <li class="orders__buy">
                     <form class="accept_by_client">
                       {{csrf_field()}}
                       <input type="hidden" name="order_id" value="{{$order->id}}">
-                      <button type="submit" class="btn btn--action btn--action-buy">
-                        Заказать
-                      </button>
+                      @if($order->ordered_by_client == '1')
+                        <button disabled="true" style="background-color: grey" type="submit" class="btn btn--action btn--action-buy">
+                          Заказать
+                        </button>
+                      @else
+                        <button  type="submit" class="btn btn--action btn--action-buy">
+                          Заказать
+                        </button>
+                      @endif
                     </form>
                   </li>
                   <li class="orders__delete">
