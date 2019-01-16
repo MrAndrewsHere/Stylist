@@ -43,8 +43,8 @@
           @endif
 
           @if(Auth::user()->role->name == 'admin')
-            <a class="navigation__link" href="/admin">Заявки</a>
-              <span class="enter-panel__divider">|</span>
+
+
               <a class="navigation__link" href="/admin_stylists">Стилисты</a>
               <span class="enter-panel__divider">|</span>
               <a class="navigation__link" href="/admin_find_orders">Заказы</a>
@@ -72,7 +72,7 @@
               <a class="navigation__profile-menu-link navigation__link" href="/lk_client">Личный кабинет</a>
               <a class="navigation__profile-menu-link navigation__link" href="/my_style">Мой стиль</a>
             @endif
-
+            <a class="navigation__profile-menu-link navigation__link" href="/admin">Заявки</a>
             <a class="navigation__profile-menu-link navigation__link" href="/settings">Настройки</a>
             <a class="navigation__profile-menu-link navigation__link" href="/logout"
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Выход</a>
