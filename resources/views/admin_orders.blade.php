@@ -19,7 +19,7 @@
                         <label for="validationCustom02">Стилист</label>
                         <select class="form__input" name="stylist">
                             <option value="">Все</option>
-                            @foreach(\App\stylist::all() as $stylist)
+                            @foreach(\App\stylist::where('confirmed','1')->get() as $stylist)
                                 <option value="{{$stylist->id}}">{{$stylist->user->name." ".$stylist->user->second_name}}</option>
                             @endforeach
                         </select>
@@ -154,11 +154,7 @@
 
             }
 
-            .container
-            {
-                padding: 1px;
 
-            }
             </style>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 

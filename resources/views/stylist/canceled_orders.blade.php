@@ -18,7 +18,9 @@
         <span>{{$order->price." ₽"}}</span>
       </li>
       <li class="orders__status">
-        <span>Отменен</span>
+        @if($order->canceled_by_stylist == 1 ) <span>Отменён стилистом </span><br> @endif
+        @if($order->canceled_by_client == 1 ) <span>Отменён клиентом </span><br> @endif
+          @if(isset($order->confirmed_Date)) <span> {{\Carbon\Carbon::parse($order->confirmed_Date)->format('d-m-Y')}}</span>@endif
       </li>
 
     </ul>

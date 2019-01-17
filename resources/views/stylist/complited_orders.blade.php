@@ -17,17 +17,22 @@
       </li>
       <li class="orders__price orders__price--big">
         <span>{{$order->price." ₽"}}</span>
+        <br>
+        <span>Комиссия: {{$order->payment." ₽"}}</span>
       </li>
       <li class="orders__status">
         <span>Завершен</span>
+
         <br>
-        <span>Комиссия: {{$order->payment." ₽"}}</span>
-        <br>
+        @if($order->paid == 0 && $order->complited == 1) <span class="card__description__text card__description__text--price" style="color: darkred">Без оплаты</span><br>@endif
+        @if($order->paid == 1 && $order->complited == 1) <span class="card__description__text card__description__text--price" >Оплачен</span><br>@endif
         @if($order->confirmed_pay_by_admin == 1)
         <span class="card__description__text card__description__text--price">Оплата подтверждена</span>
           @else
           <span class="card__description__text card__description__text--price" style="color: darkred">Оплата не подтверждена</span>
         @endif
+        <br>
+        @if(isset($order->confirmed_Date)) <span> {{\Carbon\Carbon::parse($order->confirmed_Date)->format('d-m-Y')}}</span>@endif
       </li>
 
       <li class="orders__buy">
