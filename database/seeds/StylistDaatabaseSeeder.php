@@ -12,7 +12,7 @@ class StylistDaatabaseSeeder extends Seeder
     public function run()
     {
 
-        
+
       DB::table('stylists')->insert(
         [  'id'=>'1',
           'user_id' => '3',
