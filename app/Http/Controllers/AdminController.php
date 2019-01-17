@@ -29,8 +29,16 @@ class AdminController extends Controller
       $stylists = (new StylistFilter(stylist::where('confirmed','1')->get(),$request))->apply();
       return view('admin.stylists_filter',compact('stylists'));
   }
+    public function filter_new_stylist(Request $request)
+    {
 
-  public function show_new_profile(Request $request)
+        $stylists = (new StylistFilter(stylist::where('send_confirm','1')->where('Confirmed','0')->get(),$request))->apply();
+        return view('admin.new_stylists_filter',compact('stylists'));
+    }
+
+
+
+    public function show_new_profile(Request $request)
   {
       try
       {

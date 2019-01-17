@@ -75,8 +75,7 @@ class StylistController extends Controller
         try {
             $stylist = Auth::user()->stylist;
             $stylist->send_confirm();
-            return "Временная ошибка " .
-                "Попробуйте позже";
+            return "Заявка отправлена";
         }
         catch (\Exception $exception)
         {

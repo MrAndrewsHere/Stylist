@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes(); //Группа роутов для стандартной авторизации
 
+Route::post('filter_new_stylist','AdminController@filter_new_stylist');
 Route::post('filter_orders','AdminController@filter_orders');
 Route::post('show_new_profile','AdminController@show_new_profile');
 Route::post('filter_stylist','AdminController@filter_stylist');

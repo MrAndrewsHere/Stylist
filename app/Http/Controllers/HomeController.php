@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\OrderFilter;
 use App\service;
 use App\stylist;
 use App\stylistcategory;
 use App\User;
 use App\Order;
+use http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -170,30 +172,15 @@ class HomeController extends Controller
 
     public function my_orders()
     {
-//        $Neworders = Order::where('status','0')->orderby('updated_at','asc')->paginate(5);
-//        $Savedorders = Order::where('status','1')->orderby('updated_at','asc')->paginate(5);
 
-        if (Auth::user()->role_id == '1') {
-            $orders = Auth::user()->client->orders->where('confirmed_by_stylist', '=', '0');
-            $orders = $orders->where('canceled_by_stylist', '0');
-            $orders = $orders->where('complited', '0');
-             $orders->reject( function ($item){
-                 return $item->canceled_by_client == 1 || $item->canceled_by_stylist == 1;
-             });
-
+        $role = Auth::user()->role->name;
+        try {
+            $orders = (new OrderFilter(Auth::user()->$role->orders, Request::create(null,null,['status' =>'newOrders'])))->apply();
             return view('my-orders', compact('orders'));
+        } catch (\ErrorException $error) {
+            return redirect('/');
+
         }
-        if (Auth::user()->role_id == '2')
-            try {
-                $orders = Auth::user()->stylist->orders->where('ordered_by_client', '1');
-                $orders->reject( function ($item){
-                    return $item->canceled_by_client == 1 || $item->canceled_by_stylist == 1;
-                });
-
-                return view('my-orders', compact('orders'));
-            } catch (\ErrorException $error) {
-
-            }
 
     }
 
