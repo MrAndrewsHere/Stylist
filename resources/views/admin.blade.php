@@ -6,7 +6,7 @@
   <section class="section section--admin">
     <h1 class="section__title">Новые заявки</h1>
     <div class="container">
-      <form class="needs-validation"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
+      <form class="needs-validation-new-stylist-filter"  style="border: 1px solid antiquewhite; padding: 10px; margin-bottom: 15px" novalidate>
         {{csrf_field()}}
         <div class="form__output" style="text-align: center">
           <div class="col-md-4 mb-3">
@@ -39,20 +39,13 @@
         <div class="admin-request">
         <!-- Новые заявки -->
 
-        <div class="admin-request__new">
-          <h3 class="title-block"></h3>
-          @if(isset($stylists))
-            @foreach($stylists as $stylist)
-              <form class="show_new_profile">
-                {{csrf_field()}}
-                <input hidden name="id" value={{$stylist->id}} />
-                <button type="submit" class="admin-request__person">{{$stylist->user->name.' '.$stylist->user->second_name}}</button>
-              </form>
-            @endforeach
-          @endif
-        </div>
+          <div class="admin-request__new" style="overflow-y: auto;padding: 2px;width: 15%">
+            <div class="stylists_filter_container">
 
-        <div class="admin-request__about">
+            </div>
+          </div>
+
+          <div class="admin-request__about">
         </div>
 
       </div>
@@ -60,6 +53,29 @@
 
 
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+
+
+
+      $('.needs-validation-new-stylist-filter').on('submit', function (e) {
+        e.preventDefault();
+        $.ajax({
+          type:'post',
+          url:'/filter_new_stylist',
+          data: $(this).serialize(),
+          success(result){
+            $('.stylists_filter_container').html(result);
+          },
+          error(result){alert(result)},
+
+        });
+      });
+
+    </script>
+
   </section>
 @endsection
 
@@ -87,4 +103,3 @@
 
   }
 </style>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
